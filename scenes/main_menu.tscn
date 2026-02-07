@@ -1,0 +1,150 @@
+[gd_scene load_steps=22 format=3 uid="uid://bcu52y8d45rpo"]
+
+[ext_resource type="Script" uid="uid://bvu41ij0ekeb4" path="res://scripts/main_menu.gd" id="1_wu84c"]
+[ext_resource type="Texture2D" uid="uid://cqmejefvn1ob8" path="res://Background/locker-room.png" id="2_8ln24"]
+[ext_resource type="FontFile" uid="uid://w8sncg6hlxg" path="res://fonts/SpecialElite-Regular.ttf" id="3_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://reaw4avq7wjl" path="res://Background/BlueMoon.png" id="4_oa1go"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
+texture = ExtResource("2_8ln24")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vrkn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jix8l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glbon"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlkkf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe12f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy7ct"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o4t1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0k4wn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5v2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iotk1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w44g7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm266"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8g3n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u0te"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_wu84c")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jix8l")
+
+[node name="Button_manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="New Game" type="Button" parent="Button_manager"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = 296.0
+offset_right = 287.0
+offset_bottom = 373.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_rtw2f")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fu7sn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jix8l")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_glbon")
+text = "New Game"
+
+[node name="Load" type="Button" parent="Button_manager"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = 360.0
+offset_right = 252.0
+offset_bottom = 437.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_rtw2f")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nlkkf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8qtwp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dy7ct")
+text = "Load"
+
+[node name="Options" type="Button" parent="Button_manager"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = 422.0
+offset_right = 278.0
+offset_bottom = 499.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_rtw2f")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0o4t1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0k4wn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j5v2v")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iotk1")
+text = "Options"
+
+[node name="Exit" type="Button" parent="Button_manager"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = 484.0
+offset_right = 252.0
+offset_bottom = 561.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_rtw2f")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w44g7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cm266")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g8g3n")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8u0te")
+text = "Exit
+"
+
+[node name="BlueMoon" type="Sprite2D" parent="."]
+position = Vector2(217, 208.99997)
+scale = Vector2(0.48564813, 0.48564813)
+texture = ExtResource("4_oa1go")
+
+[connection signal="pressed" from="Button_manager/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Button_manager/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Button_manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Button_manager/Exit" to="." method="_on_exit_pressed"]
