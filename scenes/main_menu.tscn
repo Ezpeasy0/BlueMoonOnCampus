@@ -1,12 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://bcu52y8d45rpo"]
+[gd_scene load_steps=30 format=3 uid="uid://bcu52y8d45rpo"]
 
 [ext_resource type="Script" uid="uid://bvu41ij0ekeb4" path="res://scripts/main_menu.gd" id="1_wu84c"]
-[ext_resource type="Texture2D" uid="uid://cqmejefvn1ob8" path="res://Background/locker-room.png" id="2_8ln24"]
-[ext_resource type="FontFile" uid="uid://w8sncg6hlxg" path="res://fonts/SpecialElite-Regular.ttf" id="3_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://reaw4avq7wjl" path="res://Background/BlueMoon.png" id="4_oa1go"]
+[ext_resource type="Texture2D" uid="uid://bssa16gk2q3xh" path="res://background/bg.jpg" id="2_jk1qb"]
+[ext_resource type="FontFile" uid="uid://d2mc3d6mxoooo" path="res://fonts/SpecialElite-Regular.ttf" id="3_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://cqmypgtankgdd" path="res://background/BlueMoon.png" id="4_oa1go"]
+[ext_resource type="Script" uid="uid://0bhvnnymdwhl" path="res://scripts/video.gd" id="5_8ln24"]
+[ext_resource type="Script" uid="uid://dtakctuc41kv7" path="res://scripts/audio.gd" id="6_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://cnd13wj0ynsqh" path="res://sound/raydellrios-suspense.mp3" id="7_oa1go"]
+[ext_resource type="AudioStream" uid="uid://bihnsa6duijhn" path="res://sound/sfx-hover.wav" id="8_jk1qb"]
+[ext_resource type="AudioStream" uid="uid://bwip8prevcfwo" path="res://sound/sfx-click.mp3" id="9_5dd4i"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
-texture = ExtResource("2_8ln24")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
+texture = ExtResource("2_jk1qb")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
 
@@ -40,21 +45,41 @@ texture = ExtResource("2_8ln24")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u0te"]
 
-[node name="Main Menu" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[node name="Main Menu" type="Node2D" node_paths=PackedStringArray("menu", "options", "video", "audio", "back_button", "options_button", "video_button", "audio_button", "sfx_hover", "sfx_click")]
 script = ExtResource("1_wu84c")
+menu = NodePath("Main")
+options = NodePath("Options")
+video = NodePath("Video")
+audio = NodePath("Audio")
+back_button = NodePath("Back")
+options_button = NodePath("Main/Button_manager/Options")
+video_button = NodePath("Options/Control/Video")
+audio_button = NodePath("Options/Control2/Audio")
+sfx_hover = NodePath("Sfx-hover")
+sfx_click = NodePath("Sfx-click")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1152.0
 offset_bottom = 646.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_jix8l")
+theme_override_styles/panel = SubResource("StyleBoxTexture_5dd4i")
 
-[node name="Button_manager" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="Main" type="VBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="New Game" type="Button" parent="Button_manager"]
+[node name="Button_manager" type="Control" parent="Main"]
+layout_mode = 2
+
+[node name="New Game" type="Button" parent="Main/Button_manager"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -75,7 +100,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_jix8l")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_glbon")
 text = "New Game"
 
-[node name="Load" type="Button" parent="Button_manager"]
+[node name="Load" type="Button" parent="Main/Button_manager"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -96,7 +121,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_8qtwp")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dy7ct")
 text = "Load"
 
-[node name="Options" type="Button" parent="Button_manager"]
+[node name="Options" type="Button" parent="Main/Button_manager"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -117,7 +142,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_j5v2v")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_iotk1")
 text = "Options"
 
-[node name="Exit" type="Button" parent="Button_manager"]
+[node name="Exit" type="Button" parent="Main/Button_manager"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -139,12 +164,257 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_8u0te")
 text = "Exit
 "
 
-[node name="BlueMoon" type="Sprite2D" parent="."]
+[node name="BlueMoon Logo" type="Sprite2D" parent="."]
 position = Vector2(217, 208.99997)
 scale = Vector2(0.48564813, 0.48564813)
 texture = ExtResource("4_oa1go")
 
-[connection signal="pressed" from="Button_manager/New Game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="Button_manager/Load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="Button_manager/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Button_manager/Exit" to="." method="_on_exit_pressed"]
+[node name="Options" type="Panel" parent="."]
+visible = false
+offset_left = 140.0
+offset_top = 55.0
+offset_right = 988.0
+offset_bottom = 556.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbmy8")
+
+[node name="Control" type="Control" parent="Options"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 18.0
+size_flags_vertical = 7
+
+[node name="Video" type="Button" parent="Options/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 355.0
+offset_top = 108.0
+offset_right = 465.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Video"
+
+[node name="Control2" type="Control" parent="Options"]
+anchors_preset = 0
+offset_left = 124.0
+offset_top = 147.0
+offset_right = 164.0
+offset_bottom = 165.0
+size_flags_vertical = 7
+
+[node name="Audio" type="Button" parent="Options/Control2"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 65.0
+offset_right = 361.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 24
+text = "Audio
+"
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 13.0
+offset_right = 61.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="Video" type="Panel" parent="." node_paths=PackedStringArray("resolution_option", "fullscreen_check", "borderless_check")]
+visible = false
+custom_minimum_size = Vector2(500, 500)
+offset_left = 142.0
+offset_top = 54.0
+offset_right = 989.0
+offset_bottom = 554.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ln24")
+script = ExtResource("5_8ln24")
+resolution_option = NodePath("VBoxContainer/Resolution")
+fullscreen_check = NodePath("HBoxContainer/Fullscreen")
+borderless_check = NodePath("HBoxContainer2/Borderless")
+
+[node name="Label" type="Label" parent="Video"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.5
+offset_top = 13.0
+offset_right = 43.5
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Video"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Video"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 90.0
+offset_right = 765.0
+offset_bottom = 170.0
+
+[node name="Label" type="Label" parent="Video/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Resoulution"
+
+[node name="Resolution" type="OptionButton" parent="Video/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Video"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 190.0
+offset_right = 744.0
+offset_bottom = 299.0
+
+[node name="Label" type="Label" parent="Video/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Fullscreen"
+
+[node name="Fullscreen" type="CheckBox" parent="Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Video"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 297.0
+offset_right = 744.0
+offset_bottom = 406.0
+
+[node name="Label" type="Label" parent="Video/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Borderless"
+
+[node name="Borderless" type="CheckBox" parent="Video/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Video"]
+visible = false
+layout_mode = 0
+offset_left = 687.0
+offset_top = 428.0
+offset_right = 807.0
+offset_bottom = 479.0
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Audio" type="Panel" parent="." node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
+visible = false
+custom_minimum_size = Vector2(500, 500)
+offset_left = 144.0
+offset_top = 50.0
+offset_right = 991.0
+offset_bottom = 550.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oa1go")
+script = ExtResource("6_rtw2f")
+master_slider = NodePath("VBoxContainer/Master")
+music_slider = NodePath("VBoxContainer2/Music")
+sfx_slider = NodePath("VBoxContainer3/SFX")
+
+[node name="Label" type="Label" parent="Audio"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_top = 11.0
+offset_right = 45.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Audio"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Audio"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 90.0
+offset_right = 765.0
+offset_bottom = 170.0
+
+[node name="Label" type="Label" parent="Audio/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Master"
+
+[node name="Master" type="HSlider" parent="Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Audio"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 198.0
+offset_right = 764.0
+offset_bottom = 278.0
+
+[node name="Label" type="Label" parent="Audio/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Music"
+
+[node name="Music" type="HSlider" parent="Audio/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Audio"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 309.0
+offset_right = 764.0
+offset_bottom = 389.0
+
+[node name="Label" type="Label" parent="Audio/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SFX"
+
+[node name="SFX" type="HSlider" parent="Audio/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Audio"]
+visible = false
+layout_mode = 0
+offset_left = 683.0
+offset_top = 419.0
+offset_right = 803.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Back" type="Button" parent="."]
+visible = false
+offset_left = 837.0
+offset_top = 481.0
+offset_right = 957.0
+offset_bottom = 532.0
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="bg_menu_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_oa1go")
+autoplay = true
+bus = &"Music"
+
+[node name="Sfx-hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_jk1qb")
+bus = &"SFX"
+
+[node name="Sfx-click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_5dd4i")
+bus = &"SFX"
+
+[connection signal="pressed" from="Main/Button_manager/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Main/Button_manager/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Main/Button_manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Main/Button_manager/Exit" to="." method="_on_exit_pressed"]
