@@ -1,0 +1,265 @@
+[gd_scene load_steps=16 format=3 uid="uid://ca2jdtr1f5s7m"]
+
+[ext_resource type="Script" uid="uid://qn4dy3j7yw72" path="res://scripts/save_slot.gd" id="1_2uv05"]
+[ext_resource type="Texture2D" uid="uid://btgp8bo3c6nuy" path="res://background/locker-room.png" id="1_332xg"]
+[ext_resource type="FontFile" uid="uid://d2mc3d6mxoooo" path="res://fonts/SpecialElite-Regular.ttf" id="2_2uv05"]
+[ext_resource type="Texture2D" uid="uid://dbs4bcterys1p" path="res://background/Empty slot.png" id="3_32et5"]
+[ext_resource type="Script" uid="uid://40k5o0cbak0l" path="res://scripts/grid_container.gd" id="3_urbvt"]
+[ext_resource type="AudioStream" uid="uid://cnd13wj0ynsqh" path="res://sound/raydellrios-suspense.mp3" id="5_32et5"]
+[ext_resource type="AudioStream" uid="uid://bihnsa6duijhn" path="res://sound/sfx-hover.wav" id="6_m1k8t"]
+[ext_resource type="AudioStream" uid="uid://bwip8prevcfwo" path="res://sound/sfx-click.mp3" id="7_urbvt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u54lf"]
+texture = ExtResource("1_332xg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_332xg"]
+content_margin_left = 100.0
+content_margin_top = 100.0
+bg_color = Color(0.009691907, 2.2977942e-05, 0.00010123012, 0.34117648)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m1k8t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urbvt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhbkm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xuanb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uv05"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+bg_color = Color(0.9867516, 0.9867516, 0.9867516, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[node name="SaveSlot" type="Node2D" node_paths=PackedStringArray("sfx_hover", "sfx_click") groups=["Persist"]]
+script = ExtResource("1_2uv05")
+sfx_hover = NodePath("sfx_hover")
+sfx_click = NodePath("sfx_click")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1151.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_u54lf")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_right = 1151.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_332xg")
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 500
+theme_override_constants/v_separation = 200
+columns = 2
+script = ExtResource("3_urbvt")
+
+[node name="saveslot" type="Button" parent="ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2uv05")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m1k8t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_urbvt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rhbkm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xuanb")
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/GridContainer/saveslot"]
+layout_mode = 0
+offset_right = 442.0
+offset_bottom = 119.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2uv05")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/GridContainer/saveslot/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/saveslot/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture = ExtResource("3_32et5")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/GridContainer/saveslot/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="slot" type="Label" parent="ScrollContainer/GridContainer/saveslot/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "No."
+
+[node name="date" type="Label" parent="ScrollContainer/GridContainer/saveslot/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DD/MM/YY"
+
+[node name="time" type="Label" parent="ScrollContainer/GridContainer/saveslot/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HH/MM"
+
+[node name="saveslot2" type="Button" parent="ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2uv05")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m1k8t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_urbvt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rhbkm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xuanb")
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/GridContainer/saveslot2"]
+layout_mode = 0
+offset_right = 442.0
+offset_bottom = 119.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2uv05")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/GridContainer/saveslot2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/saveslot2/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture = ExtResource("3_32et5")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/GridContainer/saveslot2/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/saveslot2/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "No."
+
+[node name="date" type="Label" parent="ScrollContainer/GridContainer/saveslot2/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DD/MM/YY"
+
+[node name="time" type="Label" parent="ScrollContainer/GridContainer/saveslot2/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HH/MM"
+
+[node name="saveslot3" type="Button" parent="ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2uv05")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m1k8t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_urbvt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rhbkm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xuanb")
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/GridContainer/saveslot3"]
+layout_mode = 0
+offset_right = 442.0
+offset_bottom = 119.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2uv05")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/GridContainer/saveslot3/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/saveslot3/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture = ExtResource("3_32et5")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/GridContainer/saveslot3/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/saveslot3/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "No."
+
+[node name="date" type="Label" parent="ScrollContainer/GridContainer/saveslot3/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DD/MM/YY"
+
+[node name="time" type="Label" parent="ScrollContainer/GridContainer/saveslot3/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HH/MM"
+
+[node name="saveslot4" type="Button" parent="ScrollContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2uv05")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m1k8t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_urbvt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rhbkm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xuanb")
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/GridContainer/saveslot4"]
+layout_mode = 0
+offset_right = 442.0
+offset_bottom = 119.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2uv05")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/GridContainer/saveslot4/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/GridContainer/saveslot4/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture = ExtResource("3_32et5")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/GridContainer/saveslot4/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="ScrollContainer/GridContainer/saveslot4/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "No."
+
+[node name="date" type="Label" parent="ScrollContainer/GridContainer/saveslot4/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DD/MM/YY"
+
+[node name="time" type="Label" parent="ScrollContainer/GridContainer/saveslot4/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HH/MM"
+
+[node name="bg_menu_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_32et5")
+autoplay = true
+bus = &"Music"
+
+[node name="sfx_hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_m1k8t")
+bus = &"SFX"
+
+[node name="sfx_click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_urbvt")
+
+[connection signal="pressed" from="ScrollContainer/GridContainer/saveslot" to="." method="_on_saveslot_pressed"]

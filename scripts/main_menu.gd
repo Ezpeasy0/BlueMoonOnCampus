@@ -4,8 +4,9 @@ extends Node2D
 @export var options: Panel
 @export var video: Panel
 @export var audio: Panel
-@export var back_button: Button
 
+
+@export var back_button: Button
 @export var options_button: Button
 @export var video_button: Button
 @export var audio_button: Button
@@ -76,3 +77,7 @@ func _on_back_pressed():
 	current_panel = nav_stack.pop_back()
 	_show_panel(current_panel)
 	_update_back_button()
+
+
+func _on_load_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/save_slot.tscn") 
