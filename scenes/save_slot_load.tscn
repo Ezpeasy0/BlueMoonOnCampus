@@ -646,8 +646,8 @@ bus = &"SFX"
 [node name="sfx_click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_bcqwn")
 
-[node name="SaveConfirmDialogue" type="ConfirmationDialog" parent="."]
-dialog_text = "คุณต้องการบันทึกทับข้อมูลเดิมในช่องนี้ใช่หรือไม่?"
+[node name="SaveConfirmDialog" type="ConfirmationDialog" parent="."]
+dialog_text = "Overwrite this save slot?"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
@@ -658,7 +658,8 @@ offset_bottom = 76.0
 theme_override_font_sizes/font_size = 24
 text = "Back"
 
-[node name="DeleteConfirmDialogue" type="ConfirmationDialog" parent="."]
+[node name="DeleteConfirmDialog" type="ConfirmationDialog" parent="."]
+dialog_text = "Delete this save slot?"
 
 [connection signal="pressed" from="ScrollContainer/GridContainer/saveslot" to="ScrollContainer/GridContainer/saveslot" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/GridContainer/saveslot2" to="ScrollContainer/GridContainer/saveslot2" method="_on_pressed"]

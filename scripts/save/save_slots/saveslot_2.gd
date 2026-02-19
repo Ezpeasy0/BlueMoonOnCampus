@@ -26,3 +26,7 @@ func update_ui(data: SaveResource):
 
 func _on_pressed():
 	get_owner().slot_selected(slot_id)
+	
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		get_owner().request_delete(slot_id)

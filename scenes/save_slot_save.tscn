@@ -86,13 +86,11 @@ expand_margin_top = 8.0
 expand_margin_right = 8.0
 expand_margin_bottom = 8.0
 
-[node name="SaveSlot" type="Control" node_paths=PackedStringArray("sfx_hover", "sfx_click")]
+[node name="SaveSlot" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ul2ru")
-mode = 1
-sfx_hover = NodePath("sfx_hover")
-sfx_click = NodePath("sfx_click")
+mode = 0
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -650,7 +648,7 @@ bus = &"SFX"
 stream = ExtResource("18_jt146")
 
 [node name="SaveConfirmDialog" type="ConfirmationDialog" parent="."]
-dialog_text = "คุณต้องการบันทึกทับข้อมูลเดิมในช่องนี้ใช่หรือไม่?"
+dialog_text = "Overwrite this save slot?"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
@@ -660,6 +658,9 @@ offset_right = 1124.0
 offset_bottom = 76.0
 theme_override_font_sizes/font_size = 24
 text = "Back"
+
+[node name="DeleteConfirmDialog" type="ConfirmationDialog" parent="."]
+dialog_text = "Delete this save slot?"
 
 [connection signal="pressed" from="ScrollContainer/GridContainer/saveslot" to="ScrollContainer/GridContainer/saveslot" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/GridContainer/saveslot2" to="ScrollContainer/GridContainer/saveslot2" method="_on_pressed"]
