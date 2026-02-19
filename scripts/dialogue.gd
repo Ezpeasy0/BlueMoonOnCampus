@@ -1,174 +1,178 @@
 extends Control
 
-const CHAPTER_SCRIPT_PATH: String = "res://data/chapter1.gd"
-const SPRITE_DIR: String = "res://sprites/"
+# === Paths ===
+const BG_DIR := "res://background/"
+const SPRITE_DIR := "res://sprites/"
 
-# const SFX_MAP := {
-	# "fan": "res://sound/fan.wav",
-	# "rain": "res://sound/rain.wav"
-# }
-
+# === UI nodes (use Unique Name in Owner in the editor) ===
+@onready var bg: TextureRect = %BG
+@onready var character: TextureRect = %Character
 @onready var name_label: Label = %NameLabel
 @onready var dialogue_label: RichTextLabel = %DialogueLabel
 @onready var choices_box: VBoxContainer = %ChoicesBox
-@onready var portrait: TextureRect = %Portrait
-@onready var sfx_player: AudioStreamPlayer = %SfxPlayer
+
+# Fade layers
+@onready var bg_fade: ColorRect = %BGFade
+@onready var sprite_fade: ColorRect = %SpriteFade
 
 var story_lines: Array = []
 var id_to_index: Dictionary = {}
 
 var index: int = 0
-var stats: Dictionary = {"INT": 0, "CHA": 0}
+var stats := {"INT": 0, "CHA": 0}
 
-var waiting_choice_advance: bool = false
+var _busy: bool = false
 
 func _ready() -> void:
-	choices_box.visible = false
-
-	_load_chapter()
-	_build_id_index()
-
-	_show_current()
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept") or (event is InputEventMouseButton and event.pressed):
-		if choices_box.visible:
-			return
-
-		if waiting_choice_advance:
-			waiting_choice_advance = false
-			_show_current()
-			return
-
-		index += 1
-		_show_current()
-
-func _load_chapter() -> void:
-	var scr = load(CHAPTER_SCRIPT_PATH)
-	if scr == null:
-		push_error("Dialogue: Chapter script not found: " + CHAPTER_SCRIPT_PATH)
-		story_lines = []
-		return
-
-	var chapter = scr.new()
-	if chapter == null or not chapter.has("lines"):
-		push_error("Dialogue: Chapter script has no 'lines' array.")
-		story_lines = []
-		return
-
+	# Load chapter data (you will create chapter1.gd next)
+	var chapter = preload("res://data/chapter1.gd").new()
 	story_lines = chapter.lines
 
-func _build_id_index() -> void:
-	id_to_index.clear()
 	for i in range(story_lines.size()):
 		var line = story_lines[i]
 		if typeof(line) == TYPE_DICTIONARY and line.has("id"):
 			id_to_index[line["id"]] = i
 
-func _show_current() -> void:
-	if index < 0:
-		index = 0
+	choices_box.visible = false
+	_show_current()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if _busy:
+		return
+
+	var advance: bool = (event is InputEventMouseButton and event.pressed) or event.is_action_pressed("ui_accept")
+	if not advance:
+		return
+
+	if choices_box.visible:
+		return
+
+	index += 1
+	_show_current()
+
+
+func _show_current() -> void:
 	if index >= story_lines.size():
+		# End of chapter: go back to menu for now
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		return
 
 	var line: Dictionary = story_lines[index]
 
+	# Choice line
 	if line.get("type", "line") == "choice":
 		_show_choices(line.get("choices", []))
 		return
 
 	choices_box.visible = false
-	_clear_choices()
 
-	var who: String = str(line.get("name", ""))
-	var txt: String = str(line.get("text", ""))
+	# Background change (optional)
+	if line.has("bg"):
+		await _set_background(str(line["bg"]))
 
-	if bool(line.get("thought", false)):
+	# Character sprite change (optional)
+	if line.has("sprite"):
+		await _set_character_sprite(str(line["sprite"]))
+
+	# Name + text
+	var who := str(line.get("name", ""))
+	var txt := str(line.get("text", ""))
+
+	if line.get("thought", false):
 		txt = "(" + txt + ")"
 
 	name_label.text = who
 	dialogue_label.text = txt
 
-	if line.has("sprite"):
-		_set_portrait(str(line["sprite"]))
-
-	if line.has("sfx"):
-		_play_sfx(str(line["sfx"]))
-
-func _set_portrait(filename: String) -> void:
-	if filename.strip_edges() == "":
-		portrait.visible = false
-		return
-
-	var path := SPRITE_DIR + filename
-	var tex: Texture2D = load(path) as Texture2D
-	if tex == null:
-		# Don't crash; just hide if not found
-		push_warning("Dialogue: sprite not found: " + path)
-		portrait.visible = false
-		return
-
-	portrait.texture = tex
-	portrait.visible = true
-
-func _play_sfx(key: String) -> void:
-	var path: String = ""
-	# if SFX_MAP.has(key):
-		# path = str(SFX_MAP[key])
-	# else:
-		# if key.begins_with("res://") and key.ends_with(".wav") or key.ends_with(".mp3") or key.ends_with(".ogg"):
-			# path = key
-
-	if path == "":
-		return
-
-	var stream: AudioStream = load(path) as AudioStream
-	if stream == null:
-		push_warning("Dialogue: SFX not found: " + path)
-		return
-
-	sfx_player.stream = stream
-	sfx_player.play()
-
 func _show_choices(options: Array) -> void:
 	choices_box.visible = true
-	_clear_choices()
 
-	for opt_any in options:
-		if typeof(opt_any) != TYPE_DICTIONARY:
-			continue
-		var opt: Dictionary = opt_any
-
-		var b := Button.new()
-		b.text = str(opt.get("label", "Choice"))
-		b.pressed.connect(_on_choice_pressed.bind(opt))
-		choices_box.add_child(b)
-
-func _clear_choices() -> void:
 	for c in choices_box.get_children():
 		c.queue_free()
 
-func _on_choice_pressed(opt: Dictionary) -> void:
-	name_label.text = "เมฆ"
-	dialogue_label.text = str(opt.get("say", ""))
+	for opt in options:
+		var b := Button.new()
+		b.text = str(opt.get("label", ""))
+		b.pressed.connect(func(): _on_choice(opt))
+		choices_box.add_child(b)
 
-	var effects_any = opt.get("effects", {})
-	if typeof(effects_any) == TYPE_DICTIONARY:
-		var effects: Dictionary = effects_any
-		for k in effects.keys():
-			var key := str(k)
-			if stats.has(key):
-				stats[key] = int(stats[key]) + int(effects[key])
+func _on_choice(opt: Dictionary) -> void:
+	choices_box.visible = false
 
+	# Show immediate "say" line (optional)
+	var say := str(opt.get("say", ""))
+	if say != "":
+		name_label.text = "ฝน"
+		dialogue_label.text = say
+
+	# Apply effects
+	var effects: Dictionary = opt.get("effects", {})
+	for k in effects.keys():
+		if stats.has(k):
+			stats[k] += int(effects[k])
+
+	# Jump
 	var target_id: String = str(opt.get("next", ""))
 	if target_id != "" and id_to_index.has(target_id):
 		index = int(id_to_index[target_id])
 	else:
 		index += 1
 
-	choices_box.visible = false
-	_clear_choices()
+	_show_current()
 
-	waiting_choice_advance = true
+# ======================
+# Background fade to black
+# ======================
+func _set_background(filename: String) -> void:
+	var path := BG_DIR + filename
+	var tex: Texture2D = load(path) as Texture2D
+	if tex == null:
+		push_warning("BG not found: " + path)
+		return
+
+	_busy = true
+	await _fade(bg_fade, 0.0, 1.0, 0.25) # fade to black
+	bg.texture = tex
+	await _fade(bg_fade, 1.0, 0.0, 0.25) # fade in
+	_busy = false
+
+# ======================
+# Character sprite fade
+# ======================
+func _set_character_sprite(filename: String) -> void:
+	if filename.strip_edges() == "":
+		character.visible = false
+		return
+
+	var path := SPRITE_DIR + filename
+	var tex: Texture2D = load(path) as Texture2D
+	if tex == null:
+		push_warning("Sprite not found: " + path)
+		character.visible = false
+		return
+
+	_busy = true
+	await _fade(sprite_fade, 0.0, 1.0, 0.15)
+	character.texture = tex
+	character.visible = true
+	await _fade(sprite_fade, 1.0, 0.0, 0.15)
+	_busy = false
+
+func _fade(rect: ColorRect, from_a: float, to_a: float, duration: float) -> void:
+	rect.visible = true
+	var c := rect.color
+	c.a = from_a
+	rect.color = c
+
+	var t := 0.0
+	while t < duration:
+		t += get_process_delta_time()
+		var k: float = clamp(t / duration, 0.0, 1.0)
+		c.a = lerp(from_a, to_a, k)
+		rect.color = c
+		await get_tree().process_frame
+
+	c.a = to_a
+	rect.color = c
+	if to_a <= 0.001:
+		rect.visible = false
