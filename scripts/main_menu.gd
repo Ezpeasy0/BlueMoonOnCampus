@@ -80,4 +80,4 @@ func _on_back_pressed():
 
 
 func _on_load_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/save_slot.tscn") 
+	get_tree().change_scene_to_file("res://scenes/save_slot_load.tscn") 
