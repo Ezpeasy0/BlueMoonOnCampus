@@ -1,21 +1,16 @@
-# res://scripts/dialogue.gd
 extends Control
 
-# === Paths ===
 const BG_DIR: String = "res://sprites/"
 const SPRITE_DIR: String = "res://sprites/"
 
-# BGs that should hide character sprites (full-screen evidence / photo, etc.)
 const FULLSCREEN_BGS: Array[String] = ["pete.png"]
 
-# === UI nodes (Unique Name in Owner) ===
 @onready var bg: TextureRect = %BG
 @onready var character: TextureRect = %Character
 @onready var name_label: Label = %NameLabel
 @onready var dialogue_label: RichTextLabel = %DialogueLabel
 @onready var choices_box: VBoxContainer = %ChoicesBox
 
-# Fade layer (BG uses a black overlay; sprite fades use alpha)
 @onready var bg_fade: ColorRect = %BGFade
 
 var story_lines: Array = []
@@ -26,27 +21,21 @@ var stats: Dictionary = {"INT": 0, "CHA": 0}
 
 var _busy: bool = false
 
-# Cache current visuals so we don't fade repeatedly
 var _current_bg: String = ""
 var _current_sprite: String = ""
 
 func _ready() -> void:
-	# ensure playable if something paused the tree before
 	get_tree().paused = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-	# Make sure BG overlay doesn't block clicks
 	bg_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	# Make sure visuals don't block clicks
 	character.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	# Load chapter data
 	var chapter: Node = preload("res://data/chapter1.gd").new()
 	story_lines = chapter.lines
 
-	# Build id map
 	for i in range(story_lines.size()):
 		var line = story_lines[i]
 		if typeof(line) == TYPE_DICTIONARY and line.has("id"):
@@ -59,7 +48,6 @@ func _input(event: InputEvent) -> void:
 	if _busy:
 		return
 
-	# LEFT-CLICK advance only (explicit bool type to avoid Variant inference)
 	var advance: bool = (
 		event is InputEventMouseButton
 		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT
@@ -75,7 +63,6 @@ func _input(event: InputEvent) -> void:
 	_advance()
 
 func _advance() -> void:
-	# Support "skip_to" so branch response doesn't show both lines
 	if index >= 0 and index < story_lines.size():
 		var line = story_lines[index]
 		if typeof(line) == TYPE_DICTIONARY:
@@ -95,26 +82,23 @@ func _show_current() -> void:
 
 	var line: Dictionary = story_lines[index]
 
-	# Choice line
 	if str(line.get("type", "line")) == "choice":
 		_show_choices(line.get("choices", []))
 		return
 
 	choices_box.visible = false
 
-	# Background change (optional)
 	if line.has("bg"):
 		var new_bg: String = str(line["bg"])
 		if new_bg != "" and new_bg != _current_bg:
 			_current_bg = new_bg
 			await _set_background(new_bg)
 
-	# If current BG is fullscreen, NEVER show sprites (even if the line has "sprite")
 	if _current_bg in FULLSCREEN_BGS:
 		_current_sprite = ""
 		character.visible = false
 	else:
-		# Character sprite change (optional)
+
 		if line.has("sprite"):
 			var new_sprite: String = str(line["sprite"])
 
@@ -125,7 +109,6 @@ func _show_current() -> void:
 				_current_sprite = new_sprite
 				await _set_character_sprite(new_sprite)
 
-	# Name + text
 	var who: String = str(line.get("name", ""))
 	var txt: String = str(line.get("text", ""))
 
@@ -150,19 +133,16 @@ func _show_choices(options: Array) -> void:
 func _on_choice(opt: Dictionary) -> void:
 	choices_box.visible = false
 
-	# Show immediate "say" line (optional)
 	var say: String = str(opt.get("say", ""))
 	if say != "":
 		name_label.text = "เมฆ"
 		dialogue_label.text = say
 
-	# Apply effects
 	var effects: Dictionary = opt.get("effects", {})
 	for k in effects.keys():
 		if stats.has(k):
 			stats[k] += int(effects[k])
 
-	# Jump
 	var target_id: String = str(opt.get("next", ""))
 	if target_id != "" and id_to_index.has(target_id):
 		index = int(id_to_index[target_id])
@@ -179,9 +159,9 @@ func _set_background(filename: String) -> void:
 		return
 
 	_busy = true
-	await _fade_rect_alpha(bg_fade, 0.0, 1.0, 0.25) # fade to black
+	await _fade_rect_alpha(bg_fade, 0.0, 1.0, 0.25) 
 	bg.texture = tex
-	await _fade_rect_alpha(bg_fade, 1.0, 0.0, 0.25) # fade in
+	await _fade_rect_alpha(bg_fade, 1.0, 0.0, 0.25)
 	_busy = false
 
 func _set_character_sprite(filename: String) -> void:
@@ -194,14 +174,11 @@ func _set_character_sprite(filename: String) -> void:
 
 	_busy = true
 
-	# Fade OUT character using alpha (does not affect BG)
 	character.visible = true
 	await _fade_control_alpha(character, 1.0, 0.0, 0.15)
 
-	# Swap sprite
 	character.texture = tex
 
-	# Fade IN
 	await _fade_control_alpha(character, 0.0, 1.0, 0.15)
 
 	_busy = false

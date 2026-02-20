@@ -9,7 +9,6 @@ const DEFAULT_IMAGE := preload("res://sprites/no_data.png")
 @onready var texture_rect: TextureRect = $PanelContainer/HBoxContainer/TextureRect
 
 func _ready() -> void:
-	# Makes sure left-click works even if the signal wasn't connected in editor
 	if not pressed.is_connected(_on_pressed):
 		pressed.connect(_on_pressed)
 	refresh()

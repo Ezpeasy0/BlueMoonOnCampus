@@ -1,11 +1,6 @@
-# res://data/chapter1.gd
 extends Node
 
 # Chapter 1: เงาแรกของคดี
-# Note:
-# - "???" means name not revealed yet
-# - pete.png is treated as FULLSCREEN_BGS in dialogue.gd (sprites hidden automatically)
-# - choice branching uses "skip_to" to avoid showing both responses
 
 var lines: Array = [
 
@@ -27,11 +22,9 @@ var lines: Array = [
 	{"sprite":"tana_chill.png", "name":"สารวัตรธนา", "text":"ไว้ก่อนลูก"},
 	{"name":"สารวัตรธนา", "text":"ขอโทษเรื่องลูกสาวผมด้วยนะ"},
 
-	# Pete shown as BG (fullscreen), sprites will be hidden by dialogue.gd
 	{"bg":"pete.png", "name":"สารวัตรธนา", "text":"ผู้เคราะห์ร้ายชื่อ “พีท” อายุ 21 ปี ศึกษาอยู่ที่มหาลัยแจ่มจันทร์ เป็นนักศึกษาปี 2"},
 	{"name":"สารวัตรธนา", "text":"หายตัวไป 3 วัน ติดต่อไม่ได้ตั้งแต่วันแรกที่หายตัวไป"},
 
-	# Return to scene 1 background + sprite after Pete evidence
 	{"bg":"scene_1.png", "sprite":"tana_chill.png", "name":"เมฆ", "text":"มีพยานบุคคลในวันสุดท้ายที่เจอน้องพีทมั้ยครับ"},
 	{"name":"สารวัตรธนา", "text":"เท่าที่ลูกน้องผมตรวจสอบ มีเพื่อนคนนึงที่ทำโปรเจกต์กลุ่มด้วยกัน กับ เพื่อนอีกคนที่อยู่ชมรมเดียวกัน"},
 	{"name":"สารวัตรธนา", "text":"แต่… คำให้การของ 2 คนนี้ ไม่ตรงกัน คนนึงบอกเห็นพีทแถวตึกสำนักทะเบียน อีกคนบอกว่าพีทกลับหอไปแล้ว"},
@@ -78,10 +71,8 @@ var lines: Array = [
 		{"label":"C) ขออนุญาตสารวัตรก่อน", "say":"ถ้าน้องฝนยังไม่ได้บอกพ่อ เดี๋ยวพี่ต้องโทรถามก่อนนะ", "effects":{}, "next":"after_choice_c"}
 	]},
 
-	# Branch responses:
 	{"id":"after_choice", "name":"ฝน", "text":"งั้นไปกันเถอะค่ะ", "skip_to":"after_choice_end"},
 	{"id":"after_choice_c", "name":"ฝน", "text":"เดี๋ยวหนูค่อยบอกเขาทีหลังก็ได้ ไปกันเถอะค่ะ", "skip_to":"after_choice_end"},
 
-	# Merge point (can be empty or continue story later)
 	{"id":"after_choice_end", "name":"", "text":""},
 ]

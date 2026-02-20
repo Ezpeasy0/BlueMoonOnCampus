@@ -1,4 +1,3 @@
-# res://scripts/save/save_slots/manage_save.gd
 extends Control
 
 enum Mode { NEW_GAME, LOAD }
@@ -16,14 +15,12 @@ var _pending_slot: int = -1
 var _pending_delete_slot: int = -1
 
 func _ready() -> void:
-	# ✅ Auto-set mode by which scene this is
 	var p := get_tree().current_scene.scene_file_path
 	if p.ends_with("save_slot_load.tscn"):
 		mode = Mode.LOAD
 	elif p.ends_with("save_slot_save.tscn"):
 		mode = Mode.NEW_GAME
 
-	# Connect dialogs once
 	if not overwrite_dialog.confirmed.is_connected(_on_overwrite_confirmed):
 		overwrite_dialog.confirmed.connect(_on_overwrite_confirmed)
 	if not load_dialog.confirmed.is_connected(_on_load_confirmed):
@@ -31,7 +28,6 @@ func _ready() -> void:
 	if not delete_dialog.confirmed.is_connected(_on_delete_confirmed):
 		delete_dialog.confirmed.connect(_on_delete_confirmed)
 
-	# ✅ Back button
 	if not back_button.pressed.is_connected(_on_back_pressed):
 		back_button.pressed.connect(_on_back_pressed)
 

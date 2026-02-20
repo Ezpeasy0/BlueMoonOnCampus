@@ -52,12 +52,10 @@ func load_game(slot: int) -> bool:
 	return false
 
 func delete_slot(slot: int) -> void:
-	# Delete JSON save (progress)
 	var json_path := get_slot_path(slot)
 	if FileAccess.file_exists(json_path):
 		DirAccess.remove_absolute(json_path)
 
-	# Delete preview image/resource
 	var preview_path := "user://save_%d.tres" % slot
 	if FileAccess.file_exists(preview_path):
 		DirAccess.remove_absolute(preview_path)
@@ -66,7 +64,6 @@ func delete_slot(slot: int) -> void:
 		current_slot = -1
 		state = {}
 
-# For your SaveResource preview UI
 func load_slot_preview(slot: int) -> SaveResource:
 	var path := "user://save_%d.tres" % slot
 	if FileAccess.file_exists(path):

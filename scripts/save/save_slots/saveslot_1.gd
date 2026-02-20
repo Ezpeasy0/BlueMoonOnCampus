@@ -9,14 +9,11 @@ const DEFAULT_IMAGE := preload("res://sprites/no_data.png")
 @onready var texture_rect: TextureRect = $PanelContainer/HBoxContainer/TextureRect
 
 func _ready() -> void:
-	# Ensure left-click works even if you forgot to connect the signal in editor
 	if not pressed.is_connected(_on_pressed):
 		pressed.connect(_on_pressed)
 	refresh()
 
 func refresh() -> void:
-	# Preview only exists if gameplay saved a SaveResource.
-	# If not exists, data will be null => show Empty UI.
 	var data: SaveResource = GameSave.load_slot_preview(slot_id)
 	update_ui(data)
 
