@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://g5q7tm64coy7"]
+[gd_scene load_steps=6 format=3 uid="uid://g5q7tm64coy7"]
 
+[ext_resource type="Script" uid="uid://raqig1qkw5ll" path="res://scripts/dialogue.gd" id="1_3n4vj"]
 [ext_resource type="FontFile" uid="uid://d2g1dcyt4rtyv" path="res://fonts/LayijiMahaniyomV1_61.ttf" id="1_jwyou"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwyou"]
@@ -27,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3n4vj")
 
 [node name="BG" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -54,7 +56,18 @@ offset_bottom = 384.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Fade" type="ColorRect" parent="."]
+[node name="SpriteFade" type="ColorRect" parent="Character"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="BGFade" type="ColorRect" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -100,7 +113,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_jwyou")
 theme_override_font_sizes/font_size = 32
-text = "ชื่อตัวละคร"
 horizontal_alignment = 1
 
 [node name="DialogueLabel" type="RichTextLabel" parent="UI/TextBox/VBox"]
@@ -112,7 +124,6 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_jwyou")
 theme_override_font_sizes/normal_font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_bfpow")
-text = "บทสนทนา"
 scroll_active = false
 
 [node name="ChoicesBox" type="VBoxContainer" parent="."]

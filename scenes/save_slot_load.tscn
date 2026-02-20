@@ -646,8 +646,7 @@ bus = &"SFX"
 [node name="sfx_click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_bcqwn")
 
-[node name="SaveConfirmDialog" type="ConfirmationDialog" parent="."]
-dialog_text = "Overwrite this save slot?"
+[node name="LoadConfirmDialog" type="ConfirmationDialog" parent="."]
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
@@ -660,6 +659,10 @@ text = "Back"
 
 [node name="DeleteConfirmDialog" type="ConfirmationDialog" parent="."]
 dialog_text = "Delete this save slot?"
+
+[node name="OverwriteConfirmDialog" type="ConfirmationDialog" parent="."]
+
+[node name="EmptySlotDialog" type="AcceptDialog" parent="."]
 
 [connection signal="pressed" from="ScrollContainer/GridContainer/saveslot" to="ScrollContainer/GridContainer/saveslot" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/GridContainer/saveslot2" to="ScrollContainer/GridContainer/saveslot2" method="_on_pressed"]

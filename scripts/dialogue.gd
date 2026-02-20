@@ -1,33 +1,52 @@
+# res://scripts/dialogue.gd
 extends Control
 
 # === Paths ===
-const BG_DIR := "res://background/"
-const SPRITE_DIR := "res://sprites/"
+const BG_DIR: String = "res://sprites/"
+const SPRITE_DIR: String = "res://sprites/"
 
-# === UI nodes (use Unique Name in Owner in the editor) ===
+# BGs that should hide character sprites (full-screen evidence / photo, etc.)
+const FULLSCREEN_BGS: Array[String] = ["pete.png"]
+
+# === UI nodes (Unique Name in Owner) ===
 @onready var bg: TextureRect = %BG
 @onready var character: TextureRect = %Character
 @onready var name_label: Label = %NameLabel
 @onready var dialogue_label: RichTextLabel = %DialogueLabel
 @onready var choices_box: VBoxContainer = %ChoicesBox
 
-# Fade layers
+# Fade layer (BG uses a black overlay; sprite fades use alpha)
 @onready var bg_fade: ColorRect = %BGFade
-@onready var sprite_fade: ColorRect = %SpriteFade
 
 var story_lines: Array = []
 var id_to_index: Dictionary = {}
 
 var index: int = 0
-var stats := {"INT": 0, "CHA": 0}
+var stats: Dictionary = {"INT": 0, "CHA": 0}
 
 var _busy: bool = false
 
+# Cache current visuals so we don't fade repeatedly
+var _current_bg: String = ""
+var _current_sprite: String = ""
+
 func _ready() -> void:
-	# Load chapter data (you will create chapter1.gd next)
-	var chapter = preload("res://data/chapter1.gd").new()
+	# ensure playable if something paused the tree before
+	get_tree().paused = false
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+	# Make sure BG overlay doesn't block clicks
+	bg_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	# Make sure visuals don't block clicks
+	character.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	# Load chapter data
+	var chapter: Node = preload("res://data/chapter1.gd").new()
 	story_lines = chapter.lines
 
+	# Build id map
 	for i in range(story_lines.size()):
 		var line = story_lines[i]
 		if typeof(line) == TYPE_DICTIONARY and line.has("id"):
@@ -36,31 +55,48 @@ func _ready() -> void:
 	choices_box.visible = false
 	_show_current()
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if _busy:
 		return
 
-	var advance: bool = (event is InputEventMouseButton and event.pressed) or event.is_action_pressed("ui_accept")
+	# LEFT-CLICK advance only (explicit bool type to avoid Variant inference)
+	var advance: bool = (
+		event is InputEventMouseButton
+		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT
+		and (event as InputEventMouseButton).pressed
+	)
+
 	if not advance:
 		return
 
 	if choices_box.visible:
 		return
 
+	_advance()
+
+func _advance() -> void:
+	# Support "skip_to" so branch response doesn't show both lines
+	if index >= 0 and index < story_lines.size():
+		var line = story_lines[index]
+		if typeof(line) == TYPE_DICTIONARY:
+			var skip_to: String = str(line.get("skip_to", ""))
+			if skip_to != "" and id_to_index.has(skip_to):
+				index = int(id_to_index[skip_to])
+				_show_current()
+				return
+
 	index += 1
 	_show_current()
 
-
 func _show_current() -> void:
 	if index >= story_lines.size():
-		# End of chapter: go back to menu for now
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		return
 
 	var line: Dictionary = story_lines[index]
 
 	# Choice line
-	if line.get("type", "line") == "choice":
+	if str(line.get("type", "line")) == "choice":
 		_show_choices(line.get("choices", []))
 		return
 
@@ -68,17 +104,32 @@ func _show_current() -> void:
 
 	# Background change (optional)
 	if line.has("bg"):
-		await _set_background(str(line["bg"]))
+		var new_bg: String = str(line["bg"])
+		if new_bg != "" and new_bg != _current_bg:
+			_current_bg = new_bg
+			await _set_background(new_bg)
 
-	# Character sprite change (optional)
-	if line.has("sprite"):
-		await _set_character_sprite(str(line["sprite"]))
+	# If current BG is fullscreen, NEVER show sprites (even if the line has "sprite")
+	if _current_bg in FULLSCREEN_BGS:
+		_current_sprite = ""
+		character.visible = false
+	else:
+		# Character sprite change (optional)
+		if line.has("sprite"):
+			var new_sprite: String = str(line["sprite"])
+
+			if new_sprite.strip_edges() == "":
+				_current_sprite = ""
+				character.visible = false
+			elif new_sprite != _current_sprite:
+				_current_sprite = new_sprite
+				await _set_character_sprite(new_sprite)
 
 	# Name + text
-	var who := str(line.get("name", ""))
-	var txt := str(line.get("text", ""))
+	var who: String = str(line.get("name", ""))
+	var txt: String = str(line.get("text", ""))
 
-	if line.get("thought", false):
+	if bool(line.get("thought", false)):
 		txt = "(" + txt + ")"
 
 	name_label.text = who
@@ -91,18 +142,18 @@ func _show_choices(options: Array) -> void:
 		c.queue_free()
 
 	for opt in options:
-		var b := Button.new()
+		var b: Button = Button.new()
 		b.text = str(opt.get("label", ""))
-		b.pressed.connect(func(): _on_choice(opt))
+		b.pressed.connect(func() -> void: _on_choice(opt))
 		choices_box.add_child(b)
 
 func _on_choice(opt: Dictionary) -> void:
 	choices_box.visible = false
 
 	# Show immediate "say" line (optional)
-	var say := str(opt.get("say", ""))
+	var say: String = str(opt.get("say", ""))
 	if say != "":
-		name_label.text = "ฝน"
+		name_label.text = "เมฆ"
 		dialogue_label.text = say
 
 	# Apply effects
@@ -120,31 +171,21 @@ func _on_choice(opt: Dictionary) -> void:
 
 	_show_current()
 
-# ======================
-# Background fade to black
-# ======================
 func _set_background(filename: String) -> void:
-	var path := BG_DIR + filename
+	var path: String = BG_DIR + filename
 	var tex: Texture2D = load(path) as Texture2D
 	if tex == null:
 		push_warning("BG not found: " + path)
 		return
 
 	_busy = true
-	await _fade(bg_fade, 0.0, 1.0, 0.25) # fade to black
+	await _fade_rect_alpha(bg_fade, 0.0, 1.0, 0.25) # fade to black
 	bg.texture = tex
-	await _fade(bg_fade, 1.0, 0.0, 0.25) # fade in
+	await _fade_rect_alpha(bg_fade, 1.0, 0.0, 0.25) # fade in
 	_busy = false
 
-# ======================
-# Character sprite fade
-# ======================
 func _set_character_sprite(filename: String) -> void:
-	if filename.strip_edges() == "":
-		character.visible = false
-		return
-
-	var path := SPRITE_DIR + filename
+	var path: String = SPRITE_DIR + filename
 	var tex: Texture2D = load(path) as Texture2D
 	if tex == null:
 		push_warning("Sprite not found: " + path)
@@ -152,19 +193,26 @@ func _set_character_sprite(filename: String) -> void:
 		return
 
 	_busy = true
-	await _fade(sprite_fade, 0.0, 1.0, 0.15)
-	character.texture = tex
+
+	# Fade OUT character using alpha (does not affect BG)
 	character.visible = true
-	await _fade(sprite_fade, 1.0, 0.0, 0.15)
+	await _fade_control_alpha(character, 1.0, 0.0, 0.15)
+
+	# Swap sprite
+	character.texture = tex
+
+	# Fade IN
+	await _fade_control_alpha(character, 0.0, 1.0, 0.15)
+
 	_busy = false
 
-func _fade(rect: ColorRect, from_a: float, to_a: float, duration: float) -> void:
+func _fade_rect_alpha(rect: ColorRect, from_a: float, to_a: float, duration: float) -> void:
 	rect.visible = true
-	var c := rect.color
+	var c: Color = rect.color
 	c.a = from_a
 	rect.color = c
 
-	var t := 0.0
+	var t: float = 0.0
 	while t < duration:
 		t += get_process_delta_time()
 		var k: float = clamp(t / duration, 0.0, 1.0)
@@ -176,3 +224,19 @@ func _fade(rect: ColorRect, from_a: float, to_a: float, duration: float) -> void
 	rect.color = c
 	if to_a <= 0.001:
 		rect.visible = false
+
+func _fade_control_alpha(ctrl: CanvasItem, from_a: float, to_a: float, duration: float) -> void:
+	var t: float = 0.0
+	var c: Color = ctrl.modulate
+	c.a = from_a
+	ctrl.modulate = c
+
+	while t < duration:
+		t += get_process_delta_time()
+		var k: float = clamp(t / duration, 0.0, 1.0)
+		c.a = lerp(from_a, to_a, k)
+		ctrl.modulate = c
+		await get_tree().process_frame
+
+	c.a = to_a
+	ctrl.modulate = c

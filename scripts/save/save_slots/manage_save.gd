@@ -1,60 +1,93 @@
+# res://scripts/save/save_slots/manage_save.gd
 extends Control
 
-enum Mode { SAVE, LOAD }
+enum Mode { NEW_GAME, LOAD }
+@export var mode: Mode = Mode.NEW_GAME
 
-@export var mode: Mode = Mode.LOAD
+@export var gameplay_scene: PackedScene = preload("res://scenes/dialogue.tscn")
 
-var pending_slot: int = -1
-
-@onready var confirm_dialog: ConfirmationDialog = $SaveConfirmDialog
+@onready var overwrite_dialog: ConfirmationDialog = $OverwriteConfirmDialog
+@onready var load_dialog: ConfirmationDialog = $LoadConfirmDialog
+@onready var empty_dialog: AcceptDialog = $EmptySlotDialog
 @onready var delete_dialog: ConfirmationDialog = $DeleteConfirmDialog
+@onready var back_button: Button = $Back
+
+var _pending_slot: int = -1
+var _pending_delete_slot: int = -1
 
 func _ready() -> void:
-	refresh_all_slots()
-	confirm_dialog.confirmed.connect(_on_overwrite_confirmed)
-	delete_dialog.confirmed.connect(_on_delete_confirmed)
+	# ✅ Auto-set mode by which scene this is
+	var p := get_tree().current_scene.scene_file_path
+	if p.ends_with("save_slot_load.tscn"):
+		mode = Mode.LOAD
+	elif p.ends_with("save_slot_save.tscn"):
+		mode = Mode.NEW_GAME
 
-func refresh_all_slots() -> void:
-	var grid: GridContainer = $ScrollContainer/GridContainer
-	for child in grid.get_children():
-		if child.has_method("update_ui") and "slot_id" in child:
-			var preview := GameSave.load_slot_preview(child.slot_id)
-			child.update_ui(preview)
+	# Connect dialogs once
+	if not overwrite_dialog.confirmed.is_connected(_on_overwrite_confirmed):
+		overwrite_dialog.confirmed.connect(_on_overwrite_confirmed)
+	if not load_dialog.confirmed.is_connected(_on_load_confirmed):
+		load_dialog.confirmed.connect(_on_load_confirmed)
+	if not delete_dialog.confirmed.is_connected(_on_delete_confirmed):
+		delete_dialog.confirmed.connect(_on_delete_confirmed)
 
-func slot_selected(slot: int) -> void:
-	if mode == Mode.LOAD:
-		# Load only if exists, otherwise do nothing (REQ2)
-		if GameSave.load_game(slot):
-			get_tree().change_scene_to_file("res://scenes/dialogue.tscn") # change later to gameplay scene
-		return
+	# ✅ Back button
+	if not back_button.pressed.is_connected(_on_back_pressed):
+		back_button.pressed.connect(_on_back_pressed)
 
-	# SAVE MODE (REQ1)
-	pending_slot = slot
-	if GameSave.slot_exists(slot):
-		confirm_dialog.popup_centered()
-	else:
-		_on_overwrite_confirmed()
+	refresh_slots_ui()
 
-func _on_overwrite_confirmed() -> void:
-	if pending_slot == -1:
-		return
+func slot_selected(slot_id: int) -> void:
+	_pending_slot = slot_id
 
-	# If you want "New Game creates fresh state", use new_game instead of save_game:
-	GameSave.new_game(pending_slot)
+	match mode:
+		Mode.NEW_GAME:
+			overwrite_dialog.dialog_text = "Overwrite slot %d?" % (slot_id + 1)
+			overwrite_dialog.popup_centered()
+		Mode.LOAD:
+			if GameSave.slot_exists(slot_id):
+				load_dialog.dialog_text = "Load slot %d?" % (slot_id + 1)
+				load_dialog.popup_centered()
+			else:
+				empty_dialog.dialog_text = "Empty slot"
+				empty_dialog.popup_centered()
 
-	pending_slot = -1
-	refresh_all_slots()
-
-func request_delete(slot: int) -> void:
-	pending_slot = slot
+func request_delete(slot_id: int) -> void:
+	_pending_delete_slot = slot_id
+	delete_dialog.dialog_text = "Delete slot %d?" % (slot_id + 1)
 	delete_dialog.popup_centered()
 
-func _on_delete_confirmed() -> void:
-	if pending_slot == -1:
+func _on_overwrite_confirmed() -> void:
+	if _pending_slot < 0:
 		return
-	GameSave.delete_slot(pending_slot)
-	pending_slot = -1
-	refresh_all_slots()
+	GameSave.new_game(_pending_slot)
+	_go_to_gameplay()
+
+func _on_load_confirmed() -> void:
+	if _pending_slot < 0:
+		return
+	if GameSave.load_game(_pending_slot):
+		_go_to_gameplay()
+	else:
+		empty_dialog.dialog_text = "Empty slot"
+		empty_dialog.popup_centered()
+		refresh_slots_ui()
+
+func _on_delete_confirmed() -> void:
+	if _pending_delete_slot < 0:
+		return
+	GameSave.delete_slot(_pending_delete_slot)
+	refresh_slots_ui()
+
+func _go_to_gameplay() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(gameplay_scene)
+
+func refresh_slots_ui() -> void:
+	var grid := $ScrollContainer/GridContainer
+	for child in grid.get_children():
+		if child.has_method("refresh"):
+			child.refresh()
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
