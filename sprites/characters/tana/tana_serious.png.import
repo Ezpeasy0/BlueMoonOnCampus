@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dplkqm2fvi16e"
-path="res://.godot/imported/fon_curious_with_umbrella.png-0e7b9ded973e76d8c7de022b41077886.ctex"
+uid="uid://dk1y8bajino0u"
+path="res://.godot/imported/tana_serious.png-38ec597bc8b894a0a0e09aec152c4e43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/fon_curious_with_umbrella.png"
-dest_files=["res://.godot/imported/fon_curious_with_umbrella.png-0e7b9ded973e76d8c7de022b41077886.ctex"]
+source_file="res://sprites/characters/tana/tana_serious.png"
+dest_files=["res://.godot/imported/tana_serious.png-38ec597bc8b894a0a0e09aec152c4e43.ctex"]
 
 [params]
 

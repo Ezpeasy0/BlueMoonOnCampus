@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btgp8bo3c6nuy"
-path="res://.godot/imported/locker_room.png-83c29de0567ab38a0b8508110a98abc5.ctex"
+uid="uid://b23xuhpdf4xpu"
+path="res://.godot/imported/scene_2.png-9540bb2ad1f895bc4d45fa44f63ce365.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/locker_room.png"
-dest_files=["res://.godot/imported/locker_room.png-83c29de0567ab38a0b8508110a98abc5.ctex"]
+source_file="res://sprites/scene/scene_2.png"
+dest_files=["res://.godot/imported/scene_2.png-9540bb2ad1f895bc4d45fa44f63ce365.ctex"]
 
 [params]
 

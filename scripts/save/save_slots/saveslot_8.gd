@@ -1,7 +1,7 @@
 extends Button
 
 @export var slot_id: int = 7
-const DEFAULT_IMAGE := preload("res://sprites/no_data.png")
+const DEFAULT_IMAGE := preload("res://sprites/save&load/no_data.png")
 
 @onready var label_slot: Label = $PanelContainer/HBoxContainer/VBoxContainer/slot
 @onready var label_date: Label = $PanelContainer/HBoxContainer/VBoxContainer/date

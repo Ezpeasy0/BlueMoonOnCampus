@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0nagifuf4nab"
-path="res://.godot/imported/tana_chill.png-498014bf4fa08ecd441835987aefbc3b.ctex"
+uid="uid://783taguq2mox"
+path="res://.godot/imported/fon_upset.png-b2af317837b77e38c710e4f387220069.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tana_chill.png"
-dest_files=["res://.godot/imported/tana_chill.png-498014bf4fa08ecd441835987aefbc3b.ctex"]
+source_file="res://sprites/characters/fon/fon_upset.png"
+dest_files=["res://.godot/imported/fon_upset.png-b2af317837b77e38c710e4f387220069.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b23xuhpdf4xpu"
-path="res://.godot/imported/scene_2.png-429d58225418a6405113e95318d57c37.ctex"
+uid="uid://dplkqm2fvi16e"
+path="res://.godot/imported/fon_curious_with_umbrella.png-b3feef1206a40063a864db40a68ef9c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene_2.png"
-dest_files=["res://.godot/imported/scene_2.png-429d58225418a6405113e95318d57c37.ctex"]
+source_file="res://sprites/characters/fon/fon_curious_with_umbrella.png"
+dest_files=["res://.godot/imported/fon_curious_with_umbrella.png-b3feef1206a40063a864db40a68ef9c5.ctex"]
 
 [params]
 

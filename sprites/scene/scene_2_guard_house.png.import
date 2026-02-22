@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://783taguq2mox"
-path="res://.godot/imported/fon_upset.png-ba91a374db729ffc621dff86964fc871.ctex"
+uid="uid://ce7afriqqofo"
+path="res://.godot/imported/scene_2_guard_house.png-273cf264bf26b8fc267fc8d0ff961eb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/fon_upset.png"
-dest_files=["res://.godot/imported/fon_upset.png-ba91a374db729ffc621dff86964fc871.ctex"]
+source_file="res://sprites/scene/scene_2_guard_house.png"
+dest_files=["res://.godot/imported/scene_2_guard_house.png-273cf264bf26b8fc267fc8d0ff961eb5.ctex"]
 
 [params]
 

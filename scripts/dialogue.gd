@@ -10,26 +10,20 @@ const FULLSCREEN_BGS: Array[String] = ["pete.png"]
 @onready var name_label: Label = %NameLabel
 @onready var dialogue_label: RichTextLabel = %DialogueLabel
 @onready var choices_box: VBoxContainer = %ChoicesBox
-
 @onready var bg_fade: ColorRect = %BGFade
 
 var story_lines: Array = []
 var id_to_index: Dictionary = {}
-
 var index: int = 0
 var stats: Dictionary = {"INT": 0, "CHA": 0}
-
 var _busy: bool = false
-
 var _current_bg: String = ""
 var _current_sprite: String = ""
 
 func _ready() -> void:
 	get_tree().paused = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
-
 	bg_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
 	character.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
@@ -45,33 +39,16 @@ func _ready() -> void:
 	_show_current()
 
 func _input(event: InputEvent) -> void:
-	if _busy:
-		return
-
+	if _busy: return
 	var advance: bool = (
 		event is InputEventMouseButton
 		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT
 		and (event as InputEventMouseButton).pressed
 	)
-
-	if not advance:
-		return
-
-	if choices_box.visible:
-		return
-
+	if not advance or choices_box.visible: return
 	_advance()
 
 func _advance() -> void:
-	if index >= 0 and index < story_lines.size():
-		var line = story_lines[index]
-		if typeof(line) == TYPE_DICTIONARY:
-			var skip_to: String = str(line.get("skip_to", ""))
-			if skip_to != "" and id_to_index.has(skip_to):
-				index = int(id_to_index[skip_to])
-				_show_current()
-				return
-
 	index += 1
 	_show_current()
 
@@ -98,10 +75,8 @@ func _show_current() -> void:
 		_current_sprite = ""
 		character.visible = false
 	else:
-
 		if line.has("sprite"):
 			var new_sprite: String = str(line["sprite"])
-
 			if new_sprite.strip_edges() == "":
 				_current_sprite = ""
 				character.visible = false
@@ -116,11 +91,11 @@ func _show_current() -> void:
 		txt = "(" + txt + ")"
 
 	name_label.text = who
+	%NameBox.visible = (who.strip_edges() != "")
 	dialogue_label.text = txt
 
 func _show_choices(options: Array) -> void:
 	choices_box.visible = true
-
 	for c in choices_box.get_children():
 		c.queue_free()
 
@@ -132,88 +107,77 @@ func _show_choices(options: Array) -> void:
 
 func _on_choice(opt: Dictionary) -> void:
 	choices_box.visible = false
-
-	var say: String = str(opt.get("say", ""))
-	if say != "":
-		name_label.text = "เมฆ"
-		dialogue_label.text = say
-
 	var effects: Dictionary = opt.get("effects", {})
 	for k in effects.keys():
-		if stats.has(k):
-			stats[k] += int(effects[k])
+		if stats.has(k): stats[k] += int(effects[k])
 
 	var target_id: String = str(opt.get("next", ""))
 	if target_id != "" and id_to_index.has(target_id):
-		index = int(id_to_index[target_id])
+		index = id_to_index[target_id]
 	else:
 		index += 1
-
 	_show_current()
 
+func _get_full_path(root: String, filename: String) -> String:
+	if filename.begins_with("res://"): return filename
+	var dir = DirAccess.open(root)
+	if dir:
+		return _search_recursive(root, filename)
+	return ""
+
+func _search_recursive(path: String, target: String) -> String:
+	var dir = DirAccess.open(path)
+	if not dir: return ""
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	while file_name != "":
+		if dir.current_is_dir():
+			var found = _search_recursive(path + file_name + "/", target)
+			if found != "": return found
+		elif file_name == target:
+			return path + file_name
+		file_name = dir.get_next()
+	return ""
+
 func _set_background(filename: String) -> void:
-	var path: String = BG_DIR + filename
-	var tex: Texture2D = load(path) as Texture2D
-	if tex == null:
-		push_warning("BG not found: " + path)
-		return
+	var full_path = _get_full_path(BG_DIR, filename)
+	var tex: Texture2D = load(full_path) as Texture2D
+	if tex == null: return
 
 	_busy = true
-	await _fade_rect_alpha(bg_fade, 0.0, 1.0, 0.25) 
+	await _fade_rect_alpha(bg_fade, 0.0, 1.0, 0.25)
 	bg.texture = tex
 	await _fade_rect_alpha(bg_fade, 1.0, 0.0, 0.25)
 	_busy = false
 
 func _set_character_sprite(filename: String) -> void:
-	var path: String = SPRITE_DIR + filename
-	var tex: Texture2D = load(path) as Texture2D
+	var full_path = _get_full_path(SPRITE_DIR, filename)
+	var tex: Texture2D = load(full_path) as Texture2D
 	if tex == null:
-		push_warning("Sprite not found: " + path)
 		character.visible = false
 		return
 
 	_busy = true
-
 	character.visible = true
-	await _fade_control_alpha(character, 1.0, 0.0, 0.15)
-
+	await _fade_control_alpha(character, character.modulate.a, 0.0, 0.15)
 	character.texture = tex
-
 	await _fade_control_alpha(character, 0.0, 1.0, 0.15)
-
 	_busy = false
 
 func _fade_rect_alpha(rect: ColorRect, from_a: float, to_a: float, duration: float) -> void:
 	rect.visible = true
-	var c: Color = rect.color
-	c.a = from_a
-	rect.color = c
-
 	var t: float = 0.0
 	while t < duration:
 		t += get_process_delta_time()
-		var k: float = clamp(t / duration, 0.0, 1.0)
-		c.a = lerp(from_a, to_a, k)
-		rect.color = c
+		rect.color.a = lerp(from_a, to_a, clamp(t / duration, 0.0, 1.0))
 		await get_tree().process_frame
-
-	c.a = to_a
-	rect.color = c
-	if to_a <= 0.001:
-		rect.visible = false
+	rect.color.a = to_a
+	if to_a <= 0.001: rect.visible = false
 
 func _fade_control_alpha(ctrl: CanvasItem, from_a: float, to_a: float, duration: float) -> void:
 	var t: float = 0.0
-	var c: Color = ctrl.modulate
-	c.a = from_a
-	ctrl.modulate = c
-
 	while t < duration:
 		t += get_process_delta_time()
-		var k: float = clamp(t / duration, 0.0, 1.0)
-		c.a = lerp(from_a, to_a, k)
-		ctrl.modulate = c
+		ctrl.modulate.a = lerp(from_a, to_a, clamp(t / duration, 0.0, 1.0))
 		await get_tree().process_frame
-
-	c.a = to_a
-	ctrl.modulate = c
+	ctrl.modulate.a = to_a
