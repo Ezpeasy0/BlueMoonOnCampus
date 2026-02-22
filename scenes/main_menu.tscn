@@ -1,14 +1,14 @@
 [gd_scene load_steps=30 format=3 uid="uid://bcu52y8d45rpo"]
 
 [ext_resource type="Script" uid="uid://bvu41ij0ekeb4" path="res://scripts/main_menu.gd" id="1_wu84c"]
-[ext_resource type="Texture2D" uid="uid://bssa16gk2q3xh" path="res://background/bg.jpg" id="2_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://bssa16gk2q3xh" path="res://sprites/background_menu/main_menu_bg.jpg" id="2_jk1qb"]
 [ext_resource type="FontFile" uid="uid://d2mc3d6mxoooo" path="res://fonts/SpecialElite-Regular.ttf" id="3_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://cqmypgtankgdd" path="res://background/BlueMoon.png" id="4_oa1go"]
+[ext_resource type="Texture2D" uid="uid://cqmypgtankgdd" path="res://sprites/background_menu/logo.png" id="4_oa1go"]
 [ext_resource type="Script" uid="uid://0bhvnnymdwhl" path="res://scripts/video.gd" id="5_8ln24"]
 [ext_resource type="Script" uid="uid://dtakctuc41kv7" path="res://scripts/audio.gd" id="6_rtw2f"]
-[ext_resource type="AudioStream" uid="uid://cnd13wj0ynsqh" path="res://sound/raydellrios-suspense.mp3" id="7_oa1go"]
-[ext_resource type="AudioStream" uid="uid://bihnsa6duijhn" path="res://sound/sfx-hover.wav" id="8_jk1qb"]
-[ext_resource type="AudioStream" uid="uid://bwip8prevcfwo" path="res://sound/sfx-click.mp3" id="9_5dd4i"]
+[ext_resource type="AudioStream" uid="uid://cnd13wj0ynsqh" path="res://sounds/raydellrios-suspense.mp3" id="7_oa1go"]
+[ext_resource type="AudioStream" uid="uid://bihnsa6duijhn" path="res://sounds/sfx-hover.wav" id="8_jk1qb"]
+[ext_resource type="AudioStream" uid="uid://bwip8prevcfwo" path="res://sounds/sfx-click.mp3" id="9_5dd4i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
 texture = ExtResource("2_jk1qb")

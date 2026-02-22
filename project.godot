@@ -14,6 +14,10 @@ config/name="Blue Moon on Campus"
 run/main_scene="uid://bcu52y8d45rpo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[autoload]
+
+GameSave="*res://scripts/save/game_save.gd"
+
 [display]
 
 window/size/borderless=true

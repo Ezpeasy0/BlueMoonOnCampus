@@ -44,11 +44,11 @@ func _setup_button_sounds(node: Node):
 			_setup_button_sounds(child)
 
 func _play_hover():
-	if sfx_hover:
+	if sfx_hover and sfx_hover.is_inside_tree():
 		sfx_hover.play()
 
 func _play_click():
-	if sfx_click:
+	if sfx_click and sfx_click.is_inside_tree():
 		sfx_click.play()
 
 func _on_exit_pressed() -> void:
@@ -78,6 +78,8 @@ func _on_back_pressed():
 	_show_panel(current_panel)
 	_update_back_button()
 
-
 func _on_load_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/save_slot.tscn") 
+	get_tree().change_scene_to_file("res://scenes/save_slot_load.tscn")
+	
+func _on_new_game_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/save_slot_save.tscn") 

@@ -1,0 +1,157 @@
+[gd_scene load_steps=6 format=3 uid="uid://g5q7tm64coy7"]
+
+[ext_resource type="Script" uid="uid://raqig1qkw5ll" path="res://scripts/dialogue.gd" id="1_3n4vj"]
+[ext_resource type="FontFile" uid="uid://d2g1dcyt4rtyv" path="res://fonts/LayijiMahaniyomV1_61.ttf" id="1_jwyou"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwyou"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3n4vj"]
+bg_color = Color(0.050980393, 0.36078432, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5686275, 0.5686275, 0.5686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfpow"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 0.5411765)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5689727, 0.5689728, 0.5689725, 1)
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3n4vj")
+
+[node name="BG" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Character" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -384.0
+offset_right = 256.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpriteFade" type="ColorRect" parent="Character"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="BGFade" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextBox" type="PanelContainer" parent="UI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 220)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = -220.0
+offset_right = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwyou")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/TextBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="UI/TextBox/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NameBox" type="PanelContainer" parent="UI/TextBox/MarginContainer/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3n4vj")
+
+[node name="NameLabel" type="Label" parent="UI/TextBox/MarginContainer/VBox/NameBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_jwyou")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="DialogueLabel" type="RichTextLabel" parent="UI/TextBox/MarginContainer/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_jwyou")
+theme_override_font_sizes/normal_font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_bfpow")
+scroll_active = false
+
+[node name="ChoicesBox" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -380.0
+offset_right = -200.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
