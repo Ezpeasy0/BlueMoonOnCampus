@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ca2jdtr1f5s7m"]
+[gd_scene load_steps=26 format=3 uid="uid://ca2jdtr1f5s7m"]
 
 [ext_resource type="Script" uid="uid://qn4dy3j7yw72" path="res://scripts/save/save_slots/manage_save.gd" id="1_73c25"]
 [ext_resource type="Texture2D" uid="uid://btgp8bo3c6nuy" path="res://sprites/save&load/locker_room.png" id="2_m3b18"]
@@ -15,9 +15,8 @@
 [ext_resource type="Script" uid="uid://bgt8pljy6wrov" path="res://scripts/save/save_slots/saveslot_8.gd" id="13_msfop"]
 [ext_resource type="Script" uid="uid://e4u30hh5ejq" path="res://scripts/save/save_slots/saveslot_9.gd" id="14_tfgwm"]
 [ext_resource type="Script" uid="uid://bfkbm5pxcepvx" path="res://scripts/save/save_slots/saveslot_10.gd" id="15_l3p7c"]
-[ext_resource type="AudioStream" uid="uid://cnd13wj0ynsqh" path="res://sounds/raydellrios-suspense.mp3" id="16_lwvoo"]
-[ext_resource type="AudioStream" uid="uid://bihnsa6duijhn" path="res://sounds/sfx-hover.wav" id="17_23mvl"]
-[ext_resource type="AudioStream" uid="uid://bwip8prevcfwo" path="res://sounds/sfx-click.mp3" id="18_bcqwn"]
+[ext_resource type="AudioStream" uid="uid://bihnsa6duijhn" path="res://sounds/sfx/sfx-hover.wav" id="17_23mvl"]
+[ext_resource type="AudioStream" uid="uid://bwip8prevcfwo" path="res://sounds/sfx/sfx-click.mp3" id="18_bcqwn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u54lf"]
 texture = ExtResource("2_m3b18")
@@ -87,6 +86,7 @@ expand_margin_right = 8.0
 expand_margin_bottom = 8.0
 
 [node name="SaveSlot" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_73c25")
@@ -633,11 +633,6 @@ text = "DD/MM/YY"
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "HH/MM"
-
-[node name="bg_menu_sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("16_lwvoo")
-autoplay = true
-bus = &"Music"
 
 [node name="sfx_hover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_23mvl")

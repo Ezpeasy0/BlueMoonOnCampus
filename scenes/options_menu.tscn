@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfywggkiehmc2"]
+
+[ext_resource type="Script" uid="uid://dun7dpeofvvj2" path="res://scripts/options_menu.gd" id="1_liyum"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[node name="Options" type="Panel" node_paths=PackedStringArray("video_button", "audio_button")]
+visible = false
+offset_left = 140.0
+offset_top = 55.0
+offset_right = 988.0
+offset_bottom = 556.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbmy8")
+script = ExtResource("1_liyum")
+video_button = NodePath("Control/Video")
+audio_button = NodePath("Control2/Audio")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 18.0
+size_flags_vertical = 7
+
+[node name="Video" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 355.0
+offset_top = 108.0
+offset_right = 465.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Video"
+
+[node name="Control2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 124.0
+offset_top = 147.0
+offset_right = 164.0
+offset_bottom = 165.0
+size_flags_vertical = 7
+
+[node name="Audio" type="Button" parent="Control2"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 65.0
+offset_right = 361.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 24
+text = "Audio
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 13.0
+offset_right = 61.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"

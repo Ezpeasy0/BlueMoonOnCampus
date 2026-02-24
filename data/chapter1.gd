@@ -5,7 +5,7 @@ extends Node
 var lines: Array = [
 
 	# Scene 1: ห้องทำงานสารวัตรธนา
-	{"bg":"scene_1_inspector's office.png", "sprite":"tana_chill.png", "name":"???", "text":"นั่งลงสิ"},
+	{"bg":"scene_1_inspector's office.png", "sprite":"tana_chill.png", "name":"???", "text":"นั่งลงสิ", "sfx": "ceiling_fan.mp3"},
 	{"name":"เมฆ", "text":"ครับ"},
 	{"name":"???", "text":"อืม…"},
 	{"name":"???", "text":"เมฆินทร์ นฤพานิช เป็นนักสืบเอกชน รับงานฟรีแลนซ์ใช่มั้ย"},
@@ -45,10 +45,10 @@ var lines: Array = [
 
 	{"sprite":"fon_curious.png", "name":"ฝน", "text":"แล้วถ้าความจริง.. มันอยู่ในที่ที่มหาลัยไม่ให้เข้าล่ะ…"},
 	{"sprite":"tana_chill.png", "name":"สารวัตรธนา", "text":"…"},
-	{"name":"สารวัตรธนา", "text":"ไว้เจอกัน คุณเมฆินทร์ มีอะไรติดต่อผมได้"},
+	{"name":"สารวัตรธนา", "text":"ไว้เจอกัน คุณเมฆินทร์ มีอะไรติดต่อผมได้", "sfx":"null"},
 
 	# Scene 2: ป้อมยามหน้ามหาวิทยาลัย
-	{"bg":"scene_2_guard_house.png", "sprite":"", "name":"เมฆ", "thought":true, "text":"อืม.. ที่นี่สินะ มหาลัยแจ่มจันทร์"},
+	{"bg":"scene_2_guard_house.png", "sprite":"", "name":"เมฆ", "thought":true, "text":"อืม.. ที่นี่สินะ มหาลัยแจ่มจันทร์", "sfx": "light_rain.mp3"},
 	{"name":"เมฆ", "thought":true, "text":"ไม่เคยมาเลยแฮะ แต่พอมาถึงแล้ว รู้สึก.. วังเวงแปลกๆ"},
 
 	{"sprite":"fon_smile_with_umbrella.png", "name":"ฝน", "text":"สวัสดีค่าา"},
