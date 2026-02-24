@@ -19,6 +19,9 @@ var stats: Dictionary = {"INT": 0, "CHA": 0}
 var _busy: bool = false
 var _current_bg: String = ""
 var _current_sprite: String = ""
+var _next_index_override: int = -1
+
+var _showing_choice_say: bool = false
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -39,17 +42,40 @@ func _ready() -> void:
 	_show_current()
 
 func _input(event: InputEvent) -> void:
-	if _busy: return
+	if _busy:
+		return
+
 	var advance: bool = (
 		event is InputEventMouseButton
 		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT
 		and (event as InputEventMouseButton).pressed
 	)
-	if not advance or choices_box.visible: return
+
+	if not advance:
+		return
+
+	if choices_box.visible:
+		return
+
 	_advance()
 
 func _advance() -> void:
-	index += 1
+	if _showing_choice_say:
+		_showing_choice_say = false
+		if _next_index_override >= 0:
+			index = _next_index_override
+			_next_index_override = -1
+		else:
+			index += 1
+		_show_current()
+		return
+
+	if _next_index_override >= 0:
+		index = _next_index_override
+		_next_index_override = -1
+	else:
+		index += 1
+
 	_show_current()
 
 func _show_current() -> void:
@@ -94,8 +120,14 @@ func _show_current() -> void:
 	%NameBox.visible = (who.strip_edges() != "")
 	dialogue_label.text = txt
 
+	if line.has("skip_to"):
+		var sid: String = str(line["skip_to"])
+		if sid != "" and id_to_index.has(sid):
+			_next_index_override = int(id_to_index[sid])
+
 func _show_choices(options: Array) -> void:
 	choices_box.visible = true
+
 	for c in choices_box.get_children():
 		c.queue_free()
 
@@ -107,19 +139,31 @@ func _show_choices(options: Array) -> void:
 
 func _on_choice(opt: Dictionary) -> void:
 	choices_box.visible = false
+
 	var effects: Dictionary = opt.get("effects", {})
 	for k in effects.keys():
-		if stats.has(k): stats[k] += int(effects[k])
+		if stats.has(k):
+			stats[k] += int(effects[k])
 
 	var target_id: String = str(opt.get("next", ""))
 	if target_id != "" and id_to_index.has(target_id):
-		index = id_to_index[target_id]
+		_next_index_override = int(id_to_index[target_id])
 	else:
-		index += 1
-	_show_current()
+		_next_index_override = -1
+
+	var say_text: String = str(opt.get("say", "")).strip_edges()
+	if say_text != "":
+		_showing_choice_say = true
+		name_label.text = "เมฆ"
+		%NameBox.visible = true
+		dialogue_label.text = say_text
+		return
+
+	_advance()
 
 func _get_full_path(root: String, filename: String) -> String:
-	if filename.begins_with("res://"): return filename
+	if filename.begins_with("res://"):
+		return filename
 	var dir = DirAccess.open(root)
 	if dir:
 		return _search_recursive(root, filename)
@@ -127,13 +171,15 @@ func _get_full_path(root: String, filename: String) -> String:
 
 func _search_recursive(path: String, target: String) -> String:
 	var dir = DirAccess.open(path)
-	if not dir: return ""
+	if not dir:
+		return ""
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
 		if dir.current_is_dir():
 			var found = _search_recursive(path + file_name + "/", target)
-			if found != "": return found
+			if found != "":
+				return found
 		elif file_name == target:
 			return path + file_name
 		file_name = dir.get_next()
@@ -142,7 +188,8 @@ func _search_recursive(path: String, target: String) -> String:
 func _set_background(filename: String) -> void:
 	var full_path = _get_full_path(BG_DIR, filename)
 	var tex: Texture2D = load(full_path) as Texture2D
-	if tex == null: return
+	if tex == null:
+		return
 
 	_busy = true
 	await _fade_rect_alpha(bg_fade, 0.0, 1.0, 0.25)
@@ -172,7 +219,8 @@ func _fade_rect_alpha(rect: ColorRect, from_a: float, to_a: float, duration: flo
 		rect.color.a = lerp(from_a, to_a, clamp(t / duration, 0.0, 1.0))
 		await get_tree().process_frame
 	rect.color.a = to_a
-	if to_a <= 0.001: rect.visible = false
+	if to_a <= 0.001:
+		rect.visible = false
 
 func _fade_control_alpha(ctrl: CanvasItem, from_a: float, to_a: float, duration: float) -> void:
 	var t: float = 0.0
