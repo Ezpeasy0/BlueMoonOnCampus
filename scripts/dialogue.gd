@@ -24,7 +24,7 @@ const SFX_PATH_DIR: String = "res://sounds/sfx/"
 @onready var sfx_dialogue: AudioStreamPlayer = $SFX
 
 @export var sfx_text_blip: AudioStreamPlayer
-@export var blip_volume_db: float = -18.0
+@export var blip_volume_db: float = -10.0
 
 @export_group("Options Sub-Panels")
 @export var video_panel: Panel
@@ -98,7 +98,7 @@ func _ready() -> void:
 		if line_any is Dictionary:
 			var line_dict: Dictionary = line_any
 			if line_dict.has("id"):
-				id_to_index[str(line_dict["id"])] = i
+				id_to_index[line_dict["id"]] = i
 
 	_restore_from_gamesave()
 	await _apply_restored_visuals()
@@ -110,7 +110,7 @@ func _apply_restored_visuals() -> void:
 	if _current_bg != "":
 		await _set_background(_current_bg)
 
-	if _current_bg in FULLSCREEN_BGS:
+	if _is_fullscreen_bg(_current_bg):
 		character.visible = false
 	else:
 		if _current_sprite != "":
@@ -118,6 +118,12 @@ func _apply_restored_visuals() -> void:
 
 	if _current_bgm != "":
 		_play_bgm(_current_bgm)
+
+func _is_fullscreen_bg(bg_value: String) -> bool:
+	if bg_value == "":
+		return false
+	var file := bg_value.get_file()
+	return FULLSCREEN_BGS.has(file)
 
 func _restore_from_gamesave() -> void:
 	if GameSave.current_slot < 0:
@@ -149,13 +155,6 @@ func _sync_state_to_gamesave() -> void:
 	GameSave.state["bg"] = _current_bg
 	GameSave.state["sprite"] = _current_sprite
 	GameSave.state["bgm"] = _current_bgm
-
-func _get_stats() -> Dictionary:
-	if stats == null or not (stats is Dictionary):
-		stats = {"INT": 0, "CHA": 0}
-	if not stats.has("INT"): stats["INT"] = 0
-	if not stats.has("CHA"): stats["CHA"] = 0
-	return stats
 
 func _save_now() -> void:
 	if GameSave.current_slot >= 0:
@@ -256,27 +255,30 @@ func _show_current() -> void:
 		_show_current()
 		return
 
-	var line: Dictionary = any_line as Dictionary
+	var line: Dictionary = any_line
 
+	# BGM/SFX (safe if missing)
 	if line.has("bgm"):
 		_play_bgm(str(line["bgm"]))
-
 	if line.has("sfx"):
 		_play_sfx(str(line["sfx"]))
 
+	# Choices
 	if str(line.get("type", "line")) == "choice":
 		_show_choices(line.get("choices", []))
 		return
 
 	choices_box.visible = false
 
+	# BG
 	if line.has("bg"):
 		var new_bg: String = str(line["bg"])
-		if new_bg != "" and new_bg != _current_bg:
+		if new_bg.strip_edges() != "" and new_bg != _current_bg:
 			_current_bg = new_bg
 			await _set_background(new_bg)
 
-	if _current_bg in FULLSCREEN_BGS:
+	# Sprite
+	if _is_fullscreen_bg(_current_bg):
 		_current_sprite = ""
 		character.visible = false
 	else:
@@ -289,9 +291,9 @@ func _show_current() -> void:
 				_current_sprite = new_sprite
 				await _set_character_sprite(new_sprite)
 
+	# Text
 	var who: String = str(line.get("name", ""))
 	var txt: String = str(line.get("text", ""))
-
 	if bool(line.get("thought", false)):
 		txt = "(" + txt + ")"
 
@@ -302,8 +304,15 @@ func _show_current() -> void:
 		%NameBox.modulate.a = 1.0
 
 	await _type_text(txt)
-
 	_sync_state_to_gamesave()
+
+	# ✅ Support skip_to AFTER showing this line (what your chapter file expects)
+	if line.has("skip_to"):
+		var target_id := str(line["skip_to"])
+		if target_id != "" and id_to_index.has(target_id):
+			index = int(id_to_index[target_id])
+			_show_current()
+			return
 
 func _type_text(full_text: String) -> void:
 	_typing = true
@@ -325,11 +334,10 @@ func _type_text(full_text: String) -> void:
 		dialogue_label.text += full_text[i]
 		char_count += 1
 
-		# Blip should follow typing and stop when typing stops.
-		# Also avoid "machine gun" pop by restarting only when needed.
 		if sfx_text_blip and blip_every_chars > 0 and (char_count % blip_every_chars == 0):
-			if not sfx_text_blip.playing:
-				sfx_text_blip.play()
+			if sfx_text_blip.playing:
+				sfx_text_blip.stop()
+			sfx_text_blip.play()
 
 		await get_tree().create_timer(type_speed_seconds).timeout
 
@@ -346,13 +354,11 @@ func _play_bgm(filename: String) -> void:
 			bgm_player.stop()
 		_current_bgm = ""
 		return
-
 	if filename == _current_bgm:
 		return
 
 	var full_path: String = BGM_PATH_DIR + filename
 	if not FileAccess.file_exists(full_path):
-		print("BGM not found: ", full_path)
 		return
 
 	var stream: Resource = load(full_path)
@@ -369,7 +375,6 @@ func _play_sfx(filename: String) -> void:
 
 	var full_path: String = SFX_PATH_DIR + filename
 	if not FileAccess.file_exists(full_path):
-		print("SFX not found: ", full_path)
 		return
 
 	var stream: Resource = load(full_path)
@@ -385,7 +390,7 @@ func _show_choices(options_list: Array) -> void:
 	for opt_any in options_list:
 		if not (opt_any is Dictionary):
 			continue
-		var opt: Dictionary = opt_any as Dictionary
+		var opt: Dictionary = opt_any
 
 		var b: Button = Button.new()
 		b.text = str(opt.get("label", ""))
@@ -397,13 +402,15 @@ func _on_choice(opt: Dictionary) -> void:
 	choices_box.visible = false
 
 	var effects_any: Variant = opt.get("effects", {})
-	var effects: Dictionary = (effects_any as Dictionary) if (effects_any is Dictionary) else {}
+	var effects: Dictionary = effects_any if effects_any is Dictionary else {}
 
-	var s: Dictionary = _get_stats()
+	if not (stats is Dictionary):
+		stats = {"INT": 0, "CHA": 0}
+	if not stats.has("INT"): stats["INT"] = 0
+	if not stats.has("CHA"): stats["CHA"] = 0
+
 	for k in effects.keys():
-		if s.has(k):
-			s[k] = int(s[k]) + int(effects[k])
-	stats = s
+		stats[k] = int(stats.get(k, 0)) + int(effects[k])
 
 	var say_text: String = str(opt.get("say", "")).strip_edges()
 	if say_text != "":
@@ -421,40 +428,64 @@ func _on_choice(opt: Dictionary) -> void:
 	_save_now()
 	_show_current()
 
-func _get_full_path(root: String, filename: String) -> String:
-	if filename.begins_with("res://"):
-		return filename
-	var dir: DirAccess = DirAccess.open(root)
-	if dir:
-		return _search_recursive(root, filename)
+# =========================
+# ✅ Robust path resolution
+# =========================
+func _resolve_path(root: String, value: String) -> String:
+	if value.strip_edges() == "":
+		return ""
+
+	# If it's already a full res:// path, use it directly.
+	if value.begins_with("res://"):
+		return value
+
+	# Otherwise search recursively for filename inside root.
+	var found := _search_recursive(root, value)
+	if found != "":
+		return found
+
+	# If not found, also try root + value (non-recursive fallback)
+	var direct := root + value
+	if FileAccess.file_exists(direct):
+		return direct
+
 	return ""
 
-func _search_recursive(path: String, target: String) -> String:
-	var dir: DirAccess = DirAccess.open(path)
+func _search_recursive(path: String, target_file: String) -> String:
+	var dir := DirAccess.open(path)
 	if not dir:
 		return ""
+
 	dir.list_dir_begin()
-	var file_name: String = dir.get_next()
-	while file_name != "":
+	while true:
+		var file_name := dir.get_next()
+		if file_name == "":
+			break
+
 		if dir.current_is_dir():
-			var found: String = _search_recursive(path + file_name + "/", target)
+			var found := _search_recursive(path + file_name + "/", target_file)
 			if found != "":
 				dir.list_dir_end()
 				return found
-		elif file_name == target:
-			dir.list_dir_end()
-			return path + file_name
-		file_name = dir.get_next()
+		else:
+			if file_name == target_file:
+				dir.list_dir_end()
+				return path + file_name
+
 	dir.list_dir_end()
 	return ""
 
-func _set_background(filename: String) -> void:
-	var full_path: String = _get_full_path(BG_DIR, filename)
+func _set_background(value: String) -> void:
+	var full_path := _resolve_path(BG_DIR, value)
+
+	# ✅ If it can't resolve, DON'T change bg, but print why (so no blind stuck).
 	if full_path == "":
+		print("[BG] Not found:", value, "  (searched under ", BG_DIR, ")")
 		return
 
-	var tex: Texture2D = load(full_path) as Texture2D
+	var tex := load(full_path) as Texture2D
 	if tex == null:
+		print("[BG] Failed to load:", full_path)
 		return
 
 	_busy = true
@@ -463,13 +494,13 @@ func _set_background(filename: String) -> void:
 	await _fade_rect_alpha(bg_fade, 1.0, 0.0, 0.25)
 	_busy = false
 
-func _set_character_sprite(filename: String) -> void:
-	var full_path: String = _get_full_path(SPRITE_DIR, filename)
+func _set_character_sprite(value: String) -> void:
+	var full_path := _resolve_path(SPRITE_DIR, value)
 	if full_path == "":
 		character.visible = false
 		return
 
-	var tex: Texture2D = load(full_path) as Texture2D
+	var tex := load(full_path) as Texture2D
 	if tex == null:
 		character.visible = false
 		return
@@ -513,13 +544,12 @@ func _on_exit_canceled() -> void:
 	get_tree().paused = false
 
 func _on_save_pressed() -> void:
-	# Sync state first, then open Save Slots in SAVE mode (not NEW_GAME)
 	_sync_state_to_gamesave()
-
 	get_tree().paused = true
 	if save_scene:
 		var save_menu: Node = save_scene.instantiate()
-		save_menu.set("mode", 2) # 2 = SAVE (matches manage_save.gd enum)
+		if save_menu.has_method("set"):
+			save_menu.set("mode", 2)
 		add_child(save_menu)
 		move_child(save_menu, -1)
 
