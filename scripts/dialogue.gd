@@ -235,9 +235,13 @@ func _on_back_pressed() -> void:
 		if video_panel: video_panel.visible = false
 		if audio_panel: audio_panel.visible = false
 		if options_menu: options_menu.visible = true
-	else:
-		if options_menu: options_menu.visible = false
-		if back_button: back_button.visible = false
+		if back_button: back_button.visible = true
+		return
+
+	if options_menu: options_menu.visible = false
+	if back_button: back_button.visible = false
+
+	get_tree().paused = false
 
 func _advance() -> void:
 	index += 1
