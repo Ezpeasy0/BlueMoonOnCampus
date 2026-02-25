@@ -1,4 +1,3 @@
-# res://scripts/dialogue.gd
 extends Control
 
 const BG_DIR: String = "res://sprites/scene/"
@@ -261,27 +260,23 @@ func _show_current() -> void:
 
 	var line: Dictionary = any_line
 
-	# BGM/SFX (safe if missing)
 	if line.has("bgm"):
 		_play_bgm(str(line["bgm"]))
 	if line.has("sfx"):
 		_play_sfx(str(line["sfx"]))
 
-	# Choices
 	if str(line.get("type", "line")) == "choice":
 		_show_choices(line.get("choices", []))
 		return
 
 	choices_box.visible = false
 
-	# BG
 	if line.has("bg"):
 		var new_bg: String = str(line["bg"])
 		if new_bg.strip_edges() != "" and new_bg != _current_bg:
 			_current_bg = new_bg
 			await _set_background(new_bg)
 
-	# Sprite
 	if _is_fullscreen_bg(_current_bg):
 		_current_sprite = ""
 		character.visible = false
@@ -295,7 +290,6 @@ func _show_current() -> void:
 				_current_sprite = new_sprite
 				await _set_character_sprite(new_sprite)
 
-	# Text
 	var who: String = str(line.get("name", ""))
 	var txt: String = str(line.get("text", ""))
 	if bool(line.get("thought", false)):
@@ -310,7 +304,6 @@ func _show_current() -> void:
 	await _type_text(txt)
 	_sync_state_to_gamesave()
 
-	# ✅ Support skip_to AFTER showing this line (what your chapter file expects)
 	if line.has("skip_to"):
 		var target_id := str(line["skip_to"])
 		if target_id != "" and id_to_index.has(target_id):
@@ -415,6 +408,8 @@ func _on_choice(opt: Dictionary) -> void:
 
 	for k in effects.keys():
 		stats[k] = int(stats.get(k, 0)) + int(effects[k])
+		
+	print("[STATS] INT =", stats.get("INT", 0), " | CHA =", stats.get("CHA", 0))
 
 	var say_text: String = str(opt.get("say", "")).strip_edges()
 	if say_text != "":
@@ -432,23 +427,17 @@ func _on_choice(opt: Dictionary) -> void:
 	_save_now()
 	_show_current()
 
-# =========================
-# ✅ Robust path resolution
-# =========================
 func _resolve_path(root: String, value: String) -> String:
 	if value.strip_edges() == "":
 		return ""
 
-	# If it's already a full res:// path, use it directly.
 	if value.begins_with("res://"):
 		return value
 
-	# Otherwise search recursively for filename inside root.
 	var found := _search_recursive(root, value)
 	if found != "":
 		return found
 
-	# If not found, also try root + value (non-recursive fallback)
 	var direct := root + value
 	if FileAccess.file_exists(direct):
 		return direct
@@ -482,7 +471,6 @@ func _search_recursive(path: String, target_file: String) -> String:
 func _set_background(value: String) -> void:
 	var full_path := _resolve_path(BG_DIR, value)
 
-	# ✅ If it can't resolve, DON'T change bg, but print why (so no blind stuck).
 	if full_path == "":
 		print("[BG] Not found:", value, "  (searched under ", BG_DIR, ")")
 		return
