@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://g5q7tm64coy7"]
+[gd_scene load_steps=19 format=3 uid="uid://g5q7tm64coy7"]
 
 [ext_resource type="Script" uid="uid://raqig1qkw5ll" path="res://scripts/dialogue.gd" id="1_3n4vj"]
 [ext_resource type="FontFile" uid="uid://d2g1dcyt4rtyv" path="res://fonts/LayijiMahaniyomV1_61.ttf" id="1_jwyou"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dtakctuc41kv7" path="res://scripts/audio.gd" id="6_x1cjp"]
 [ext_resource type="AudioStream" uid="uid://bwip8prevcfwo" path="res://sounds/sfx/sfx-click.mp3" id="7_tp716"]
 [ext_resource type="AudioStream" uid="uid://bihnsa6duijhn" path="res://sounds/sfx/sfx-hover.wav" id="8_03vpb"]
+[ext_resource type="AudioStream" uid="uid://bfkiyvc4agb4g" path="res://sounds/text_blip.wav" id="9_03vpb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwyou"]
 bg_color = Color(0, 0, 0, 0)
@@ -64,7 +65,7 @@ bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03vpb"]
 bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
 
-[node name="Dialogue" type="Control" node_paths=PackedStringArray("sfx_click", "sfx_hover", "video_panel", "audio_panel", "back_button")]
+[node name="Dialogue" type="Control" node_paths=PackedStringArray("sfx_click", "sfx_hover", "sfx_text_blip", "video_panel", "audio_panel", "back_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,6 +75,7 @@ grow_vertical = 2
 script = ExtResource("1_3n4vj")
 sfx_click = NodePath("sfx_click")
 sfx_hover = NodePath("sfx_hover")
+sfx_text_blip = NodePath("TextBlip")
 video_panel = NodePath("Video")
 audio_panel = NodePath("Audio")
 back_button = NodePath("Back")
@@ -458,6 +460,12 @@ bus = &"Music"
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 process_mode = 1
+bus = &"SFX"
+
+[node name="TextBlip" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("9_03vpb")
+max_polyphony = 8
 bus = &"SFX"
 
 [connection signal="pressed" from="HBoxContainer/save" to="." method="_on_save_pressed"]
