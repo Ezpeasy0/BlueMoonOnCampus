@@ -15,12 +15,6 @@ var _pending_slot: int = -1
 var _pending_delete_slot: int = -1
 
 func _ready() -> void:
-	var p := get_tree().current_scene.scene_file_path
-	if p.ends_with("save_slot_load.tscn"):
-		mode = Mode.LOAD
-	elif p.ends_with("save_slot_save.tscn"):
-		mode = Mode.NEW_GAME
-
 	if not overwrite_dialog.confirmed.is_connected(_on_overwrite_confirmed):
 		overwrite_dialog.confirmed.connect(_on_overwrite_confirmed)
 	if not load_dialog.confirmed.is_connected(_on_load_confirmed):
@@ -40,6 +34,7 @@ func slot_selected(slot_id: int) -> void:
 		Mode.NEW_GAME:
 			overwrite_dialog.dialog_text = "Overwrite slot %d?" % (slot_id + 1)
 			overwrite_dialog.popup_centered()
+
 		Mode.LOAD:
 			if GameSave.slot_exists(slot_id):
 				load_dialog.dialog_text = "Load slot %d?" % (slot_id + 1)
@@ -86,5 +81,5 @@ func refresh_slots_ui() -> void:
 			child.refresh()
 
 func _on_back_pressed() -> void:
-	get_tree().paused = false 
+	get_tree().paused = false
 	queue_free()
