@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://g5q7tm64coy7"]
+[gd_scene load_steps=21 format=3 uid="uid://g5q7tm64coy7"]
 
 [ext_resource type="Script" uid="uid://raqig1qkw5ll" path="res://scripts/dialogue.gd" id="1_3n4vj"]
 [ext_resource type="FontFile" uid="uid://d2g1dcyt4rtyv" path="res://fonts/LayijiMahaniyomV1_61.ttf" id="1_jwyou"]
+[ext_resource type="PackedScene" uid="uid://3gx32k8n8q8l" path="res://scenes/save_slot_save.tscn" id="2_6xhvj"]
 [ext_resource type="PackedScene" uid="uid://bfywggkiehmc2" path="res://scenes/options_menu.tscn" id="2_fyky8"]
 [ext_resource type="FontFile" uid="uid://d2mc3d6mxoooo" path="res://fonts/SpecialElite-Regular.ttf" id="3_bfpow"]
+[ext_resource type="PackedScene" uid="uid://ca2jdtr1f5s7m" path="res://scenes/save_slot_load.tscn" id="3_sv5jy"]
 [ext_resource type="Script" uid="uid://0bhvnnymdwhl" path="res://scripts/video.gd" id="5_vogiq"]
 [ext_resource type="Script" uid="uid://dtakctuc41kv7" path="res://scripts/audio.gd" id="6_x1cjp"]
 [ext_resource type="AudioStream" uid="uid://bwip8prevcfwo" path="res://sounds/sfx/sfx-click.mp3" id="7_tp716"]
@@ -79,6 +81,8 @@ sfx_text_blip = NodePath("TextBlip")
 video_panel = NodePath("Video")
 audio_panel = NodePath("Audio")
 back_button = NodePath("Back")
+save_scene = ExtResource("2_6xhvj")
+load_scene = ExtResource("3_sv5jy")
 
 [node name="BG" type="TextureRect" parent="."]
 unique_name_in_owner = true

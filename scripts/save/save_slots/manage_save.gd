@@ -1,9 +1,11 @@
+# res://scripts/save/save_slots/manage_save.gd
 extends Control
 
 enum Mode { NEW_GAME, LOAD }
 @export var mode: Mode = Mode.NEW_GAME
 
-@export var gameplay_scene: PackedScene = preload("res://scenes/dialogue.tscn")
+# IMPORTANT: do NOT preload dialogue.tscn here (it can cause cyclic load).
+@export var gameplay_scene_path: String = "res://scenes/dialogue.tscn"
 
 @onready var overwrite_dialog: ConfirmationDialog = $OverwriteConfirmDialog
 @onready var load_dialog: ConfirmationDialog = $LoadConfirmDialog
@@ -15,6 +17,13 @@ var _pending_slot: int = -1
 var _pending_delete_slot: int = -1
 
 func _ready() -> void:
+	# Detect by *this instantiated scene's* path (works even when added as a child)
+	var my_path: String = get_scene_file_path()
+	if my_path.ends_with("save_slot_load.tscn"):
+		mode = Mode.LOAD
+	elif my_path.ends_with("save_slot_save.tscn"):
+		mode = Mode.NEW_GAME
+
 	if not overwrite_dialog.confirmed.is_connected(_on_overwrite_confirmed):
 		overwrite_dialog.confirmed.connect(_on_overwrite_confirmed)
 	if not load_dialog.confirmed.is_connected(_on_load_confirmed):
@@ -32,6 +41,7 @@ func slot_selected(slot_id: int) -> void:
 
 	match mode:
 		Mode.NEW_GAME:
+			# Always ask overwrite (even empty slot) – your requirement
 			overwrite_dialog.dialog_text = "Overwrite slot %d?" % (slot_id + 1)
 			overwrite_dialog.popup_centered()
 
@@ -57,6 +67,7 @@ func _on_overwrite_confirmed() -> void:
 func _on_load_confirmed() -> void:
 	if _pending_slot < 0:
 		return
+
 	if GameSave.load_game(_pending_slot):
 		_go_to_gameplay()
 	else:
@@ -72,10 +83,10 @@ func _on_delete_confirmed() -> void:
 
 func _go_to_gameplay() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_packed(gameplay_scene)
+	get_tree().change_scene_to_file(gameplay_scene_path)
 
 func refresh_slots_ui() -> void:
-	var grid := $ScrollContainer/GridContainer
+	var grid: GridContainer = $ScrollContainer/GridContainer
 	for child in grid.get_children():
 		if child.has_method("refresh"):
 			child.refresh()
