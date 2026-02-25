@@ -1,10 +1,9 @@
 # res://scripts/save/save_slots/manage_save.gd
 extends Control
 
-enum Mode { NEW_GAME, LOAD }
+enum Mode { NEW_GAME, LOAD, SAVE }
 @export var mode: Mode = Mode.NEW_GAME
 
-# IMPORTANT: do NOT preload dialogue.tscn here (it can cause cyclic load).
 @export var gameplay_scene_path: String = "res://scenes/dialogue.tscn"
 
 @onready var overwrite_dialog: ConfirmationDialog = $OverwriteConfirmDialog
@@ -17,12 +16,16 @@ var _pending_slot: int = -1
 var _pending_delete_slot: int = -1
 
 func _ready() -> void:
-	# Detect by *this instantiated scene's* path (works even when added as a child)
+	# Detect from THIS SCENE PATH (important when this menu is instantiated under dialogue.tscn)
 	var my_path: String = get_scene_file_path()
 	if my_path.ends_with("save_slot_load.tscn"):
 		mode = Mode.LOAD
 	elif my_path.ends_with("save_slot_save.tscn"):
-		mode = Mode.NEW_GAME
+		# This scene is used for New Game AND in-game Save.
+		# Default is NEW_GAME unless someone sets mode to SAVE explicitly.
+		# (We will set SAVE from dialogue.gd)
+		if mode != Mode.SAVE:
+			mode = Mode.NEW_GAME
 
 	if not overwrite_dialog.confirmed.is_connected(_on_overwrite_confirmed):
 		overwrite_dialog.confirmed.connect(_on_overwrite_confirmed)
@@ -41,8 +44,11 @@ func slot_selected(slot_id: int) -> void:
 
 	match mode:
 		Mode.NEW_GAME:
-			# Always ask overwrite (even empty slot) – your requirement
 			overwrite_dialog.dialog_text = "Overwrite slot %d?" % (slot_id + 1)
+			overwrite_dialog.popup_centered()
+
+		Mode.SAVE:
+			overwrite_dialog.dialog_text = "Save to slot %d?" % (slot_id + 1)
 			overwrite_dialog.popup_centered()
 
 		Mode.LOAD:
@@ -61,8 +67,20 @@ func request_delete(slot_id: int) -> void:
 func _on_overwrite_confirmed() -> void:
 	if _pending_slot < 0:
 		return
-	GameSave.new_game(_pending_slot)
-	_go_to_gameplay()
+
+	match mode:
+		Mode.NEW_GAME:
+			GameSave.new_game(_pending_slot)
+			_go_to_gameplay()
+
+		Mode.SAVE:
+			# Save current progress into chosen slot (NO restart)
+			GameSave.save_game(_pending_slot)
+			refresh_slots_ui()
+			_close_menu()
+
+		_:
+			pass
 
 func _on_load_confirmed() -> void:
 	if _pending_slot < 0:
@@ -91,6 +109,9 @@ func refresh_slots_ui() -> void:
 		if child.has_method("refresh"):
 			child.refresh()
 
-func _on_back_pressed() -> void:
+func _close_menu() -> void:
 	get_tree().paused = false
 	queue_free()
+
+func _on_back_pressed() -> void:
+	_close_menu()

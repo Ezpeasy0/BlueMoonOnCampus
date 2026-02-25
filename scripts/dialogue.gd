@@ -24,7 +24,7 @@ const SFX_PATH_DIR: String = "res://sounds/sfx/"
 @onready var sfx_dialogue: AudioStreamPlayer = $SFX
 
 @export var sfx_text_blip: AudioStreamPlayer
-@export var blip_volume_db: float = -10.0 
+@export var blip_volume_db: float = -18.0
 
 @export_group("Options Sub-Panels")
 @export var video_panel: Panel
@@ -98,7 +98,7 @@ func _ready() -> void:
 		if line_any is Dictionary:
 			var line_dict: Dictionary = line_any
 			if line_dict.has("id"):
-				id_to_index[line_dict["id"]] = i
+				id_to_index[str(line_dict["id"])] = i
 
 	_restore_from_gamesave()
 	await _apply_restored_visuals()
@@ -256,7 +256,7 @@ func _show_current() -> void:
 		_show_current()
 		return
 
-	var line: Dictionary = any_line
+	var line: Dictionary = any_line as Dictionary
 
 	if line.has("bgm"):
 		_play_bgm(str(line["bgm"]))
@@ -325,10 +325,11 @@ func _type_text(full_text: String) -> void:
 		dialogue_label.text += full_text[i]
 		char_count += 1
 
+		# Blip should follow typing and stop when typing stops.
+		# Also avoid "machine gun" pop by restarting only when needed.
 		if sfx_text_blip and blip_every_chars > 0 and (char_count % blip_every_chars == 0):
-			if sfx_text_blip.playing:
-				sfx_text_blip.stop()
-			sfx_text_blip.play()
+			if not sfx_text_blip.playing:
+				sfx_text_blip.play()
 
 		await get_tree().create_timer(type_speed_seconds).timeout
 
@@ -384,7 +385,7 @@ func _show_choices(options_list: Array) -> void:
 	for opt_any in options_list:
 		if not (opt_any is Dictionary):
 			continue
-		var opt: Dictionary = opt_any
+		var opt: Dictionary = opt_any as Dictionary
 
 		var b: Button = Button.new()
 		b.text = str(opt.get("label", ""))
@@ -396,7 +397,8 @@ func _on_choice(opt: Dictionary) -> void:
 	choices_box.visible = false
 
 	var effects_any: Variant = opt.get("effects", {})
-	var effects: Dictionary = effects_any if effects_any is Dictionary else {}
+	var effects: Dictionary = (effects_any as Dictionary) if (effects_any is Dictionary) else {}
+
 	var s: Dictionary = _get_stats()
 	for k in effects.keys():
 		if s.has(k):
@@ -422,29 +424,35 @@ func _on_choice(opt: Dictionary) -> void:
 func _get_full_path(root: String, filename: String) -> String:
 	if filename.begins_with("res://"):
 		return filename
-	var dir := DirAccess.open(root)
+	var dir: DirAccess = DirAccess.open(root)
 	if dir:
 		return _search_recursive(root, filename)
 	return ""
 
 func _search_recursive(path: String, target: String) -> String:
-	var dir := DirAccess.open(path)
+	var dir: DirAccess = DirAccess.open(path)
 	if not dir:
 		return ""
 	dir.list_dir_begin()
-	var file_name := dir.get_next()
+	var file_name: String = dir.get_next()
 	while file_name != "":
 		if dir.current_is_dir():
-			var found := _search_recursive(path + file_name + "/", target)
+			var found: String = _search_recursive(path + file_name + "/", target)
 			if found != "":
+				dir.list_dir_end()
 				return found
 		elif file_name == target:
+			dir.list_dir_end()
 			return path + file_name
 		file_name = dir.get_next()
+	dir.list_dir_end()
 	return ""
 
 func _set_background(filename: String) -> void:
 	var full_path: String = _get_full_path(BG_DIR, filename)
+	if full_path == "":
+		return
+
 	var tex: Texture2D = load(full_path) as Texture2D
 	if tex == null:
 		return
@@ -457,6 +465,10 @@ func _set_background(filename: String) -> void:
 
 func _set_character_sprite(filename: String) -> void:
 	var full_path: String = _get_full_path(SPRITE_DIR, filename)
+	if full_path == "":
+		character.visible = false
+		return
+
 	var tex: Texture2D = load(full_path) as Texture2D
 	if tex == null:
 		character.visible = false
@@ -501,10 +513,13 @@ func _on_exit_canceled() -> void:
 	get_tree().paused = false
 
 func _on_save_pressed() -> void:
-	_save_now()
+	# Sync state first, then open Save Slots in SAVE mode (not NEW_GAME)
+	_sync_state_to_gamesave()
+
 	get_tree().paused = true
 	if save_scene:
 		var save_menu: Node = save_scene.instantiate()
+		save_menu.set("mode", 2) # 2 = SAVE (matches manage_save.gd enum)
 		add_child(save_menu)
 		move_child(save_menu, -1)
 
