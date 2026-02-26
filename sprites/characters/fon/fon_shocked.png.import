@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bll684bm007mp"
-path="res://.godot/imported/scene_2_guard_house.png-273cf264bf26b8fc267fc8d0ff961eb5.ctex"
+uid="uid://cakm558if5b2n"
+path="res://.godot/imported/fon_shocked.png-c5f761d627e8c53a3cf046233df20362.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_2_guard_house.png"
-dest_files=["res://.godot/imported/scene_2_guard_house.png-273cf264bf26b8fc267fc8d0ff961eb5.ctex"]
+source_file="res://sprites/characters/fon/fon_shocked.png"
+dest_files=["res://.godot/imported/fon_shocked.png-c5f761d627e8c53a3cf046233df20362.ctex"]
 
 [params]
 

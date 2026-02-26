@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bihnsa6duijhn"
-path="res://.godot/imported/sfx-hover.wav-14ac8cb532236990a0cdf29c5f2c3fc9.sample"
+uid="uid://bfkiyvc4agb4g"
+path="res://.godot/imported/text_blip.wav-d6e85a9bc7dc980bdec59bd617e4263b.sample"
 
 [deps]
 
-source_file="res://sounds/sfx-hover.wav"
-dest_files=["res://.godot/imported/sfx-hover.wav-14ac8cb532236990a0cdf29c5f2c3fc9.sample"]
+source_file="res://sounds/text_blip.wav"
+dest_files=["res://.godot/imported/text_blip.wav-d6e85a9bc7dc980bdec59bd617e4263b.sample"]
 
 [params]
 

@@ -69,3 +69,17 @@ func load_slot_preview(slot: int) -> SaveResource:
 	if FileAccess.file_exists(path):
 		return load(path) as SaveResource
 	return null
+
+func get_stats() -> Dictionary:
+	if state.has("stats") and state["stats"] is Dictionary:
+		return state["stats"]
+	return {"INT":0, "CHA":0}
+
+func add_stat(stat_name: String, amount: int) -> void:
+	if not state.has("stats") or not (state["stats"] is Dictionary):
+		state["stats"] = {"INT":0, "CHA":0}
+	var s: Dictionary = state["stats"]
+	if not s.has(stat_name):
+		s[stat_name] = 0
+	s[stat_name] = int(s[stat_name]) + amount
+	state["stats"] = s

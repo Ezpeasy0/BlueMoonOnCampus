@@ -14,20 +14,58 @@ func _ready() -> void:
 	refresh()
 
 func refresh() -> void:
+	# Prefer preview if it exists
 	var data: SaveResource = GameSave.load_slot_preview(slot_id)
-	update_ui(data)
-
-func update_ui(data: SaveResource) -> void:
 	if data:
-		label_slot.text = data.slot_name
-		label_date.text = data.date
-		label_time.text = data.time
-		texture_rect.texture = data.screenshot if data.screenshot else DEFAULT_IMAGE
+		update_ui_preview(data)
+		return
+
+	# If no preview, still show JSON info if the slot exists
+	if GameSave.slot_exists(slot_id):
+		var info := _read_slot_json_info(slot_id)
+		update_ui_json(info)
 	else:
-		label_slot.text = "Empty Slot " + str(slot_id + 1)
+		update_ui_empty()
+
+func update_ui_preview(data: SaveResource) -> void:
+	label_slot.text = data.slot_name
+	label_date.text = data.date
+	label_time.text = data.time
+	texture_rect.texture = data.screenshot if data.screenshot else DEFAULT_IMAGE
+
+func update_ui_json(info: Dictionary) -> void:
+	label_slot.text = "Slot " + str(slot_id + 1)
+
+	var ts := str(info.get("timestamp", ""))
+	if ts != "":
+		# leave it as-is; Godot timestamp string format varies by Time.get_datetime_string_from_system()
+		label_date.text = ts
+		label_time.text = ""
+	else:
 		label_date.text = "--/--/--"
 		label_time.text = "--:--"
-		texture_rect.texture = DEFAULT_IMAGE
+
+	texture_rect.texture = DEFAULT_IMAGE
+
+func update_ui_empty() -> void:
+	label_slot.text = "Empty Slot " + str(slot_id + 1)
+	label_date.text = "--/--/--"
+	label_time.text = "--:--"
+	texture_rect.texture = DEFAULT_IMAGE
+
+func _read_slot_json_info(id: int) -> Dictionary:
+	var path := GameSave.get_slot_path(id)
+	if not FileAccess.file_exists(path):
+		return {}
+
+	var f := FileAccess.open(path, FileAccess.READ)
+	if f == null:
+		return {}
+
+	var parsed: Variant = JSON.parse_string(f.get_as_text())
+	if parsed is Dictionary:
+		return parsed as Dictionary
+	return {}
 
 func _on_pressed() -> void:
 	get_owner().slot_selected(slot_id)

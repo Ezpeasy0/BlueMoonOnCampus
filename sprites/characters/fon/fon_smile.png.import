@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1ywg7h1crlak"
-path="res://.godot/imported/scene_1_inspector's office.png-0ec3fe15bce60b82d21b9ebec87cc715.ctex"
+uid="uid://rfqdrqc3ku8x"
+path="res://.godot/imported/fon_smile.png-7d2ec757965f8a413118f43c0507ac46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_1_inspector's office.png"
-dest_files=["res://.godot/imported/scene_1_inspector's office.png-0ec3fe15bce60b82d21b9ebec87cc715.ctex"]
+source_file="res://sprites/characters/fon/fon_smile.png"
+dest_files=["res://.godot/imported/fon_smile.png-7d2ec757965f8a413118f43c0507ac46.ctex"]
 
 [params]
 
