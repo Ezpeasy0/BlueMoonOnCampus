@@ -276,7 +276,6 @@ func _on_back_pressed() -> void:
 func _advance() -> void:
 	index += 1
 	_show_current()
-	_save_now()
 
 
 func _show_current() -> void:

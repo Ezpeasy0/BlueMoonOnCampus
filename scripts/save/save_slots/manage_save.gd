@@ -71,10 +71,11 @@ func _on_overwrite_confirmed() -> void:
 	match mode:
 		Mode.NEW_GAME:
 			GameSave.new_game(_pending_slot)
+			GameSave.current_slot = _pending_slot
 			_go_to_gameplay()
 
 		Mode.SAVE:
-			# Save current progress into chosen slot (NO restart)
+			GameSave.current_slot = _pending_slot
 			GameSave.save_game(_pending_slot)
 			refresh_slots_ui()
 			_close_menu()
