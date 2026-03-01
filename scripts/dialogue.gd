@@ -51,6 +51,7 @@ var _current_bgm: String = ""
 @export var type_speed_seconds: float = 0.02
 @export var blip_every_chars: int = 2
 
+
 func _ready() -> void:
 	get_tree().paused = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -59,10 +60,7 @@ func _ready() -> void:
 	character.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	if options_menu: options_menu.visible = false
-	if video_panel: video_panel.visible = false
-	if audio_panel: audio_panel.visible = false
-	if back_button: back_button.visible = false
+	_hide_all_in_game_menus()
 
 	_auto_setup_all_buttons(self)
 
@@ -105,6 +103,7 @@ func _ready() -> void:
 	choices_box.visible = false
 	_show_current()
 
+
 func _apply_restored_visuals() -> void:
 	if _current_bg != "":
 		await _set_background(_current_bg)
@@ -118,11 +117,13 @@ func _apply_restored_visuals() -> void:
 	if _current_bgm != "":
 		_play_bgm(_current_bgm)
 
+
 func _is_fullscreen_bg(bg_value: String) -> bool:
 	if bg_value == "":
 		return false
 	var file := bg_value.get_file()
 	return FULLSCREEN_BGS.has(file)
+
 
 func _restore_from_gamesave() -> void:
 	if GameSave.current_slot < 0:
@@ -143,6 +144,7 @@ func _restore_from_gamesave() -> void:
 	if GameSave.state.has("bgm"):
 		_current_bgm = str(GameSave.state["bgm"])
 
+
 func _sync_state_to_gamesave() -> void:
 	if not (GameSave.state is Dictionary):
 		GameSave.state = {}
@@ -155,10 +157,12 @@ func _sync_state_to_gamesave() -> void:
 	GameSave.state["sprite"] = _current_sprite
 	GameSave.state["bgm"] = _current_bgm
 
+
 func _save_now() -> void:
 	if GameSave.current_slot >= 0:
 		_sync_state_to_gamesave()
 		GameSave.save_game(GameSave.current_slot)
+
 
 func _auto_setup_all_buttons(node: Node) -> void:
 	if node is Button:
@@ -166,38 +170,57 @@ func _auto_setup_all_buttons(node: Node) -> void:
 	for child in node.get_children():
 		_auto_setup_all_buttons(child)
 
+
 func _setup_button_sounds(btn: Button) -> void:
 	if not btn.mouse_entered.is_connected(_on_button_hover):
 		btn.mouse_entered.connect(_on_button_hover)
 	if not btn.pressed.is_connected(_on_button_click):
 		btn.pressed.connect(_on_button_click)
 
+
 func _on_button_hover() -> void:
 	if sfx_hover:
 		sfx_hover.play()
+
 
 func _on_button_click() -> void:
 	if sfx_click:
 		sfx_click.play()
 
+
 func _input(event: InputEvent) -> void:
+	if event is InputEventKey and (event as InputEventKey).pressed and (event as InputEventKey).keycode == KEY_ESCAPE:
+		print("[PANIC UNLOCK]")
+		if is_inside_tree():
+			get_tree().paused = false
+		_busy = false
+		_hide_all_in_game_menus()
+		return
+
+	if is_inside_tree() and get_tree().paused:
+		return
+
 	if _busy:
 		return
 
 	var is_any_menu_open: bool = (options_menu and options_menu.visible) \
 		or (video_panel and video_panel.visible) \
 		or (audio_panel and audio_panel.visible) \
-		or get_tree().paused
-
+		or (exit_confirm and exit_confirm.visible)
 	if is_any_menu_open:
 		return
 
-	var left_click: bool = (event is InputEventMouseButton \
-		and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT \
-		and (event as InputEventMouseButton).pressed)
-
-	if not left_click:
+	if not (event is InputEventMouseButton):
 		return
+	var mb := event as InputEventMouseButton
+	if mb.button_index != MOUSE_BUTTON_LEFT or not mb.pressed:
+		return
+
+	var hovered := get_viewport().gui_get_hovered_control()
+	if hovered != null:
+
+		if hovered is Button or hovered is OptionButton or hovered is CheckBox or hovered is Slider:
+			return
 
 	if _typing:
 		_skip_typing = true
@@ -209,13 +232,17 @@ func _input(event: InputEvent) -> void:
 	_advance()
 
 func _on_options_pressed() -> void:
+	_block_dialogue_input_for_menu_open()
 	get_tree().paused = true
+
 	if options_menu:
 		options_menu.visible = true
-		if back_button:
-			back_button.visible = true
-		if options_menu.has_method("init_settings"):
-			options_menu.init_settings()
+	if back_button:
+		back_button.visible = true
+
+	if options_menu and options_menu.has_method("init_settings"):
+		options_menu.init_settings()
+
 
 func _on_video_setting() -> void:
 	if video_panel:
@@ -223,13 +250,16 @@ func _on_video_setting() -> void:
 		if options_menu: options_menu.visible = false
 		if back_button: back_button.visible = true
 
+
 func _on_audio_setting() -> void:
 	if audio_panel:
 		audio_panel.visible = true
 		if options_menu: options_menu.visible = false
 		if back_button: back_button.visible = true
 
+
 func _on_back_pressed() -> void:
+	# If we are inside sub-panels, go back to Options menu (still paused)
 	if (video_panel and video_panel.visible) or (audio_panel and audio_panel.visible):
 		if video_panel: video_panel.visible = false
 		if audio_panel: audio_panel.visible = false
@@ -237,15 +267,17 @@ func _on_back_pressed() -> void:
 		if back_button: back_button.visible = true
 		return
 
-	if options_menu: options_menu.visible = false
-	if back_button: back_button.visible = false
-
+	# Close Options fully
+	_hide_all_in_game_menus()
 	get_tree().paused = false
+	_busy = false
+
 
 func _advance() -> void:
 	index += 1
 	_show_current()
 	_save_now()
+
 
 func _show_current() -> void:
 	if index >= story_lines.size():
@@ -311,6 +343,7 @@ func _show_current() -> void:
 			_show_current()
 			return
 
+
 func _type_text(full_text: String) -> void:
 	_typing = true
 	_skip_typing = false
@@ -345,6 +378,7 @@ func _type_text(full_text: String) -> void:
 
 	_typing = false
 
+
 func _play_bgm(filename: String) -> void:
 	if filename == "" or filename == "null":
 		if bgm_player:
@@ -364,6 +398,7 @@ func _play_bgm(filename: String) -> void:
 		bgm_player.play()
 		_current_bgm = filename
 
+
 func _play_sfx(filename: String) -> void:
 	if filename == "" or filename == "null":
 		if sfx_dialogue:
@@ -378,6 +413,7 @@ func _play_sfx(filename: String) -> void:
 	if stream and sfx_dialogue:
 		sfx_dialogue.stream = stream
 		sfx_dialogue.play()
+
 
 func _show_choices(options_list: Array) -> void:
 	choices_box.visible = true
@@ -395,6 +431,7 @@ func _show_choices(options_list: Array) -> void:
 		b.pressed.connect(func() -> void: _on_choice(opt))
 		choices_box.add_child(b)
 
+
 func _on_choice(opt: Dictionary) -> void:
 	choices_box.visible = false
 
@@ -408,7 +445,7 @@ func _on_choice(opt: Dictionary) -> void:
 
 	for k in effects.keys():
 		stats[k] = int(stats.get(k, 0)) + int(effects[k])
-		
+
 	print("[STATS] INT =", stats.get("INT", 0), " | CHA =", stats.get("CHA", 0))
 
 	var say_text: String = str(opt.get("say", "")).strip_edges()
@@ -427,10 +464,10 @@ func _on_choice(opt: Dictionary) -> void:
 	_save_now()
 	_show_current()
 
+
 func _resolve_path(root: String, value: String) -> String:
 	if value.strip_edges() == "":
 		return ""
-
 	if value.begins_with("res://"):
 		return value
 
@@ -443,6 +480,7 @@ func _resolve_path(root: String, value: String) -> String:
 		return direct
 
 	return ""
+
 
 func _search_recursive(path: String, target_file: String) -> String:
 	var dir := DirAccess.open(path)
@@ -468,11 +506,11 @@ func _search_recursive(path: String, target_file: String) -> String:
 	dir.list_dir_end()
 	return ""
 
+
 func _set_background(value: String) -> void:
 	var full_path := _resolve_path(BG_DIR, value)
-
 	if full_path == "":
-		print("[BG] Not found:", value, "  (searched under ", BG_DIR, ")")
+		print("[BG] Not found:", value, " (searched under ", BG_DIR, ")")
 		return
 
 	var tex := load(full_path) as Texture2D
@@ -485,6 +523,7 @@ func _set_background(value: String) -> void:
 	bg.texture = tex
 	await _fade_rect_alpha(bg_fade, 1.0, 0.0, 0.25)
 	_busy = false
+
 
 func _set_character_sprite(value: String) -> void:
 	var full_path := _resolve_path(SPRITE_DIR, value)
@@ -504,6 +543,7 @@ func _set_character_sprite(value: String) -> void:
 	await _fade_control_alpha(character, 0.0, 1.0, 0.15)
 	_busy = false
 
+
 func _fade_rect_alpha(rect: ColorRect, from_a: float, to_a: float, duration: float) -> void:
 	rect.visible = true
 	var t: float = 0.0
@@ -515,6 +555,7 @@ func _fade_rect_alpha(rect: ColorRect, from_a: float, to_a: float, duration: flo
 	if to_a <= 0.001:
 		rect.visible = false
 
+
 func _fade_control_alpha(ctrl: CanvasItem, from_a: float, to_a: float, duration: float) -> void:
 	var t: float = 0.0
 	while t < duration:
@@ -523,31 +564,86 @@ func _fade_control_alpha(ctrl: CanvasItem, from_a: float, to_a: float, duration:
 		await get_tree().process_frame
 	ctrl.modulate.a = to_a
 
+
 func _on_quit_pressed() -> void:
 	if exit_confirm:
+		_block_dialogue_input_for_menu_open()
 		get_tree().paused = true
 		exit_confirm.popup_centered()
 
+
 func _on_exit_confirmed() -> void:
 	get_tree().paused = false
+	_busy = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
 
 func _on_exit_canceled() -> void:
 	get_tree().paused = false
+	_busy = false
+	_hide_all_in_game_menus()
+
 
 func _on_save_pressed() -> void:
+	_block_dialogue_input_for_menu_open()
+	_hide_all_in_game_menus()
+
 	_sync_state_to_gamesave()
-	get_tree().paused = true
+	_save_now()
+
+	var tree := get_tree()
+	tree.paused = true
+
 	if save_scene:
 		var save_menu: Node = save_scene.instantiate()
-		if save_menu.has_method("set"):
-			save_menu.set("mode", 2)
+		save_menu.set("mode", 2)
+
+		save_menu.tree_exited.connect(func():
+
+			if is_instance_valid(tree):
+				tree.paused = false
+			_busy = false
+		)
+
 		add_child(save_menu)
 		move_child(save_menu, -1)
+	else:
+		tree.paused = false
+		_busy = false
+
 
 func _on_load_pressed() -> void:
-	get_tree().paused = true
+	_block_dialogue_input_for_menu_open()
+	_hide_all_in_game_menus()
+
+	var tree := get_tree()
+	tree.paused = true
+
 	if load_scene:
 		var load_menu: Node = load_scene.instantiate()
+
+		load_menu.tree_exited.connect(func():
+			if is_instance_valid(tree):
+				tree.paused = false
+			_busy = false
+		)
+
 		add_child(load_menu)
 		move_child(load_menu, -1)
+	else:
+		tree.paused = false
+		_busy = false
+
+
+func _hide_all_in_game_menus() -> void:
+	if options_menu: options_menu.visible = false
+	if video_panel: video_panel.visible = false
+	if audio_panel: audio_panel.visible = false
+	if back_button: back_button.visible = false
+	if exit_confirm: exit_confirm.visible = false
+
+
+func _block_dialogue_input_for_menu_open() -> void:
+	_busy = true
+	if _typing:
+		_skip_typing = true
