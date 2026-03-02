@@ -72,10 +72,10 @@ var lines: Array = [
 	]},
 
 	{"id":"after_choice_ab", "name":"ฝน", "text":"งั้นไปกันเถอะค่ะ", "skip_to":"after_choice_end"},
-	{"id":"after_choice_c", "name":"ฝน", "text":"เดี๋ยวหนูค่อยบอกเขาทีหลังก็ได้ ไปกันเถอะค่ะ", "skip_to":"after_choice_end"},
+	{"id":"after_choice_c", "name":"ฝน", "text":"เดี๋ยวหนูค่อยบอกเขาทีหลังก็ได้ ไปกันเถอะค่ะ", "skip_to":"after_choice_end", "sfx":"null"},
 
 	# Scene 3
-	{"id":"after_choice_end", "bg":"res://sprites/scene/scene_3.png", "sprite":"", "name":"เมฆ", "text":"(เข้ามาทางประตูเล็กแบบนี้ได้เลยเหรอ..)", "sfx":"light_rain.mp3", "bgm":"mysterious_piano.mp3"},
+	{"id":"after_choice_end", "bg":"res://sprites/scene/scene_3_lonely_path.png", "sprite":"", "name":"เมฆ", "text":"(เข้ามาทางประตูเล็กแบบนี้ได้เลยเหรอ..)", "sfx":"light_rain2.mp3", "bgm":"atmospheric_piano.mp3"},
 	{"sprite":"fon_smile.png", "name":"ฝน", "text":"เหมือนว่าฝนจะซาลงแล้วนะคะ"},
 	{"name":"เมฆ", "text":"แต่ยังมีฝนแถวนี้ ไม่ซาเลยนะ ดีดตลอด"},
 	{"sprite":"fon_curious.png", "name":"ฝน", "text":"??"},
@@ -91,7 +91,7 @@ var lines: Array = [
 	{"name":"ฝน", "text":".."},
 	{"name":"ฝน", "text":"ค่ะ.."},
 
-	{"name":"", "text":"", "bgm":"mysterious_piano.mp3"},
+	{"name":"", "text":"","sfx":"light_rain2.mp3", "bgm":"atmospheric_piano.mp3"},
 
 	{"sprite":"fon_curious.png", "name":"ฝน", "text":"พี่เมฆคิดว่า ทำไมพีทถึงหายตัวไปเหรอคะ"},
 	{"name":"เมฆ", "text":"พี่ก็ยังสันนิษฐานอะไรไม่ได้หรอก แต่ถ้ามีใครพยายามปกปิดข้อมูลบางส่วน แปลว่าอาจจะมีเรื่องที่ไม่อยากให้ใครรู้ก็ได้นะ"},
@@ -101,7 +101,7 @@ var lines: Array = [
 	{"name":"ฝน", "text":"ถึงแล้วค่ะ ตึกสำนักทะเบียน"},
 
 	# Scene 4
-	{"bg":"res://sprites/scene/scene_4.png", "sprite":"fon_curious.png", "name":"ฝน", "text":"ประตูหน้าตึกน่าจะล็อคอยู่"},
+	{"bg":"res://sprites/scene/scene_4_registration_office.png", "sprite":"fon_curious.png", "name":"ฝน", "text":"ประตูหน้าตึกน่าจะล็อคอยู่", "sfx":"light_rain2.mp3", "bgm":"mysterious_piano.mp3"},
 	{"name":"ฝน", "text":"อืม.. ปกติจะมีพี่ยาม ประจำอยู่ที่ป้อมนี้ แต่วันนี้เหมือนพี่เขาจะไม่อยู่ค่ะ"},
 	{"name":"เมฆ", "thought":true, "text":"ยามที่ประจำอยู่ตรงนี้ไม่อยู่.. เขาไปทำธุระอะไรรึเปล่านะ"},
 	{"name":"เมฆ", "text":"เราจะมาดูเรื่องภาพจากกล้องวงจรปิดของตึกนี้เลยใช่มั้ย แล้วจะเข้าไปยังไงล่ะ ถ้ายามไม่อยู่"},
