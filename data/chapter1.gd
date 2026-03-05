@@ -67,8 +67,10 @@ var lines: Array = [
 		{"label":"B) ได้สิ อย่าซนมากนะ", "say":"ก็ได้ แต่อย่าเที่ยวซนนะ เผื่อเจอเบาะแสที่เป็นหลักฐานเพิ่มเติมได้", "effects":{"INT":1}, "next":"after_choice_ab"},
 		{"label":"C) ขออนุญาตสารวัตรก่อน", "say":"ถ้าน้องฝนยังไม่ได้บอกพ่อ เดี๋ยวพี่ต้องโทรถามก่อนนะ", "effects":{}, "next":"after_choice_c"}
 	]},
-
+	
+	# A/B
 	{"id":"after_choice_ab", "name":"ฝน", "text":"งั้นไปกันเถอะค่ะ", "skip_to":"after_choice_end"},
+	# C
 	{"id":"after_choice_c", "name":"ฝน", "text":"เดี๋ยวหนูค่อยบอกเขาทีหลังก็ได้ ไปกันเถอะค่ะ", "skip_to":"after_choice_end", "sfx":"null"},
 
 	# Scene 3
@@ -134,23 +136,31 @@ var lines: Array = [
 	{"name":"ฝน", "text":"ห้องนี้มัน.."},
 
 	# Scene 7
+# Scene 7
 	{"bg":"res://sprites/scene/scene_7_front_file_room.png", "sprite":"fon_shocked.png", "name":"ฝน", "text":"ห้องเก็บเอกสารค่ะ", "sfx":"light_rain2.mp3", "bgm":"null"},
 	{"name":"เมฆ", "thought":true, "text":"เสียงเหมือนมีคนอยู่ข้างใน แปลว่า มีคนอื่นนอกจากพวกเราด้วยเหรอ"},
 	{"name":"เมฆ", "thought":true, "text":"ดึกป่านนี้เนี่ยนะ"},
 
 	{"type":"choice", "choices":[
 		{"label":"A) โทรแจ้งสารวัตรธนา", "say":"แบบนี้เข้าข่ายผิดปกติแล้วล่ะ พี่ต้องแจ้งพ่อเราก่อน", "effects":{}, "next":"scene7_call"},
-		{"label":"B) เดี๋ยวพี่เข้าไปดูเอง ฝนรอข้างนอก", "say":"ฝนเปิดประตูให้พี่ แล้วเดี๋ยวพี่เข้าไปดูเอง ฝนรออยู่ข้างนอกนี่นะ", "effects":{"CHA":1}, "next":"scene7_open"},
-		{"label":"C) รีบเปิดเข้าไปดู", "say":"ฝนรีบเปิดประตูเร็ว เราจะไปเข้าดูว่าใครอยู่ในห้องกันแน่", "effects":{"INT":1}, "next":"scene7_open"}
+		{"label":"B) เดี๋ยวพี่เข้าไปดูเอง ฝนรอข้างนอก", "say":"ฝนเปิดประตูให้พี่ แล้วเดี๋ยวพี่เข้าไปดูเอง ฝนรออยู่ข้างนอกนี่นะ", "effects":{"CHA":1}, "next":"scene7_open_bc"},
+		{"label":"C) รีบเปิดเข้าไปดู", "say":"ฝนรีบเปิดประตูเร็ว เราจะไปเข้าดูว่าใครอยู่ในห้องกันแน่", "effects":{"INT":1}, "next":"scene7_open_bc"}
 	]},
 
+	# A
 	{"id":"scene7_call", "sprite":"fon_upset.png", "name":"ฝน", "text":"…", "sfx":"phone_call.mp3", "bgm":"null"},
 	{"name":"เมฆ", "thought":true, "text":"รีบรับสายเร็วเข้า สารวัตรรร"},
 	{"name":"", "text":"", "sfx":"box_fall.mp3"},
 	{"sprite":"fon_shocked.png", "name":"ฝน", "text":"!?"},
-	{"name":"ฝน", "text":"มีคนอยู่จริงๆ ค่ะ หนูจะรีบเปิดประตูก่อน", "skip_to":"scene7_open"},
+	{"name":"ฝน", "text":"มีคนอยู่จริงๆ ค่ะ หนูจะรีบเปิดประตูก่อน", "skip_to":"scene7_open_after_a"},
 
-	{"id":"scene7_open", "sprite":"fon_shocked.png", "name":"ฝน", "text":"ค-ค่ะ"},
+	# B/C
+	{"id":"scene7_open_bc", "sprite":"fon_shocked.png", "name":"ฝน", "text":"ค-ค่ะ"},
+	{"name":"", "text":"", "sfx":"lockpick.mp3"},
+	{"name":"", "text":"", "sfx":"door_open.mp3"},
+	{"name":"", "text":"", "sfx":"box_fall.mp3", "skip_to":"scene8_start"},
+
+	{"id":"scene7_open_after_a", "name":"", "text":""},
 	{"name":"", "text":"", "sfx":"lockpick.mp3"},
 	{"name":"", "text":"", "sfx":"door_open.mp3"},
 	{"name":"", "text":"", "sfx":"box_fall.mp3", "skip_to":"scene8_start"},
