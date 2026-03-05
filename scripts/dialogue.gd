@@ -593,7 +593,6 @@ func _on_save_pressed() -> void:
 	_hide_all_in_game_menus()
 
 	_sync_state_to_gamesave()
-	_save_now()
 
 	var tree := get_tree()
 	tree.paused = true
