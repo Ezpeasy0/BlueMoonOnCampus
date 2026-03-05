@@ -286,7 +286,7 @@ func _show_current() -> void:
 	var any_line: Variant = story_lines[index]
 	if not (any_line is Dictionary):
 		index += 1
-		_show_current()
+		await _show_current()
 		return
 
 	var line: Dictionary = any_line
@@ -339,7 +339,7 @@ func _show_current() -> void:
 		var target_id := str(line["skip_to"])
 		if target_id != "" and id_to_index.has(target_id):
 			index = int(id_to_index[target_id])
-			_show_current()
+			await _show_current()
 			return
 
 
@@ -432,27 +432,32 @@ func _show_choices(options_list: Array) -> void:
 
 
 func _on_choice(opt: Dictionary) -> void:
+	_busy = true
 	choices_box.visible = false
+
+	# --- Apply effects safely (JSON loads numbers as float, so normalize to int) ---
+	if not (stats is Dictionary):
+		stats = {"INT": 0, "CHA": 0}
+
+	for key in ["INT", "CHA"]:
+		stats[key] = int(stats.get(key, 0))
 
 	var effects_any: Variant = opt.get("effects", {})
 	var effects: Dictionary = effects_any if effects_any is Dictionary else {}
 
-	if not (stats is Dictionary):
-		stats = {"INT": 0, "CHA": 0}
-	if not stats.has("INT"): stats["INT"] = 0
-	if not stats.has("CHA"): stats["CHA"] = 0
-
 	for k in effects.keys():
 		stats[k] = int(stats.get(k, 0)) + int(effects[k])
 
-	print("[STATS] INT =", stats.get("INT", 0), " | CHA =", stats.get("CHA", 0))
+	print("[STATS] INT =", int(stats.get("INT", 0)), " | CHA =", int(stats.get("CHA", 0)))
 
+	# --- Show player's spoken line (if any) ---
 	var say_text: String = str(opt.get("say", "")).strip_edges()
 	if say_text != "":
 		name_label.text = "เมฆ"
 		%NameBox.modulate.a = 1.0
 		await _type_text(say_text)
 
+	# --- Jump to target line id and SHOW it immediately ---
 	var target_id: String = str(opt.get("next", ""))
 	if target_id != "" and id_to_index.has(target_id):
 		index = int(id_to_index[target_id])
@@ -460,9 +465,9 @@ func _on_choice(opt: Dictionary) -> void:
 		index += 1
 
 	_sync_state_to_gamesave()
-	_save_now()
-	_show_current()
+	await _show_current()
 
+	_busy = false
 
 func _resolve_path(root: String, value: String) -> String:
 	if value.strip_edges() == "":
