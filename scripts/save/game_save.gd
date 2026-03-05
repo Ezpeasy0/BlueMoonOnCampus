@@ -28,6 +28,7 @@ func new_game(slot: int) -> void:
 	save_game(slot)
 
 func save_game(slot: int) -> void:
+	print("[SAVE] slot=", slot, " path=", get_slot_path(slot))
 	current_slot = slot
 	state["timestamp"] = Time.get_datetime_string_from_system()
 	var path := get_slot_path(slot)
@@ -45,6 +46,7 @@ func load_game(slot: int) -> bool:
 
 	var parsed: Variant = JSON.parse_string(f.get_as_text())
 	if parsed is Dictionary:
+		print("[LOAD] slot=", slot, " path=", path, " line_index=", parsed.get("line_index"))
 		current_slot = slot
 		state = parsed as Dictionary
 		return true
