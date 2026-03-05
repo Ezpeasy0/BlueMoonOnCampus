@@ -217,6 +217,4 @@ var lines: Array = [
 	{"name":"เมฆ", "text":"กลับบ้าน.. ไปพักผ่อนเถอะนะ"},
 	{"name":"ฝน", "text":"…"},
 	{"name":"ฝน", "text":"ค่ะ.."},
-	
-	# End Chapter 1
 ]
