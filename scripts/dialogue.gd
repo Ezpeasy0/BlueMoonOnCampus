@@ -6,6 +6,7 @@ const FULLSCREEN_BGS: Array[String] = ["pete.png"]
 
 const BGM_PATH_DIR: String = "res://sounds/bgm/"
 const SFX_PATH_DIR: String = "res://sounds/sfx/"
+const MasterSFX_PATH_DIR: String = "res://sounds/master_sfx/"
 
 @onready var bg: TextureRect = %BG
 @onready var character: TextureRect = %Character
@@ -21,6 +22,8 @@ const SFX_PATH_DIR: String = "res://sounds/sfx/"
 @export var sfx_hover: AudioStreamPlayer
 @onready var bgm_player: AudioStreamPlayer = $BGM
 @onready var sfx_dialogue: AudioStreamPlayer = $SFX
+@onready var master_sfx: AudioStreamPlayer = $MasterSFX
+
 
 @export var sfx_text_blip: AudioStreamPlayer
 @export var blip_volume_db: float = -10.0
@@ -47,6 +50,7 @@ var _skip_typing: bool = false
 var _current_bg: String = ""
 var _current_sprite: String = ""
 var _current_bgm: String = ""
+var _current_master_sfx: String = ""
 
 @export var type_speed_seconds: float = 0.02
 @export var blip_every_chars: int = 2
@@ -115,8 +119,14 @@ func _apply_restored_visuals() -> void:
 			await _set_character_sprite(_current_sprite)
 
 	if _current_bgm != "":
-		_play_bgm(_current_bgm)
+		var temp_bgm = _current_bgm
+		_current_bgm = "" 
+		_play_bgm(temp_bgm)
 
+	if _current_master_sfx != "":
+		var temp_master = _current_master_sfx
+		_current_master_sfx = "" 
+		_play_master_sfx(temp_master)
 
 func _is_fullscreen_bg(bg_value: String) -> bool:
 	if bg_value == "":
@@ -143,6 +153,8 @@ func _restore_from_gamesave() -> void:
 		_current_sprite = str(GameSave.state["sprite"])
 	if GameSave.state.has("bgm"):
 		_current_bgm = str(GameSave.state["bgm"])
+	if GameSave.state.has("master_sfx"):
+		_current_master_sfx = str(GameSave.state["master_sfx"])
 
 
 func _sync_state_to_gamesave() -> void:
@@ -156,6 +168,7 @@ func _sync_state_to_gamesave() -> void:
 	GameSave.state["bg"] = _current_bg
 	GameSave.state["sprite"] = _current_sprite
 	GameSave.state["bgm"] = _current_bgm
+	GameSave.state["master_sfx"] = _current_master_sfx
 
 
 func _save_now() -> void:
@@ -295,6 +308,8 @@ func _show_current() -> void:
 		_play_bgm(str(line["bgm"]))
 	if line.has("sfx"):
 		_play_sfx(str(line["sfx"]))
+	if line.has("master_sfx"):
+		_play_master_sfx(str(line["master_sfx"]))
 
 	if str(line.get("type", "line")) == "choice":
 		_show_choices(line.get("choices", []))
@@ -389,10 +404,18 @@ func _play_bgm(filename: String) -> void:
 
 	var full_path: String = BGM_PATH_DIR + filename
 	if not FileAccess.file_exists(full_path):
+		print("[BGM] not found: ", full_path)
 		return
 
 	var stream: Resource = load(full_path)
 	if stream and bgm_player:
+		if stream is AudioStreamMP3:
+			stream.loop = true
+		elif stream is AudioStreamWAV:
+			stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+		elif stream is AudioStreamOggVorbis:
+			stream.loop = true
+		
 		bgm_player.stream = stream
 		bgm_player.play()
 		_current_bgm = filename
@@ -412,6 +435,34 @@ func _play_sfx(filename: String) -> void:
 	if stream and sfx_dialogue:
 		sfx_dialogue.stream = stream
 		sfx_dialogue.play()
+
+func _play_master_sfx(filename: String) -> void:
+	if filename == "" or filename == "null":
+		if master_sfx:
+			master_sfx.stop()
+		_current_master_sfx = ""
+		return
+	
+	if filename == _current_master_sfx:
+		return
+
+	var full_path: String = MasterSFX_PATH_DIR + filename
+	if not FileAccess.file_exists(full_path):
+		print("[MasterSFX] not found: ", full_path)
+		return
+
+	var stream: Resource = load(full_path)
+	if stream and master_sfx:
+		if stream is AudioStreamMP3:
+			stream.loop = true
+		if stream is AudioStreamWAV:
+			stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+		elif stream is AudioStreamOggVorbis:
+			stream.loop = true
+			
+		master_sfx.stream = stream
+		master_sfx.play()
+		_current_master_sfx = filename
 
 
 func _show_choices(options_list: Array) -> void:

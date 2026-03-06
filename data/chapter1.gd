@@ -3,7 +3,7 @@ extends Node
 var lines: Array = [
 
 	# Scene 1
-	{"bg":"res://sprites/scene/scene_1_inspector_office.png", "sprite":"tana_chill.png", "name":"???", "text":"นั่งลงสิ", "sfx":"ceiling_fan.mp3", "bgm":"null"},
+	{"bg":"res://sprites/scene/scene_1_inspector_office.png", "sprite":"tana_chill.png", "name":"???", "text":"นั่งลงสิ", "master_sfx":"ceiling_fan.mp3", "bgm":"null"},
 	{"name":"เมฆ", "text":"ครับ"},
 	{"name":"???", "text":"อืม…"},
 	{"name":"???", "text":"เมฆินทร์ นฤพานิช เป็นนักสืบเอกชน รับงานฟรีแลนซ์ใช่มั้ย"},
@@ -42,10 +42,10 @@ var lines: Array = [
 	{"name":"เมฆ", "text":"ครับผม"},
 	{"sprite":"fon_curious.png", "name":"ฝน", "text":"แล้วถ้าความจริง.. มันอยู่ในที่ที่มหาลัยไม่ให้เข้าล่ะ…"},
 	{"sprite":"tana_chill.png", "name":"สารวัตรธนา", "text":"…"},
-	{"name":"สารวัตรธนา", "text":"ไว้เจอกัน คุณเมฆินทร์ มีอะไรติดต่อผมได้", "sfx":"null"},
+	{"name":"สารวัตรธนา", "text":"ไว้เจอกัน คุณเมฆินทร์ มีอะไรติดต่อผมได้","master_sfx":"null"},
 
 	# Scene 2
-	{"bg":"res://sprites/scene/scene_2_guard_house.png", "sprite":"", "name":"เมฆ", "thought":true, "text":"อืม.. ที่นี่สินะ มหาลัยแจ่มจันทร์", "sfx":"light_rain.mp3", "bgm":"null"},
+	{"bg":"res://sprites/scene/scene_2_guard_house.png", "sprite":"", "name":"เมฆ", "thought":true, "text":"อืม.. ที่นี่สินะ มหาลัยแจ่มจันทร์", "master_sfx":"light_rain.mp3", "bgm":"null"},
 	{"name":"เมฆ", "thought":true, "text":"ไม่เคยมาเลยแฮะ แต่พอมาถึงแล้ว รู้สึก.. วังเวงแปลกๆ"},
 
 	{"sprite":"fon_smile_with_umbrella.png", "name":"ฝน", "text":"สวัสดีค่าา"},
@@ -71,10 +71,10 @@ var lines: Array = [
 	# A/B
 	{"id":"after_choice_ab", "name":"ฝน", "text":"งั้นไปกันเถอะค่ะ", "skip_to":"after_choice_end"},
 	# C
-	{"id":"after_choice_c", "name":"ฝน", "text":"เดี๋ยวหนูค่อยบอกเขาทีหลังก็ได้ ไปกันเถอะค่ะ", "skip_to":"after_choice_end", "sfx":"null"},
+	{"id":"after_choice_c", "name":"ฝน", "text":"เดี๋ยวหนูค่อยบอกเขาทีหลังก็ได้ ไปกันเถอะค่ะ", "skip_to":"after_choice_end"},
 
 	# Scene 3
-	{"id":"after_choice_end", "bg":"res://sprites/scene/scene_3_lonely_path.png", "sprite":"", "name":"เมฆ", "text":"(เข้ามาทางประตูเล็กแบบนี้ได้เลยเหรอ..)", "sfx":"light_rain2.mp3", "bgm":"atmospheric_piano.mp3"},
+	{"id":"after_choice_end", "bg":"res://sprites/scene/scene_3_lonely_path.png", "sprite":"", "name":"เมฆ", "text":"(เข้ามาทางประตูเล็กแบบนี้ได้เลยเหรอ..)", "master_sfx":"light_rain2.mp3", "bgm":"atmospheric_piano.mp3"},
 	{"sprite":"fon_smile.png", "name":"ฝน", "text":"เหมือนว่าฝนจะซาลงแล้วนะคะ"},
 	{"name":"เมฆ", "text":"แต่ยังมีฝนแถวนี้ ไม่ซาเลยนะ ดีดตลอด"},
 	{"sprite":"fon_curious.png", "name":"ฝน", "text":"??"},
@@ -90,7 +90,7 @@ var lines: Array = [
 	{"name":"ฝน", "text":".."},
 	{"name":"ฝน", "text":"ค่ะ.."},
 
-	{"name":"", "text":"", "sfx":"light_rain2.mp3", "bgm":"atmospheric_piano.mp3"},
+	{"name":"", "text":"", "master_sfx":"light_rain2.mp3", "bgm":"atmospheric_piano.mp3"},
 
 	{"sprite":"fon_curious.png", "name":"ฝน", "text":"พี่เมฆคิดว่า ทำไมพีทถึงหายตัวไปเหรอคะ"},
 	{"name":"เมฆ", "text":"พี่ก็ยังสันนิษฐานอะไรไม่ได้หรอก แต่ถ้ามีใครพยายามปกปิดข้อมูลบางส่วน แปลว่าอาจจะมีเรื่องที่ไม่อยากให้ใครรู้ก็ได้นะ"},
@@ -100,7 +100,7 @@ var lines: Array = [
 	{"name":"ฝน", "text":"ถึงแล้วค่ะ ตึกสำนักทะเบียน"},
 
 	# Scene 4
-	{"bg":"res://sprites/scene/scene_4_registration_office.png", "sprite":"fon_curious.png", "name":"ฝน", "text":"ประตูหน้าตึกน่าจะล็อคอยู่", "sfx":"light_rain2.mp3", "bgm":"mysterious_piano.mp3"},
+	{"bg":"res://sprites/scene/scene_4_registration_office.png", "sprite":"fon_curious.png", "name":"ฝน", "text":"ประตูหน้าตึกน่าจะล็อคอยู่", "master_sfx":"light_rain2.mp3", "bgm":"mysterious_piano.mp3"},
 	{"name":"ฝน", "text":"อืม.. ปกติจะมีพี่ยาม ประจำอยู่ที่ป้อมนี้ แต่วันนี้เหมือนพี่เขาจะไม่อยู่ค่ะ"},
 	{"name":"เมฆ", "thought":true, "text":"ยามที่ประจำอยู่ตรงนี้ไม่อยู่.. เขาไปทำธุระอะไรรึเปล่านะ"},
 	{"name":"เมฆ", "text":"เราจะมาดูเรื่องภาพจากกล้องวงจรปิดของตึกนี้เลยใช่มั้ย แล้วจะเข้าไปยังไงล่ะ ถ้ายามไม่อยู่"},
@@ -137,7 +137,7 @@ var lines: Array = [
 
 	# Scene 7
 # Scene 7
-	{"bg":"res://sprites/scene/scene_7_front_file_room.png", "sprite":"fon_shocked.png", "name":"ฝน", "text":"ห้องเก็บเอกสารค่ะ", "sfx":"light_rain2.mp3", "bgm":"null"},
+	{"bg":"res://sprites/scene/scene_7_front_file_room.png", "sprite":"fon_shocked.png", "name":"ฝน", "text":"ห้องเก็บเอกสารค่ะ", "bgm":"null"},
 	{"name":"เมฆ", "thought":true, "text":"เสียงเหมือนมีคนอยู่ข้างใน แปลว่า มีคนอื่นนอกจากพวกเราด้วยเหรอ"},
 	{"name":"เมฆ", "thought":true, "text":"ดึกป่านนี้เนี่ยนะ"},
 
@@ -167,13 +167,13 @@ var lines: Array = [
 	{"skip_to":"scene8_start"},
 
 	# Scene 8
-	{"id":"scene8_start", "bg":"res://sprites/scene/scene_8_file_room_light_on.png", "sprite":"guard/silhouette.png", "name":"เมฆ", "text":"เห้ย คุณเป็นใคร เข้ามาได้ไง มาขโมยของเหรอ!?", "sfx":"null", "bgm":"suspense.mp3"},
+	{"id":"scene8_start", "bg":"res://sprites/scene/scene_8_file_room_light_on.png", "sprite":"guard/silhouette.png", "name":"เมฆ", "text":"เห้ย คุณเป็นใคร เข้ามาได้ไง มาขโมยของเหรอ!?", "master_sfx":"null", "bgm":"suspense_music.mp3"},
 	{"name":"???", "text":"!?"},
 	{"name":"", "text":"", "sfx":"light_switch.mp3"},
 	{"skip_to":"scene9_start"},
 
 	# Scene 9
-	{"id":"scene9_start", "bg":"res://sprites/scene/scene_9_file_room_light_off.png", "sprite":"", "name":"", "text":"", "sfx":"light_rain2.mp3", "bgm":"null"},
+	{"id":"scene9_start", "bg":"res://sprites/scene/scene_9_file_room_light_off.png", "sprite":"", "name":"", "text":"", "master_sfx":"light_rain2.mp3", "bgm":"null"},
 	{"name":"", "text":"", "sfx":"jump.mp3"},
 	{"name":"เมฆ", "thought":true, "text":"ม-ไม่เห็นเลย"},
 	{"name":"เมฆ", "thought":true, "text":"ต้องรีบเปิดไฟก่อน"},
@@ -182,13 +182,13 @@ var lines: Array = [
 	{"skip_to":"scene10_start"},
 
 	# Scene 10
-	{"id":"scene10_start", "bg":"res://sprites/scene/scene_10_file_room_window_open.png", "sprite":"fon_shocked.png", "name":"ฝน", "text":"ก-กระโดดออกนอกหน้าต่างไปแล้วค่ะ..", "sfx":"light_rain2.mp3", "bgm":"atmospheric_piano.mp3"},
+	{"id":"scene10_start", "bg":"res://sprites/scene/scene_10_file_room_window_open.png", "sprite":"fon_shocked.png", "name":"ฝน", "text":"ก-กระโดดออกนอกหน้าต่างไปแล้วค่ะ..", "master_sfx":"light_rain2.mp3", "bgm":"atmospheric_piano.mp3"},
 	{"name":"เมฆ", "text":"ใครกันแน่นะ.."},
 	{"name":"เมฆ", "text":"!?"},
 	{"name":"เมฆ", "text":"คอมพิวเตอร์เปิดอยู่", "skip_to":"scene11_start"},
 
 	# Scene 11
-	{"id":"scene11_start", "bg":"res://sprites/scene/scene_11_pc_monitor.png", "sprite":"", "name":"เมฆ", "text":"นี่มัน..", "sfx":"null", "bgm":"null"},
+	{"id":"scene11_start", "bg":"res://sprites/scene/scene_11_pc_monitor.png", "sprite":"", "name":"เมฆ", "text":"นี่มัน..", "bgm":"null"},
 	{"name":"ฝน", "text":"ค่ะ.."},
 	{"name":"ฝน", "text":"เป็นพีทแน่นอนค่ะ"},
 	{"name":"เมฆ", "text":"อืม เหมือนว่า.."},
@@ -202,17 +202,17 @@ var lines: Array = [
 	{"skip_to":"scene12_start"},
 
 	# Scene 12
-	{"id":"scene12_start", "bg":"res://sprites/scene/scene_12_file_room_window_open.png", "sprite":"fon_curious.png", "name":"เมฆ", "text":"ทั้งผู้ต้องสงสัยคนเมื่อกี๊ แล้วก็รูปภาพ 2 รูปนี้อีก..", "sfx":"light_rain2.mp3", "bgm":"null"},
+	{"id":"scene12_start", "bg":"res://sprites/scene/scene_12_file_room_window_open.png", "sprite":"fon_curious.png", "name":"เมฆ", "text":"ทั้งผู้ต้องสงสัยคนเมื่อกี๊ แล้วก็รูปภาพ 2 รูปนี้อีก..", "master_sfx":"light_rain2.mp3", "bgm":"mysterious_music.mp3"},
 	{"name":"เมฆ", "thought":true, "text":"โธ่เว้ย.. มืดแปดด้านไปหมด"},
 	{"sprite":"fon_upset.png", "name":"เมฆ", "text":"เรามาเก็บเอกสารพวกนี้กันก่อนเถอะ"},
 
 	# Scene 13
-	{"bg":"res://sprites/scene/scene_13_file_room_cleaned.png", "sprite":"fon_upset.png", "name":"เมฆ", "text":"ตอนนี้คงต้องเก็บห้องนี้เป็นพยานหลักฐานแล้วล่ะ", "sfx":"light_rain2.mp3", "bgm":"null"},
+	{"bg":"res://sprites/scene/scene_13_file_room_cleaned.png", "sprite":"fon_upset.png", "name":"เมฆ", "text":"ตอนนี้คงต้องเก็บห้องนี้เป็นพยานหลักฐานแล้วล่ะ"},
 	{"name":"เมฆ", "text":"คืนนี้.. คงต้องพอเท่านี้ก่อน"},
 	{"name":"ฝน", "text":"พี่เมฆ แต่หนูว่า-"},
-	{"name":"เมฆ", "text":"ฝนอยากจะตามโจรนั่นไปเหรอ!?"},
+	{"name":"เมฆ", "text":"ฝนอยากจะตามโจรนั่นไปเหรอ!?", "bgm":"null"},
 	{"sprite":"fon_shocked.png", "name":"เมฆ", "text":"มัน.. ไม่มีประโยชน์หรอก"},
-	{"name":"เมฆ", "text":"ต่อให้เมื่อกี๊จับมันได้.. ยังไงสุดท้ายก็ต้องปล่อยตัวไป"},
+	{"name":"เมฆ", "text":"ต่อให้เมื่อกี๊จับมันได้.. ยังไงสุดท้ายก็ต้องปล่อยตัวไป", "bgm":"sad_music.mp3"},
 	{"name":"เมฆ", "text":"เพราะเราก็แอบเข้ามา โดยไม่ได้ขออนุญาตใคร"},
 	{"name":"เมฆ", "text":"ใช้อำนาจตำรวจไม่ได้หรอก"},
 	{"name":"ฝน", "text":"ต-แต่อย่างน้อยเราก็จะได้รู้ว่าเป็นใครนะคะ!"},
