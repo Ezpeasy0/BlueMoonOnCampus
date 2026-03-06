@@ -192,6 +192,7 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/line_separation = 10
 theme_override_fonts/normal_font = ExtResource("1_jwyou")
 theme_override_font_sizes/normal_font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_bfpow")
@@ -199,15 +200,11 @@ scroll_active = false
 
 [node name="ChoicesBox" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 23.0
-offset_top = -389.0
-offset_right = -17.0
-offset_bottom = -289.0
+layout_mode = 0
+offset_left = 390.0
+offset_top = 305.5
+offset_right = 762.0
+offset_bottom = 342.5
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -474,6 +471,9 @@ bus = &"Music"
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 process_mode = 1
+bus = &"SFX"
+
+[node name="MasterSFX" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 
 [node name="TextBlip" type="AudioStreamPlayer" parent="."]

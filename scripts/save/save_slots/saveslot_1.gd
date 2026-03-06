@@ -68,6 +68,7 @@ func _read_slot_json_info(id: int) -> Dictionary:
 	return {}
 
 func _on_pressed() -> void:
+	print("[CLICK] button=", name, " slot_id=", slot_id)
 	get_owner().slot_selected(slot_id)
 
 func _gui_input(event: InputEvent) -> void:

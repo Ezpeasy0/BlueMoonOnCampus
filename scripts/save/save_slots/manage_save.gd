@@ -40,6 +40,7 @@ func _ready() -> void:
 	refresh_slots_ui()
 
 func slot_selected(slot_id: int) -> void:
+	print("[slot_selected] slot_id =", slot_id, "mode =", mode)
 	_pending_slot = slot_id
 
 	match mode:
