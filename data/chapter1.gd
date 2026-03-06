@@ -10,7 +10,7 @@ var lines: Array = [
 	{"name":"เมฆ", "text":"ใช่ครับ"},
 	{"name":"สารวัตรธนา", "text":"อืม ผมชื่อธนานะ ทางกรมฯ ต้องจ้างคนมารับงานนี้เพิ่ม เพราะขาดคนน่ะ"},
 
-	{"name":"", "text":""},
+	{"name":"", "text":"", "sfx":"door_knocking.mp3"},
 	{"name":"เมฆ", "thought":true, "text":"หืม ใครน่ะ"},
 	{"name":"สารวัตรธนา", "text":"เข้ามาได้ ประตูไม่ได้ล็อค"},
 
@@ -153,22 +153,24 @@ var lines: Array = [
 	{"name":"", "text":"", "sfx":"box_fall.mp3"},
 	{"sprite":"fon_shocked.png", "name":"ฝน", "text":"!?"},
 	{"name":"ฝน", "text":"มีคนอยู่จริงๆ ค่ะ หนูจะรีบเปิดประตูก่อน", "skip_to":"scene7_open_after_a"},
+	
+	{"id":"scene7_open_after_a", "name":"", "text":""},
+	{"name":"", "text":"", "sfx":"lockpick.wav"},
+	{"name":"", "text":"", "sfx":"door_open.mp3"},
+	{"skip_to":"scene8_start"},
 
 	# B/C
 	{"id":"scene7_open_bc", "sprite":"fon_shocked.png", "name":"ฝน", "text":"ค-ค่ะ"},
-	{"name":"", "text":"", "sfx":"lockpick.mp3"},
+	{"name":"", "text":"", "sfx":"lockpick.wav"},
 	{"name":"", "text":"", "sfx":"door_open.mp3"},
-	{"name":"", "text":"", "sfx":"box_fall.mp3", "skip_to":"scene8_start"},
-
-	{"id":"scene7_open_after_a", "name":"", "text":""},
-	{"name":"", "text":"", "sfx":"lockpick.mp3"},
-	{"name":"", "text":"", "sfx":"door_open.mp3"},
-	{"name":"", "text":"", "sfx":"box_fall.mp3", "skip_to":"scene8_start"},
+	{"name":"", "text":"", "sfx":"box_fall.mp3"},
+	{"skip_to":"scene8_start"},
 
 	# Scene 8
 	{"id":"scene8_start", "bg":"res://sprites/scene/scene_8_file_room_light_on.png", "sprite":"guard/silhouette.png", "name":"เมฆ", "text":"เห้ย คุณเป็นใคร เข้ามาได้ไง มาขโมยของเหรอ!?", "sfx":"null", "bgm":"suspense.mp3"},
 	{"name":"???", "text":"!?"},
-	{"name":"", "text":"", "sfx":"light_switch.mp3", "skip_to":"scene9_start"},
+	{"name":"", "text":"", "sfx":"light_switch.mp3"},
+	{"skip_to":"scene9_start"},
 
 	# Scene 9
 	{"id":"scene9_start", "bg":"res://sprites/scene/scene_9_file_room_light_off.png", "sprite":"", "name":"", "text":"", "sfx":"light_rain2.mp3", "bgm":"null"},
@@ -176,7 +178,8 @@ var lines: Array = [
 	{"name":"เมฆ", "thought":true, "text":"ม-ไม่เห็นเลย"},
 	{"name":"เมฆ", "thought":true, "text":"ต้องรีบเปิดไฟก่อน"},
 	{"name":"เมฆ", "thought":true, "text":"จ-เจอสวิตช์แล้ว!"},
-	{"name":"", "text":"", "sfx":"light_switch.mp3", "skip_to":"scene10_start"},
+	{"name":"", "text":"", "sfx":"light_switch.mp3",},
+	{"skip_to":"scene10_start"},
 
 	# Scene 10
 	{"id":"scene10_start", "bg":"res://sprites/scene/scene_10_file_room_window_open.png", "sprite":"fon_shocked.png", "name":"ฝน", "text":"ก-กระโดดออกนอกหน้าต่างไปแล้วค่ะ..", "sfx":"light_rain2.mp3", "bgm":"atmospheric_piano.mp3"},
