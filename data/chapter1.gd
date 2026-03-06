@@ -198,7 +198,8 @@ var lines: Array = [
 	{"bg":"res://sprites/scene/scene_11_pc_monitor.png", "sprite":"", "name":"เมฆ", "text":"เท่ากับว่า คนเมื่อกี๊มาเปิดดูรูปพวกนี้สินะ"},
 
 	{"bg":"res://sprites/scene/scene_11_cctv_photo_1.png", "sprite":"", "name":"ฝน", "text":"ดูจากมุม เหมือนว่าพุ่มไม้นี่ น่าจะอยู่ตรงหน้าตึกนี้นะคะ"},
-	{"name":"เมฆ", "text":"..", "skip_to":"scene12_start"},
+	{"name":"เมฆ", "text":".."},
+	{"skip_to":"scene12_start"},
 
 	# Scene 12
 	{"id":"scene12_start", "bg":"res://sprites/scene/scene_12_file_room_window_open.png", "sprite":"fon_curious.png", "name":"เมฆ", "text":"ทั้งผู้ต้องสงสัยคนเมื่อกี๊ แล้วก็รูปภาพ 2 รูปนี้อีก..", "sfx":"light_rain2.mp3", "bgm":"null"},
