@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp51y7tqwg72y"
-path="res://.godot/imported/scene_11_cctv_photo_1.png-6b637347eda41dee8c1394d52d33811c.ctex"
+uid="uid://bllg0pj8uyrb3"
+path="res://.godot/imported/scene_1_10_file_room_window_open.png-235ce68a44e422054e6dca2fd97e55cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_11_cctv_photo_1.png"
-dest_files=["res://.godot/imported/scene_11_cctv_photo_1.png-6b637347eda41dee8c1394d52d33811c.ctex"]
+source_file="res://sprites/scene/scene_1_10_file_room_window_open.png"
+dest_files=["res://.godot/imported/scene_1_10_file_room_window_open.png-235ce68a44e422054e6dca2fd97e55cd.ctex"]
 
 [params]
 

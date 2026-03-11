@@ -12,7 +12,10 @@ const MasterSFX_PATH_DIR: String = "res://sounds/master_sfx/"
 @onready var character: TextureRect = %Character
 @onready var name_label: Label = %NameLabel
 @onready var dialogue_label: RichTextLabel = %DialogueLabel
+
+@onready var choices_container: Control = %ChoicesPanel 
 @onready var choices_box: VBoxContainer = %ChoicesBox
+
 @onready var bg_fade: ColorRect = %BGFade
 @onready var btn_options: Button = $HBoxContainer/options
 @onready var options_menu: Panel = $Options
@@ -104,7 +107,7 @@ func _ready() -> void:
 	_restore_from_gamesave()
 	await _apply_restored_visuals()
 
-	choices_box.visible = false
+	choices_container.visible = false
 	_show_current()
 
 
@@ -239,7 +242,7 @@ func _input(event: InputEvent) -> void:
 		_skip_typing = true
 		return
 
-	if choices_box.visible:
+	if choices_container.visible:
 		return
 
 	_advance()
@@ -272,7 +275,6 @@ func _on_audio_setting() -> void:
 
 
 func _on_back_pressed() -> void:
-	# If we are inside sub-panels, go back to Options menu (still paused)
 	if (video_panel and video_panel.visible) or (audio_panel and audio_panel.visible):
 		if video_panel: video_panel.visible = false
 		if audio_panel: audio_panel.visible = false
@@ -280,7 +282,6 @@ func _on_back_pressed() -> void:
 		if back_button: back_button.visible = true
 		return
 
-	# Close Options fully
 	_hide_all_in_game_menus()
 	get_tree().paused = false
 	_busy = false
@@ -315,7 +316,7 @@ func _show_current() -> void:
 		_show_choices(line.get("choices", []))
 		return
 
-	choices_box.visible = false
+	choices_container.visible = false
 
 	if line.has("bg"):
 		var new_bg: String = str(line["bg"])
@@ -466,9 +467,12 @@ func _play_master_sfx(filename: String) -> void:
 
 
 func _show_choices(options_list: Array) -> void:
-	choices_box.visible = true
+	choices_container.visible = true
 	for c in choices_box.get_children():
 		c.queue_free()
+		
+	var my_style = load("res://sprites/choices/MyButtonStyle.tres")
+	var my_style_hover = load("res://sprites/choices/MyButtonStyle_Hover.tres")
 
 	for opt_any in options_list:
 		if not (opt_any is Dictionary):
@@ -477,6 +481,9 @@ func _show_choices(options_list: Array) -> void:
 
 		var b: Button = Button.new()
 		b.text = str(opt.get("label", ""))
+		b.add_theme_stylebox_override("normal", my_style)
+		b.add_theme_stylebox_override("hover", my_style_hover)
+		b.custom_minimum_size.y = 45 
 		_setup_button_sounds(b)
 		b.pressed.connect(func() -> void: _on_choice(opt))
 		choices_box.add_child(b)
@@ -484,9 +491,8 @@ func _show_choices(options_list: Array) -> void:
 
 func _on_choice(opt: Dictionary) -> void:
 	_busy = true
-	choices_box.visible = false
+	choices_container.visible = false
 
-	# --- Apply effects safely (JSON loads numbers as float, so normalize to int) ---
 	if not (stats is Dictionary):
 		stats = {"INT": 0, "CHA": 0}
 
@@ -501,14 +507,14 @@ func _on_choice(opt: Dictionary) -> void:
 
 	print("[STATS] INT =", int(stats.get("INT", 0)), " | CHA =", int(stats.get("CHA", 0)))
 
-	# --- Show player's spoken line (if any) ---
 	var say_text: String = str(opt.get("say", "")).strip_edges()
 	if say_text != "":
 		name_label.text = "เมฆ"
 		%NameBox.modulate.a = 1.0
 		await _type_text(say_text)
 
-	# --- Jump to target line id and SHOW it immediately ---
+	_busy = false
+
 	var target_id: String = str(opt.get("next", ""))
 	if target_id != "" and id_to_index.has(target_id):
 		index = int(id_to_index[target_id])
@@ -518,7 +524,6 @@ func _on_choice(opt: Dictionary) -> void:
 	_sync_state_to_gamesave()
 	await _show_current()
 
-	_busy = false
 
 func _resolve_path(root: String, value: String) -> String:
 	if value.strip_edges() == "":
@@ -642,23 +647,17 @@ func _on_exit_canceled() -> void:
 func _on_save_pressed() -> void:
 	_block_dialogue_input_for_menu_open()
 	_hide_all_in_game_menus()
-
 	_sync_state_to_gamesave()
-
 	var tree := get_tree()
 	tree.paused = true
-
 	if save_scene:
 		var save_menu: Node = save_scene.instantiate()
 		save_menu.set("mode", 2)
-
 		save_menu.tree_exited.connect(func():
-
 			if is_instance_valid(tree):
 				tree.paused = false
 			_busy = false
 		)
-
 		add_child(save_menu)
 		move_child(save_menu, -1)
 	else:
@@ -669,19 +668,15 @@ func _on_save_pressed() -> void:
 func _on_load_pressed() -> void:
 	_block_dialogue_input_for_menu_open()
 	_hide_all_in_game_menus()
-
 	var tree := get_tree()
 	tree.paused = true
-
 	if load_scene:
 		var load_menu: Node = load_scene.instantiate()
-
 		load_menu.tree_exited.connect(func():
 			if is_instance_valid(tree):
 				tree.paused = false
 			_busy = false
 		)
-
 		add_child(load_menu)
 		move_child(load_menu, -1)
 	else:
