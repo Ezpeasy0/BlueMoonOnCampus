@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqyjncd43qoj1"
-path="res://.godot/imported/scene_4_registration_office.png-774fbcd06bfe3371ebf74d5fd0cee75b.ctex"
+uid="uid://mvurqbqxarcq"
+path="res://.godot/imported/scene_1_11_cctv_photo_1.png-8f991a65fef811814b8009a518da1044.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_4_registration_office.png"
-dest_files=["res://.godot/imported/scene_4_registration_office.png-774fbcd06bfe3371ebf74d5fd0cee75b.ctex"]
+source_file="res://sprites/scene/scene_1_11_cctv_photo_1.png"
+dest_files=["res://.godot/imported/scene_1_11_cctv_photo_1.png-8f991a65fef811814b8009a518da1044.ctex"]
 
 [params]
 

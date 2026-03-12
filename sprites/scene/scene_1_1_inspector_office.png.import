@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bllg0pj8uyrb3"
-path="res://.godot/imported/scene_10_file_room_window_open.png-e91cf91633952c880b008a35e6d4d9c7.ctex"
+uid="uid://b1ywg7h1crlak"
+path="res://.godot/imported/scene_1_1_inspector_office.png-c651b306f3eac9a97233c1cb29e95d1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_10_file_room_window_open.png"
-dest_files=["res://.godot/imported/scene_10_file_room_window_open.png-e91cf91633952c880b008a35e6d4d9c7.ctex"]
+source_file="res://sprites/scene/scene_1_1_inspector_office.png"
+dest_files=["res://.godot/imported/scene_1_1_inspector_office.png-c651b306f3eac9a97233c1cb29e95d1a.ctex"]
 
 [params]
 

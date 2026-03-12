@@ -61,11 +61,29 @@ expand_margin_right = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_led2e"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tp716"]
-bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xhvj"]
+bg_color = Color(0, 0.18039216, 0.3019608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.047058824, 0.05490196, 0.13333334, 0.83137256)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03vpb"]
-bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sv5jy"]
+bg_color = Color(0, 0.18039216, 0.3019608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.047058824, 0.05490196, 0.13333334, 0.83137256)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
 
 [node name="Dialogue" type="Control" node_paths=PackedStringArray("sfx_click", "sfx_hover", "sfx_text_blip", "video_panel", "audio_panel", "back_button")]
 layout_mode = 3
@@ -198,15 +216,29 @@ theme_override_font_sizes/normal_font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_bfpow")
 scroll_active = false
 
-[node name="ChoicesBox" type="VBoxContainer" parent="."]
+[node name="ChoicesPanel" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -103.5
+offset_right = 241.0
+offset_bottom = -64.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChoicesBox" type="VBoxContainer" parent="ChoicesPanel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 390.0
-offset_top = 305.5
-offset_right = 762.0
-offset_bottom = 342.5
-grow_horizontal = 2
-grow_vertical = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 479.0
+offset_bottom = 37.0
+theme_override_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -282,7 +314,7 @@ offset_left = 142.0
 offset_top = 54.0
 offset_right = 989.0
 offset_bottom = 554.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_tp716")
+theme_override_styles/panel = SubResource("StyleBoxFlat_6xhvj")
 script = ExtResource("5_vogiq")
 resolution_option = NodePath("VBoxContainer/Resolution")
 fullscreen_check = NodePath("HBoxContainer/Fullscreen")
@@ -364,7 +396,7 @@ offset_left = 144.0
 offset_top = 50.0
 offset_right = 991.0
 offset_bottom = 550.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_03vpb")
+theme_override_styles/panel = SubResource("StyleBoxFlat_sv5jy")
 script = ExtResource("6_x1cjp")
 master_slider = NodePath("VBoxContainer/Master")
 music_slider = NodePath("VBoxContainer2/Music")
@@ -376,9 +408,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -45.0
-offset_top = 11.0
+offset_top = 25.0
 offset_right = 45.0
-offset_bottom = 56.0
+offset_bottom = 70.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 text = "Audio"
@@ -386,9 +418,9 @@ text = "Audio"
 [node name="VBoxContainer" type="VBoxContainer" parent="Audio"]
 layout_mode = 0
 offset_left = 81.0
-offset_top = 90.0
+offset_top = 111.0
 offset_right = 765.0
-offset_bottom = 170.0
+offset_bottom = 191.0
 
 [node name="Label" type="Label" parent="Audio/VBoxContainer"]
 layout_mode = 2
@@ -401,9 +433,9 @@ layout_mode = 2
 [node name="VBoxContainer2" type="VBoxContainer" parent="Audio"]
 layout_mode = 0
 offset_left = 80.0
-offset_top = 198.0
+offset_top = 222.0
 offset_right = 764.0
-offset_bottom = 278.0
+offset_bottom = 302.0
 
 [node name="Label" type="Label" parent="Audio/VBoxContainer2"]
 layout_mode = 2
@@ -416,9 +448,9 @@ layout_mode = 2
 [node name="VBoxContainer3" type="VBoxContainer" parent="Audio"]
 layout_mode = 0
 offset_left = 80.0
-offset_top = 309.0
+offset_top = 333.0
 offset_right = 764.0
-offset_bottom = 389.0
+offset_bottom = 413.0
 
 [node name="Label" type="Label" parent="Audio/VBoxContainer3"]
 layout_mode = 2
@@ -452,6 +484,87 @@ text = "Back"
 title = ""
 ok_button_text = "Ok"
 dialog_text = "คุณต้องการกลับไปหน้าเมนูหลักใช่ไหม?"
+
+[node name="Audio2" type="Panel" parent="ExitConfirm" node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
+visible = false
+custom_minimum_size = Vector2(500, 500)
+offset_left = 144.0
+offset_top = 50.0
+offset_right = 991.0
+offset_bottom = 550.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sv5jy")
+script = ExtResource("6_x1cjp")
+master_slider = NodePath("VBoxContainer/Master")
+music_slider = NodePath("VBoxContainer2/Music")
+sfx_slider = NodePath("VBoxContainer3/SFX")
+
+[node name="Label" type="Label" parent="ExitConfirm/Audio2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_top = 25.0
+offset_right = 45.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Audio"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ExitConfirm/Audio2"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 111.0
+offset_right = 765.0
+offset_bottom = 191.0
+
+[node name="Label" type="Label" parent="ExitConfirm/Audio2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Master"
+
+[node name="Master" type="HSlider" parent="ExitConfirm/Audio2/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ExitConfirm/Audio2"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 222.0
+offset_right = 764.0
+offset_bottom = 302.0
+
+[node name="Label" type="Label" parent="ExitConfirm/Audio2/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Music"
+
+[node name="Music" type="HSlider" parent="ExitConfirm/Audio2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ExitConfirm/Audio2"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 333.0
+offset_right = 764.0
+offset_bottom = 413.0
+
+[node name="Label" type="Label" parent="ExitConfirm/Audio2/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SFX"
+
+[node name="SFX" type="HSlider" parent="ExitConfirm/Audio2/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="ExitConfirm/Audio2"]
+visible = false
+layout_mode = 0
+offset_left = 683.0
+offset_top = 419.0
+offset_right = 803.0
+offset_bottom = 470.0
+theme_override_font_sizes/font_size = 24
+text = "Back"
 
 [node name="sfx_click" type="AudioStreamPlayer" parent="."]
 process_mode = 1

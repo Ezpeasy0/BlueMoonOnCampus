@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2bvnd64a8ti5"
-path="res://.godot/imported/scene_7_front_file_room.png-469ae2181742af5789cc0159ec4346d5.ctex"
+uid="uid://cf3g8ccjxg3bk"
+path="res://.godot/imported/scene_1_3_lonely_path.png-c04432e87747d4510d2852ad019b38bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_7_front_file_room.png"
-dest_files=["res://.godot/imported/scene_7_front_file_room.png-469ae2181742af5789cc0159ec4346d5.ctex"]
+source_file="res://sprites/scene/scene_1_3_lonely_path.png"
+dest_files=["res://.godot/imported/scene_1_3_lonely_path.png-c04432e87747d4510d2852ad019b38bb.ctex"]
 
 [params]
 

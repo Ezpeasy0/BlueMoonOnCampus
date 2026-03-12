@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqnbjbahgyg0h"
-path="res://.godot/imported/scene_11_pc_monitor.png-5adcc287a842cf5102210fcb53d26666.ctex"
+uid="uid://csxeetryqh8ix"
+path="res://.godot/imported/scene_1_13_file_room_cleaned.png-3cb06b63f0727452aa836cf89fa38821.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_11_pc_monitor.png"
-dest_files=["res://.godot/imported/scene_11_pc_monitor.png-5adcc287a842cf5102210fcb53d26666.ctex"]
+source_file="res://sprites/scene/scene_1_13_file_room_cleaned.png"
+dest_files=["res://.godot/imported/scene_1_13_file_room_cleaned.png-3cb06b63f0727452aa836cf89fa38821.ctex"]
 
 [params]
 

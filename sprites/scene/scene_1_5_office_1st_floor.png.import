@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkeou75oo6yhw"
-path="res://.godot/imported/scene_5_office_1st_floor.png-6bae79c5885b00395bcaae93e1968dfd.ctex"
+path="res://.godot/imported/scene_1_5_office_1st_floor.png-a32e5c14dd4d88c98b1d5e42c1422582.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_5_office_1st_floor.png"
-dest_files=["res://.godot/imported/scene_5_office_1st_floor.png-6bae79c5885b00395bcaae93e1968dfd.ctex"]
+source_file="res://sprites/scene/scene_1_5_office_1st_floor.png"
+dest_files=["res://.godot/imported/scene_1_5_office_1st_floor.png-a32e5c14dd4d88c98b1d5e42c1422582.ctex"]
 
 [params]
 

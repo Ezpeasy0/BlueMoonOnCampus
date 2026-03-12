@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf3g8ccjxg3bk"
-path="res://.godot/imported/scene_3_lonely_path.png-ec12fe82e24c7e58bc9dc0e25cd85bee.ctex"
+uid="uid://ba6enf2mwamqt"
+path="res://.godot/imported/scene_1_11_cctv_photo_2.png-cb87d76bde63d74c263f5ae3d42d9d52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_3_lonely_path.png"
-dest_files=["res://.godot/imported/scene_3_lonely_path.png-ec12fe82e24c7e58bc9dc0e25cd85bee.ctex"]
+source_file="res://sprites/scene/scene_1_11_cctv_photo_2.png"
+dest_files=["res://.godot/imported/scene_1_11_cctv_photo_2.png-cb87d76bde63d74c263f5ae3d42d9d52.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctnfxthy0qd6y"
-path="res://.godot/imported/scene_13_file_room_cleaned.png-7bf601f46372560e2f766eee04623e8e.ctex"
+uid="uid://bf5d0vtetbe7k"
+path="res://.godot/imported/scene_1_9_file_room_light_off.png-249a3869b941c3712729f4a21b8a26e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_13_file_room_cleaned.png"
-dest_files=["res://.godot/imported/scene_13_file_room_cleaned.png-7bf601f46372560e2f766eee04623e8e.ctex"]
+source_file="res://sprites/scene/scene_1_9_file_room_light_off.png"
+dest_files=["res://.godot/imported/scene_1_9_file_room_light_off.png-249a3869b941c3712729f4a21b8a26e6.ctex"]
 
 [params]
 
