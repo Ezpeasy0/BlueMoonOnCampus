@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dyk3bypqilvtn"
+path="res://.godot/imported/铁痕电台-MSR - 山樆轻.mp3-689b45c3a9025e74aaad2010530def42.mp3str"
+
+[deps]
+
+source_file="res://minigames/minigame_1_lunchbox/assets/bgm/铁痕电台-MSR - 山樆轻.mp3"
+dest_files=["res://.godot/imported/铁痕电台-MSR - 山樆轻.mp3-689b45c3a9025e74aaad2010530def42.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

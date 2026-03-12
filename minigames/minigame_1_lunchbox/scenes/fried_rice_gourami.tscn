@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfjrs050mykq0"]
+
+[ext_resource type="Script" uid="uid://x4vejp81hna2" path="res://minigames/minigame_1_lunchbox/scripts/onigiri.gd" id="1_fqxwn"]
+[ext_resource type="Texture2D" uid="uid://b53i3kdmyd8nn" path="res://minigames/minigame_1_lunchbox/assets/food/firedrice salidfish.png" id="2_fqxwn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60he1"]
+size = Vector2(327, 117.25)
+
+[node name="onigiri" type="Area2D"]
+position = Vector2(217, 119)
+script = ExtResource("1_fqxwn")
+target_slot_name = "Slot4"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8.999998, 25.138521)
+scale = Vector2(0.553125, 0.30581206)
+texture = ExtResource("2_fqxwn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13.5, -6.375)
+shape = SubResource("RectangleShape2D_60he1")

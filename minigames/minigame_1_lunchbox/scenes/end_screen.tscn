@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbluaxd6bmuws"]
+
+[ext_resource type="Texture2D" uid="uid://c13into6av2rm" path="res://minigames/minigame_1_lunchbox/assets/item/result screen.jpg" id="1_my301"]
+[ext_resource type="AudioStream" uid="uid://dcvsb25sr2lci" path="res://minigames/minigame_1_lunchbox/assets/bgm/prop.mp3" id="2_abjgy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -4.0
+offset_top = 4.0
+offset_right = 1154.0
+offset_bottom = 652.0
+texture = ExtResource("1_my301")
+expand_mode = 1
+
+[node name="win sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_abjgy")
+volume_db = -10.097
+autoplay = true

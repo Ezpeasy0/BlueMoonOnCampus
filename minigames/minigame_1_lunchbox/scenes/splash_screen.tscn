@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsv345k18vqlp"]
+
+[ext_resource type="Script" uid="uid://cpjufj3tm20wi" path="res://minigames/minigame_1_lunchbox/scripts/splash_screen.gd" id="1_el3v4"]
+[ext_resource type="Texture2D" uid="uid://bp4iadk1fw60h" path="res://minigames/minigame_1_lunchbox/assets/item/title.jpg" id="2_arguk"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+script = ExtResource("1_el3v4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -11.0
+offset_right = 1149.0
+offset_bottom = 660.0
+texture = ExtResource("2_arguk")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true

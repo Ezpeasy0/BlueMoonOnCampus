@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://br4xi88d0er7j"]
+
+[ext_resource type="Script" uid="uid://x4vejp81hna2" path="res://minigames/minigame_1_lunchbox/scripts/onigiri.gd" id="1_4ctya"]
+[ext_resource type="Texture2D" uid="uid://w2gtfw4xiwfv" path="res://minigames/minigame_1_lunchbox/assets/food/porkchop.png" id="2_4ctya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60he1"]
+size = Vector2(168, 87)
+
+[node name="onigiri" type="Area2D"]
+position = Vector2(217, 119)
+script = ExtResource("1_4ctya")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3.8146973e-06)
+scale = Vector2(0.70728385, 0.40363494)
+texture = ExtResource("2_4ctya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -4)
+shape = SubResource("RectangleShape2D_60he1")
