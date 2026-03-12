@@ -100,47 +100,36 @@ volume_db = -10.495
 
 [node name="onigiri" parent="." instance=ExtResource("3_fu7sn")]
 position = Vector2(139, 597)
-script = null
 
 [node name="onigiri2" parent="." instance=ExtResource("4_jix8l")]
 position = Vector2(699, 271)
-script = null
 
 [node name="onigiri3" parent="." instance=ExtResource("10_0o4t1")]
 position = Vector2(855, 69)
-script = null
 
 [node name="onigiri4" parent="." instance=ExtResource("11_0k4wn")]
 position = Vector2(1031, 364)
-script = null
 
 [node name="onigiri5" parent="." instance=ExtResource("14_w44g7")]
 position = Vector2(492, 269)
-script = null
 
 [node name="onigiri6" parent="." instance=ExtResource("15_cm266")]
 position = Vector2(133, 358)
-script = null
 
 [node name="onigiri7" parent="." instance=ExtResource("16_g8g3n")]
 position = Vector2(1040, 75)
-script = null
 
 [node name="onigiri8" parent="." instance=ExtResource("17_8u0te")]
 position = Vector2(136, 474)
-script = null
 
 [node name="onigiri9" parent="." instance=ExtResource("18_oiatc")]
 position = Vector2(197, 83)
-script = null
 
 [node name="onigiri10" parent="." instance=ExtResource("19_mg3m2")]
 position = Vector2(200, 214)
-script = null
 
 [node name="onigiri11" parent="." instance=ExtResource("20_ojb7r")]
 position = Vector2(998, 206)
-script = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(589, 105.00001)

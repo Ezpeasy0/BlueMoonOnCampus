@@ -4,7 +4,9 @@ extends Node2D
 
 func _ready():
 	Input.set_custom_mouse_cursor(
-		load("res://minigames/minigame_1_lunchbox/assets/texture/chopsticks.png")
+		load("res://minigames/minigame_1_lunchbox/assets/texture/chopsticks.png"),
+		Input.CURSOR_ARROW,
+		Vector2(20, 100)
 	)
 	
 func _process(_delta):

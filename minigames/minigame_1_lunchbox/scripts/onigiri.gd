@@ -11,7 +11,7 @@ var starting_position = Vector2.ZERO
 # อ้างอิงโหนดเสียง (อิงตามชื่อในรูป image_4e59ed.png)
 @onready var pick_up_audio = $"../PickUpSound"
 @onready var drop_audio = $"../DropSound"
-	
+		
 func _process(_delta):
 	if dragging:
 		global_position = get_global_mouse_position() - offset
