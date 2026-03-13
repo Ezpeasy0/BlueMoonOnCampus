@@ -9,6 +9,8 @@ size = Vector2(166.25, 81)
 [node name="onigiri" type="Area2D"]
 position = Vector2(217, 119)
 script = ExtResource("2_nuqy6")
+target_slot_name = "Slot1"
+food_id = "korean_chicken"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 1.9999943)

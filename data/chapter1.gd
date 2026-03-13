@@ -136,7 +136,6 @@ var lines: Array = [
 	{"name":"ฝน", "text":"ห้องนี้มัน.."},
 
 	# Scene 7
-# Scene 7
 	{"bg":"res://sprites/scene/scene_1_7_front_file_room.png", "sprite":"fon_shocked.png", "name":"ฝน", "text":"ห้องเก็บเอกสารค่ะ", "bgm":"null"},
 	{"name":"เมฆ", "thought":true, "text":"เสียงเหมือนมีคนอยู่ข้างใน แปลว่า มีคนอื่นนอกจากพวกเราด้วยเหรอ"},
 	{"name":"เมฆ", "thought":true, "text":"ดึกป่านนี้เนี่ยนะ"},
@@ -167,7 +166,7 @@ var lines: Array = [
 	{"skip_to":"scene8_start"},
 
 	# Scene 8
-	{"id":"scene8_start", "bg":"res://sprites/scene/scene_1_8_file_room_light_on.png", "sprite":"guard/silhouette.png", "name":"เมฆ", "text":"เห้ย คุณเป็นใคร เข้ามาได้ไง มาขโมยของเหรอ!?", "master_sfx":"null", "bgm":"suspense_music.mp3"},
+	{"id":"scene8_start", "bg":"res://sprites/scene/scene_1_8_file_room_light_on.png", "sprite":"tae/silhouette.png", "name":"เมฆ", "text":"เห้ย คุณเป็นใคร เข้ามาได้ไง มาขโมยของเหรอ!?", "master_sfx":"null", "bgm":"suspense_music.mp3"},
 	{"name":"???", "text":"!?"},
 	{"name":"", "text":"", "sfx":"light_switch.mp3"},
 	{"skip_to":"scene9_start"},

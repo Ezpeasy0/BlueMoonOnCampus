@@ -10,6 +10,7 @@ size = Vector2(108.5, 64)
 position = Vector2(138, 74)
 script = ExtResource("1_lxgi5")
 target_slot_name = "Slot3"
+food_id = "sushi_sweet_egg"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.9999962, 12)

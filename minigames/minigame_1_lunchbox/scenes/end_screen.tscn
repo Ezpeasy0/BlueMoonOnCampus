@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbluaxd6bmuws"]
+[gd_scene load_steps=4 format=3 uid="uid://bbluaxd6bmuws"]
 
+[ext_resource type="Script" uid="uid://quyg8y8572b3" path="res://minigames/minigame_1_lunchbox/scripts/end_screen.gd" id="1_3cq6s"]
 [ext_resource type="Texture2D" uid="uid://c13into6av2rm" path="res://minigames/minigame_1_lunchbox/assets/item/result screen.jpg" id="1_my301"]
 [ext_resource type="AudioStream" uid="uid://dcvsb25sr2lci" path="res://minigames/minigame_1_lunchbox/assets/bgm/prop.mp3" id="2_abjgy"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_3cq6s")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -4.0

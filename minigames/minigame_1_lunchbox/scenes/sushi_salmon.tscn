@@ -6,10 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60he1"]
 size = Vector2(108.5, 64)
 
-[node name="onigiri" type="Area2D"]
+[node name="onigiri3" type="Area2D"]
 position = Vector2(138, 74)
 script = ExtResource("1_x38yq")
 target_slot_name = "Slot3"
+food_id = "sushi_salmon"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-6.392854, -1.5500059)

@@ -10,6 +10,7 @@ size = Vector2(185, 94.5)
 position = Vector2(217, 119)
 script = ExtResource("1_pfke6")
 target_slot_name = "Slot2"
+food_id = "papaya_salad"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(12, 21.000015)
