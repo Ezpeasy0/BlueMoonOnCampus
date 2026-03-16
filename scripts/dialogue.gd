@@ -94,9 +94,24 @@ func _ready() -> void:
 	if sfx_text_blip:
 		sfx_text_blip.volume_db = blip_volume_db
 
-	var chapter_node: Node = preload("res://data/chapter1.gd").new()
+	await _load_current_chapter()
+
+func _load_current_chapter() -> void:
+	var chapter_num: int = 1
+
+	if GameSave.state is Dictionary and GameSave.state.has("chapter"):
+		chapter_num = int(GameSave.state["chapter"])
+
+	var path := "res://data/chapter%d.gd" % chapter_num
+	if not ResourceLoader.exists(path):
+		push_error("Chapter file not found: " + path)
+		return
+
+	var chapter_script = load(path)
+	var chapter_node: Node = chapter_script.new()
 	story_lines = chapter_node.lines
 
+	id_to_index.clear()
 	for i in range(story_lines.size()):
 		var line_any: Variant = story_lines[i]
 		if line_any is Dictionary:
@@ -108,7 +123,7 @@ func _ready() -> void:
 	await _apply_restored_visuals()
 
 	choices_container.visible = false
-	_show_current()
+	await _show_current()
 
 
 func _apply_restored_visuals() -> void:
@@ -158,14 +173,23 @@ func _restore_from_gamesave() -> void:
 		_current_bgm = str(GameSave.state["bgm"])
 	if GameSave.state.has("master_sfx"):
 		_current_master_sfx = str(GameSave.state["master_sfx"])
+	if GameSave.state.has("minigame_return_next_id"):
+		var return_id := str(GameSave.state["minigame_return_next_id"])
+		if return_id != "" and id_to_index.has(return_id):
+			index = int(id_to_index[return_id])
+		GameSave.state.erase("minigame_return_next_id")
+		GameSave.state.erase("pending_next_id")
 
 
 func _sync_state_to_gamesave() -> void:
 	if not (GameSave.state is Dictionary):
 		GameSave.state = {}
 
-	GameSave.state["chapter"] = 1
-	GameSave.state["scene"] = 1
+	if not GameSave.state.has("chapter"):
+		GameSave.state["chapter"] = 1
+	if not GameSave.state.has("scene"):
+		GameSave.state["scene"] = 1
+
 	GameSave.state["line_index"] = index
 	GameSave.state["stats"] = stats.duplicate(true)
 	GameSave.state["bg"] = _current_bg
@@ -286,15 +310,36 @@ func _on_back_pressed() -> void:
 	get_tree().paused = false
 	_busy = false
 
-
 func _advance() -> void:
 	index += 1
-	_show_current()
+	await _show_current()
 
+func _go_to_next_chapter_or_end() -> void:
+	var current_chapter: int = 1
+	if GameSave.state is Dictionary and GameSave.state.has("chapter"):
+		current_chapter = int(GameSave.state["chapter"])
 
+	var next_chapter: int = current_chapter + 1
+	var next_path := "res://data/chapter%d.gd" % next_chapter
+
+	if ResourceLoader.exists(next_path):
+		GameSave.state["chapter"] = next_chapter
+		GameSave.state["line_index"] = 0
+		GameSave.state["bg"] = ""
+		GameSave.state["sprite"] = ""
+		GameSave.state["bgm"] = ""
+		GameSave.state["master_sfx"] = ""
+
+		if GameSave.current_slot >= 0:
+			GameSave.save_game(GameSave.current_slot)
+
+		get_tree().change_scene_to_file("res://scenes/dialogue.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		
 func _show_current() -> void:
 	if index >= story_lines.size():
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		_go_to_next_chapter_or_end()
 		return
 
 	var any_line: Variant = story_lines[index]
@@ -312,8 +357,20 @@ func _show_current() -> void:
 	if line.has("master_sfx"):
 		_play_master_sfx(str(line["master_sfx"]))
 
-	if str(line.get("type", "line")) == "choice":
+	var line_type := str(line.get("type", "line"))
+
+	if line_type == "choice":
 		_show_choices(line.get("choices", []))
+		return
+
+	if line_type == "minigame":
+		var minigame_id := str(line.get("minigame_id", ""))
+		var next_id := str(line.get("next", ""))
+		_start_minigame(minigame_id, next_id)
+		return
+
+	if line_type == "conditional":
+		await _handle_conditional(line)
 		return
 
 	choices_container.visible = false
@@ -524,6 +581,50 @@ func _on_choice(opt: Dictionary) -> void:
 	_sync_state_to_gamesave()
 	await _show_current()
 
+func _ensure_flags() -> void:
+	if not GameSave.state.has("flags") or not (GameSave.state["flags"] is Dictionary):
+		GameSave.state["flags"] = {}
+
+
+func _get_flag(flag_name: String, default_value: bool = false) -> bool:
+	_ensure_flags()
+	return bool((GameSave.state["flags"] as Dictionary).get(flag_name, default_value))
+
+
+func _start_minigame(minigame_id: String, next_id: String) -> void:
+	_busy = true
+
+	if not (GameSave.state is Dictionary):
+		GameSave.state = {}
+
+	GameSave.state["pending_next_id"] = next_id
+	_sync_state_to_gamesave()
+
+	match minigame_id:
+		"lunchbox_for_fon":
+			get_tree().change_scene_to_file("res://minigames/minigame_1_lunchbox/scenes/main.tscn")
+		_:
+			push_warning("Unknown minigame_id: " + minigame_id)
+			_busy = false
+
+
+func _handle_conditional(line: Dictionary) -> void:
+	var condition_name: String = str(line.get("condition", ""))
+	var true_next: String = str(line.get("true_next", ""))
+	var false_next: String = str(line.get("false_next", ""))
+
+	var condition_result := _get_flag(condition_name, false)
+
+	if condition_result:
+		if true_next != "" and id_to_index.has(true_next):
+			index = int(id_to_index[true_next])
+			await _show_current()
+			return
+	else:
+		if false_next != "" and id_to_index.has(false_next):
+			index = int(id_to_index[false_next])
+			await _show_current()
+			return
 
 func _resolve_path(root: String, value: String) -> String:
 	if value.strip_edges() == "":

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdj2ndk6ydlv4"]
+
+[ext_resource type="Script" uid="uid://x4vejp81hna2" path="res://minigames/minigame_1_lunchbox/scripts/onigiri.gd" id="1_x38yq"]
+[ext_resource type="Texture2D" uid="uid://dfs3id3c3hm2i" path="res://minigames/minigame_1_lunchbox/assets/food/sushi salmon.png" id="2_sk325"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60he1"]
+size = Vector2(108.5, 64)
+
+[node name="onigiri3" type="Area2D"]
+position = Vector2(138, 74)
+script = ExtResource("1_x38yq")
+target_slot_name = "Slot3"
+food_id = "sushi_salmon"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6.392854, -1.5500059)
+scale = Vector2(0.19497769, 0.17046875)
+texture = ExtResource("2_sk325")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.75, -2)
+shape = SubResource("RectangleShape2D_60he1")

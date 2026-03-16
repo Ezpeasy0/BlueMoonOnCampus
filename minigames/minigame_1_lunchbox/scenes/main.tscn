@@ -1,0 +1,147 @@
+[gd_scene load_steps=27 format=3 uid="uid://c5bgb8p43dj2n"]
+
+[ext_resource type="Texture2D" uid="uid://dslxddxku62eg" path="res://minigames/minigame_1_lunchbox/assets/texture/wood.jpg" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://bagk01nyxbufp" path="res://minigames/minigame_1_lunchbox/scripts/main.gd" id="1_7bbuq"]
+[ext_resource type="Texture2D" uid="uid://bf3mesmft6cw5" path="res://minigames/minigame_1_lunchbox/assets/item/bento.png" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://ywi7rita048" path="res://minigames/minigame_1_lunchbox/scripts/slot_1.gd" id="3_8qtwp"]
+[ext_resource type="PackedScene" uid="uid://dl8l2xnbwca68" path="res://minigames/minigame_1_lunchbox/scenes/onigiri.tscn" id="3_fu7sn"]
+[ext_resource type="Script" uid="uid://bwd81lwskb8uf" path="res://minigames/minigame_1_lunchbox/scripts/slot_2.gd" id="4_dy7ct"]
+[ext_resource type="PackedScene" uid="uid://bdj2ndk6ydlv4" path="res://minigames/minigame_1_lunchbox/scenes/sushi_salmon.tscn" id="4_jix8l"]
+[ext_resource type="Script" uid="uid://dm73gos1yqubh" path="res://minigames/minigame_1_lunchbox/scripts/slot_3.gd" id="5_0o4t1"]
+[ext_resource type="Script" uid="uid://etuodhbd0wta" path="res://minigames/minigame_1_lunchbox/scripts/slot_4.gd" id="6_0k4wn"]
+[ext_resource type="AudioStream" uid="uid://dyk3bypqilvtn" path="res://minigames/minigame_1_lunchbox/assets/bgm/铁痕电台-MSR - 山樆轻.mp3" id="9_dy7ct"]
+[ext_resource type="PackedScene" uid="uid://bhxst7lbhpdht" path="res://minigames/minigame_1_lunchbox/scenes/sushi_sweet_egg.tscn" id="10_0o4t1"]
+[ext_resource type="PackedScene" uid="uid://8xiaqhga4m35" path="res://minigames/minigame_1_lunchbox/scenes/korean_chicken.tscn" id="11_0k4wn"]
+[ext_resource type="AudioStream" uid="uid://byvht8ry042wt" path="res://minigames/minigame_1_lunchbox/assets/bgm/chopstick pick.mp3" id="11_iotk1"]
+[ext_resource type="AudioStream" uid="uid://kfk8qq7e7ft0" path="res://minigames/minigame_1_lunchbox/assets/bgm/drop.mp3" id="12_w44g7"]
+[ext_resource type="PackedScene" uid="uid://ctscdp4jaovmr" path="res://minigames/minigame_1_lunchbox/scenes/kfc.tscn" id="14_w44g7"]
+[ext_resource type="PackedScene" uid="uid://br4xi88d0er7j" path="res://minigames/minigame_1_lunchbox/scenes/pork_chop.tscn" id="15_cm266"]
+[ext_resource type="PackedScene" uid="uid://da010ttca8ylt" path="res://minigames/minigame_1_lunchbox/scenes/salad.tscn" id="16_g8g3n"]
+[ext_resource type="PackedScene" uid="uid://cscv400iwayn2" path="res://minigames/minigame_1_lunchbox/scenes/papaya_salad.tscn" id="17_8u0te"]
+[ext_resource type="PackedScene" uid="uid://dl8qx2d8hc7bx" path="res://minigames/minigame_1_lunchbox/scenes/fried_rice_seafood.tscn" id="18_oiatc"]
+[ext_resource type="PackedScene" uid="uid://dxfkrlrwibf4r" path="res://minigames/minigame_1_lunchbox/scenes/fried_rice_sausage.tscn" id="19_mg3m2"]
+[ext_resource type="PackedScene" uid="uid://cfjrs050mykq0" path="res://minigames/minigame_1_lunchbox/scenes/fried_rice_gourami.tscn" id="20_ojb7r"]
+[ext_resource type="Texture2D" uid="uid://d4mi61hvgalau" path="res://minigames/minigame_1_lunchbox/assets/item/guide.png" id="21_e5qqf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vrkn"]
+size = Vector2(215.5, 81.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fu7sn"]
+size = Vector2(206, 82.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jix8l"]
+size = Vector2(149.75, 90.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glbon"]
+size = Vector2(299, 90.5)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7bbuq")
+
+[node name="Wood" type="TextureRect" parent="."]
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 1158.0
+offset_bottom = 656.0
+mouse_filter = 2
+texture = ExtResource("1_06t4h")
+expand_mode = 1
+
+[node name="BentoBox" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BentoBox"]
+position = Vector2(568.00006, 518)
+scale = Vector2(0.48246443, 0.37447542)
+texture = ExtResource("2_7vrkn")
+
+[node name="Slot1" type="Area2D" parent="BentoBox"]
+position = Vector2(470, 405)
+script = ExtResource("3_8qtwp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BentoBox/Slot1"]
+position = Vector2(4, -3)
+shape = SubResource("RectangleShape2D_7vrkn")
+
+[node name="Slot2" type="Area2D" parent="BentoBox"]
+position = Vector2(694, 404)
+script = ExtResource("4_dy7ct")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BentoBox/Slot2"]
+position = Vector2(4, -1)
+shape = SubResource("RectangleShape2D_fu7sn")
+
+[node name="Slot3" type="Area2D" parent="BentoBox"]
+position = Vector2(419, 505)
+script = ExtResource("5_0o4t1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BentoBox/Slot3"]
+position = Vector2(1, -3)
+shape = SubResource("RectangleShape2D_jix8l")
+
+[node name="Slot4" type="Area2D" parent="BentoBox"]
+position = Vector2(680, 505)
+script = ExtResource("6_0k4wn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BentoBox/Slot4"]
+position = Vector2(-4, -7)
+shape = SubResource("RectangleShape2D_glbon")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_dy7ct")
+volume_db = -15.266
+autoplay = true
+
+[node name="PickUpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_iotk1")
+
+[node name="DropSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_w44g7")
+volume_db = -10.495
+
+[node name="onigiri" parent="." instance=ExtResource("3_fu7sn")]
+position = Vector2(139, 597)
+
+[node name="onigiri2" parent="." instance=ExtResource("4_jix8l")]
+position = Vector2(699, 271)
+
+[node name="onigiri3" parent="." instance=ExtResource("10_0o4t1")]
+position = Vector2(855, 69)
+
+[node name="onigiri4" parent="." instance=ExtResource("11_0k4wn")]
+position = Vector2(1031, 364)
+
+[node name="onigiri5" parent="." instance=ExtResource("14_w44g7")]
+position = Vector2(492, 269)
+
+[node name="onigiri6" parent="." instance=ExtResource("15_cm266")]
+position = Vector2(133, 358)
+
+[node name="onigiri7" parent="." instance=ExtResource("16_g8g3n")]
+position = Vector2(1040, 75)
+
+[node name="onigiri8" parent="." instance=ExtResource("17_8u0te")]
+position = Vector2(136, 474)
+
+[node name="onigiri9" parent="." instance=ExtResource("18_oiatc")]
+position = Vector2(197, 83)
+
+[node name="onigiri10" parent="." instance=ExtResource("19_mg3m2")]
+position = Vector2(200, 214)
+
+[node name="onigiri11" parent="." instance=ExtResource("20_ojb7r")]
+position = Vector2(998, 206)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(589, 105.00001)
+scale = Vector2(0.118316635, 0.08849334)
+texture = ExtResource("21_e5qqf")
+
+[node name="CompleteButton" type="Button" parent="."]
+offset_left = 962.0
+offset_top = 499.0
+offset_right = 1114.0
+offset_bottom = 581.0
+disabled = true
+text = "Complete"
+
+[connection signal="pressed" from="CompleteButton" to="." method="_on_complete_button_pressed"]

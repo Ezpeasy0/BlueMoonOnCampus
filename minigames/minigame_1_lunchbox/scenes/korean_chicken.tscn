@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://8xiaqhga4m35"]
+
+[ext_resource type="Texture2D" uid="uid://dqur0t06s2s5w" path="res://minigames/minigame_1_lunchbox/assets/food/korean chicken.png" id="2_k1i5u"]
+[ext_resource type="Script" uid="uid://x4vejp81hna2" path="res://minigames/minigame_1_lunchbox/scripts/onigiri.gd" id="2_nuqy6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60he1"]
+size = Vector2(166.25, 81)
+
+[node name="onigiri" type="Area2D"]
+position = Vector2(217, 119)
+script = ExtResource("2_nuqy6")
+target_slot_name = "Slot1"
+food_id = "korean_chicken"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1.9999943)
+scale = Vector2(0.6090122, 0.3517144)
+texture = ExtResource("2_k1i5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.125, -0.5)
+shape = SubResource("RectangleShape2D_60he1")

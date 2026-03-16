@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl8l2xnbwca68"]
+
+[ext_resource type="Texture2D" uid="uid://bua3s8ao7sb34" path="res://minigames/minigame_1_lunchbox/assets/food/onigiri.png" id="1_6ui2g"]
+[ext_resource type="Script" uid="uid://x4vejp81hna2" path="res://minigames/minigame_1_lunchbox/scripts/onigiri.gd" id="1_60he1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60he1"]
+size = Vector2(103, 64)
+
+[node name="onigiri3" type="Area2D"]
+position = Vector2(138, 74)
+script = ExtResource("1_60he1")
+target_slot_name = "Slot3"
+food_id = "onigiri"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.31428573, 0.2725)
+texture = ExtResource("1_6ui2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_60he1")
