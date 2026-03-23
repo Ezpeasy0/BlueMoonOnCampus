@@ -94,7 +94,7 @@ func _ready() -> void:
 	if sfx_text_blip:
 		sfx_text_blip.volume_db = blip_volume_db
 
-	await _load_current_chapter()
+	await _load_current_chapter() 
 
 func _load_current_chapter() -> void:
 	var chapter_num: int = 1
