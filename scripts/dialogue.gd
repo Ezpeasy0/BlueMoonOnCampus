@@ -371,9 +371,6 @@ func _go_to_next_chapter_or_end() -> void:
 		GameSave.state["bgm"] = ""
 		GameSave.state["master_sfx"] = ""
 
-		if GameSave.current_slot >= 0:
-			GameSave.save_game(GameSave.current_slot)
-
 		get_tree().change_scene_to_file("res://scenes/dialogue.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
