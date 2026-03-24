@@ -46,7 +46,6 @@
 	  "text": "ต้องรายงานเหตุการณ์",
 	  "next": "ch2_s2_001"
 	},
-
 	{
 	  "id": "ch2_s2_001",
 	  "type": "dialogue",
@@ -95,7 +94,6 @@
 	  "text": "..",
 	  "next": "ch2_s2_choice_001"
 	},
-
 	{
 	  "id": "ch2_s2_choice_001",
 	  "type": "choice",
@@ -116,7 +114,6 @@
 		}
 	  ]
 	},
-
 	{
 	  "id": "ch2_s2_a_001",
 	  "type": "dialogue",
@@ -132,7 +129,6 @@
 	  "thought": true,
 	  "next": "ch2_s2_merge_001"
 	},
-
 	{
 	  "id": "ch2_s2_b_001",
 	  "type": "dialogue",
@@ -180,7 +176,6 @@
 	  "thought": true,
 	  "next": "ch2_s2_merge_001"
 	},
-
 	{
 	  "id": "ch2_s2_merge_001",
 	  "type": "dialogue",
@@ -205,10 +200,11 @@
 	{
 	  "id": "ch2_s2_009",
 	  "type": "dialogue",
-	  "bg": "scene_1_11_cctv_photo_1",
 	  "name": "เมฆ",
 	  "text": "ทีนี้จุดสำคัญคือ รูปนี้ครับ เป็นรูปของพีทเขาเหมือนเดินออกมาจากพุ่มไม้",
-	  "next": "ch2_s2_010"
+	  "bg": "scene_1_11_cctv_photo_1",
+	  "sprite": "",
+	  "next": "ch2_s2_011"
 	},
 	{
 	  "id": "ch2_s2_010",
@@ -244,6 +240,8 @@
 	  "type": "dialogue",
 	  "name": "สารวัตรธนา",
 	  "text": "..",
+	  "bg": "scene_2_2_inspector_office",
+	  "sprite": "tana_chill",
 	  "next": "ch2_s2_015"
 	},
 	{
@@ -481,7 +479,6 @@
 	  "text": "เห้ย เดี๋ยว-",
 	  "next": "ch2_s3_001"
 	},
-
 	{
 	  "id": "ch2_s3_001",
 	  "type": "dialogue",
@@ -563,14 +560,12 @@
 	  "text": "เหมือนสารวัตรพูดอยู่นะ ว่าฝนชอบอะไร..",
 	  "next": "ch2_minigame_001"
 	},
-
 	{
 	  "id": "ch2_minigame_001",
 	  "type": "minigame",
 	  "minigame_id": "lunchbox",
 	  "next": "ch2_s3_012"
 	},
-
 	{
 	  "id": "ch2_s3_012",
 	  "type": "dialogue",
@@ -593,7 +588,6 @@
 	  "text": "ไปเลยดีกว่า",
 	  "next": "ch2_s4_001"
 	},
-
 	{
 	  "id": "ch2_s4_001",
 	  "type": "dialogue",
@@ -629,7 +623,6 @@
 	  "thought": true,
 	  "next": "ch2_s5_001"
 	},
-
 	{
 	  "id": "ch2_s5_001",
 	  "type": "dialogue",
@@ -648,7 +641,6 @@
 	  "sfx": "bush_leaves.mp3",
 	  "next": "ch2_s6_001"
 	},
-
 	{
 	  "id": "ch2_s6_001",
 	  "type": "dialogue",
@@ -705,7 +697,6 @@
 	  "thought": true,
 	  "next": "ch2_s7_001"
 	},
-
 	{
 	  "id": "ch2_s7_001",
 	  "type": "dialogue",
@@ -1032,7 +1023,6 @@
 	  "sfx": "bush_leaves.mp3",
 	  "next": "ch2_s8_001"
 	},
-
 	{
 	  "id": "ch2_s8_001",
 	  "type": "dialogue",
@@ -1058,7 +1048,6 @@
 	  "text": "!!???",
 	  "next": "ch2_s9_001"
 	},
-
 	{
 	  "id": "ch2_s9_001",
 	  "type": "dialogue",
@@ -1117,7 +1106,6 @@
 	  "thought": true,
 	  "next": "ch2_s10_001"
 	},
-
 	{
 	  "id": "ch2_s10_001",
 	  "type": "dialogue",
@@ -1218,7 +1206,6 @@
 	  "thought": true,
 	  "next": "ch2_s10_choice_001"
 	},
-
 	{
 	  "id": "ch2_s10_choice_001",
 	  "type": "choice",
@@ -1237,7 +1224,6 @@
 		}
 	  ]
 	},
-
 	{
 	  "id": "ch2_s10_merge_001",
 	  "type": "dialogue",
@@ -1267,7 +1253,6 @@
 	  "text": "นี่ไง",
 	  "next": "ch2_food_conditional_001"
 	},
-
 	{
 	  "id": "ch2_food_conditional_001",
 	  "type": "conditional",
@@ -1279,7 +1264,6 @@
 	  ],
 	  "else": "ch2_food_bad_001"
 	},
-
 	{
 	  "id": "ch2_food_good_001",
 	  "type": "dialogue",
@@ -1296,7 +1280,6 @@
 	  "text": "อ-อ๋อค่ะ ขอบคุณนะคะ",
 	  "next": "ch2_food_after_001"
 	},
-
 	{
 	  "id": "ch2_food_after_001",
 	  "type": "dialogue",
@@ -1369,7 +1352,6 @@
 	  "text": "ค่ะ",
 	  "next": "ch2_s11_001"
 	},
-
 	{
 	  "id": "ch2_s11_001",
 	  "type": "dialogue",
@@ -1442,7 +1424,6 @@
 	  "thought": true,
 	  "next": "ch2_s12_001"
 	},
-
 	{
 	  "id": "ch2_s12_001",
 	  "type": "dialogue",
@@ -1519,7 +1500,6 @@
 	  "text": "อ๋ออ ได้ค่ะะ",
 	  "next": "ch2_s13_001"
 	},
-
 	{
 	  "id": "ch2_s13_001",
 	  "type": "dialogue",
@@ -1871,7 +1851,6 @@
 	  "thought": true,
 	  "next": "ch2_s14_001"
 	},
-
 	{
 	  "id": "ch2_s14_001",
 	  "type": "dialogue",
@@ -2301,7 +2280,6 @@
 	  "thought": true,
 	  "next": "ch2_s15_001"
 	},
-
 	{
 	  "id": "ch2_s15_001",
 	  "type": "dialogue",
@@ -2321,7 +2299,6 @@
 	  "text": "!",
 	  "next": "ch2_s16_001"
 	},
-
 	{
 	  "id": "ch2_s16_001",
 	  "type": "dialogue",
@@ -2435,7 +2412,6 @@
 	  "text": "ค่ะ!!",
 	  "next": "ch2_s17_001"
 	},
-
 	{
 	  "id": "ch2_s17_001",
 	  "type": "dialogue",
@@ -2445,13 +2421,6 @@
 	  "sprite": "",
 	  "name": "เมฆ",
 	  "text": "เอาวะ ให้มันรู้แล้วรู้รอดกันไปเลย!",
-	  "next": "ch2_end_001"
-	},
-	{
-	  "id": "ch2_end_001",
-	  "type": "dialogue",
-	  "name": "",
-	  "text": "จบ Chapter 2",
 	  "next": null
 	}
   ]
