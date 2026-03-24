@@ -832,7 +832,7 @@
 	  "type": "dialogue",
 	  "name": "",
 	  "text": "",
-	  "sfx": "lockpick.mp3",
+	  "sfx": "lockpick.wav",
 	  "next": "ch1_s7_bc_003"
 	},
 	{
@@ -903,7 +903,7 @@
 	  "type": "dialogue",
 	  "name": "",
 	  "text": "",
-	  "sfx": "lockpick.mp3",
+	  "sfx": "lockpick.wav",
 	  "next": "ch1_s7_a_008"
 	},
 	{

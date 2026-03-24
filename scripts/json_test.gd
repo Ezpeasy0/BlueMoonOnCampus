@@ -1,220 +1,783 @@
 extends Control
 
-@onready var bg: TextureRect = $BG
-@onready var character: TextureRect = $Character
-@onready var name_label: Label = $NameLabel
-@onready var dialogue_label: RichTextLabel = $DialogueLabel
-@onready var choices_box: VBoxContainer = $ChoicesBox
+const BG_DIR: String = "res://sprites/scene/"
+const SPRITE_DIR: String = "res://sprites/characters/"
+const FULLSCREEN_BGS: Array[String] = ["pete.png"]
 
-var events_by_id: Dictionary = {}
-var current_event_id: String = ""
-var current_bg_name: String = ""
-var current_sprite_name: String = ""
+const BGM_PATH_DIR: String = "res://sounds/bgm/"
+const SFX_PATH_DIR: String = "res://sounds/sfx/"
+const MasterSFX_PATH_DIR: String = "res://sounds/master_sfx/"
 
-const BG_BASE := "res://sprites/scene/"
-const SPRITE_BASE := "res://sprites/characters/"
+@onready var bg: TextureRect = %BG
+@onready var character: TextureRect = %Character
+@onready var name_label: Label = %NameLabel
+@onready var dialogue_label: RichTextLabel = %DialogueLabel
+
+@onready var choices_container: Control = %ChoicesPanel 
+@onready var choices_box: VBoxContainer = %ChoicesBox
+
+@onready var bg_fade: ColorRect = %BGFade
+@onready var btn_options: Button = $HBoxContainer/options
+@onready var options_menu: Panel = $Options
+@onready var exit_confirm: ConfirmationDialog = $ExitConfirm
+
+@export var sfx_click: AudioStreamPlayer
+@export var sfx_hover: AudioStreamPlayer
+@onready var bgm_player: AudioStreamPlayer = $BGM
+@onready var sfx_dialogue: AudioStreamPlayer = $SFX
+@onready var master_sfx: AudioStreamPlayer = $MasterSFX
+
+@export var sfx_text_blip: AudioStreamPlayer
+@export var blip_volume_db: float = -10.0
+
+@export_group("Options Sub-Panels")
+@export var video_panel: Panel
+@export var audio_panel: Panel
+@export var back_button: Button
+
+@export_group("Save/Load Scenes")
+@export var save_scene: PackedScene
+@export var load_scene: PackedScene
+
+var story_lines: Array = []
+var id_to_index: Dictionary = {}
+
+var index: int = 0
+var stats: Dictionary = {"INT": 0, "CHA": 0}
+
+var _busy: bool = false
+var _typing: bool = false
+var _skip_typing: bool = false
+
+var _current_bg: String = ""
+var _current_sprite: String = ""
+var _current_bgm: String = ""
+var _current_master_sfx: String = ""
+
+@export var type_speed_seconds: float = 0.02
+@export var blip_every_chars: int = 2
+
 
 func _ready() -> void:
-	load_story("res://data/chapter1.json")
-	show_current_event()
+	get_tree().paused = false
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
-func load_story(path: String) -> void:
+	bg_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	character.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	_hide_all_in_game_menus()
+
+	_auto_setup_all_buttons(self)
+
+	if btn_options and not btn_options.pressed.is_connected(_on_options_pressed):
+		btn_options.pressed.connect(_on_options_pressed)
+
+	if back_button and not back_button.pressed.is_connected(_on_back_pressed):
+		back_button.pressed.connect(_on_back_pressed)
+
+	if options_menu:
+		if options_menu.has_signal("video_requested") and not options_menu.video_requested.is_connected(_on_video_setting):
+			options_menu.video_requested.connect(_on_video_setting)
+		if options_menu.has_signal("audio_requested") and not options_menu.audio_requested.is_connected(_on_audio_setting):
+			options_menu.audio_requested.connect(_on_audio_setting)
+
+	if exit_confirm:
+		exit_confirm.visible = false
+		exit_confirm.process_mode = Node.PROCESS_MODE_ALWAYS
+		if not exit_confirm.confirmed.is_connected(_on_exit_confirmed):
+			exit_confirm.confirmed.connect(_on_exit_confirmed)
+		if not exit_confirm.canceled.is_connected(_on_exit_canceled):
+			exit_confirm.canceled.connect(_on_exit_canceled)
+
+	if sfx_text_blip:
+		sfx_text_blip.volume_db = blip_volume_db
+
+	await _load_current_chapter() 
+
+
+func _load_current_chapter() -> void:
+	var chapter_num: int = 1
+
+	if GameSave.state is Dictionary and GameSave.state.has("chapter"):
+		chapter_num = int(GameSave.state["chapter"])
+
+	var path := "res://data/chapter%d.json" % chapter_num
+	if not FileAccess.file_exists(path):
+		push_error("Chapter file not found: " + path)
+		return
+
 	var file := FileAccess.open(path, FileAccess.READ)
-	if file == null:
-		push_error("Cannot open JSON: " + path)
-		return
-
 	var text := file.get_as_text()
-	var data = JSON.parse_string(text)
-	if typeof(data) != TYPE_DICTIONARY:
-		push_error("Invalid JSON root")
-		return
-
-	events_by_id.clear()
-	for e in data.get("events", []):
-		events_by_id[str(e["id"])] = e
-
-	current_event_id = str(data.get("start", ""))
-
-func show_current_event() -> void:
-	for child in choices_box.get_children():
-		child.queue_free()
-
-	if not events_by_id.has(current_event_id):
-		return
-
-	var event: Dictionary = events_by_id[current_event_id]
-	var event_type := str(event.get("type", "dialogue"))
-
-	if event.has("bg"):
-		var bg_value := str(event.get("bg", ""))
-		if bg_value == "":
-			bg.texture = null
-			current_bg_name = ""
+	var json_data = JSON.parse_string(text)
+	
+	if typeof(json_data) == TYPE_ARRAY:
+		story_lines = json_data
+	elif typeof(json_data) == TYPE_DICTIONARY:
+		if json_data.has("events"):
+			story_lines = json_data["events"]
+		elif json_data.has("lines"):
+			story_lines = json_data["lines"]
 		else:
-			current_bg_name = bg_value
-			var bg_path := resolve_bg(bg_value)
-			if bg_path != "":
-				bg.texture = load(bg_path)
-
-	if event.has("sprite"):
-		var sprite_value := str(event.get("sprite", ""))
-		if sprite_value == "":
-			character.texture = null
-			character.visible = false
-			current_sprite_name = ""
-		else:
-			current_sprite_name = sprite_value
-			var sprite_path := resolve_sprite(sprite_value)
-			if sprite_path != "":
-				character.texture = load(sprite_path)
-				character.visible = true
-			else:
-				character.texture = null
-				character.visible = false
-
-	name_label.text = str(event.get("name", ""))
-	dialogue_label.text = str(event.get("text", ""))
-
-	if event_type == "choice":
-		var choices: Array = event.get("choices", [])
-		for i in range(choices.size()):
-			var choice: Dictionary = choices[i]
-			var btn := Button.new()
-			btn.text = str(choice.get("label", ""))
-			btn.pressed.connect(func(): on_choice_pressed(i))
-			choices_box.add_child(btn)
-
-func on_choice_pressed(choice_index: int) -> void:
-	if not events_by_id.has(current_event_id):
-		return
-
-	var event: Dictionary = events_by_id[current_event_id]
-	var choices: Array = event.get("choices", [])
-	if choice_index < 0 or choice_index >= choices.size():
-		return
-
-	var choice: Dictionary = choices[choice_index]
-
-	# for test: show "say" immediately as one dialogue step before jumping
-	var say_text := str(choice.get("say", ""))
-	var next_id := str(choice.get("next", ""))
-
-	if say_text != "":
-		name_label.text = "เมฆ"
-		dialogue_label.text = say_text
-
-		for child in choices_box.get_children():
-			child.queue_free()
-
-		var continue_btn := Button.new()
-		continue_btn.text = "Continue"
-		continue_btn.pressed.connect(func():
-			apply_choice_effects(choice.get("effects", {}))
-			current_event_id = next_id
-			show_current_event()
-		)
-		choices_box.add_child(continue_btn)
+			push_error("JSON file must contain an 'events' or 'lines' array: " + path)
+			return
 	else:
-		apply_choice_effects(choice.get("effects", {}))
-		current_event_id = next_id
-		show_current_event()
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if choices_box.get_child_count() > 0:
-			return
-		go_next()
-
-	if event.is_action_pressed("ui_accept"):
-		if choices_box.get_child_count() > 0:
-			return
-		go_next()
-
-func go_next() -> void:
-	if not events_by_id.has(current_event_id):
+		push_error("Failed to parse JSON from: " + path)
 		return
 
-	var event: Dictionary = events_by_id[current_event_id]
-	if str(event.get("type", "dialogue")) != "dialogue":
+	id_to_index.clear()
+	for i in range(story_lines.size()):
+		var line_any: Variant = story_lines[i]
+		if line_any is Dictionary:
+			var line_dict: Dictionary = line_any
+			if line_dict.has("id"):
+				id_to_index[line_dict["id"]] = i
+
+	_restore_from_gamesave()
+	await _apply_restored_visuals()
+
+	choices_container.visible = false
+	await _show_current()
+
+
+func _apply_restored_visuals() -> void:
+	if _current_bg != "":
+		await _set_background(_current_bg)
+
+	if _is_fullscreen_bg(_current_bg):
+		character.visible = false
+	else:
+		if _current_sprite != "":
+			await _set_character_sprite(_current_sprite)
+
+	if _current_bgm != "":
+		var temp_bgm = _current_bgm
+		_current_bgm = "" 
+		_play_bgm(temp_bgm)
+
+	if _current_master_sfx != "":
+		var temp_master = _current_master_sfx
+		_current_master_sfx = "" 
+		_play_master_sfx(temp_master)
+
+
+func _is_fullscreen_bg(bg_value: String) -> bool:
+	if bg_value == "":
+		return false
+	var file := bg_value.get_file()
+	return FULLSCREEN_BGS.has(file)
+
+
+func _restore_from_gamesave() -> void:
+	if GameSave.current_slot < 0:
+		return
+	if not (GameSave.state is Dictionary):
 		return
 
-	var next_id := str(event.get("next", ""))
-	if next_id != "":
-		current_event_id = next_id
-		show_current_event()
+	if GameSave.state.has("line_index"):
+		index = int(GameSave.state["line_index"])
 
-func apply_choice_effects(effects: Dictionary) -> void:
+	if GameSave.state.has("stats") and GameSave.state["stats"] is Dictionary:
+		stats = (GameSave.state["stats"] as Dictionary).duplicate(true)
+
+	if GameSave.state.has("bg"):
+		_current_bg = str(GameSave.state["bg"])
+	if GameSave.state.has("sprite"):
+		_current_sprite = str(GameSave.state["sprite"])
+	if GameSave.state.has("bgm"):
+		_current_bgm = str(GameSave.state["bgm"])
+	if GameSave.state.has("master_sfx"):
+		_current_master_sfx = str(GameSave.state["master_sfx"])
+	if GameSave.state.has("minigame_return_next_id"):
+		var return_id := str(GameSave.state["minigame_return_next_id"])
+		if return_id != "" and id_to_index.has(return_id):
+			index = int(id_to_index[return_id])
+		GameSave.state.erase("minigame_return_next_id")
+		GameSave.state.erase("pending_next_id")
+
+
+func _sync_state_to_gamesave() -> void:
 	if not (GameSave.state is Dictionary):
 		GameSave.state = {}
 
-	if not GameSave.state.has("stats") or not (GameSave.state["stats"] is Dictionary):
-		GameSave.state["stats"] = {"INT": 0, "CHA": 0}
+	if not GameSave.state.has("chapter"):
+		GameSave.state["chapter"] = 1
+	if not GameSave.state.has("scene"):
+		GameSave.state["scene"] = 1
 
-	var stats: Dictionary = GameSave.state["stats"]
+	GameSave.state["line_index"] = index
+	GameSave.state["stats"] = stats.duplicate(true)
+	GameSave.state["bg"] = _current_bg
+	GameSave.state["sprite"] = _current_sprite
+	GameSave.state["bgm"] = _current_bgm
+	GameSave.state["master_sfx"] = _current_master_sfx
 
-	for key in effects.keys():
-		stats[key] = int(stats.get(key, 0)) + int(effects[key])
 
-	GameSave.state["stats"] = stats
-	print("Updated stats: ", GameSave.state["stats"])
+func _save_now() -> void:
+	if GameSave.current_slot >= 0:
+		_sync_state_to_gamesave()
+		GameSave.save_game(GameSave.current_slot)
 
-func resolve_bg(name: String) -> String:
-	var path := BG_BASE + name + ".png"
-	if ResourceLoader.exists(path):
-		return path
 
-	path = BG_BASE + name + ".jpg"
-	if ResourceLoader.exists(path):
-		return path
+func _auto_setup_all_buttons(node: Node) -> void:
+	if node is Button:
+		_setup_button_sounds(node)
+	for child in node.get_children():
+		_auto_setup_all_buttons(child)
 
-	path = BG_BASE + name + ".jpeg"
-	if ResourceLoader.exists(path):
-		return path
 
-	print("BG not found: ", name)
+func _setup_button_sounds(btn: Button) -> void:
+	if not btn.mouse_entered.is_connected(_on_button_hover):
+		btn.mouse_entered.connect(_on_button_hover)
+	if not btn.pressed.is_connected(_on_button_click):
+		btn.pressed.connect(_on_button_click)
+
+
+func _on_button_hover() -> void:
+	if sfx_hover:
+		sfx_hover.play()
+
+
+func _on_button_click() -> void:
+	if sfx_click:
+		sfx_click.play()
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and (event as InputEventKey).pressed and (event as InputEventKey).keycode == KEY_ESCAPE:
+		print("[PANIC UNLOCK]")
+		if is_inside_tree():
+			get_tree().paused = false
+		_busy = false
+		_hide_all_in_game_menus()
+		return
+
+	if is_inside_tree() and get_tree().paused:
+		return
+
+	if _busy:
+		return
+
+	var hovered := get_viewport().gui_get_hovered_control()
+	if hovered != null:
+		if hovered is Button or hovered is BaseButton or hovered.mouse_filter == Control.MOUSE_FILTER_STOP:
+			return
+
+	if not (event is InputEventMouseButton):
+		return
+	var mb := event as InputEventMouseButton
+	if mb.button_index != MOUSE_BUTTON_LEFT or not mb.pressed:
+		return
+
+	if _typing:
+		_skip_typing = true
+		get_viewport().set_input_as_handled() 
+		return
+
+	if choices_container.visible:
+		return
+
+	_advance()
+
+
+func _on_options_pressed() -> void:
+	_block_dialogue_input_for_menu_open()
+	get_tree().paused = true
+
+	if options_menu:
+		options_menu.visible = true
+	if back_button:
+		back_button.visible = true
+
+	if options_menu and options_menu.has_method("init_settings"):
+		options_menu.init_settings()
+
+
+func _on_video_setting() -> void:
+	if video_panel:
+		video_panel.visible = true
+		if options_menu: options_menu.visible = false
+		if back_button: back_button.visible = true
+
+
+func _on_audio_setting() -> void:
+	if audio_panel:
+		audio_panel.visible = true
+		if options_menu: options_menu.visible = false
+		if back_button: back_button.visible = true
+
+
+func _on_back_pressed() -> void:
+	if (video_panel and video_panel.visible) or (audio_panel and audio_panel.visible):
+		if video_panel: video_panel.visible = false
+		if audio_panel: audio_panel.visible = false
+		if options_menu: options_menu.visible = true
+		if back_button: back_button.visible = true
+		return
+
+	_hide_all_in_game_menus()
+	get_tree().paused = false
+	_busy = false
+
+
+func _advance() -> void:
+	index += 1
+	await _show_current()
+
+
+func _go_to_next_chapter_or_end() -> void:
+	var current_chapter: int = 1
+	if GameSave.state is Dictionary and GameSave.state.has("chapter"):
+		current_chapter = int(GameSave.state["chapter"])
+
+	var next_chapter: int = current_chapter + 1
+	var next_path := "res://data/chapter%d.json" % next_chapter
+
+	if FileAccess.file_exists(next_path):
+		GameSave.state["chapter"] = next_chapter
+		GameSave.state["line_index"] = 0
+		GameSave.state["bg"] = ""
+		GameSave.state["sprite"] = ""
+		GameSave.state["bgm"] = ""
+		GameSave.state["master_sfx"] = ""
+
+		if GameSave.current_slot >= 0:
+			GameSave.save_game(GameSave.current_slot)
+
+		get_tree().change_scene_to_file("res://scenes/dialogue.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _show_current() -> void:
+	if index >= story_lines.size():
+		_go_to_next_chapter_or_end()
+		return
+
+	var any_line: Variant = story_lines[index]
+	if not (any_line is Dictionary):
+		index += 1
+		await _show_current()
+		return
+
+	var line: Dictionary = any_line
+
+	if line.has("bgm"):
+		_play_bgm(str(line["bgm"]))
+	if line.has("sfx"):
+		_play_sfx(str(line["sfx"]))
+	if line.has("master_sfx"):
+		_play_master_sfx(str(line["master_sfx"]))
+
+	var line_type := str(line.get("type", "line"))
+
+	if line_type == "choice":
+		_show_choices(line.get("choices", []))
+		return
+
+	if line_type == "minigame":
+		var minigame_id := str(line.get("minigame_id", ""))
+		var next_id := str(line.get("next", ""))
+		_start_minigame(minigame_id, next_id)
+		return
+
+	if line_type == "conditional":
+		await _handle_conditional(line)
+		return
+
+	choices_container.visible = false
+
+	if line.has("bg"):
+		var new_bg: String = str(line["bg"])
+		if new_bg.strip_edges() != "" and new_bg != _current_bg:
+			_current_bg = new_bg
+			await _set_background(new_bg)
+
+	if _is_fullscreen_bg(_current_bg):
+		_current_sprite = ""
+		character.visible = false
+	else:
+		if line.has("sprite"):
+			var new_sprite: String = str(line["sprite"])
+			if new_sprite.strip_edges() == "":
+				_current_sprite = ""
+				character.visible = false
+			elif new_sprite != _current_sprite:
+				_current_sprite = new_sprite
+				await _set_character_sprite(new_sprite)
+
+	var who: String = str(line.get("name", ""))
+	var txt: String = str(line.get("text", ""))
+	if bool(line.get("thought", false)):
+		txt = "(" + txt + ")"
+
+	name_label.text = who
+	if who.strip_edges() == "":
+		%NameBox.modulate.a = 0.0
+	else:
+		%NameBox.modulate.a = 1.0
+
+	await _type_text(txt)
+	_sync_state_to_gamesave()
+
+	if line.has("skip_to"):
+		var target_id := str(line["skip_to"])
+		if target_id != "" and id_to_index.has(target_id):
+			index = int(id_to_index[target_id])
+			await _show_current()
+			return
+
+
+func _type_text(full_text: String) -> void:
+	_typing = true
+	_skip_typing = false
+	dialogue_label.text = ""
+
+	if sfx_text_blip and sfx_text_blip.playing:
+		sfx_text_blip.stop()
+
+	if full_text == "":
+		_typing = false
+		return
+
+	var char_count: int = 0
+	for i in range(full_text.length()):
+		if _skip_typing:
+			break
+
+		dialogue_label.text += full_text[i]
+		char_count += 1
+
+		if sfx_text_blip and blip_every_chars > 0 and (char_count % blip_every_chars == 0):
+			if sfx_text_blip.playing:
+				sfx_text_blip.stop()
+			sfx_text_blip.play()
+
+		await get_tree().create_timer(type_speed_seconds).timeout
+
+	dialogue_label.text = full_text
+
+	if sfx_text_blip and sfx_text_blip.playing:
+		sfx_text_blip.stop()
+
+	_typing = false
+
+
+func _play_bgm(filename: String) -> void:
+	if filename == "" or filename == "null":
+		if bgm_player:
+			bgm_player.stop()
+		_current_bgm = ""
+		return
+	if filename == _current_bgm:
+		return
+
+	var full_path: String = BGM_PATH_DIR + filename
+	if not FileAccess.file_exists(full_path):
+		return
+
+	var stream: Resource = load(full_path)
+	if stream and bgm_player:
+		if stream is AudioStreamMP3:
+			stream.loop = true
+		elif stream is AudioStreamWAV:
+			stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+		elif stream is AudioStreamOggVorbis:
+			stream.loop = true
+		
+		bgm_player.stream = stream
+		bgm_player.play()
+		_current_bgm = filename
+
+
+func _play_sfx(filename: String) -> void:
+	if filename == "" or filename == "null":
+		if sfx_dialogue:
+			sfx_dialogue.stop()
+		return
+
+	var full_path: String = SFX_PATH_DIR + filename
+	if not FileAccess.file_exists(full_path):
+		return
+
+	var stream: Resource = load(full_path)
+	if stream and sfx_dialogue:
+		sfx_dialogue.stream = stream
+		sfx_dialogue.play()
+
+
+func _play_master_sfx(filename: String) -> void:
+	if filename == "" or filename == "null":
+		if master_sfx:
+			master_sfx.stop()
+		_current_master_sfx = ""
+		return
+	
+	if filename == _current_master_sfx:
+		return
+
+	var full_path: String = MasterSFX_PATH_DIR + filename
+	if not FileAccess.file_exists(full_path):
+		return
+
+	var stream: Resource = load(full_path)
+	if stream and master_sfx:
+		if stream is AudioStreamMP3:
+			stream.loop = true
+		if stream is AudioStreamWAV:
+			stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+		elif stream is AudioStreamOggVorbis:
+			stream.loop = true
+			
+		master_sfx.stream = stream
+		master_sfx.play()
+		_current_master_sfx = filename
+
+
+func _show_choices(options_list: Array) -> void:
+	choices_container.visible = true
+	for c in choices_box.get_children():
+		c.queue_free()
+		
+	var my_style = load("res://sprites/choices/MyButtonStyle.tres")
+	var my_style_hover = load("res://sprites/choices/MyButtonStyle_Hover.tres")
+
+	for opt_any in options_list:
+		if not (opt_any is Dictionary):
+			continue
+		var opt: Dictionary = opt_any
+
+		var b: Button = Button.new()
+		b.text = str(opt.get("label", ""))
+		b.add_theme_stylebox_override("normal", my_style)
+		b.add_theme_stylebox_override("hover", my_style_hover)
+		b.custom_minimum_size.y = 45 
+		_setup_button_sounds(b)
+		b.pressed.connect(func() -> void: _on_choice(opt))
+		choices_box.add_child(b)
+
+
+func _on_choice(opt: Dictionary) -> void:
+	_busy = true
+	choices_container.visible = false
+
+	if not (stats is Dictionary):
+		stats = {"INT": 0, "CHA": 0}
+
+	for key in ["INT", "CHA"]:
+		stats[key] = int(stats.get(key, 0))
+
+	var effects_any: Variant = opt.get("effects", {})
+	var effects: Dictionary = effects_any if effects_any is Dictionary else {}
+
+	for k in effects.keys():
+		stats[k] = int(stats.get(k, 0)) + int(effects[k])
+
+	var say_text: String = str(opt.get("say", "")).strip_edges()
+	if say_text != "":
+		name_label.text = "เมฆ"
+		%NameBox.modulate.a = 1.0
+		await _type_text(say_text)
+
+	_busy = false
+
+	var target_id: String = str(opt.get("next", ""))
+	if target_id != "" and id_to_index.has(target_id):
+		index = int(id_to_index[target_id])
+	else:
+		index += 1
+
+	_sync_state_to_gamesave()
+	await _show_current()
+
+
+func _ensure_flags() -> void:
+	if not GameSave.state.has("flags") or not (GameSave.state["flags"] is Dictionary):
+		GameSave.state["flags"] = {}
+
+
+func _get_flag(flag_name: String, default_value: bool = false) -> bool:
+	_ensure_flags()
+	return bool((GameSave.state["flags"] as Dictionary).get(flag_name, default_value))
+
+
+func _start_minigame(minigame_id: String, next_id: String) -> void:
+	_busy = true
+	if not (GameSave.state is Dictionary):
+		GameSave.state = {}
+	GameSave.state["pending_next_id"] = next_id
+	_sync_state_to_gamesave()
+
+	match minigame_id:
+		"lunchbox_for_fon":
+			get_tree().change_scene_to_file("res://minigames/minigame_1_lunchbox/scenes/main.tscn")
+		_:
+			push_warning("Unknown minigame_id: " + minigame_id)
+			_busy = false
+
+
+func _handle_conditional(line: Dictionary) -> void:
+	var condition_name: String = str(line.get("condition", ""))
+	var true_next: String = str(line.get("true_next", ""))
+	var false_next: String = str(line.get("false_next", ""))
+	var condition_result := _get_flag(condition_name, false)
+
+	if condition_result:
+		if true_next != "" and id_to_index.has(true_next):
+			index = int(id_to_index[true_next])
+			await _show_current()
+	else:
+		if false_next != "" and id_to_index.has(false_next):
+			index = int(id_to_index[false_next])
+			await _show_current()
+
+
+func _resolve_path(root: String, value: String) -> String:
+	if value.strip_edges() == "": return ""
+	if value.begins_with("res://"): return value
+	var found := _search_recursive(root, value)
+	if found != "": return found
+	var direct := root + value
+	if FileAccess.file_exists(direct): return direct
 	return ""
 
-func resolve_sprite(name: String) -> String:
-	var found := search_recursive(SPRITE_BASE, name + ".png")
-	if found != "":
-		return found
 
-	found = search_recursive(SPRITE_BASE, name + ".jpg")
-	if found != "":
-		return found
-
-	found = search_recursive(SPRITE_BASE, name + ".jpeg")
-	if found != "":
-		return found
-
-	print("Sprite not found: ", name)
-	return ""
-
-func search_recursive(path: String, target_file: String) -> String:
+func _search_recursive(path: String, target_file: String) -> String:
 	var dir := DirAccess.open(path)
-	if dir == null:
-		return ""
-
+	if not dir: return ""
 	dir.list_dir_begin()
 	while true:
-		var item := dir.get_next()
-		if item == "":
-			break
-		if item == "." or item == "..":
-			continue
-
-		var full_path := path.path_join(item)
-
+		var file_name := dir.get_next()
+		if file_name == "": break
 		if dir.current_is_dir():
-			var found := search_recursive(full_path, target_file)
+			var found := _search_recursive(path + file_name + "/", target_file)
 			if found != "":
 				dir.list_dir_end()
 				return found
 		else:
-			if item == target_file:
+			if file_name == target_file:
 				dir.list_dir_end()
-				return full_path
-
+				return path + file_name
 	dir.list_dir_end()
 	return ""
+
+
+func _set_background(value: String) -> void:
+	var full_path := _resolve_path(BG_DIR, value)
+	if full_path == "": return
+	var tex := load(full_path) as Texture2D
+	if tex == null: return
+
+	_busy = true
+	await _fade_rect_alpha(bg_fade, 0.0, 1.0, 0.25)
+	bg.texture = tex
+	await _fade_rect_alpha(bg_fade, 1.0, 0.0, 0.25)
+	_busy = false
+
+
+func _set_character_sprite(value: String) -> void:
+	var full_path := _resolve_path(SPRITE_DIR, value)
+	if full_path == "":
+		character.visible = false
+		return
+	var tex := load(full_path) as Texture2D
+	if tex == null:
+		character.visible = false
+		return
+
+	_busy = true
+	character.visible = true
+	await _fade_control_alpha(character, character.modulate.a, 0.0, 0.15)
+	character.texture = tex
+	await _fade_control_alpha(character, 0.0, 1.0, 0.15)
+	_busy = false
+
+
+func _fade_rect_alpha(rect: ColorRect, from_a: float, to_a: float, duration: float) -> void:
+	rect.visible = true
+	var t: float = 0.0
+	while t < duration:
+		t += get_process_delta_time()
+		rect.color.a = lerp(from_a, to_a, clamp(t / duration, 0.0, 1.0))
+		await get_tree().process_frame
+	rect.color.a = to_a
+	if to_a <= 0.001: rect.visible = false
+
+
+func _fade_control_alpha(ctrl: CanvasItem, from_a: float, to_a: float, duration: float) -> void:
+	var t: float = 0.0
+	while t < duration:
+		t += get_process_delta_time()
+		ctrl.modulate.a = lerp(from_a, to_a, clamp(t / duration, 0.0, 1.0))
+		await get_tree().process_frame
+	ctrl.modulate.a = to_a
+
+
+func _on_quit_pressed() -> void:
+	_block_dialogue_input_for_menu_open()
+	if exit_confirm:
+		get_tree().paused = true
+		exit_confirm.popup_centered()
+
+
+func _on_exit_confirmed() -> void:
+	get_tree().paused = false
+	_busy = false
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_exit_canceled() -> void:
+	get_tree().paused = false
+	_busy = false
+	_hide_all_in_game_menus()
+
+
+func _on_save_pressed() -> void:
+	_block_dialogue_input_for_menu_open()
+	_hide_all_in_game_menus()
+	_sync_state_to_gamesave()
+	var tree := get_tree()
+	tree.paused = true
+	if save_scene:
+		var save_menu: Node = save_scene.instantiate()
+		save_menu.set("mode", 2)
+		save_menu.tree_exited.connect(func():
+			if is_instance_valid(tree): tree.paused = false
+			_busy = false
+		)
+		add_child(save_menu)
+		move_child(save_menu, -1)
+	else:
+		tree.paused = false
+		_busy = false
+
+
+func _on_load_pressed() -> void:
+	_block_dialogue_input_for_menu_open()
+	_hide_all_in_game_menus()
+	var tree := get_tree()
+	tree.paused = true
+	if load_scene:
+		var load_menu: Node = load_scene.instantiate()
+		load_menu.tree_exited.connect(func():
+			if is_instance_valid(tree): tree.paused = false
+			_busy = false
+		)
+		add_child(load_menu)
+		move_child(load_menu, -1)
+	else:
+		tree.paused = false
+		_busy = false
+
+
+func _hide_all_in_game_menus() -> void:
+	if options_menu: options_menu.visible = false
+	if video_panel: video_panel.visible = false
+	if audio_panel: audio_panel.visible = false
+	if back_button: back_button.visible = false
+	if exit_confirm: exit_confirm.visible = false
+
+
+func _block_dialogue_input_for_menu_open() -> void:
+	_busy = true
+	_skip_typing = true 

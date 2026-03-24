@@ -3,7 +3,6 @@ extends Control
 const BG_DIR: String = "res://sprites/scene/"
 const SPRITE_DIR: String = "res://sprites/characters/"
 const FULLSCREEN_BGS: Array[String] = ["pete.png"]
-
 const BGM_PATH_DIR: String = "res://sounds/bgm/"
 const SFX_PATH_DIR: String = "res://sounds/sfx/"
 const MasterSFX_PATH_DIR: String = "res://sounds/master_sfx/"
@@ -11,6 +10,7 @@ const MasterSFX_PATH_DIR: String = "res://sounds/master_sfx/"
 @onready var bg: TextureRect = %BG
 @onready var character: TextureRect = %Character
 @onready var name_label: Label = %NameLabel
+@onready var name_box: PanelContainer = %NameBox
 @onready var dialogue_label: RichTextLabel = %DialogueLabel
 
 @onready var choices_container: Control = %ChoicesPanel 
@@ -27,7 +27,6 @@ const MasterSFX_PATH_DIR: String = "res://sounds/master_sfx/"
 @onready var sfx_dialogue: AudioStreamPlayer = $SFX
 @onready var master_sfx: AudioStreamPlayer = $MasterSFX
 
-
 @export var sfx_text_blip: AudioStreamPlayer
 @export var blip_volume_db: float = -10.0
 
@@ -39,6 +38,14 @@ const MasterSFX_PATH_DIR: String = "res://sounds/master_sfx/"
 @export_group("Save/Load Scenes")
 @export var save_scene: PackedScene
 @export var load_scene: PackedScene
+
+@onready var stat_notify: Label = %StatNotifyLabel
+@onready var int_label: Label = %INTLabel
+@onready var cha_label: Label = %CHALabel
+
+# --- ระบบ Fast Forward ---
+var _is_fast_forwarding: bool = false
+@onready var normal_type_speed: float = type_speed_seconds
 
 var story_lines: Array = []
 var id_to_index: Dictionary = {}
@@ -57,6 +64,8 @@ var _current_master_sfx: String = ""
 
 @export var type_speed_seconds: float = 0.02
 @export var blip_every_chars: int = 2
+
+@export var default_box_color: Color = Color("#0d5cff")
 
 
 func _ready() -> void:
@@ -93,8 +102,10 @@ func _ready() -> void:
 
 	if sfx_text_blip:
 		sfx_text_blip.volume_db = blip_volume_db
-
+		
+	_update_stats_display()
 	await _load_current_chapter() 
+
 
 func _load_current_chapter() -> void:
 	var chapter_num: int = 1
@@ -102,14 +113,28 @@ func _load_current_chapter() -> void:
 	if GameSave.state is Dictionary and GameSave.state.has("chapter"):
 		chapter_num = int(GameSave.state["chapter"])
 
-	var path := "res://data/chapter%d.gd" % chapter_num
-	if not ResourceLoader.exists(path):
+	var path := "res://data/chapter%d.json" % chapter_num
+	if not FileAccess.file_exists(path):
 		push_error("Chapter file not found: " + path)
 		return
 
-	var chapter_script = load(path)
-	var chapter_node: Node = chapter_script.new()
-	story_lines = chapter_node.lines
+	var file := FileAccess.open(path, FileAccess.READ)
+	var text := file.get_as_text()
+	var json_data = JSON.parse_string(text)
+
+	if typeof(json_data) == TYPE_ARRAY:
+		story_lines = json_data
+	elif typeof(json_data) == TYPE_DICTIONARY:
+		if json_data.has("events"):
+			story_lines = json_data["events"]
+		elif json_data.has("lines"):
+			story_lines = json_data["lines"]
+		else:
+			push_error("JSON file must contain an 'events' or 'lines' array: " + path)
+			return
+	else:
+		push_error("Failed to parse JSON from: " + path)
+		return
 
 	id_to_index.clear()
 	for i in range(story_lines.size()):
@@ -145,6 +170,12 @@ func _apply_restored_visuals() -> void:
 		var temp_master = _current_master_sfx
 		_current_master_sfx = "" 
 		_play_master_sfx(temp_master)
+	
+	var current_line: Variant = story_lines[index]
+	if current_line is Dictionary:
+		var who: String = str(current_line.get("name", ""))
+		_update_name_box(who)
+
 
 func _is_fullscreen_bg(bg_value: String) -> bool:
 	if bg_value == "":
@@ -179,6 +210,14 @@ func _restore_from_gamesave() -> void:
 			index = int(id_to_index[return_id])
 		GameSave.state.erase("minigame_return_next_id")
 		GameSave.state.erase("pending_next_id")
+	if GameSave.state.has("stats") and GameSave.state["stats"] is Dictionary:
+		stats = (GameSave.state["stats"] as Dictionary).duplicate(true)
+		_update_stats_display()
+	if index < story_lines.size():
+		var current_line = story_lines[index]
+		if current_line is Dictionary:
+			var who = str(current_line.get("name", ""))
+			_update_name_box(who)
 
 
 func _sync_state_to_gamesave() -> void:
@@ -258,7 +297,6 @@ func _input(event: InputEvent) -> void:
 
 	var hovered := get_viewport().gui_get_hovered_control()
 	if hovered != null:
-
 		if hovered is Button or hovered is OptionButton or hovered is CheckBox or hovered is Slider:
 			return
 
@@ -270,6 +308,7 @@ func _input(event: InputEvent) -> void:
 		return
 
 	_advance()
+
 
 func _on_options_pressed() -> void:
 	_block_dialogue_input_for_menu_open()
@@ -310,9 +349,11 @@ func _on_back_pressed() -> void:
 	get_tree().paused = false
 	_busy = false
 
+
 func _advance() -> void:
 	index += 1
 	await _show_current()
+
 
 func _go_to_next_chapter_or_end() -> void:
 	var current_chapter: int = 1
@@ -320,9 +361,9 @@ func _go_to_next_chapter_or_end() -> void:
 		current_chapter = int(GameSave.state["chapter"])
 
 	var next_chapter: int = current_chapter + 1
-	var next_path := "res://data/chapter%d.gd" % next_chapter
+	var next_path := "res://data/chapter%d.json" % next_chapter
 
-	if ResourceLoader.exists(next_path):
+	if FileAccess.file_exists(next_path):
 		GameSave.state["chapter"] = next_chapter
 		GameSave.state["line_index"] = 0
 		GameSave.state["bg"] = ""
@@ -336,7 +377,14 @@ func _go_to_next_chapter_or_end() -> void:
 		get_tree().change_scene_to_file("res://scenes/dialogue.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-		
+
+#//change color NameBox for each character
+var character_box_colors: Dictionary = {
+	"เมฆ": Color("#5AB9E1"),    
+	"ฝน": Color("#9FA8DA"),   
+	"สารวัตรธนา": Color("#b8860b"), 
+}
+
 func _show_current() -> void:
 	if index >= story_lines.size():
 		_go_to_next_chapter_or_end()
@@ -360,10 +408,12 @@ func _show_current() -> void:
 	var line_type := str(line.get("type", "line"))
 
 	if line_type == "choice":
+		type_speed_seconds = normal_type_speed
 		_show_choices(line.get("choices", []))
 		return
 
 	if line_type == "minigame":
+		type_speed_seconds = normal_type_speed
 		var minigame_id := str(line.get("minigame_id", ""))
 		var next_id := str(line.get("next", ""))
 		_start_minigame(minigame_id, next_id)
@@ -395,6 +445,7 @@ func _show_current() -> void:
 				await _set_character_sprite(new_sprite)
 
 	var who: String = str(line.get("name", ""))
+	_update_name_box(who)
 	var txt: String = str(line.get("text", ""))
 	if bool(line.get("thought", false)):
 		txt = "(" + txt + ")"
@@ -414,6 +465,58 @@ func _show_current() -> void:
 			index = int(id_to_index[target_id])
 			await _show_current()
 			return
+	
+	# --- Fast Forward Auto-Advance ---
+	if _is_fast_forwarding and not choices_container.visible:
+		await get_tree().create_timer(0.1).timeout
+		
+		while get_tree().paused:
+			await get_tree().process_frame
+	
+		if _is_fast_forwarding:
+			_advance()
+
+func _show_stat_popup(stat_name: String, amount: int) -> void:
+	if not stat_notify: return
+	
+	stat_notify.text = "+%d %s" % [amount, stat_name]
+	
+	if stat_name == "INT":
+		stat_notify.add_theme_color_override("font_color", Color("1f676d"))
+	elif stat_name == "CHA":
+		stat_notify.add_theme_color_override("font_color", Color("a1224e"))
+	
+	stat_notify.global_position = Vector2(540,300)
+	stat_notify.modulate.a = 1.0
+	
+	var tween = create_tween()
+	tween.tween_property(stat_notify, "global_position:y", stat_notify.global_position.y - 60, 0.4)\
+	.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	
+	tween.tween_interval(0.6)
+		
+	tween.tween_property(stat_notify, "modulate:a", 0.0, 0.5)
+	
+func _update_stats_display() -> void:
+	var current_int = stats.get("INT", 0)
+	var current_cha = stats.get("CHA", 0)
+	
+	int_label.text = "INT: %d" % current_int
+	cha_label.text = "CHA: %d" % current_cha
+	
+func _update_name_box(who: String) -> void:
+	who = who.strip_edges()
+	name_label.text = who
+	
+	if who == "":
+		name_box.modulate.a = 0.0 
+	else:
+		name_box.modulate.a = 1.0 
+		
+		if character_box_colors.has(who):
+			name_box.self_modulate = character_box_colors[who]
+		else:
+			name_box.self_modulate = default_box_color
 
 
 func _type_text(full_text: String) -> void:
@@ -425,6 +528,12 @@ func _type_text(full_text: String) -> void:
 		sfx_text_blip.stop()
 
 	if full_text == "":
+		_typing = false
+		return
+
+	# ถ้า Fast Forward อยู่ ให้แสดงข้อความทั้งหมดทันที
+	if _is_fast_forwarding:
+		dialogue_label.text = full_text
 		_typing = false
 		return
 
@@ -460,9 +569,9 @@ func _play_bgm(filename: String) -> void:
 	if filename == _current_bgm:
 		return
 
-	var full_path: String = BGM_PATH_DIR + filename
-	if not FileAccess.file_exists(full_path):
-		print("[BGM] not found: ", full_path)
+	var full_path: String = _guess_audio_path(BGM_PATH_DIR, filename)
+	if full_path == "":
+		print("[BGM] not found: ", filename)
 		return
 
 	var stream: Resource = load(full_path)
@@ -485,14 +594,16 @@ func _play_sfx(filename: String) -> void:
 			sfx_dialogue.stop()
 		return
 
-	var full_path: String = SFX_PATH_DIR + filename
-	if not FileAccess.file_exists(full_path):
+	var full_path: String = _guess_audio_path(SFX_PATH_DIR, filename)
+	if full_path == "":
+		print("[SFX] not found: ", filename)
 		return
 
 	var stream: Resource = load(full_path)
 	if stream and sfx_dialogue:
 		sfx_dialogue.stream = stream
 		sfx_dialogue.play()
+
 
 func _play_master_sfx(filename: String) -> void:
 	if filename == "" or filename == "null":
@@ -504,9 +615,9 @@ func _play_master_sfx(filename: String) -> void:
 	if filename == _current_master_sfx:
 		return
 
-	var full_path: String = MasterSFX_PATH_DIR + filename
-	if not FileAccess.file_exists(full_path):
-		print("[MasterSFX] not found: ", full_path)
+	var full_path: String = _guess_audio_path(MasterSFX_PATH_DIR, filename)
+	if full_path == "":
+		print("[MasterSFX] not found: ", filename)
 		return
 
 	var stream: Resource = load(full_path)
@@ -560,17 +671,30 @@ func _on_choice(opt: Dictionary) -> void:
 	var effects: Dictionary = effects_any if effects_any is Dictionary else {}
 
 	for k in effects.keys():
-		stats[k] = int(stats.get(k, 0)) + int(effects[k])
-
-	print("[STATS] INT =", int(stats.get("INT", 0)), " | CHA =", int(stats.get("CHA", 0)))
+		var gain = int(effects[k]) 
+		stats[k] = int(stats.get(k, 0)) + gain
+		if gain > 0:
+			_show_stat_popup(k, gain)
+	_update_stats_display()
 
 	var say_text: String = str(opt.get("say", "")).strip_edges()
 	if say_text != "":
-		name_label.text = "เมฆ"
-		%NameBox.modulate.a = 1.0
+		_update_name_box("เมฆ") 
+		
+		if _is_fast_forwarding:
+			type_speed_seconds = 0.001
+		else:
+			type_speed_seconds = normal_type_speed
+			
 		await _type_text(say_text)
 
-	_busy = false
+		_busy = false
+		_typing = false
+		_sync_state_to_gamesave()
+		
+		if _is_fast_forwarding:
+			_advance()
+		return 
 
 	var target_id: String = str(opt.get("next", ""))
 	if target_id != "" and id_to_index.has(target_id):
@@ -578,8 +702,14 @@ func _on_choice(opt: Dictionary) -> void:
 	else:
 		index += 1
 
+	_busy = false
 	_sync_state_to_gamesave()
+	
+	if _is_fast_forwarding:
+		type_speed_seconds = 0.001
+	
 	await _show_current()
+
 
 func _ensure_flags() -> void:
 	if not GameSave.state.has("flags") or not (GameSave.state["flags"] is Dictionary):
@@ -626,6 +756,7 @@ func _handle_conditional(line: Dictionary) -> void:
 			await _show_current()
 			return
 
+
 func _resolve_path(root: String, value: String) -> String:
 	if value.strip_edges() == "":
 		return ""
@@ -667,11 +798,39 @@ func _search_recursive(path: String, target_file: String) -> String:
 	dir.list_dir_end()
 	return ""
 
+func _guess_image_path(root: String, filename: String) -> String:
+	if filename.get_extension() != "":
+		return _resolve_path(root, filename)
+	
+	var exts = [".png", ".jpg", ".jpeg", ".webp"]
+	for ext in exts:
+		var path = _resolve_path(root, filename + ext)
+		if path != "":
+			return path
+			
+	return ""
+
+
+func _guess_audio_path(root: String, filename: String) -> String:
+	if filename.get_extension() != "":
+		var direct_path = root + filename
+		if FileAccess.file_exists(direct_path):
+			return direct_path
+		return ""
+		
+	var exts = [".mp3", ".wav", ".ogg"]
+	for ext in exts:
+		var path = root + filename + ext
+		if FileAccess.file_exists(path):
+			return path
+			
+	return ""
+
 
 func _set_background(value: String) -> void:
-	var full_path := _resolve_path(BG_DIR, value)
+	var full_path := _guess_image_path(BG_DIR, value)
 	if full_path == "":
-		print("[BG] Not found:", value, " (searched under ", BG_DIR, ")")
+		print("[BG] Not found:", value, " (searched under ", BG_DIR, " with auto-extensions)")
 		return
 
 	var tex := load(full_path) as Texture2D
@@ -687,7 +846,7 @@ func _set_background(value: String) -> void:
 
 
 func _set_character_sprite(value: String) -> void:
-	var full_path := _resolve_path(SPRITE_DIR, value)
+	var full_path := _guess_image_path(SPRITE_DIR, value)
 	if full_path == "":
 		character.visible = false
 		return
@@ -743,6 +902,21 @@ func _on_exit_canceled() -> void:
 	get_tree().paused = false
 	_busy = false
 	_hide_all_in_game_menus()
+
+
+func _on_fast_forward_toggled(button_pressed: bool) -> void:
+	_is_fast_forwarding = button_pressed
+	
+	if _is_fast_forwarding:
+		type_speed_seconds = 0.001 
+		
+		if _typing:
+			_skip_typing = true
+			
+		if not _busy and not choices_container.visible:
+			_advance()
+	else:
+		type_speed_seconds = normal_type_speed
 
 
 func _on_save_pressed() -> void:
