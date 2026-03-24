@@ -4,12 +4,12 @@
 	{
 	  "id": "ch1_s1_001",
 	  "type": "dialogue",
-	  "bg": "scene_1_1_inspector_office",
-	  "sprite": "tana_chill",
 	  "name": "???",
 	  "text": "นั่งลงสิ",
-	  "master_sfx": "ceiling_fan.mp3",
-	  "next": "ch1_s1_002"
+	  "bg": "scene_1_1_inspector_office",
+	  "sprite": "tana_chill",
+	  "next": "ch1_s1_002",
+	  "master_sfx": "ceiling_fan.mp3"
 	},
 	{
 	  "id": "ch1_s1_002",
@@ -243,7 +243,6 @@
 	  "text": "ไว้เจอกัน คุณเมฆินทร์ มีอะไรติดต่อผมได้",
 	  "next": "ch1_s2_001"
 	},
-
 	{
 	  "id": "ch1_s2_001",
 	  "type": "dialogue",
@@ -357,13 +356,17 @@
 		{
 		  "label": "A) ได้สิ ช่วยบอกทางหน่อย",
 		  "say": "เอาสิ เดี๋ยวช่วยบอกทางพี่หน่อยนะ พี่เพิ่งเคยมา",
-		  "effects": { "CHA": 1 },
+		  "effects": {
+			"CHA": 1
+		  },
 		  "next": "ch1_s2_after_ab"
 		},
 		{
 		  "label": "B) ได้สิ อย่าซนมากนะ",
 		  "say": "ก็ได้ แต่อย่าเที่ยวซนนะ เผื่อเจอเบาะแสที่เป็นหลักฐานเพิ่มเติมได้",
-		  "effects": { "INT": 1 },
+		  "effects": {
+			"INT": 1
+		  },
 		  "next": "ch1_s2_after_ab"
 		},
 		{
@@ -388,7 +391,6 @@
 	  "text": "เดี๋ยวหนูค่อยบอกเขาทีหลังก็ได้ ไปกันเถอะค่ะ",
 	  "next": "ch1_s3_001"
 	},
-
 	{
 	  "id": "ch1_s3_001",
 	  "type": "dialogue",
@@ -547,7 +549,6 @@
 	  "text": "ถึงแล้วค่ะ ตึกสำนักทะเบียน",
 	  "next": "ch1_s4_001"
 	},
-
 	{
 	  "id": "ch1_s4_001",
 	  "type": "dialogue",
@@ -622,7 +623,6 @@
 	  "text": "ค่า ไปกันเถอะ",
 	  "next": "ch1_s5_001"
 	},
-
 	{
 	  "id": "ch1_s5_001",
 	  "type": "dialogue",
@@ -682,7 +682,6 @@
 	  "text": "เดี๋ยวเราค่อยบอกกับยามคนนั้นทีหลังละกันนะว่าเรามาทำอะไร",
 	  "next": "ch1_s6_001"
 	},
-
 	{
 	  "id": "ch1_s6_001",
 	  "type": "dialogue",
@@ -766,7 +765,6 @@
 	  "text": "ห้องนี้มัน..",
 	  "next": "ch1_s7_001"
 	},
-
 	{
 	  "id": "ch1_s7_001",
 	  "type": "dialogue",
@@ -806,18 +804,21 @@
 		{
 		  "label": "เดี๋ยวพี่เข้าไปดูเอง ฝนรอข้างนอก",
 		  "say": "ฝนเปิดประตูให้พี่ แล้วเดี๋ยวพี่เข้าไปดูเอง ฝนรออยู่ข้างนอกนี่นะ",
-		  "effects": { "CHA": 1 },
+		  "effects": {
+			"CHA": 1
+		  },
 		  "next": "ch1_s7_bc_001"
 		},
 		{
 		  "label": "รีบเปิดเข้าไปดู",
 		  "say": "ฝนรีบเปิดประตูเร็ว เราจะไปเข้าดูว่าใครอยู่ในห้องกันแน่",
-		  "effects": { "INT": 1 },
+		  "effects": {
+			"INT": 1
+		  },
 		  "next": "ch1_s7_bc_001"
 		}
 	  ]
 	},
-
 	{
 	  "id": "ch1_s7_bc_001",
 	  "type": "dialogue",
@@ -850,7 +851,6 @@
 	  "sfx": "box_fall.mp3",
 	  "next": "ch1_s8_001"
 	},
-
 	{
 	  "id": "ch1_s7_a_001",
 	  "type": "dialogue",
@@ -914,7 +914,6 @@
 	  "sfx": "door_open.mp3",
 	  "next": "ch1_s8_001"
 	},
-
 	{
 	  "id": "ch1_s8_001",
 	  "type": "dialogue",
@@ -941,7 +940,6 @@
 	  "sfx": "light_switch.mp3",
 	  "next": "ch1_s9_001"
 	},
-
 	{
 	  "id": "ch1_s9_001",
 	  "type": "dialogue",
@@ -993,7 +991,6 @@
 	  "sfx": "light_switch.mp3",
 	  "next": "ch1_s10_001"
 	},
-
 	{
 	  "id": "ch1_s10_001",
 	  "type": "dialogue",
@@ -1026,7 +1023,6 @@
 	  "text": "คอมพิวเตอร์เปิดอยู่",
 	  "next": "ch1_s11_001"
 	},
-
 	{
 	  "id": "ch1_s11_001",
 	  "type": "dialogue",
@@ -1097,7 +1093,6 @@
 	  "text": "..",
 	  "next": "ch1_s12_001"
 	},
-
 	{
 	  "id": "ch1_s12_001",
 	  "type": "dialogue",
@@ -1125,7 +1120,6 @@
 	  "text": "เรามาเก็บเอกสารพวกนี้กันก่อนเถอะ",
 	  "next": "ch1_s13_001"
 	},
-
 	{
 	  "id": "ch1_s13_001",
 	  "type": "dialogue",
