@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqyjncd43qoj1"
-path="res://.godot/imported/scene_1_4_registration_office.png-6bbeac736e0eee0c83829e0f8436f0bb.ctex"
+path="res://.godot/imported/scene_1_4_registration_office_night.png-d57338ab9752870d81478135b9304ca8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_1_4_registration_office.png"
-dest_files=["res://.godot/imported/scene_1_4_registration_office.png-6bbeac736e0eee0c83829e0f8436f0bb.ctex"]
+source_file="res://sprites/scene/scene_1_4_registration_office_night.png"
+dest_files=["res://.godot/imported/scene_1_4_registration_office_night.png-d57338ab9752870d81478135b9304ca8.ctex"]
 
 [params]
 

@@ -1,0 +1,1235 @@
+{
+  "start": "ch1_s1_001",
+  "events": [
+	{
+	  "id": "ch1_s1_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_1_inspector_office",
+	  "sprite": "tana_chill",
+	  "name": "???",
+	  "text": "นั่งลงสิ",
+	  "master_sfx": "ceiling_fan.mp3",
+	  "next": "ch1_s1_002"
+	},
+	{
+	  "id": "ch1_s1_002",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ครับ",
+	  "next": "ch1_s1_003"
+	},
+	{
+	  "id": "ch1_s1_003",
+	  "type": "dialogue",
+	  "name": "???",
+	  "text": "อืม…",
+	  "next": "ch1_s1_004"
+	},
+	{
+	  "id": "ch1_s1_004",
+	  "type": "dialogue",
+	  "name": "???",
+	  "text": "เมฆินทร์ นฤพานิช เป็นนักสืบเอกชน รับงานฟรีแลนซ์ใช่มั้ย",
+	  "next": "ch1_s1_005"
+	},
+	{
+	  "id": "ch1_s1_005",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ใช่ครับ",
+	  "next": "ch1_s1_006"
+	},
+	{
+	  "id": "ch1_s1_006",
+	  "type": "dialogue",
+	  "name": "สารวัตรธนา",
+	  "text": "อืม ผมชื่อธนานะ ทางกรมฯ ต้องจ้างคนมารับงานนี้เพิ่ม เพราะขาดคนน่ะ",
+	  "next": "ch1_s1_007"
+	},
+	{
+	  "id": "ch1_s1_007",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "door_knock.mp3",
+	  "next": "ch1_s1_008"
+	},
+	{
+	  "id": "ch1_s1_008",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "หืม ใครน่ะ",
+	  "thought": true,
+	  "next": "ch1_s1_009"
+	},
+	{
+	  "id": "ch1_s1_009",
+	  "type": "dialogue",
+	  "name": "สารวัตรธนา",
+	  "text": "เข้ามาได้ ประตูไม่ได้ล็อค",
+	  "next": "ch1_s1_010"
+	},
+	{
+	  "id": "ch1_s1_010",
+	  "type": "dialogue",
+	  "sprite": "fon_upset",
+	  "name": "???",
+	  "text": "พ่ออดข้าวเย็นอีกแล้วใช่มั้ยคะ",
+	  "next": "ch1_s1_011"
+	},
+	{
+	  "id": "ch1_s1_011",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ล-ลูกสาวของสารวัตรเหรอ เข้ามาถามเรื่องข้าวเย็นซะงั้น",
+	  "thought": true,
+	  "next": "ch1_s1_012"
+	},
+	{
+	  "id": "ch1_s1_012",
+	  "type": "dialogue",
+	  "sprite": "tana_chill",
+	  "name": "สารวัตรธนา",
+	  "text": "ไว้ก่อนลูก",
+	  "next": "ch1_s1_013"
+	},
+	{
+	  "id": "ch1_s1_013",
+	  "type": "dialogue",
+	  "name": "สารวัตรธนา",
+	  "text": "ขอโทษเรื่องลูกสาวผมด้วยนะ",
+	  "next": "ch1_s1_014"
+	},
+	{
+	  "id": "ch1_s1_014",
+	  "type": "dialogue",
+	  "sprite": "pete",
+	  "name": "สารวัตรธนา",
+	  "text": "ผู้เคราะห์ร้ายชื่อ “พีท” อายุ 21 ปี ศึกษาอยู่ที่มหาลัยแจ่มจันทร์ เป็นนักศึกษาปี 2",
+	  "next": "ch1_s1_015"
+	},
+	{
+	  "id": "ch1_s1_015",
+	  "type": "dialogue",
+	  "name": "สารวัตรธนา",
+	  "text": "หายตัวไป 3 วัน ติดต่อไม่ได้ตั้งแต่วันแรกที่หายตัวไป",
+	  "next": "ch1_s1_016"
+	},
+	{
+	  "id": "ch1_s1_016",
+	  "type": "dialogue",
+	  "sprite": "tana_chill",
+	  "name": "เมฆ",
+	  "text": "มีพยานบุคคลในวันสุดท้ายที่เจอน้องพีทมั้ยครับ",
+	  "next": "ch1_s1_017"
+	},
+	{
+	  "id": "ch1_s1_017",
+	  "type": "dialogue",
+	  "name": "สารวัตรธนา",
+	  "text": "เท่าที่ลูกน้องผมตรวจสอบ มีเพื่อนคนนึงที่ทำโปรเจกต์กลุ่มด้วยกัน กับ เพื่อนอีกคนที่อยู่ชมรมเดียวกัน",
+	  "next": "ch1_s1_018"
+	},
+	{
+	  "id": "ch1_s1_018",
+	  "type": "dialogue",
+	  "name": "สารวัตรธนา",
+	  "text": "แต่… คำให้การของ 2 คนนี้ ไม่ตรงกัน คนนึงบอกเห็นพีทแถวตึกสำนักทะเบียน อีกคนบอกว่าพีทกลับหอไปแล้ว",
+	  "next": "ch1_s1_019"
+	},
+	{
+	  "id": "ch1_s1_019",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "แล้วมีภาพจากกล้องวงจรปิดมั้ยครับ",
+	  "next": "ch1_s1_020"
+	},
+	{
+	  "id": "ch1_s1_020",
+	  "type": "dialogue",
+	  "name": "สารวัตรธนา",
+	  "text": "มีแค่ภาพบางส่วน เขายังไม่ได้เปิดเผยให้ตำรวจทั้งหมด ต้องรอทางมหาลัยอนุมัติ",
+	  "next": "ch1_s1_021"
+	},
+	{
+	  "id": "ch1_s1_021",
+	  "type": "dialogue",
+	  "sprite": "fon_curious",
+	  "name": "???",
+	  "text": "งั้นลองไปถามคนอื่นที่มหาลัยดูมั้ยคะ",
+	  "next": "ch1_s1_022"
+	},
+	{
+	  "id": "ch1_s1_022",
+	  "type": "dialogue",
+	  "sprite": "tana_chill",
+	  "name": "สารวัตรธนา",
+	  "text": "ไปถามก็ได้อยู่หรอก แต่ทางมหาลัย.. ชอบกังวลเรื่องภาพลักษณ์น่ะสิ",
+	  "next": "ch1_s1_023"
+	},
+	{
+	  "id": "ch1_s1_023",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ท่านหมายถึงว่า มหาลัยต้องการให้ปิดเรื่องคดีเป็นความลับเหรอครับ",
+	  "next": "ch1_s1_024"
+	},
+	{
+	  "id": "ch1_s1_024",
+	  "type": "dialogue",
+	  "name": "สารวัตรธนา",
+	  "text": "เท่าที่ผมเจอมา บางคดีก็เงียบหาย เพราะคนบางกลุ่ม.. กลัวเสียชื่อเสียง",
+	  "next": "ch1_s1_025"
+	},
+	{
+	  "id": "ch1_s1_025",
+	  "type": "dialogue",
+	  "sprite": "fon_curious",
+	  "name": "???",
+	  "text": "พ่อพูดเหมือนกับ-",
+	  "next": "ch1_s1_026"
+	},
+	{
+	  "id": "ch1_s1_026",
+	  "type": "dialogue",
+	  "sprite": "tana_serious",
+	  "name": "สารวัตรธนา",
+	  "text": "ฝน.. อย่าเดาสุ่มสี่สุ่มห้า",
+	  "next": "ch1_s1_027"
+	},
+	{
+	  "id": "ch1_s1_027",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "เหมือนว่า.. จะมีเบื้องหลังที่เราไม่ควรรู้สินะ..",
+	  "thought": true,
+	  "next": "ch1_s1_028"
+	},
+	{
+	  "id": "ch1_s1_028",
+	  "type": "dialogue",
+	  "sprite": "tana_chill",
+	  "name": "สารวัตรธนา",
+	  "text": "งั้นคุณเมฆินทร์ ก็ลงพื้นที่สืบสวนด้วยตัวเองก่อนละกันนะ ถ้าจะเข้าพื้นที่ที่ปิดทำการอยู่ ก็โทรมาถามผมก่อนว่าเขาอนุญาตมั้ย",
+	  "next": "ch1_s1_029"
+	},
+	{
+	  "id": "ch1_s1_029",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ครับผม",
+	  "next": "ch1_s1_030"
+	},
+	{
+	  "id": "ch1_s1_030",
+	  "type": "dialogue",
+	  "sprite": "fon_curious",
+	  "name": "ฝน",
+	  "text": "แล้วถ้าความจริง.. มันอยู่ในที่ที่มหาลัยไม่ให้เข้าล่ะ…",
+	  "next": "ch1_s1_031"
+	},
+	{
+	  "id": "ch1_s1_031",
+	  "type": "dialogue",
+	  "sprite": "tana_chill",
+	  "name": "สารวัตรธนา",
+	  "text": "…",
+	  "next": "ch1_s1_032"
+	},
+	{
+	  "id": "ch1_s1_032",
+	  "type": "dialogue",
+	  "name": "สารวัตรธนา",
+	  "text": "ไว้เจอกัน คุณเมฆินทร์ มีอะไรติดต่อผมได้",
+	  "next": "ch1_s2_001"
+	},
+
+	{
+	  "id": "ch1_s2_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_2_guard_house",
+	  "sprite": "",
+	  "name": "เมฆ",
+	  "text": "อืม.. ที่นี่สินะ มหาลัยแจ่มจันทร์",
+	  "thought": true,
+	  "master_sfx": "light_rain.mp3",
+	  "next": "ch1_s2_002"
+	},
+	{
+	  "id": "ch1_s2_002",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ไม่เคยมาเลยแฮะ แต่พอมาถึงแล้ว รู้สึก.. วังเวงแปลกๆ",
+	  "thought": true,
+	  "next": "ch1_s2_003"
+	},
+	{
+	  "id": "ch1_s2_003",
+	  "type": "dialogue",
+	  "sprite": "fon_smile_with_umbrella",
+	  "name": "ฝน",
+	  "text": "สวัสดีค่าา",
+	  "next": "ch1_s2_004"
+	},
+	{
+	  "id": "ch1_s2_004",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "!?",
+	  "next": "ch1_s2_005"
+	},
+	{
+	  "id": "ch1_s2_005",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ดึกป่านนี้ คุณฝนมีธุระอะไรที่มหาลัยเหรอครับ",
+	  "next": "ch1_s2_006"
+	},
+	{
+	  "id": "ch1_s2_006",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "เรียกหนู น้องฝน ก็ได้ค่ะ พี่เมฆินทร์ชื่อเล่นอะไรเหรอคะ",
+	  "next": "ch1_s2_007"
+	},
+	{
+	  "id": "ch1_s2_007",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "พี่ชื่อเมฆครับ",
+	  "next": "ch1_s2_008"
+	},
+	{
+	  "id": "ch1_s2_008",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ค่ะ หนูอ่ะ ต้องถามพี่เมฆว่า มายืนตากฝนหน้าป้อมยามทำไมคะ",
+	  "next": "ch1_s2_009"
+	},
+	{
+	  "id": "ch1_s2_009",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "..",
+	  "next": "ch1_s2_010"
+	},
+	{
+	  "id": "ch1_s2_010",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "พี่กำลังคิดอยู่ว่าจะเริ่มดูจากตรงไหนก่อนดี เพื่อให้การสืบคดีเป็นความลับ พี่เลยมาดึกน่ะ",
+	  "next": "ch1_s2_011"
+	},
+	{
+	  "id": "ch1_s2_011",
+	  "type": "dialogue",
+	  "sprite": "fon_curious_with_umbrella",
+	  "name": "ฝน",
+	  "text": "หนูเอง.. ก็คาใจเหมือนกันค่ะ เลยอยากมาสืบ พอดีว่าหนูก็เรียนที่นี่เหมือนกัน",
+	  "next": "ch1_s2_012"
+	},
+	{
+	  "id": "ch1_s2_012",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "อ้าวเหรอ พี่เพิ่งรู้ แล้ว.. สารวัตรธนาไม่ว่าเหรอ ถ้าน้องฝนมาเวลานี้",
+	  "next": "ch1_s2_013"
+	},
+	{
+	  "id": "ch1_s2_013",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "…",
+	  "next": "ch1_s2_014"
+	},
+	{
+	  "id": "ch1_s2_014",
+	  "type": "dialogue",
+	  "sprite": "fon_smile_with_umbrella",
+	  "name": "ฝน",
+	  "text": "พี่เมฆจะเข้าไปดูใช่มั้ยคะ หนูไปด้วยได้มั้ย",
+	  "next": "ch1_s2_choice"
+	},
+	{
+	  "id": "ch1_s2_choice",
+	  "type": "choice",
+	  "choices": [
+		{
+		  "label": "A) ได้สิ ช่วยบอกทางหน่อย",
+		  "say": "เอาสิ เดี๋ยวช่วยบอกทางพี่หน่อยนะ พี่เพิ่งเคยมา",
+		  "effects": { "CHA": 1 },
+		  "next": "ch1_s2_after_ab"
+		},
+		{
+		  "label": "B) ได้สิ อย่าซนมากนะ",
+		  "say": "ก็ได้ แต่อย่าเที่ยวซนนะ เผื่อเจอเบาะแสที่เป็นหลักฐานเพิ่มเติมได้",
+		  "effects": { "INT": 1 },
+		  "next": "ch1_s2_after_ab"
+		},
+		{
+		  "label": "C) ขออนุญาตสารวัตรก่อน",
+		  "say": "ถ้าน้องฝนยังไม่ได้บอกพ่อ เดี๋ยวพี่ต้องโทรถามก่อนนะ",
+		  "effects": {},
+		  "next": "ch1_s2_after_c"
+		}
+	  ]
+	},
+	{
+	  "id": "ch1_s2_after_ab",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "งั้นไปกันเถอะค่ะ",
+	  "next": "ch1_s3_001"
+	},
+	{
+	  "id": "ch1_s2_after_c",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "เดี๋ยวหนูค่อยบอกเขาทีหลังก็ได้ ไปกันเถอะค่ะ",
+	  "next": "ch1_s3_001"
+	},
+
+	{
+	  "id": "ch1_s3_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_3_lonely_path",
+	  "sprite": "",
+	  "name": "เมฆ",
+	  "text": "เข้ามาทางประตูเล็กแบบนี้ได้เลยเหรอ..",
+	  "thought": true,
+	  "master_sfx": "light_rain2.mp3",
+	  "bgm": "mysterious_piano.mp3",
+	  "next": "ch1_s3_002"
+	},
+	{
+	  "id": "ch1_s3_002",
+	  "type": "dialogue",
+	  "sprite": "fon_smile",
+	  "name": "ฝน",
+	  "text": "เหมือนว่าฝนจะซาลงแล้วนะคะ",
+	  "next": "ch1_s3_003"
+	},
+	{
+	  "id": "ch1_s3_003",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "แต่ยังมีฝนแถวนี้ ไม่ซาเลยนะ ดีดตลอด",
+	  "next": "ch1_s3_004"
+	},
+	{
+	  "id": "ch1_s3_004",
+	  "type": "dialogue",
+	  "sprite": "fon_curious",
+	  "name": "ฝน",
+	  "text": "??",
+	  "next": "ch1_s3_005"
+	},
+	{
+	  "id": "ch1_s3_005",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ป-ไปกันต่อเถอะ",
+	  "next": "ch1_s3_006"
+	},
+	{
+	  "id": "ch1_s3_006",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "..",
+	  "next": "ch1_s3_007"
+	},
+	{
+	  "id": "ch1_s3_007",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ตรงนี้ปกติไม่ค่อยมีคนมาเลยค่ะ กลางวันก็ยังร้างเลย",
+	  "next": "ch1_s3_008"
+	},
+	{
+	  "id": "ch1_s3_008",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "dried_leaves.mp3",
+	  "bgm": "null",
+	  "next": "ch1_s3_009"
+	},
+	{
+	  "id": "ch1_s3_009",
+	  "type": "dialogue",
+	  "sprite": "fon_shocked",
+	  "name": "ฝน",
+	  "text": "เมื่อกี๊.. ได้ยินเสียงมั้ยคะ",
+	  "next": "ch1_s3_010"
+	},
+	{
+	  "id": "ch1_s3_010",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "หืม ก็ได้ยินนะ",
+	  "next": "ch1_s3_011"
+	},
+	{
+	  "id": "ch1_s3_011",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "น่าจะเสียง.. ลมพัดใบไม้รึเปล่า",
+	  "next": "ch1_s3_012"
+	},
+	{
+	  "id": "ch1_s3_012",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "แต่คิดๆ ดู มันก็.. ดังเหมือนกันนะ เสียงเมื่อกี๊",
+	  "thought": true,
+	  "next": "ch1_s3_013"
+	},
+	{
+	  "id": "ch1_s3_013",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "..",
+	  "next": "ch1_s3_014"
+	},
+	{
+	  "id": "ch1_s3_014",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ค่ะ..",
+	  "next": "ch1_s3_015"
+	},
+	{
+	  "id": "ch1_s3_015",
+	  "type": "dialogue",
+	  "bgm": "mysterious_piano.mp3",
+	  "next": "ch1_s3_016"
+	},
+	{
+	  "id": "ch1_s3_016",
+	  "type": "dialogue",
+	  "sprite": "fon_curious",
+	  "name": "ฝน",
+	  "text": "พี่เมฆคิดว่า ทำไมพีทถึงหายตัวไปเหรอคะ",
+	  "next": "ch1_s3_017"
+	},
+	{
+	  "id": "ch1_s3_017",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "พี่ก็ยังสันนิษฐานอะไรไม่ได้หรอก แต่ถ้ามีใครพยายามปกปิดข้อมูลบางส่วน แปลว่าอาจจะมีเรื่องที่ไม่อยากให้ใครรู้ก็ได้นะ",
+	  "next": "ch1_s3_018"
+	},
+	{
+	  "id": "ch1_s3_018",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "หมายถึง.. ภาพจากกล้องวงจรปิดบางส่วนที่คุณพ่อไม่มีสินะคะ",
+	  "next": "ch1_s3_019"
+	},
+	{
+	  "id": "ch1_s3_019",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "อืม แต่พี่อาจจะแค่กังวลกับเรื่องไม่เป็นเรื่องก็ได้",
+	  "next": "ch1_s3_020"
+	},
+	{
+	  "id": "ch1_s3_020",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ไม่หรอกค่ะ.. หนูก็คิดแบบนั้นเหมือนกัน",
+	  "next": "ch1_s3_021"
+	},
+	{
+	  "id": "ch1_s3_021",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ถึงแล้วค่ะ ตึกสำนักทะเบียน",
+	  "next": "ch1_s4_001"
+	},
+
+	{
+	  "id": "ch1_s4_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_4_registration_office_night",
+	  "sprite": "fon_curious",
+	  "name": "ฝน",
+	  "text": "ประตูหน้าตึกน่าจะล็อคอยู่",
+	  "next": "ch1_s4_002"
+	},
+	{
+	  "id": "ch1_s4_002",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "อืม.. ปกติจะมีพี่ยาม ประจำอยู่ที่ป้อมนี้ แต่วันนี้เหมือนพี่เขาจะไม่อยู่ค่ะ",
+	  "next": "ch1_s4_003"
+	},
+	{
+	  "id": "ch1_s4_003",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ยามที่ประจำอยู่ตรงนี้ไม่อยู่.. เขาไปทำธุระอะไรรึเปล่านะ",
+	  "thought": true,
+	  "next": "ch1_s4_004"
+	},
+	{
+	  "id": "ch1_s4_004",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "เราจะมาดูเรื่องภาพจากกล้องวงจรปิดของตึกนี้เลยใช่มั้ย แล้วจะเข้าไปยังไงล่ะ ถ้ายามไม่อยู่",
+	  "next": "ch1_s4_005"
+	},
+	{
+	  "id": "ch1_s4_005",
+	  "type": "dialogue",
+	  "sprite": "fon_smile",
+	  "name": "ฝน",
+	  "text": "มี.. ทางเข้าลับค่ะ",
+	  "next": "ch1_s4_006"
+	},
+	{
+	  "id": "ch1_s4_006",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ถ้าเดินเลาะไปทางด้านหลังของตึก จะมีประตูบานนึง.. ไม่ได้ล็อคค่ะ ลูกบิดมันเสีย",
+	  "next": "ch1_s4_007"
+	},
+	{
+	  "id": "ch1_s4_007",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "..",
+	  "next": "ch1_s4_008"
+	},
+	{
+	  "id": "ch1_s4_008",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "พี่จะไม่ถามฝนละกันนะ ว่ารู้ได้ไง",
+	  "next": "ch1_s4_009"
+	},
+	{
+	  "id": "ch1_s4_009",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "งั้นพวกเราเข้าไปก่อน แล้วถ้าเจอยามคนนั้น ค่อยบอกเขาละกันนะว่าเรามาสืบคดี",
+	  "next": "ch1_s4_010"
+	},
+	{
+	  "id": "ch1_s4_010",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ค่า ไปกันเถอะ",
+	  "next": "ch1_s5_001"
+	},
+
+	{
+	  "id": "ch1_s5_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_5_office_1st_floor",
+	  "sprite": "fon_curious",
+	  "name": "ฝน",
+	  "text": "เราน่าจะไปเช็คเรื่องกล้องวงจรปิดของตึกนี้กันนี่แหละค่ะ เพราะพบเห็นพีทครั้งสุดท้ายแถวนี้",
+	  "next": "ch1_s5_002"
+	},
+	{
+	  "id": "ch1_s5_002",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ใช่ แล้วเรารู้เหรอว่า เขาเก็บข้อมูลภาพถ่ายกันที่ไหน",
+	  "next": "ch1_s5_003"
+	},
+	{
+	  "id": "ch1_s5_003",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "หนูไม่มั่นใจนะ แต่ปกติก็น่าจะเก็บไว้ที่ห้องเก็บเอกสารค่ะ อยู่ชั้น 2",
+	  "next": "ch1_s5_004"
+	},
+	{
+	  "id": "ch1_s5_004",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "อืม.. แล้วห้องไม่ได้ล็อคเหรอ",
+	  "next": "ch1_s5_005"
+	},
+	{
+	  "id": "ch1_s5_005",
+	  "type": "dialogue",
+	  "sprite": "fon_smile",
+	  "name": "ฝน",
+	  "text": "หนูมีวิธีค่ะ",
+	  "next": "ch1_s5_006"
+	},
+	{
+	  "id": "ch1_s5_006",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "..",
+	  "next": "ch1_s5_007"
+	},
+	{
+	  "id": "ch1_s5_007",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ฝนเป็นนักศึกษาจริงๆ ใช่มั้ยเนี่ย",
+	  "next": "ch1_s5_008"
+	},
+	{
+	  "id": "ch1_s5_008",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "เดี๋ยวเราค่อยบอกกับยามคนนั้นทีหลังละกันนะว่าเรามาทำอะไร",
+	  "next": "ch1_s6_001"
+	},
+
+	{
+	  "id": "ch1_s6_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_6_office_2nd_floor",
+	  "sprite": "",
+	  "name": "เมฆ",
+	  "text": "..",
+	  "next": "ch1_s6_002"
+	},
+	{
+	  "id": "ch1_s6_002",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ก่อนหน้านี้ ฝนรู้จักพีทรึเปล่า",
+	  "next": "ch1_s6_003"
+	},
+	{
+	  "id": "ch1_s6_003",
+	  "type": "dialogue",
+	  "sprite": "fon_curious",
+	  "name": "ฝน",
+	  "text": "อืม.. ตอนแรกหนูก็จำเขาไม่ได้ แต่พอเห็นหน้าก็นึกออกนะคะ เคยคุยกันครั้งนึง ทักทายกันปกติ",
+	  "next": "ch1_s6_004"
+	},
+	{
+	  "id": "ch1_s6_004",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "แต่เวลาคุยเขาดูเหมือนกลัวหรือระแวงอะไรสักอย่าง",
+	  "next": "ch1_s6_005"
+	},
+	{
+	  "id": "ch1_s6_005",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "กลัวเหรอ",
+	  "next": "ch1_s6_006"
+	},
+	{
+	  "id": "ch1_s6_006",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ค่ะ ท่าทางกลัว มองซ้ายมองขวาตลอด เหมือนกับว่ามีปัญหาสักอย่างนึง",
+	  "next": "ch1_s6_007"
+	},
+	{
+	  "id": "ch1_s6_007",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "box_fall.mp3",
+	  "bgm": "null",
+	  "next": "ch1_s6_008"
+	},
+	{
+	  "id": "ch1_s6_008",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "!?",
+	  "next": "ch1_s6_009"
+	},
+	{
+	  "id": "ch1_s6_009",
+	  "type": "dialogue",
+	  "sprite": "fon_shocked",
+	  "name": "ฝน",
+	  "text": "!?",
+	  "next": "ch1_s6_010"
+	},
+	{
+	  "id": "ch1_s6_010",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "เสียง.. จากห้องนั้น !",
+	  "next": "ch1_s6_011"
+	},
+	{
+	  "id": "ch1_s6_011",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ห้องนี้มัน..",
+	  "next": "ch1_s7_001"
+	},
+
+	{
+	  "id": "ch1_s7_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_7_front_file_room",
+	  "sprite": "fon_shocked",
+	  "name": "ฝน",
+	  "text": "ห้องเก็บเอกสารค่ะ",
+	  "bgm": "null",
+	  "next": "ch1_s7_002"
+	},
+	{
+	  "id": "ch1_s7_002",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "เสียงเหมือนมีคนอยู่ข้างใน แปลว่า มีคนอื่นนอกจากพวกเราด้วยเหรอ",
+	  "thought": true,
+	  "next": "ch1_s7_003"
+	},
+	{
+	  "id": "ch1_s7_003",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ดึกป่านนี้เนี่ยนะ",
+	  "thought": true,
+	  "next": "ch1_s7_choice"
+	},
+	{
+	  "id": "ch1_s7_choice",
+	  "type": "choice",
+	  "choices": [
+		{
+		  "label": "โทรแจ้งสารวัตรธนา",
+		  "say": "แบบนี้เข้าข่ายผิดปกติแล้วล่ะ พี่ต้องแจ้งพ่อเราก่อน",
+		  "effects": {},
+		  "next": "ch1_s7_a_001"
+		},
+		{
+		  "label": "เดี๋ยวพี่เข้าไปดูเอง ฝนรอข้างนอก",
+		  "say": "ฝนเปิดประตูให้พี่ แล้วเดี๋ยวพี่เข้าไปดูเอง ฝนรออยู่ข้างนอกนี่นะ",
+		  "effects": { "CHA": 1 },
+		  "next": "ch1_s7_bc_001"
+		},
+		{
+		  "label": "รีบเปิดเข้าไปดู",
+		  "say": "ฝนรีบเปิดประตูเร็ว เราจะไปเข้าดูว่าใครอยู่ในห้องกันแน่",
+		  "effects": { "INT": 1 },
+		  "next": "ch1_s7_bc_001"
+		}
+	  ]
+	},
+
+	{
+	  "id": "ch1_s7_bc_001",
+	  "type": "dialogue",
+	  "sprite": "fon_shocked",
+	  "name": "ฝน",
+	  "text": "ค-ค่ะ",
+	  "next": "ch1_s7_bc_002"
+	},
+	{
+	  "id": "ch1_s7_bc_002",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "lockpick.mp3",
+	  "next": "ch1_s7_bc_003"
+	},
+	{
+	  "id": "ch1_s7_bc_003",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "door_open.mp3",
+	  "next": "ch1_s7_bc_004"
+	},
+	{
+	  "id": "ch1_s7_bc_004",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "box_fall.mp3",
+	  "next": "ch1_s8_001"
+	},
+
+	{
+	  "id": "ch1_s7_a_001",
+	  "type": "dialogue",
+	  "sprite": "fon_upset",
+	  "name": "ฝน",
+	  "text": "…",
+	  "next": "ch1_s7_a_002"
+	},
+	{
+	  "id": "ch1_s7_a_002",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "phone_call.mp3",
+	  "next": "ch1_s7_a_003"
+	},
+	{
+	  "id": "ch1_s7_a_003",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "รีบรับสายเร็วเข้า สารวัตรรร",
+	  "thought": true,
+	  "next": "ch1_s7_a_004"
+	},
+	{
+	  "id": "ch1_s7_a_004",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "box_fall.mp3",
+	  "next": "ch1_s7_a_005"
+	},
+	{
+	  "id": "ch1_s7_a_005",
+	  "type": "dialogue",
+	  "sprite": "fon_shocked",
+	  "name": "ฝน",
+	  "text": "!?",
+	  "next": "ch1_s7_a_006"
+	},
+	{
+	  "id": "ch1_s7_a_006",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "มีคนอยู่จริงๆ ค่ะ หนูจะรีบเปิดประตูก่อน",
+	  "next": "ch1_s7_a_007"
+	},
+	{
+	  "id": "ch1_s7_a_007",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "lockpick.mp3",
+	  "next": "ch1_s7_a_008"
+	},
+	{
+	  "id": "ch1_s7_a_008",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "door_open.mp3",
+	  "next": "ch1_s8_001"
+	},
+
+	{
+	  "id": "ch1_s8_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_8_file_room_light_on",
+	  "sprite": "silhouette",
+	  "name": "เมฆ",
+	  "text": "เห้ย คุณเป็นใคร เข้ามาได้ไง มาขโมยของเหรอ!?",
+	  "master_sfx": "null",
+	  "bgm": "suspense_music.mp3",
+	  "next": "ch1_s8_002"
+	},
+	{
+	  "id": "ch1_s8_002",
+	  "type": "dialogue",
+	  "name": "???",
+	  "text": "!?",
+	  "next": "ch1_s8_003"
+	},
+	{
+	  "id": "ch1_s8_003",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "light_switch.mp3",
+	  "next": "ch1_s9_001"
+	},
+
+	{
+	  "id": "ch1_s9_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_9_file_room_light_off",
+	  "sprite": "",
+	  "name": "",
+	  "text": "",
+	  "master_sfx": "light_rain2.mp3",
+	  "bgm": "null",
+	  "next": "ch1_s9_002"
+	},
+	{
+	  "id": "ch1_s9_002",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "jump.mp3",
+	  "next": "ch1_s9_003"
+	},
+	{
+	  "id": "ch1_s9_003",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ม-ไม่เห็นเลย",
+	  "thought": true,
+	  "next": "ch1_s9_004"
+	},
+	{
+	  "id": "ch1_s9_004",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ต้องรีบเปิดไฟก่อน",
+	  "thought": true,
+	  "next": "ch1_s9_005"
+	},
+	{
+	  "id": "ch1_s9_005",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "จ-เจอสวิตช์แล้ว!",
+	  "thought": true,
+	  "next": "ch1_s9_006"
+	},
+	{
+	  "id": "ch1_s9_006",
+	  "type": "dialogue",
+	  "name": "",
+	  "text": "",
+	  "sfx": "light_switch.mp3",
+	  "next": "ch1_s10_001"
+	},
+
+	{
+	  "id": "ch1_s10_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_10_file_room_window_open",
+	  "sprite": "fon_shocked",
+	  "name": "ฝน",
+	  "text": "ก-กระโดดออกนอกหน้าต่างไปแล้วค่ะ..",
+	  "master_sfx": "light_rain2.mp3",
+	  "bgm": "mysterious_piano.mp3",
+	  "next": "ch1_s10_002"
+	},
+	{
+	  "id": "ch1_s10_002",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ใครกันแน่นะ..",
+	  "next": "ch1_s10_003"
+	},
+	{
+	  "id": "ch1_s10_003",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "!?",
+	  "next": "ch1_s10_004"
+	},
+	{
+	  "id": "ch1_s10_004",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "คอมพิวเตอร์เปิดอยู่",
+	  "next": "ch1_s11_001"
+	},
+
+	{
+	  "id": "ch1_s11_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_11_pc_monitor",
+	  "sprite": "",
+	  "name": "เมฆ",
+	  "text": "นี่มัน..",
+	  "bgm": "mysterious_music.mp3",
+	  "next": "ch1_s11_002"
+	},
+	{
+	  "id": "ch1_s11_002",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ค่ะ..",
+	  "next": "ch1_s11_003"
+	},
+	{
+	  "id": "ch1_s11_003",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "เป็นพีทแน่นอนค่ะ",
+	  "next": "ch1_s11_004"
+	},
+	{
+	  "id": "ch1_s11_004",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "อืม เหมือนว่า..",
+	  "next": "ch1_s11_005"
+	},
+	{
+	  "id": "ch1_s11_005",
+	  "type": "dialogue",
+	  "bg": "scene_1_11_cctv_photo_1",
+	  "name": "เมฆ",
+	  "text": "ภาพซ้ายมือนี่คือ.. พีทออกมาจากพุ่มไม้",
+	  "next": "ch1_s11_006"
+	},
+	{
+	  "id": "ch1_s11_006",
+	  "type": "dialogue",
+	  "bg": "scene_1_11_cctv_photo_2",
+	  "name": "เมฆ",
+	  "text": "แล้วภาพขวามือคือ.. เหมือนกำลังรีบเดินออกไป..",
+	  "next": "ch1_s11_007"
+	},
+	{
+	  "id": "ch1_s11_007",
+	  "type": "dialogue",
+	  "bg": "scene_1_11_pc_monitor",
+	  "name": "เมฆ",
+	  "text": "เท่ากับว่า คนเมื่อกี๊มาเปิดดูรูปพวกนี้สินะ",
+	  "next": "ch1_s11_008"
+	},
+	{
+	  "id": "ch1_s11_008",
+	  "type": "dialogue",
+	  "bg": "scene_1_11_cctv_photo_1",
+	  "name": "ฝน",
+	  "text": "ดูจากมุม เหมือนว่าพุ่มไม้นี่ น่าจะอยู่ตรงหน้าตึกนี้นะคะ",
+	  "next": "ch1_s11_009"
+	},
+	{
+	  "id": "ch1_s11_009",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "..",
+	  "next": "ch1_s12_001"
+	},
+
+	{
+	  "id": "ch1_s12_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_12_file_room_window_open",
+	  "sprite": "fon_curious",
+	  "name": "เมฆ",
+	  "text": "ทั้งผู้ต้องสงสัยคนเมื่อกี๊ แล้วก็รูปภาพ 2 รูปนี้อีก..",
+	  "master_sfx": "light_rain2.mp3",
+	  "bgm": "mysterious_music.mp3",
+	  "next": "ch1_s12_002"
+	},
+	{
+	  "id": "ch1_s12_002",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "โธ่เว้ย.. มืดแปดด้านไปหมด",
+	  "thought": true,
+	  "next": "ch1_s12_003"
+	},
+	{
+	  "id": "ch1_s12_003",
+	  "type": "dialogue",
+	  "sprite": "fon_upset",
+	  "name": "เมฆ",
+	  "text": "เรามาเก็บเอกสารพวกนี้กันก่อนเถอะ",
+	  "next": "ch1_s13_001"
+	},
+
+	{
+	  "id": "ch1_s13_001",
+	  "type": "dialogue",
+	  "bg": "scene_1_13_file_room_cleaned",
+	  "sprite": "fon_upset",
+	  "name": "เมฆ",
+	  "text": "ตอนนี้คงต้องเก็บห้องนี้เป็นพยานหลักฐานแล้วล่ะ",
+	  "master_sfx": "light_rain2.mp3",
+	  "bgm": "mysterious_music.mp3",
+	  "next": "ch1_s13_002"
+	},
+	{
+	  "id": "ch1_s13_002",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "คืนนี้.. คงต้องพอเท่านี้ก่อน",
+	  "next": "ch1_s13_003"
+	},
+	{
+	  "id": "ch1_s13_003",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "พี่เมฆ แต่หนูว่า-",
+	  "next": "ch1_s13_004"
+	},
+	{
+	  "id": "ch1_s13_004",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ฝนอยากจะตามโจรนั่นไปเหรอ!?",
+	  "bgm": "null",
+	  "next": "ch1_s13_005"
+	},
+	{
+	  "id": "ch1_s13_005",
+	  "type": "dialogue",
+	  "sprite": "fon_shocked",
+	  "name": "เมฆ",
+	  "text": "มัน.. ไม่มีประโยชน์หรอก",
+	  "bgm": "sad_music.mp3",
+	  "next": "ch1_s13_006"
+	},
+	{
+	  "id": "ch1_s13_006",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ต่อให้เมื่อกี๊จับมันได้.. ยังไงสุดท้ายก็ต้องปล่อยตัวไป",
+	  "next": "ch1_s13_007"
+	},
+	{
+	  "id": "ch1_s13_007",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "เพราะเราก็แอบเข้ามา โดยไม่ได้ขออนุญาตใคร",
+	  "next": "ch1_s13_008"
+	},
+	{
+	  "id": "ch1_s13_008",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "ใช้อำนาจตำรวจไม่ได้หรอก",
+	  "next": "ch1_s13_009"
+	},
+	{
+	  "id": "ch1_s13_009",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ต-แต่อย่างน้อยเราก็จะได้รู้ว่าเป็นใครนะคะ!",
+	  "next": "ch1_s13_010"
+	},
+	{
+	  "id": "ch1_s13_010",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "พี่จะปล่อยให้ลูกสาวสารวัตร มาเสี่ยงกับคดีแบบนี้ไม่ได้หรอกนะ",
+	  "next": "ch1_s13_011"
+	},
+	{
+	  "id": "ch1_s13_011",
+	  "type": "dialogue",
+	  "sprite": "fon_upset",
+	  "name": "เมฆ",
+	  "text": "เดี๋ยวพี่จะพาฝนไปหาพ่อ",
+	  "next": "ch1_s13_012"
+	},
+	{
+	  "id": "ch1_s13_012",
+	  "type": "dialogue",
+	  "name": "เมฆ",
+	  "text": "กลับบ้าน.. ไปพักผ่อนเถอะนะ",
+	  "next": "ch1_s13_013"
+	},
+	{
+	  "id": "ch1_s13_013",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "…",
+	  "next": "ch1_s13_014"
+	},
+	{
+	  "id": "ch1_s13_014",
+	  "type": "dialogue",
+	  "name": "ฝน",
+	  "text": "ค่ะ.."
+	}
+  ]
+}

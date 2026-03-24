@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj4bhog0bux6u"]
+
+[ext_resource type="Script" uid="uid://dscp3xqmow24p" path="res://scripts/json_test.gd" id="1_5pjx5"]
+
+[node name="JsonTest" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5pjx5")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Character" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="DialogueLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ChoicesBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
