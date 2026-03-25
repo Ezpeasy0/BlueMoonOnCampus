@@ -31,9 +31,32 @@ func save_game(slot: int) -> void:
 	print("[SAVE] slot=", slot, " path=", get_slot_path(slot))
 	current_slot = slot
 	state["timestamp"] = Time.get_datetime_string_from_system()
+	
 	var path := get_slot_path(slot)
 	var f := FileAccess.open(path, FileAccess.WRITE)
-	f.store_string(JSON.stringify(state, "\t"))
+	if f != null:
+		f.store_string(JSON.stringify(state, "\t"))
+		f.close() 
+
+	await RenderingServer.frame_post_draw
+	
+	var img := get_viewport().get_texture().get_image()
+	
+	img.resize(320, 180, Image.INTERPOLATE_BILINEAR)
+	
+	var screenshot_tex := ImageTexture.create_from_image(img)
+	
+	var preview := SaveResource.new()
+	preview.slot_name = "Chapter " + str(state.get("chapter", 1)) # ดึงด่านมาตั้งเป็นชื่อเซฟ
+	
+	var dt := Time.get_datetime_dict_from_system()
+	preview.date = "%02d/%02d/%04d" % [dt.day, dt.month, dt.year]
+	preview.time = "%02d:%02d" % [dt.hour, dt.minute]
+	preview.screenshot = screenshot_tex
+	
+	var preview_path := "user://save_%d.tres" % slot
+	ResourceSaver.save(preview, preview_path)
+	print("[SAVE] Saved preview image to ", preview_path)
 
 func load_game(slot: int) -> bool:
 	var path := get_slot_path(slot)

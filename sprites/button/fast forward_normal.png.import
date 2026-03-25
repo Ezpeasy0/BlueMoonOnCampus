@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq36lht3g6d6n"
-path="res://.godot/imported/scene_2_7_registration_office_with_cops_evening.png-bc59923fc34624071c8eb9c2d2d779d7.ctex"
+uid="uid://d0sfttbafv7m3"
+path="res://.godot/imported/fast forward_normal.png-a372cf4ea53fc73117d3046ebd295f78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_2_7_registration_office_with_cops_evening.png"
-dest_files=["res://.godot/imported/scene_2_7_registration_office_with_cops_evening.png-bc59923fc34624071c8eb9c2d2d779d7.ctex"]
+source_file="res://sprites/button/fast forward_normal.png"
+dest_files=["res://.godot/imported/fast forward_normal.png-a372cf4ea53fc73117d3046ebd295f78.ctex"]
 
 [params]
 
