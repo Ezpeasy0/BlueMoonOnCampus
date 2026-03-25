@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3adr3i3gg3qp"]
+
+[ext_resource type="Script" uid="uid://fxva3fgup1bf" path="res://minigames/minigame_2/script/interactable_item.gd" id="1_k572j"]
+[ext_resource type="Texture2D" uid="uid://bjkgnc676aeh" path="res://minigames/minigame_2/art_room1/table.png" id="2_t4p4n"]
+[ext_resource type="AudioStream" uid="uid://mwvrq3we4iaf" path="res://minigames/minigame_2/sound/think.mp3" id="3_4p5rq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efwmw"]
+size = Vector2(195, 129)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d7l2p"]
+a = Vector2(118, 29)
+b = Vector2(100, -11)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0farh"]
+a = Vector2(-41, 33)
+b = Vector2(-1, -4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k572j"]
+size = Vector2(181.5, 118)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k572j"]
+a = Vector2(70, -43)
+b = Vector2(59, -71)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_t4p4n"]
+a = Vector2(60, -78)
+b = Vector2(27, -48)
+
+[node name="InteractableItem" type="Area2D"]
+position = Vector2(374, 153)
+script = ExtResource("1_k572j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.0517578e-05, 0)
+scale = Vector2(0.4296875, 0.47037038)
+texture = ExtResource("2_t4p4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(23.5, 16.5)
+shape = SubResource("RectangleShape2D_efwmw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-37, -74)
+shape = SubResource("SegmentShape2D_d7l2p")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(62, -82)
+shape = SubResource("SegmentShape2D_0farh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -14.0
+offset_right = 212.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "E (interact)"
+
+[node name="DialogUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Background" type="ColorRect" parent="DialogUI"]
+anchors_preset = -1
+anchor_left = 0.23900001
+anchor_top = 0.61
+anchor_right = 0.78400004
+anchor_bottom = 0.92600006
+offset_left = -0.32800293
+offset_top = -0.27999878
+offset_right = -0.16802979
+offset_bottom = -0.048034668
+color = Color(0, 0, 0, 0.19215687)
+
+[node name="DialogText" type="Label" parent="DialogUI"]
+anchors_preset = -1
+anchor_left = 0.24100001
+anchor_top = 0.61300004
+anchor_right = 0.78200006
+anchor_bottom = 0.9250001
+offset_left = 0.36798096
+offset_top = -0.22402954
+offset_right = -368.86407
+offset_bottom = -50.400024
+text = "โต๊ะดูเก่า แต่ก็เหมือนจะทนทานดีนะ"
+
+[node name="hit" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit"]
+position = Vector2(26, 16)
+shape = SubResource("RectangleShape2D_k572j")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hit"]
+position = Vector2(2, -6)
+shape = SubResource("SegmentShape2D_k572j")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="hit"]
+shape = SubResource("SegmentShape2D_t4p4n")
+
+[node name="InteractSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4p5rq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

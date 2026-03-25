@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjtcgl224hhvg"]
+
+[ext_resource type="PackedScene" uid="uid://c3adr3i3gg3qp" path="res://minigames/minigame_2/scene/table.tscn" id="1_cgvlj"]
+[ext_resource type="Texture2D" uid="uid://dlfm0dhoyiu3g" path="res://minigames/minigame_2/art_room1/diary.png" id="2_66r8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgvlj"]
+size = Vector2(60, 50)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_66r8q"]
+a = Vector2(61, 91)
+b = Vector2(61, 91)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y3lij"]
+a = Vector2(-36, 98)
+b = Vector2(-36, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjcua"]
+size = Vector2(46, 35)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_j5x34"]
+a = Vector2(35, 39)
+b = Vector2(35, 38)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2owbb"]
+a = Vector2(23, 16)
+b = Vector2(23, 16)
+
+[node name="InteractableItem" instance=ExtResource("1_cgvlj")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-119.99999, -156)
+texture = ExtResource("2_66r8q")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(26, 18)
+shape = SubResource("RectangleShape2D_cgvlj")
+
+[node name="CollisionShape2D2" parent="." index="2"]
+shape = SubResource("SegmentShape2D_66r8q")
+
+[node name="CollisionShape2D3" parent="." index="3"]
+shape = SubResource("SegmentShape2D_y3lij")
+
+[node name="Label" parent="." index="4"]
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+
+[node name="DialogText" parent="DialogUI" index="1"]
+text = "พวกรูปถ่ายกิจกรรม ตั้งกล้องดูดาวสินะ.. ดูอบอุ่นดีจัง"
+
+[node name="CollisionShape2D" parent="hit" index="0"]
+position = Vector2(25, 18.5)
+shape = SubResource("RectangleShape2D_cjcua")
+
+[node name="CollisionShape2D2" parent="hit" index="1"]
+position = Vector2(-10, -22)
+shape = SubResource("SegmentShape2D_j5x34")
+
+[node name="CollisionShape2D3" parent="hit" index="2"]
+shape = SubResource("SegmentShape2D_2owbb")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://kb2qqnkqlnlv"]
+
+[ext_resource type="PackedScene" uid="uid://bjtcgl224hhvg" path="res://minigames/minigame_2/scene/diary.tscn" id="1_tl1io"]
+[ext_resource type="Texture2D" uid="uid://bmv15qgyocmig" path="res://minigames/minigame_2/art_room1/hairclip.png" id="2_cs8ay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq117"]
+size = Vector2(40, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipavg"]
+size = Vector2(30, 19)
+
+[node name="InteractableItem" instance=ExtResource("1_tl1io")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-233, -10)
+texture = ExtResource("2_cs8ay")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(23, 14.5)
+shape = SubResource("RectangleShape2D_kq117")
+
+[node name="DialogText" parent="DialogUI" index="1"]
+text = "หืม.. กิ๊บติดผมเหรอ.. ไม่ใช่ว่าชมรมปิดตัวไปนานแล้วเหรอ กิ๊บยังดูใหม่อยู่เลย"
+
+[node name="CollisionShape2D" parent="hit" index="0"]
+position = Vector2(23, 15.5)
+shape = SubResource("RectangleShape2D_ipavg")

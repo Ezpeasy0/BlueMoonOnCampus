@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlofvgws46xfe"]
+
+[ext_resource type="PackedScene" uid="uid://c3adr3i3gg3qp" path="res://minigames/minigame_2/scene/table.tscn" id="1_w6cm7"]
+[ext_resource type="Texture2D" uid="uid://bccyafu466t6f" path="res://minigames/minigame_2/art_room1/telescope.png" id="2_kvohp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6cm7"]
+size = Vector2(93, 132)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kvohp"]
+a = Vector2(160, 32)
+b = Vector2(57, 32)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w6mbu"]
+a = Vector2(0, 38)
+b = Vector2(-1, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_draca"]
+size = Vector2(82, 123.5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xqee5"]
+a = Vector2(27, -74)
+b = Vector2(25, -38)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jtwei"]
+a = Vector2(26, -40)
+b = Vector2(130, -40)
+
+[node name="InteractableItem" instance=ExtResource("1_w6cm7")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(318, -157)
+texture = ExtResource("2_kvohp")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(30, 25)
+shape = SubResource("RectangleShape2D_w6cm7")
+
+[node name="CollisionShape2D2" parent="." index="2"]
+position = Vector2(-78, -97)
+shape = SubResource("SegmentShape2D_kvohp")
+
+[node name="CollisionShape2D3" parent="." index="3"]
+position = Vector2(34, -67)
+shape = SubResource("SegmentShape2D_w6mbu")
+
+[node name="Label" parent="." index="4"]
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+
+[node name="DialogText" parent="DialogUI" index="1"]
+text = "โอ้ อันนี้คือกล้องดูดาวสินะ เอาไว้ในห้องทำงานเลยเหรอ.. น่าเสียดายจังที่ไม่มีใครมาใช้แล้ว"
+
+[node name="CollisionShape2D" parent="hit" index="0"]
+position = Vector2(30, 20)
+shape = SubResource("RectangleShape2D_draca")
+
+[node name="CollisionShape2D2" parent="hit" index="1"]
+position = Vector2(7, 16)
+shape = SubResource("SegmentShape2D_xqee5")
+
+[node name="CollisionShape2D3" parent="hit" index="2"]
+position = Vector2(-46, -19)
+shape = SubResource("SegmentShape2D_jtwei")

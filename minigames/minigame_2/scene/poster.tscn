@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://y1ysebls08h0"]
+
+[ext_resource type="PackedScene" uid="uid://dlofvgws46xfe" path="res://minigames/minigame_2/scene/telescope.tscn" id="1_554r5"]
+[ext_resource type="Texture2D" uid="uid://daswpwoivk030" path="res://minigames/minigame_2/art_room1/poster.png" id="2_gqjg8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikvbf"]
+size = Vector2(130, 89)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dwan5"]
+a = Vector2(80, 35)
+b = Vector2(57, 32)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mgyri"]
+a = Vector2(0, 38)
+b = Vector2(-10, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b7mg"]
+size = Vector2(15.5, 12)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3n7yb"]
+a = Vector2(26, -49)
+b = Vector2(22, -46)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y75ee"]
+a = Vector2(26, -40)
+b = Vector2(66, -38)
+
+[node name="InteractableItem" instance=ExtResource("1_554r5")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(292, 85)
+texture = ExtResource("2_gqjg8")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(27, 6.5)
+shape = SubResource("RectangleShape2D_ikvbf")
+
+[node name="CollisionShape2D2" parent="." index="2"]
+position = Vector2(-48, -20)
+shape = SubResource("SegmentShape2D_dwan5")
+
+[node name="CollisionShape2D3" parent="." index="3"]
+position = Vector2(35, -20)
+shape = SubResource("SegmentShape2D_mgyri")
+
+[node name="DialogText" parent="DialogUI" index="1"]
+text = "โปสเตอร์โปรโมทชมรมสินะ ดูแล้ว เมื่อก่อนชมรมนี้น่าจะคึกคักน่าดู"
+
+[node name="CollisionShape2D" parent="hit" index="0"]
+position = Vector2(26, 9)
+shape = SubResource("RectangleShape2D_0b7mg")
+
+[node name="CollisionShape2D2" parent="hit" index="1"]
+position = Vector2(5, 57)
+shape = SubResource("SegmentShape2D_3n7yb")
+
+[node name="CollisionShape2D3" parent="hit" index="2"]
+position = Vector2(-17, 49)
+shape = SubResource("SegmentShape2D_y75ee")

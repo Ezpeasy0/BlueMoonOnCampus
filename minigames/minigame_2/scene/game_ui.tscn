@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://bev7f5y31u5re"]
+
+[ext_resource type="Script" uid="uid://b8o1e0gclw6u3" path="res://minigames/minigame_2/script/game_ui.gd" id="1_vmvqw"]
+
+[node name="GameUI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_vmvqw")
+
+[node name="BtnComplete" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.84900004
+anchor_top = 0.031000001
+anchor_right = 0.96400005
+anchor_bottom = 0.125
+offset_left = -0.048034668
+offset_top = -0.08800125
+offset_right = -0.5280762
+theme_override_colors/font_color = Color(0.8792065, 0.8747618, 1.540184e-06, 1)
+theme_override_font_sizes/font_size = 21
+text = "Complete"
+
+[node name="ConfirmBox" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.23137255)
+
+[node name="Label" type="Label" parent="ConfirmBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.349
+anchor_top = 0.22900002
+anchor_right = 0.637
+anchor_bottom = 0.358
+offset_left = 0.2539978
+offset_top = -0.8500061
+offset_right = -0.09802246
+offset_bottom = 0.2999878
+theme_override_colors/font_color = Color(1, 1, 0.7019608, 1)
+theme_override_font_sizes/font_size = 33
+text = "สำรวจครบแล้วใช่หรือไม่"
+
+[node name="BtnYes" type="Button" parent="ConfirmBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26700002
+anchor_top = 0.37500003
+anchor_right = 0.47700003
+anchor_bottom = 0.54
+offset_left = -0.118011475
+offset_top = 0.24998474
+offset_right = -0.4580078
+theme_override_colors/font_color = Color(0.4527961, 0.99999994, 0.7110926, 1)
+theme_override_font_sizes/font_size = 23
+text = "สำรวจครบแล้ว"
+
+[node name="BtnNo" type="Button" parent="ConfirmBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512
+anchor_top = 0.37500003
+anchor_right = 0.721
+anchor_bottom = 0.53800005
+offset_left = 0.15197754
+offset_top = 0.24998474
+offset_right = -0.033996582
+offset_bottom = 0.29995728
+theme_override_colors/font_color = Color(0.9379715, 0.38328853, 0.27218434, 1)
+theme_override_font_sizes/font_size = 23
+text = "ยังก่อน"
+
+[node name="FadeScreen" type="ColorRect" parent="."]
+visible = false
+offset_right = 1157.0
+offset_bottom = 658.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="BtnComplete" to="." method="_on_btn_complete_pressed"]
+[connection signal="pressed" from="ConfirmBox/BtnYes" to="." method="_on_btn_yes_pressed"]
+[connection signal="pressed" from="ConfirmBox/BtnNo" to="." method="_on_btn_no_pressed"]

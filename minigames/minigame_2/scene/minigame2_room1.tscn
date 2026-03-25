@@ -1,0 +1,131 @@
+[gd_scene load_steps=22 format=3 uid="uid://fscrgjpnnpov"]
+
+[ext_resource type="Texture2D" uid="uid://c0xb6obloi4yb" path="res://minigames/minigame_2/art_room1/room1.png" id="1_djx42"]
+[ext_resource type="PackedScene" uid="uid://bwbtuiqc531ng" path="res://minigames/minigame_2/scene/player.tscn" id="2_aw3lw"]
+[ext_resource type="AudioStream" uid="uid://cnd13wj0ynsqh" path="res://sounds/bgm/raydellrios-suspense.mp3" id="3_aw3lw"]
+[ext_resource type="PackedScene" uid="uid://c3adr3i3gg3qp" path="res://minigames/minigame_2/scene/table.tscn" id="4_qyq4q"]
+[ext_resource type="PackedScene" uid="uid://dlofvgws46xfe" path="res://minigames/minigame_2/scene/telescope.tscn" id="5_vin3b"]
+[ext_resource type="PackedScene" uid="uid://y1ysebls08h0" path="res://minigames/minigame_2/scene/poster.tscn" id="6_yrd7y"]
+[ext_resource type="PackedScene" uid="uid://bjtcgl224hhvg" path="res://minigames/minigame_2/scene/diary.tscn" id="7_y1fij"]
+[ext_resource type="PackedScene" uid="uid://kb2qqnkqlnlv" path="res://minigames/minigame_2/scene/hairclip.tscn" id="8_2ormf"]
+[ext_resource type="PackedScene" uid="uid://bev7f5y31u5re" path="res://minigames/minigame_2/scene/game_ui.tscn" id="9_pi67m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djx42"]
+size = Vector2(95, 652)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aw3lw"]
+size = Vector2(1061, 74.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyq4q"]
+size = Vector2(157, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vin3b"]
+size = Vector2(83, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrd7y"]
+size = Vector2(98.625, 51.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1fij"]
+size = Vector2(85.5, 548)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ormf"]
+size = Vector2(85, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi67m"]
+size = Vector2(67, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uic2m"]
+size = Vector2(88, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lk2k"]
+size = Vector2(90, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjhbh"]
+size = Vector2(89, 33.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bst3j"]
+size = Vector2(970.5, 2)
+
+[node name="Minigame2_room1" type="Node2D"]
+position = Vector2(506, 315)
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(71.50005, 11.500003)
+scale = Vector2(0.60364586, 0.6027778)
+texture = ExtResource("1_djx42")
+
+[node name="InteractableItem" parent="." instance=ExtResource("4_qyq4q")]
+position = Vector2(88, 39)
+
+[node name="InteractableItem2" parent="." instance=ExtResource("5_vin3b")]
+position = Vector2(-345, 207)
+
+[node name="InteractableItem3" parent="." instance=ExtResource("6_yrd7y")]
+position = Vector2(-331, -72)
+
+[node name="InteractableItem4" parent="." instance=ExtResource("7_y1fij")]
+position = Vector2(240, 213)
+
+[node name="InteractableItem5" parent="." instance=ExtResource("8_2ormf")]
+position = Vector2(421, 27)
+
+[node name="player" parent="." instance=ExtResource("2_aw3lw")]
+position = Vector2(84, -155)
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2(-454, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2(-5.5, 0)
+shape = SubResource("RectangleShape2D_djx42")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall"]
+position = Vector2(572.5, -287.25)
+shape = SubResource("RectangleShape2D_aw3lw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="wall"]
+position = Vector2(309.5, -160.5)
+shape = SubResource("RectangleShape2D_qyq4q")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="wall"]
+position = Vector2(129.5, -185)
+shape = SubResource("RectangleShape2D_vin3b")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="wall"]
+position = Vector2(197.3125, 31.125)
+shape = SubResource("RectangleShape2D_yrd7y")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="wall"]
+position = Vector2(1058.75, 48)
+shape = SubResource("RectangleShape2D_y1fij")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="wall"]
+position = Vector2(749.5, 11)
+shape = SubResource("RectangleShape2D_2ormf")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="wall"]
+position = Vector2(794.5, -133.5)
+shape = SubResource("RectangleShape2D_pi67m")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="wall"]
+position = Vector2(505, 268)
+shape = SubResource("RectangleShape2D_uic2m")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="wall"]
+position = Vector2(930, 177)
+shape = SubResource("RectangleShape2D_3lk2k")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="wall"]
+position = Vector2(338.5, 150.25)
+shape = SubResource("RectangleShape2D_cjhbh")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="wall"]
+position = Vector2(526.75, 324)
+shape = SubResource("RectangleShape2D_bst3j")
+
+[node name="bg_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_aw3lw")
+volume_db = -11.107
+autoplay = true
+
+[node name="GameUI" parent="." instance=ExtResource("9_pi67m")]
