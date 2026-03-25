@@ -44,8 +44,10 @@ const MasterSFX_PATH_DIR: String = "res://sounds/master_sfx/"
 @onready var cha_label: Label = %CHALabel
 
 # --- ระบบ Fast Forward ---
+@onready var fast_forward: Button = $HBoxContainer/fast_forward
 var _is_fast_forwarding: bool = false
 @onready var normal_type_speed: float = type_speed_seconds
+var _waiting_for_choice_next: bool = false
 
 var story_lines: Array = []
 var id_to_index: Dictionary = {}
@@ -351,6 +353,25 @@ func _on_back_pressed() -> void:
 
 
 func _advance() -> void:
+	if index >= story_lines.size(): return
+	
+	if _waiting_for_choice_next:
+		_waiting_for_choice_next = false
+		await _show_current()
+		return
+	
+	var current_line = story_lines[index]
+
+	if current_line is Dictionary and current_line.get("type") == "choice":
+		return 
+
+	if current_line is Dictionary and current_line.has("next"):
+		var target_id = str(current_line["next"])
+		if id_to_index.has(target_id):
+			index = id_to_index[target_id] 
+			await _show_current()
+			return 
+
 	index += 1
 	await _show_current()
 
@@ -455,7 +476,7 @@ func _show_current() -> void:
 
 	await _type_text(txt)
 	_sync_state_to_gamesave()
-
+	
 	if line.has("skip_to"):
 		var target_id := str(line["skip_to"])
 		if target_id != "" and id_to_index.has(target_id):
@@ -466,6 +487,8 @@ func _show_current() -> void:
 	# --- Fast Forward Auto-Advance ---
 	if _is_fast_forwarding and not choices_container.visible:
 		await get_tree().create_timer(0.1).timeout
+		
+		if not is_inside_tree(): return
 		
 		while get_tree().paused:
 			await get_tree().process_frame
@@ -673,40 +696,33 @@ func _on_choice(opt: Dictionary) -> void:
 		if gain > 0:
 			_show_stat_popup(k, gain)
 	_update_stats_display()
-
-	var say_text: String = str(opt.get("say", "")).strip_edges()
-	if say_text != "":
-		_update_name_box("เมฆ") 
-		
-		if _is_fast_forwarding:
-			type_speed_seconds = 0.001
-		else:
-			type_speed_seconds = normal_type_speed
-			
-		await _type_text(say_text)
-
-		_busy = false
-		_typing = false
-		_sync_state_to_gamesave()
-		
-		if _is_fast_forwarding:
-			_advance()
-		return 
-
+	
 	var target_id: String = str(opt.get("next", ""))
+	var say_text: String = str(opt.get("say", "")).strip_edges()
+
 	if target_id != "" and id_to_index.has(target_id):
 		index = int(id_to_index[target_id])
 	else:
 		index += 1
+		
+	if say_text != "":
+		_update_name_box("เมฆ") 
+		type_speed_seconds = 0.001 if _is_fast_forwarding else normal_type_speed
+		await _type_text(say_text)
+		
+		_busy = false
+		_typing = false
+		_sync_state_to_gamesave()
+		
+		_waiting_for_choice_next = true
 
+		if _is_fast_forwarding:
+			_advance()
+		return 
+		
 	_busy = false
 	_sync_state_to_gamesave()
-	
-	if _is_fast_forwarding:
-		type_speed_seconds = 0.001
-	
 	await _show_current()
-
 
 func _ensure_flags() -> void:
 	if not GameSave.state.has("flags") or not (GameSave.state["flags"] is Dictionary):
@@ -721,14 +737,15 @@ func _get_flag(flag_name: String, default_value: bool = false) -> bool:
 func _start_minigame(minigame_id: String, next_id: String) -> void:
 	_busy = true
 
-	if not (GameSave.state is Dictionary):
-		GameSave.state = {}
-
-	GameSave.state["pending_next_id"] = next_id
+	if next_id != "" and id_to_index.has(next_id):
+		index = int(id_to_index[next_id])
+	else:
+		index += 1
 	_sync_state_to_gamesave()
-
+	_save_now() 
+	
 	match minigame_id:
-		"lunchbox_for_fon":
+		"lunchbox": 
 			get_tree().change_scene_to_file("res://minigames/minigame_1_lunchbox/scenes/main.tscn")
 		_:
 			push_warning("Unknown minigame_id: " + minigame_id)
@@ -959,7 +976,7 @@ func _on_load_pressed() -> void:
 func _hide_all_in_game_menus() -> void:
 	if options_menu: options_menu.visible = false
 	if video_panel: video_panel.visible = false
-	if audio_panel: audio_panel.visible = false
+	if audio_panel: audio_panel.visible = false 
 	if back_button: back_button.visible = false
 	if exit_confirm: exit_confirm.visible = false
 
@@ -968,3 +985,9 @@ func _block_dialogue_input_for_menu_open() -> void:
 	_busy = true
 	if _typing:
 		_skip_typing = true
+	
+	if fast_forward:
+		fast_forward.set_pressed_no_signal(false)
+		
+	_is_fast_forwarding = false
+	type_speed_seconds = normal_type_speed
