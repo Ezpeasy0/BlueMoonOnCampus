@@ -746,7 +746,7 @@ func _start_minigame(minigame_id: String, next_id: String) -> void:
 	
 	match minigame_id:
 		"lunchbox": 
-			get_tree().change_scene_to_file("res://minigames/minigame_1_lunchbox/scenes/main.tscn")
+			get_tree().change_scene_to_file("res://minigames/minigame_1_lunchbox/scenes/splash_screen.tscn")
 		_:
 			push_warning("Unknown minigame_id: " + minigame_id)
 			_busy = false
