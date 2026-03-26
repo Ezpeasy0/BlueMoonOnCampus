@@ -43,11 +43,9 @@ shape = SubResource("SegmentShape2D_kvohp")
 position = Vector2(34, -67)
 shape = SubResource("SegmentShape2D_w6mbu")
 
-[node name="Label" parent="." index="4"]
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-
-[node name="DialogText" parent="DialogUI" index="1"]
-text = "โอ้ อันนี้คือกล้องดูดาวสินะ เอาไว้ในห้องทำงานเลยเหรอ.. น่าเสียดายจังที่ไม่มีใครมาใช้แล้ว"
+[node name="DialogText" parent="DialogUI" index="2"]
+text = "โอ้ อันนี้คือกล้องดูดาวสินะ เอาไว้ในห้องทำงานเลยเหรอ.. 
+น่าเสียดายจังที่ไม่มีใครมาใช้แล้ว"
 
 [node name="CollisionShape2D" parent="hit" index="0"]
 position = Vector2(30, 20)
