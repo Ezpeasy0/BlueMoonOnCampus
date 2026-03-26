@@ -1,4103 +1,4103 @@
 {
   "start": "ch3_s1_001",
   "events": [
-	{
-	  "id": "ch3_s1_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_1_astronomy_club_main_inside_evening",
-	  "master_sfx": "indoor_ambient",
-	  "name": "เมฆ",
-	  "text": "นี่เหรอ ข้างในตึกชมรมเก่า…",
-	  "thought": true,
-	  "next": "ch3_s1_002"
-	},
-	{
-	  "id": "ch3_s1_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ชมรมนี้ ยุบไปนานแล้ว แต่ฝนมีกุญแจไขประตูเข้าตึกชมรมด้วยเหรอ",
-	  "next": "ch3_s1_003"
-	},
-	{
-	  "id": "ch3_s1_003",
-	  "type": "dialogue",
-	  "sprite": "fon_upset_student",
-	  "name": "ฝน",
-	  "text": "พี่บอสเขารู้จักกับหนูค่ะ เขาเป็นสมาชิกชมรมนี้",
-	  "next": "ch3_s1_004"
-	},
-	{
-	  "id": "ch3_s1_004",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อ๋อ คนที่เราบอกว่า เอ่อ.. เป็นรุ่นพี่ที่ Block ไปแล้วน่ะเหรอ",
-	  "next": "ch3_s1_005"
-	},
-	{
-	  "id": "ch3_s1_005",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ค่ะ.. เขาเคยให้กุญแจสำรองไว้กับหนู",
-	  "next": "ch3_s1_006"
-	},
-	{
-	  "id": "ch3_s1_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อืม.. ถามซักไซร้ต่อก็คงจะไม่ดี",
-	  "thought": true,
-	  "next": "ch3_s1_007"
-	},
-	{
-	  "id": "ch3_s1_007",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "โอเค เรามาหาของที่น่าจะเชื่อมโยงกับสร้อยพระจันทร์เสี้ยวกันดีกว่าเนอะ",
-	  "next": "ch3_s1_008"
-	},
-	{
-	  "id": "ch3_s1_008",
-	  "type": "dialogue",
-	  "sprite": "fon_smile_student",
-	  "name": "ฝน",
-	  "text": "ค-ค่ะ",
-	  "next": "ch3_s1_009"
-	},
-	{
-	  "id": "ch3_s1_009",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เริ่มที่ห้องนั้นละกัน. ป้ายเขียนว่าเป็น. ห้องประธานชมรมสินะ",
-	  "next": "ch3_s2_001"
-	},
-	{
-	  "id": "ch3_s2_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_2_astronomy_club_president_inside",
-	  "master_sfx": "indoor_ambient",
-	  "name": "เมฆ",
-	  "text": "อืมม ห้องของประธานจะมีอะไรที่เกี่ยวกับสร้อยมั้ยนะ",
-	  "next": "ch3_s2_mg1"
-	},
-	{
-	  "id": "ch3_s2_mg1",
-	  "type": "minigame",
-	  "minigame_id": "minigame_2",
-	  "next": "ch3_s2_002"
-	},
-	{
-	  "id": "ch3_s2_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ฝน",
-	  "next": "ch3_s2_003"
-	},
-	{
-	  "id": "ch3_s2_003",
-	  "type": "dialogue",
-	  "sprite": "fon_curious_student",
-	  "name": "ฝน",
-	  "text": "คะพี่เมฆ",
-	  "next": "ch3_s2_004"
-	},
-	{
-	  "id": "ch3_s2_004",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เห็นว่าฝนรู้จักรุ่นพี่ที่เคยอยู่ชมรมนี้ แล้วฝนรู้จักประธานชมรมรึเปล่า",
-	  "next": "ch3_s2_005"
-	},
-	{
-	  "id": "ch3_s2_005",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ก็. รู้ค่ะ ถ้าประธานรุ่นสุดท้ายก็คือ พี่เชอรี่ ค่ะ",
-	  "next": "ch3_s2_006"
-	},
-	{
-	  "id": "ch3_s2_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อืม โอเค ในนี้ก็มีข้าวของอยู่บ้างน่ะแหละ แต่คิดว่าน่าจะไม่ได้เกี่ยวข้องกับเรื่องพระจันทร์เสี้ยวโดยตรง ในโปสเตอร์ก็เหมือนจะไม่มี Logo พระจันทร์ด้วย",
-	  "next": "ch3_s2_007"
-	},
-	{
-	  "id": "ch3_s2_007",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "งั้นลองไปดูที่ห้องเก็บของมั้ยคะ",
-	  "next": "ch3_s2_008"
-	},
-	{
-	  "id": "ch3_s2_008",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ห้องเก็บของอยู่ตรงไหนเหรอ",
-	  "next": "ch3_s2_009"
-	},
-	{
-	  "id": "ch3_s2_009",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ชั้น 2 ค่ะ",
-	  "next": "ch3_s2_010"
-	},
-	{
-	  "id": "ch3_s2_010",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "โอเค ไปดูกันเถอะ",
-	  "next": "ch3_s3_001"
-	},
-	{
-	  "id": "ch3_s3_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_3_astronomy_club_storage_inside_evening",
-	  "master_sfx": "indoor_ambient",
-	  "bgm": "mysterious",
-	  "name": "เมฆ",
-	  "text": "โอ้ ห้องนี้ดูรกกว่าข้างล่างเยอะเลยนะ",
-	  "next": "ch3_s3_002"
-	},
-	{
-	  "id": "ch3_s3_002",
-	  "type": "dialogue",
-	  "sprite": "fon_upset_student",
-	  "name": "ฝน",
-	  "text": "ดูไม่ค่อยน่าไว้ใจนะคะพี่..",
-	  "next": "ch3_s3_003"
-	},
-	{
-	  "id": "ch3_s3_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ก็จริงนะ ถึงจะตึกเก่า แต่ปล่อยให้ห้องรกแบบนี้เลยเหรอ",
-	  "next": "ch3_s3_004"
-	},
-	{
-	  "id": "ch3_s3_004",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ลองหาดูละกันว่ามีอะไรแปลกๆ มั้ย",
-	  "thought": true,
-	  "next": "ch3_s3_mg1"
-	},
-	{
-	  "id": "ch3_s3_mg1",
-	  "type": "minigame",
-	  "minigame_id": "minigame_2",
-	  "next": "ch3_s3_005"
-	},
-	{
-	  "id": "ch3_s3_005",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ยังไม่มีวี่แววเรื่องพระจันทร์สีน้ำเงินเลยแฮะ..",
-	  "next": "ch3_s3_006"
-	},
-	{
-	  "id": "ch3_s3_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แล้วฝนไปเห็น Logo ของชมรมมาจากไหนเหรอ ที่บอกว่าคล้ายกันกับพระจันทร์ในสร้อยนี้",
-	  "next": "ch3_s3_007"
-	},
-	{
-	  "id": "ch3_s3_007",
-	  "type": "dialogue",
-	  "sprite": "fon_curious_student",
-	  "name": "ฝน",
-	  "text": "พี่เชอรี่เคยให้หนูดูรูปค่ะ เขาบอกว่าเป็น Logo ที่ตั้งใจทำกันกับสมาชิกชมรม",
-	  "next": "ch3_s3_008"
-	},
-	{
-	  "id": "ch3_s3_008",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อืม.. แต่ตอนนี้เรายังไม่เจอ Logo ที่ว่านั่นเลยน่ะสิ",
-	  "next": "ch3_s3_009"
-	},
-	{
-	  "id": "ch3_s3_009",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ถ้าเราไม่สะดวกติดต่อรุ่นพี่ที่ชื่อบอส งั้นติดต่อประธานเชอรี่ให้พี่ได้มั้ย",
-	  "next": "ch3_s3_010"
-	},
-	{
-	  "id": "ch3_s3_010",
-	  "type": "dialogue",
-	  "sprite": "fon_upset_student",
-	  "name": "ฝน",
-	  "text": "หนูไม่มีเบอร์พี่เขาน่ะค่ะ IG หรือ Facebook ของพี่เขา หนูก็ไม่มี",
-	  "next": "ch3_s3_011"
-	},
-	{
-	  "id": "ch3_s3_011",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "...",
-	  "next": "ch3_s3_012"
-	},
-	{
-	  "id": "ch3_s3_012",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "โอเค.. พี่ขอ.. ออกไปข้างนอกก่อนนะ ไปคิดก่อนว่าจะเอายังไงดี",
-	  "next": "ch3_s3_013"
-	},
-	{
-	  "id": "ch3_s3_013",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ค่ะ งั้นหนูจะลองหาของในนี้ดูอีกหน่อยนะคะ",
-	  "next": "ch3_s3_014"
-	},
-	{
-	  "id": "ch3_s3_014",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ขอบใจมากนะ.. อย่าฝืนตัวเองล่ะ",
-	  "next": "ch3_s3_015"
-	},
-	{
-	  "id": "ch3_s3_015",
-	  "type": "dialogue",
-	  "sprite": "fon_smile_student",
-	  "name": "ฝน",
-	  "text": "ค่ะ!",
-	  "next": "ch3_s4_001"
-	},
-	{
-	  "id": "ch3_s4_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_4_astronomy_club_main_inside_evening",
-	  "master_sfx": "indoor_ambient",
-	  "bgm": "sad",
-	  "name": "เมฆ",
-	  "text": "เรานี่ ไม่ได้เรื่องจริงๆ นะ",
-	  "thought": true,
-	  "next": "ch3_s4_002"
-	},
-	{
-	  "id": "ch3_s4_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เบาะแสก็ไม่คืบหน้า แล้วให้ลูกหัวหน้ามาเหนื่อยด้วยอีก",
-	  "thought": true,
-	  "next": "ch3_s4_003"
-	},
-	{
-	  "id": "ch3_s4_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "...",
-	  "thought": true,
-	  "next": "ch3_s4_004"
-	},
-	{
-	  "id": "ch3_s4_004",
-	  "type": "dialogue",
-	  "sprite": "moon_necklace",
-	  "name": "เมฆ",
-	  "text": "เจ้าสร้อยนี่ มันยังไงกันแน่นะ!?",
-	  "thought": true,
-	  "next": "ch3_s4_005"
-	},
-	{
-	  "id": "ch3_s4_005",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "หืม",
-	  "thought": true,
-	  "next": "ch3_s4_006"
-	},
-	{
-	  "id": "ch3_s4_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ด้านหลังจี้ มันมีผิวนูนออกมาเหรอ",
-	  "thought": true,
-	  "next": "ch3_s4_007"
-	},
-	{
-	  "id": "ch3_s4_007",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "มีตัว F สลักอยู่เหรอ?",
-	  "bg": "scene_3_4_moon_necklace_back_side_with_F",
-	  "sprite": "",
-	  "next": "ch3_s4_008",
-	  "thought": true,
-	  "sfx": "dried_leaves.mp3"
-	},
-	{
-	  "id": "ch3_s4_008",
-	  "type": "dialogue",
-	  "bgm": "",
-	  "sfx": "doorknob.mp3",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s5_001"
-	},
-	{
-	  "id": "ch3_s5_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_5_astronomy_club_main_inside_evening",
-	  "bgm": "wholesome",
-	  "name": "???",
-	  "text": "น้องนักสืบอยู่ในนั้นรึเปล่าครับ",
-	  "next": "ch3_s5_002"
-	},
-	{
-	  "id": "ch3_s5_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่เต้เหรอครับ!?",
-	  "next": "ch3_s5_003"
-	},
-	{
-	  "id": "ch3_s5_003",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "อ้าว อยู่สินะ พี่ขอเข้าไปหน่อยสิ",
-	  "next": "ch3_s5_004"
-	},
-	{
-	  "id": "ch3_s5_004",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อ-อะไรเนี่ย ตามเรามาที่ตึกด้วยเหรอ",
-	  "thought": true,
-	  "next": "ch3_s5_005"
-	},
-	{
-	  "id": "ch3_s5_005",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ถ้าเกิดว่าให้เข้ามา แล้วเรื่องคดีจะมีปัญหามั้ยเนี่ย..",
-	  "thought": true,
-	  "next": "ch3_s5_choice_001"
-	},
-	{
-	  "id": "ch3_s5_choice_001",
-	  "type": "choice",
-	  "choices": [
-		{
-		  "label": "A) เปิดประตูให้",
-		  "say": "อ๋อ แป๊บนะครับ เดี๋ยวผมเปิดให้",
-		  "effects": {
-			"CHA": 2
-		  },
-		  "next": "ch3_s5_006"
-		},
-		{
-		  "label": "B) ไม่เปิดประตูให้",
-		  "say": "ผมทำงานอยู่น่ะครับ พี่รออยู่ข้างนอกก่อนนะครับ",
-		  "effects": {},
-		  "next": "ch3_s5_006"
-		}
-	  ]
-	},
-	{
-	  "id": "ch3_s5_006",
-	  "type": "dialogue",
-	  "sfx": "door_unlock.mp3",
-	  "name": "เมฆ",
-	  "text": "!!??",
-	  "next": "ch3_s5_007"
-	},
-	{
-	  "id": "ch3_s5_007",
-	  "type": "dialogue",
-	  "sfx": "door_open.mp3",
-	  "sprite": "tae_smile",
-	  "name": "เมฆ",
-	  "text": "เอ่อ..",
-	  "next": "ch3_s5_008"
-	},
-	{
-	  "id": "ch3_s5_008",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ฮ่าๆ พี่มีกุญแจไขเข้ามาได้อยู่แล้วน่ะ",
-	  "next": "ch3_s5_009"
-	},
-	{
-	  "id": "ch3_s5_009",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s5_010"
-	},
-	{
-	  "id": "ch3_s5_010",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่มีธุระอะไรที่นี่รึเปล่าครับ",
-	  "next": "ch3_s5_011"
-	},
-	{
-	  "id": "ch3_s5_011",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "น้องต่างหากล่ะ",
-	  "next": "ch3_s5_012"
-	},
-	{
-	  "id": "ch3_s5_012",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "bgm": "",
-	  "name": "เต้",
-	  "text": "มาทำอะไรที่นี่",
-	  "next": "ch3_s5_013"
-	},
-	{
-	  "id": "ch3_s5_013",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!!!!????",
-	  "next": "ch3_s5_014"
-	},
-	{
-	  "id": "ch3_s5_014",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "พี่เมฆ เมื่อกี๊ใครมาเคาะประตูเหรอคะ!?",
-	  "next": "ch3_s5_015"
-	},
-	{
-	  "id": "ch3_s5_015",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เห้ย ฝน!?",
-	  "thought": true,
-	  "next": "ch3_s5_016"
-	},
-	{
-	  "id": "ch3_s5_016",
-	  "type": "dialogue",
-	  "sprite": "fon_curious_student",
-	  "name": "ฝน",
-	  "text": "เอ๊ะ พี่ยาม เอ่อ…",
-	  "next": "ch3_s5_017"
-	},
-	{
-	  "id": "ch3_s5_017",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "สวัสดีค่ะ พอดีหนูพาพี่เขามาดูเรื่องคดีน่ะค่ะ เบาะแสเหมือนจะเกี่ยวข้องกับชมรมนี้",
-	  "next": "ch3_s5_018"
-	},
-	{
-	  "id": "ch3_s5_018",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เห้ย ฝน-",
-	  "next": "ch3_s5_019"
-	},
-	{
-	  "id": "ch3_s5_019",
-	  "type": "dialogue",
-	  "sprite": "fon_shocked_student",
-	  "name": "ฝน",
-	  "text": "อ๊ะ-",
-	  "next": "ch3_s5_020"
-	},
-	{
-	  "id": "ch3_s5_020",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "…",
-	  "next": "ch3_s5_021"
-	},
-	{
-	  "id": "ch3_s5_021",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "เบาะแสอะไรครับ",
-	  "next": "ch3_s5_022"
-	},
-	{
-	  "id": "ch3_s5_022",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s5_023"
-	},
-	{
-	  "id": "ch3_s5_023",
-	  "type": "dialogue",
-	  "bgm": "suspense",
-	  "name": "เต้",
-	  "text": "หาพีทกันอยู่ใช่มั้ย",
-	  "next": "ch3_s5_024"
-	},
-	{
-	  "id": "ch3_s5_024",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!!??",
-	  "next": "ch3_s5_025"
-	},
-	{
-	  "id": "ch3_s5_025",
-	  "type": "dialogue",
-	  "sprite": "fon_shocked_student",
-	  "name": "ฝน",
-	  "text": "!!??",
-	  "next": "ch3_s5_026"
-	},
-	{
-	  "id": "ch3_s5_026",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "พี่รู้เหรอคะว่าพีทอยู่ไหน!?",
-	  "next": "ch3_s5_027"
-	},
-	{
-	  "id": "ch3_s5_027",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "พี่ไม่จำเป็นต้องตอบครับ",
-	  "next": "ch3_s5_028"
-	},
-	{
-	  "id": "ch3_s5_028",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ต้องขอให้น้อง 2 คน ออกไปด้วยครับ",
-	  "next": "ch3_s5_029"
-	},
-	{
-	  "id": "ch3_s5_029",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s5_030"
-	},
-	{
-	  "id": "ch3_s5_030",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เดี๋ยวสิครับ เราเข้ามาที่นี่ไม่ได้รึไงครับ",
-	  "next": "ch3_s5_031"
-	},
-	{
-	  "id": "ch3_s5_031",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่เป็นคนบอกทางให้ผมเองนะ",
-	  "next": "ch3_s5_032"
-	},
-	{
-	  "id": "ch3_s5_032",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "..",
-	  "next": "ch3_s5_033"
-	},
-	{
-	  "id": "ch3_s5_033",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พี่ไม่คิดว่าน้องจะเข้ามาในนี้ได้น่ะสิครับ",
-	  "next": "ch3_s5_034"
-	},
-	{
-	  "id": "ch3_s5_034",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "เชิญออกไปด้วยครับ",
-	  "next": "ch3_s5_035"
-	},
-	{
-	  "id": "ch3_s5_035",
-	  "type": "dialogue",
-	  "sprite": "fon_angry_student",
-	  "name": "ฝน",
-	  "text": "บ-บอกมาสิคะว่าพีทอยู่ไหน!?",
-	  "next": "ch3_s6_001"
-	},
-	{
-	  "id": "ch3_s6_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_6_tae_point_gun",
-	  "master_sfx": "",
-	  "bgm": "suspense",
-	  "sfx": "pull_out_gun.mp3",
-	  "name": "เต้",
-	  "text": "ไม่ออกไป พี่ยิงนะ",
-	  "next": "ch3_s6_002"
-	},
-	{
-	  "id": "ch3_s6_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!!!!!!!!!!!!!!???????????",
-	  "next": "ch3_s6_003"
-	},
-	{
-	  "id": "ch3_s6_003",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "พี่เมฆ!!!!",
-	  "next": "ch3_s7_001"
-	},
-	{
-	  "id": "ch3_s7_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_7_astronomy_club_main_inside",
-	  "master_sfx": "",
-	  "bgm": "suspense",
-	  "sprite": "tae_angry_hold_gun",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s7_002"
-	},
-	{
-	  "id": "ch3_s7_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่ทำแบบนี้ทำไมครับ",
-	  "next": "ch3_s7_003"
-	},
-	{
-	  "id": "ch3_s7_003",
-	  "type": "dialogue",
-	  "sfx": "rack_gun_slide.mp3",
-	  "name": "เต้",
-	  "text": "ถ้าดื้อด้านถามอยู่ พี่ยิงจริงๆ นะ!",
-	  "next": "ch3_s7_004"
-	},
-	{
-	  "id": "ch3_s7_004",
-	  "type": "dialogue",
-	  "sprite": "fon_shout_with_tears_student",
-	  "name": "ฝน",
-	  "text": "พี่เมฆ หนีเร็ว ยามเขาเป็นบ้าไปแล้ว!!!",
-	  "next": "ch3_s7_005"
-	},
-	{
-	  "id": "ch3_s7_005",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ไม่หรอกฝน",
-	  "next": "ch3_s7_006"
-	},
-	{
-	  "id": "ch3_s7_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "คนๆ นี้น่ะ..",
-	  "next": "ch3_s7_007"
-	},
-	{
-	  "id": "ch3_s7_007",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เขาไม่ยิงหรอก",
-	  "next": "ch3_s7_008"
-	},
-	{
-	  "id": "ch3_s7_008",
-	  "type": "dialogue",
-	  "bgm": "",
-	  "name": "ฝน",
-	  "text": "!!??",
-	  "next": "ch3_s7_009"
-	},
-	{
-	  "id": "ch3_s7_009",
-	  "type": "dialogue",
-	  "sprite": "tae_angry_hold_gun",
-	  "name": "เต้",
-	  "text": "!!??",
-	  "next": "ch3_s7_010"
-	},
-	{
-	  "id": "ch3_s7_010",
-	  "type": "dialogue",
-	  "bgm": "mysterious",
-	  "name": "เมฆ",
-	  "text": "เพราะแม็กปืนพี่เขาน่ะ ไม่ได้ใส่กระสุน",
-	  "next": "ch3_s7_011"
-	},
-	{
-	  "id": "ch3_s7_011",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ย-อย่ามาล้อเล่นกันนะ!",
-	  "next": "ch3_s7_012"
-	},
-	{
-	  "id": "ch3_s7_012",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่นั่นแหละครับ ที่กำลังล้อเล่นอยู่",
-	  "next": "ch3_s7_013"
-	},
-	{
-	  "id": "ch3_s7_013",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "จ่อปืนขู่ผม ต่อหน้าเด็กผู้หญิงแบบนี้",
-	  "next": "ch3_s7_014"
-	},
-	{
-	  "id": "ch3_s7_014",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่คือคนที่แอบเข้าไปดูกล้องวงจรปิดเมื่อคืนใช่มั้ย",
-	  "next": "ch3_s7_015"
-	},
-	{
-	  "id": "ch3_s7_015",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "!!??",
-	  "next": "ch3_s7_016"
-	},
-	{
-	  "id": "ch3_s7_016",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พอผมมานึกดู เมื่อคืน ยามประจำป้อม อยู่ดีๆ ก็หายไป",
-	  "next": "ch3_s7_017"
-	},
-	{
-	  "id": "ch3_s7_017",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แล้วพอสังเกตพี่ดีๆ ผมจำส่วนสูง สรีระได้ครับ",
-	  "next": "ch3_s7_018"
-	},
-	{
-	  "id": "ch3_s7_018",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ถ้าพี่เจตนาไม่ดีกับพวกผมจริงๆ แทนที่จะไล่พวกเราออกไป พี่คงยิงพวกเราไปแล้วล่ะครับ",
-	  "next": "ch3_s7_019"
-	},
-	{
-	  "id": "ch3_s7_019",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "แล้วรู้ได้ไงว่าตอนนี้จะไม่ยิง!?",
-	  "next": "ch3_s7_020"
-	},
-	{
-	  "id": "ch3_s7_020",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "รู้ได้ไงว่าปืนไม่มีกระสุน!?",
-	  "next": "ch3_s7_021"
-	},
-	{
-	  "id": "ch3_s7_021",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "สังเกตจากเสียงตอนขึ้นลำปืนเมื่อกี๊ครับ",
-	  "next": "ch3_s7_022"
-	},
-	{
-	  "id": "ch3_s7_022",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เสียงมันจะต่างจากปืนที่แม็กมีกระสุน",
-	  "next": "ch3_s7_023"
-	},
-	{
-	  "id": "ch3_s7_023",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "…",
-	  "next": "ch3_s7_024"
-	},
-	{
-	  "id": "ch3_s7_024",
-	  "type": "dialogue",
-	  "sprite": "tae_sad",
-	  "name": "เมฆ",
-	  "text": "ใจเย็นๆ แล้วคุยกันดีกว่านะครับ",
-	  "next": "ch3_s7_025"
-	},
-	{
-	  "id": "ch3_s7_025",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ทำไม.. ต้องไล่พวกเราออกไปให้ได้",
-	  "next": "ch3_s7_026"
-	},
-	{
-	  "id": "ch3_s7_026",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "…",
-	  "next": "ch3_s8_001"
-	},
-	{
-	  "id": "ch3_s8_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_8_astronomy_club_president_inside_night",
-	  "bgm": "sad",
-	  "name": "เมฆ",
-	  "text": "เรามา.. เปิดอกคุยกันดีกว่านะครับ",
-	  "next": "ch3_s8_002"
-	},
-	{
-	  "id": "ch3_s8_002",
-	  "type": "dialogue",
-	  "sprite": "tae_sad",
-	  "name": "เมฆ",
-	  "text": "พี่รู้ใช่มั้ยครับ ว่าพีทหายไปไหน",
-	  "next": "ch3_s8_003"
-	},
-	{
-	  "id": "ch3_s8_003",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พี่.. ไม่รู้…",
-	  "next": "ch3_s8_004"
-	},
-	{
-	  "id": "ch3_s8_004",
-	  "type": "dialogue",
-	  "sprite": "fon_angry_student",
-	  "name": "ฝน",
-	  "text": "ไหนว่าจะเปิดอกคุยกันไงคะ ยังจะปิดบังอะไรอีก",
-	  "next": "ch3_s8_005"
-	},
-	{
-	  "id": "ch3_s8_005",
-	  "type": "dialogue",
-	  "sprite": "tae_sad",
-	  "name": "เต้",
-	  "text": "พี่ไม่รู้จริงๆ นะ… พี่ก็อยากรู้เหมือนกัน",
-	  "next": "ch3_s8_006"
-	},
-	{
-	  "id": "ch3_s8_006",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "คืนก่อนที่ไปดูที่กล้องวงจรปิด เพราะพี่ก็กำลังหาคำตอบเหมือนกัน",
-	  "next": "ch3_s8_007"
-	},
-	{
-	  "id": "ch3_s8_007",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s8_008"
-	},
-	{
-	  "id": "ch3_s8_008",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แล้วทำไมต้องรีบกระโดดหนีพวกผม",
-	  "next": "ch3_s8_009"
-	},
-	{
-	  "id": "ch3_s8_009",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "…",
-	  "next": "ch3_s8_010"
-	},
-	{
-	  "id": "ch3_s8_010",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พวกผู้บริหารของมหาลัยนี้น่ะ…",
-	  "next": "ch3_s8_011"
-	},
-	{
-	  "id": "ch3_s8_011",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ต้องมีส่วนเกี่ยวข้องกับเรื่องนี้แน่ๆ",
-	  "next": "ch3_s8_012"
-	},
-	{
-	  "id": "ch3_s8_012",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พี่ไม่อยากให้ใครรู้ว่าพี่กำลังสืบอยู่",
-	  "next": "ch3_s8_013"
-	},
-	{
-	  "id": "ch3_s8_013",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ที่พี่กำลังตามหาตัวพีทเหมือนกัน เพราะรู้จักกับพีทใช่มั้ยครับ",
-	  "next": "ch3_s8_014"
-	},
-	{
-	  "id": "ch3_s8_014",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ตามหาพีท ก็ส่วนหนึ่ง..",
-	  "next": "ch3_s8_015"
-	},
-	{
-	  "id": "ch3_s8_015",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "แต่พี่..",
-	  "next": "ch3_s8_016"
-	},
-	{
-	  "id": "ch3_s8_016",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "กำลังตามหาลูกสาวตัวเองอยู่",
-	  "next": "ch3_s8_017"
-	},
-	{
-	  "id": "ch3_s8_017",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s8_018"
-	},
-	{
-	  "id": "ch3_s8_018",
-	  "type": "dialogue",
-	  "sprite": "fon_shocked_student",
-	  "name": "ฝน",
-	  "text": "!?",
-	  "next": "ch3_s8_019"
-	},
-	{
-	  "id": "ch3_s8_019",
-	  "type": "dialogue",
-	  "sfx": "phone_ringtone.mp3",
-	  "name": "เมฆ",
-	  "text": "ค-ใครโทรมาตอนนี้เนี่ย",
-	  "thought": true,
-	  "next": "ch3_s8_020"
-	},
-	{
-	  "id": "ch3_s8_020",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "สารวัตร!?",
-	  "thought": true,
-	  "next": "ch3_s8_021"
-	},
-	{
-	  "id": "ch3_s8_021",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "...",
-	  "thought": true,
-	  "next": "ch3_s8_022"
-	},
-	{
-	  "id": "ch3_s8_022",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "รับสายก่อนละกัน จะได้ไม่มีปัญหาทีหลัง",
-	  "thought": true,
-	  "next": "ch3_s8_023"
-	},
-	{
-	  "id": "ch3_s8_023",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ผมขอคุยโทรศัพท์แป๊บนึงนะครับ พี่เต้",
-	  "next": "ch3_s8_024"
-	},
-	{
-	  "id": "ch3_s8_024",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ฮัลโหลครับ สารวัตร",
-	  "next": "ch3_s8_025"
-	},
-	{
-	  "id": "ch3_s8_025",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "เอ้อ คุณเมฆ โทษทีนะ ผมโทรมาซะดึกเลย",
-	  "next": "ch3_s8_026"
-	},
-	{
-	  "id": "ch3_s8_026",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ดึกเหรอ?",
-	  "thought": true,
-	  "next": "ch3_s8_027"
-	},
-	{
-	  "id": "ch3_s8_027",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ตอนนี้.. มันกี่โมงแล้วเนี่ย",
-	  "thought": true,
-	  "next": "ch3_s8_028"
-	},
-	{
-	  "id": "ch3_s8_028",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "พอดีงานผมก็ยุ่ง ผมก็ลืมเรื่องของฝากนั่นเลย",
-	  "next": "ch3_s8_029"
-	},
-	{
-	  "id": "ch3_s8_029",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "เดี๋ยวพรุ่งนี้คุณเข้ามาที่ สน. แล้วเอามาให้ผมด้วยนะ",
-	  "next": "ch3_s8_030"
-	},
-	{
-	  "id": "ch3_s8_030",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "คุณก็ไม่เตือนผมเลยนะ ลืมเหมือนกันรึไง ฮ่าๆ",
-	  "next": "ch3_s8_031"
-	},
-	{
-	  "id": "ch3_s8_031",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s8_032"
-	},
-	{
-	  "id": "ch3_s8_032",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ได้ครับ เดี๋ยวเอาไปให้ครับ",
-	  "next": "ch3_s8_033"
-	},
-	{
-	  "id": "ch3_s8_033",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "อืม ขอบใจมาก คุณจะสืบเรื่องพีทต่อใช่มั้ยล่ะ พักผ่อนให้เยอะๆ นะ ต้องออมแรงไว้",
-	  "next": "ch3_s8_034"
-	},
-	{
-	  "id": "ch3_s8_034",
-	  "type": "dialogue",
-	  "sfx": "phone_hang_up.mp3",
-	  "name": "เมฆ",
-	  "text": "โอเคครับ พี่เต้",
-	  "next": "ch3_s8_035"
-	},
-	{
-	  "id": "ch3_s8_035",
-	  "type": "dialogue",
-	  "sprite": "tae_sad",
-	  "name": "เมฆ",
-	  "text": "พี่กำลังตามหาน้องพีทกับลูกสาวพี่ใช่มั้ยครับ",
-	  "next": "ch3_s8_036"
-	},
-	{
-	  "id": "ch3_s8_036",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ลูกสาวพี่กับพีท เขาเป็นเพื่อนกันน่ะ",
-	  "next": "ch3_s8_037"
-	},
-	{
-	  "id": "ch3_s8_037",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ลูกพี่หายไป 3-4 วันแล้ว…",
-	  "next": "ch3_s8_038"
-	},
-	{
-	  "id": "ch3_s8_038",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พีทก็มีข่าวว่าหายตัวไป",
-	  "next": "ch3_s8_039"
-	},
-	{
-	  "id": "ch3_s8_039",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "มันต้องมีอะไรเกี่ยวพันกันแน่ๆ",
-	  "next": "ch3_s8_040"
-	},
-	{
-	  "id": "ch3_s8_040",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ทำไมพี่ถึงคิดว่าผู้บริหารมีส่วนเกี่ยวข้องครับ",
-	  "next": "ch3_s8_041"
-	},
-	{
-	  "id": "ch3_s8_041",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ก็เด็กนักศึกษาหายตัวไปตั้ง 2 คน พี่พยายามไปบอกกับพวกนั้นแล้ว",
-	  "next": "ch3_s8_042"
-	},
-	{
-	  "id": "ch3_s8_042",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "แต่ข่าวยังเงียบแบบนี้",
-	  "next": "ch3_s8_043"
-	},
-	{
-	  "id": "ch3_s8_043",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พี่ว่ามันแปลกเกินไปแล้ว!",
-	  "next": "ch3_s8_044"
-	},
-	{
-	  "id": "ch3_s8_044",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s8_045"
-	},
-	{
-	  "id": "ch3_s8_045",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "โอเคครับ พี่",
-	  "next": "ch3_s8_046"
-	},
-	{
-	  "id": "ch3_s8_046",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ตอนนี้เบาะแสสำคัญที่ผมมีคือ สร้อยพระจันทร์สีน้ำเงิน",
-	  "next": "ch3_s8_047"
-	},
-	{
-	  "id": "ch3_s8_047",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เพราะเป็นของที่เราคิดว่า พีทน่าจะเอาไปฝังไว้ครับ",
-	  "next": "ch3_s8_048"
-	},
-	{
-	  "id": "ch3_s8_048",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ที่น้องขุดขึ้นมาใช่มั้ย",
-	  "next": "ch3_s8_049"
-	},
-	{
-	  "id": "ch3_s8_049",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พี่ขอดูหน่อย",
-	  "next": "ch3_s8_050"
-	},
-	{
-	  "id": "ch3_s8_050",
-	  "type": "dialogue",
-	  "sprite": "moon_necklace",
-	  "name": "เต้",
-	  "text": "พระจันทร์สีน้ำเงิน..",
-	  "next": "ch3_s8_051"
-	},
-	{
-	  "id": "ch3_s8_051",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "!?",
-	  "next": "ch3_s8_052"
-	},
-	{
-	  "id": "ch3_s8_052",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "แบบนี้นี่เอง.. น้อง 2 คนถึงมาที่นี่สินะ",
-	  "next": "ch3_s8_053"
-	},
-	{
-	  "id": "ch3_s8_053",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "??",
-	  "next": "ch3_s8_054"
-	},
-	{
-	  "id": "ch3_s8_054",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แปลว่าชมรมดาราศาสตร์กับสร้อยนี้ เกี่ยวข้องกันจริงๆ ใช่มั้ยครับ",
-	  "next": "ch3_s8_055"
-	},
-	{
-	  "id": "ch3_s8_055",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "เรื่องสร้อยพี่ไน่แน่ใจ แต่ไอรูปพระจันทร์สีน้ำเงินนี่แหละ",
-	  "next": "ch3_s8_056"
-	},
-	{
-	  "id": "ch3_s8_056",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "มันเป็นรูปที่ลูกพี่ตั้งใจจะออกแบบให้เป็น Logo ของชมรมดาราศาสตร์",
-	  "next": "ch3_s8_057"
-	},
-	{
-	  "id": "ch3_s8_057",
-	  "type": "dialogue",
-	  "sprite": "tae_sad",
-	  "name": "เต้",
-	  "text": "แต่หลังจากนั้น ลูกพี่.. ก็หายตัวไป…",
-	  "next": "ch3_s8_058"
-	},
-	{
-	  "id": "ch3_s8_058",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s8_059"
-	},
-	{
-	  "id": "ch3_s8_059",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "จริงๆ ผมน่าจะถามตั้งนานแล้ว",
-	  "next": "ch3_s8_060"
-	},
-	{
-	  "id": "ch3_s8_060",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ลูกสาวพี่เต้.. ชื่อเชอรี่ใช่มั้ยครับ",
-	  "next": "ch3_s8_061"
-	},
-	{
-	  "id": "ch3_s8_061",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "!!!???",
-	  "next": "ch3_s8_062"
-	},
-	{
-	  "id": "ch3_s8_062",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ช-ใช่ น้องเมฆรู้ได้ไง!?",
-	  "next": "ch3_s8_063"
-	},
-	{
-	  "id": "ch3_s8_063",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "น้องที่มากับผมคนนี้ ชื่อฝนครับ",
-	  "next": "ch3_s8_064"
-	},
-	{
-	  "id": "ch3_s8_064",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เขาเล่าให้ฟังว่า เชอรี่เคยเอารูป Logo พระจันทร์เสี้ยวให้ดู",
-	  "next": "ch3_s8_065"
-	},
-	{
-	  "id": "ch3_s8_065",
-	  "type": "dialogue",
-	  "sprite": "tae_sad",
-	  "name": "เต้",
-	  "text": "...",
-	  "next": "ch3_s8_066"
-	},
-	{
-	  "id": "ch3_s8_066",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "เชอรี่กับพีทหายตัวไปแบบไม่มีปี่ไม่มีขลุ่ย",
-	  "next": "ch3_s8_067"
-	},
-	{
-	  "id": "ch3_s8_067",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "แถมพีทเอา.. สร้อยนี้ไปฝังไว้",
-	  "next": "ch3_s8_068"
-	},
-	{
-	  "id": "ch3_s8_068",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ตอนแรกพี่สังหรณ์ใจว่า มันไม่ใช่เรื่องดีแน่ๆ พี่เลย.. ขู่เพื่อไล่น้อง 2 คนออกไป",
-	  "next": "ch3_s8_069"
-	},
-	{
-	  "id": "ch3_s8_069",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พี่ขอโทษนะ",
-	  "next": "ch3_s8_070"
-	},
-	{
-	  "id": "ch3_s8_070",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ไม่เป็นไรครับ ผมเข้าใจ",
-	  "next": "ch3_s8_071"
-	},
-	{
-	  "id": "ch3_s8_071",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แต่ว่า.. พี่ไปซื้อปืนเถื่อนมาใช่มั้ยครับ",
-	  "next": "ch3_s8_072"
-	},
-	{
-	  "id": "ch3_s8_072",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ถึงเมื่อกี๊จะไม่ได้ลั่นไก แต่มีปืนไว้ในครอบครองโดยไม่มีใบอนุญาต ถือว่าผิดกฎหมายนะครับ",
-	  "next": "ch3_s8_073"
-	},
-	{
-	  "id": "ch3_s8_073",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "...",
-	  "next": "ch3_s8_074"
-	},
-	{
-	  "id": "ch3_s8_074",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่จะเอามายิงคนที่อยู่เบื้องหลังเหรอครับ",
-	  "next": "ch3_s8_075"
-	},
-	{
-	  "id": "ch3_s8_075",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "คนที่มันทำเรื่องแบบนี้ มันต้องชดใช้สิ..",
-	  "next": "ch3_s8_076"
-	},
-	{
-	  "id": "ch3_s8_076",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "...",
-	  "next": "ch3_s8_077"
-	},
-	{
-	  "id": "ch3_s8_077",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "มันไม่คุ้มหรอกพี่ เชื่อผมเถอะนะ",
-	  "next": "ch3_s8_078"
-	},
-	{
-	  "id": "ch3_s8_078",
-	  "type": "dialogue",
-	  "sprite": "tae_sad",
-	  "name": "เต้",
-	  "text": "...",
-	  "next": "ch3_s9_001"
-	},
-	{
-	  "id": "ch3_s9_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_9_astronomy_club_night",
-	  "bgm": "sad",
-	  "sprite": "tae_sad",
-	  "name": "เมฆ",
-	  "text": "ตอนนี้ผมได้เบาะแสเพิ่มแล้วว่า พีทเป็นเพื่อนกับเชอรี่ ซึ่งเชอรี่เป็นประธานชมรมดาราศาสตร์ แต่หายตัวไปทั้งคู่",
-	  "next": "ch3_s9_002"
-	},
-	{
-	  "id": "ch3_s9_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แล้วพีทต้องมีเหตุผลอะไรบางอย่าง ที่เอาสร้อยนี้ไปซ่อน",
-	  "next": "ch3_s9_003"
-	},
-	{
-	  "id": "ch3_s9_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s9_004"
-	},
-	{
-	  "id": "ch3_s9_004",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่เต้ติดต่อน้องเชอรี่ไม่ได้เลยใช่มั้ยครับ",
-	  "next": "ch3_s9_005"
-	},
-	{
-	  "id": "ch3_s9_005",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ไม่เลย..",
-	  "next": "ch3_s9_006"
-	},
-	{
-	  "id": "ch3_s9_006",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "โทรก็ไม่รับสาย",
-	  "next": "ch3_s9_007"
-	},
-	{
-	  "id": "ch3_s9_007",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "LINE ก็ไม่อ่าน",
-	  "next": "ch3_s9_008"
-	},
-	{
-	  "id": "ch3_s9_008",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ทุกช่องทางแล้ว เมฆ..",
-	  "next": "ch3_s9_009"
-	},
-	{
-	  "id": "ch3_s9_009",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ครับ..",
-	  "next": "ch3_s9_010"
-	},
-	{
-	  "id": "ch3_s9_010",
-	  "type": "dialogue",
-	  "sprite": "fon_curious_student",
-	  "name": "ฝน",
-	  "text": "แล้วเราจะเอายังไงต่อดีคะ พี่เมฆ",
-	  "next": "ch3_s9_011"
-	},
-	{
-	  "id": "ch3_s9_011",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s9_012"
-	},
-	{
-	  "id": "ch3_s9_012",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "จ-จริงสิ สร้อยคอ",
-	  "thought": true,
-	  "next": "ch3_s9_013"
-	},
-	{
-	  "id": "ch3_s9_013",
-	  "type": "dialogue",
-	  "bg": "scene_3_4_moon_necklace_back_side_with_F",
-	  "name": "เมฆ",
-	  "text": "Logo… ตัว F…",
-	  "thought": true,
-	  "next": "ch3_s9_014"
-	},
-	{
-	  "id": "ch3_s9_014",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s9_015"
-	},
-	{
-	  "id": "ch3_s9_015",
-	  "type": "dialogue",
-	  "bg": "scene_3_9_astronomy_club_night",
-	  "name": "เมฆ",
-	  "text": "ฝน.. ชื่อฝนนี่ ภาษาอังกฤษ ขึ้นด้วยตัว F ใช่มั้ย",
-	  "next": "ch3_s9_016"
-	},
-	{
-	  "id": "ch3_s9_016",
-	  "type": "dialogue",
-	  "sprite": "fon_curious_student",
-	  "name": "ฝน",
-	  "text": "เอ๊ะ ก็ใช่ค่ะ…",
-	  "next": "ch3_s9_017"
-	},
-	{
-	  "id": "ch3_s9_017",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แปลว่าสร้อยที่พีทเอาซ่อน อาจไม่ใช่ทั้งของพีทหรือของเชอรี่..",
-	  "thought": true,
-	  "next": "ch3_s9_018"
-	},
-	{
-	  "id": "ch3_s9_018",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "คนที่อยู่สมาชิกชมรมนี้ แล้วฝน Block เขาไป นี่ใครเหรอ",
-	  "next": "ch3_s9_019"
-	},
-	{
-	  "id": "ch3_s9_019",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "เอ่อ.. พี่บอสค่ะ…",
-	  "next": "ch3_s9_020"
-	},
-	{
-	  "id": "ch3_s9_020",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "พอดีว่า.. เหมือนเขาพยายามจีบหนู แล้วหลายๆ ครั้ง หนูรู้สึกว่า..",
-	  "next": "ch3_s9_021"
-	},
-	{
-	  "id": "ch3_s9_021",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s9_022"
-	},
-	{
-	  "id": "ch3_s9_022",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "โอเค บอสก็น่าจะรู้จักกับเชอรี่.. แล้วเขารู้จักพีทมั้ย",
-	  "next": "ch3_s9_023"
-	},
-	{
-	  "id": "ch3_s9_023",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ไม่แน่ใจเหมือนกันค่ะ..",
-	  "next": "ch3_s9_024"
-	},
-	{
-	  "id": "ch3_s9_024",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ตอนนี้.. พี่กำลังคิดว่าสร้อยนี้ไม่ใช่ของพีทหรือของเชอรี่เลย..",
-	  "next": "ch3_s9_025"
-	},
-	{
-	  "id": "ch3_s9_025",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ต้องเป็นของคนในชมรมดาราศาสตร์ แต่จุดสำคัญคือมีตัว F สลักอยู่ด้านหลังจี้",
-	  "next": "ch3_s9_026"
-	},
-	{
-	  "id": "ch3_s9_026",
-	  "type": "dialogue",
-	  "sprite": "fon_shocked_student",
-	  "name": "ฝน",
-	  "text": "!?",
-	  "next": "ch3_s9_027"
-	},
-	{
-	  "id": "ch3_s9_027",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่คิดว่า เจ้าของสร้อยเส้นนี้ ตั้งใจทำสร้อยมาให้ฝน.. ซึ่งถ้าตามที่ฝนเล่าเมื่อกี๊ พี่คิดว่าน่าจะเป็น-",
-	  "next": "ch3_s9_028"
-	},
-	{
-	  "id": "ch3_s9_028",
-	  "type": "dialogue",
-	  "name": "???",
-	  "text": "สวัสดีครับทุกคน",
-	  "next": "ch3_s9_029"
-	},
-	{
-	  "id": "ch3_s9_029",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s9_030"
-	},
-	{
-	  "id": "ch3_s9_030",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "!?",
-	  "next": "ch3_s9_031"
-	},
-	{
-	  "id": "ch3_s9_031",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "!?",
-	  "next": "ch3_s9_032"
-	},
-	{
-	  "id": "ch3_s9_032",
-	  "type": "dialogue",
-	  "sprite": "boss_chill",
-	  "name": "???",
-	  "text": "มีธุระอะไรที่นี่รึเปล่าครับ",
-	  "next": "ch3_s9_033"
-	},
-	{
-	  "id": "ch3_s9_033",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "พี่บอส…",
-	  "next": "ch3_s9_034"
-	},
-	{
-	  "id": "ch3_s9_034",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "thought": true,
-	  "next": "ch3_s9_035"
-	},
-	{
-	  "id": "ch3_s9_035",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "คนนี้เหรอ!?",
-	  "thought": true,
-	  "next": "ch3_s9_036"
-	},
-	{
-	  "id": "ch3_s9_036",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "…",
-	  "next": "ch3_s9_037"
-	},
-	{
-	  "id": "ch3_s9_037",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "เมฆ",
-	  "next": "ch3_s9_038"
-	},
-	{
-	  "id": "ch3_s9_038",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "เมื่อกี๊เมฆกำลังจะบอกว่า เจ้าของสร้อยคือ",
-	  "next": "ch3_s9_039"
-	},
-	{
-	  "id": "ch3_s9_039",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "น้องบอสใช่มั้ย",
-	  "next": "ch3_s9_040"
-	},
-	{
-	  "id": "ch3_s9_040",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ช-ใช่ครับ สันนิษฐานจากรูปการณ์ทั้งหมด ถ้าตัว F ที่สร้อย หมายถึงน้องฝน",
-	  "next": "ch3_s9_041"
-	},
-	{
-	  "id": "ch3_s9_041",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "คิดว่า.. บอสเป็นคนทำสร้อยเส้นนี้ครับ",
-	  "next": "ch3_s9_042"
-	},
-	{
-	  "id": "ch3_s9_042",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "…",
-	  "next": "ch3_s9_043"
-	},
-	{
-	  "id": "ch3_s9_043",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "บอสรู้รึเปล่า ว่าเชอรี่อยู่ที่ไหน",
-	  "next": "ch3_s9_044"
-	},
-	{
-	  "id": "ch3_s9_044",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "..",
-	  "next": "ch3_s9_045"
-	},
-	{
-	  "id": "ch3_s9_045",
-	  "type": "dialogue",
-	  "sprite": "boss_chill",
-	  "name": "บอส",
-	  "text": "พี่รู้จักเชอรี่เหรอครับ แล้วมาถามผมทำไม",
-	  "next": "ch3_s9_046"
-	},
-	{
-	  "id": "ch3_s9_046",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "เชอรี่เป็นลูกสาวของพี่ ตอนนี้หายไปไหนไม่รู้ 2-3 วันแล้ว",
-	  "next": "ch3_s9_047"
-	},
-	{
-	  "id": "ch3_s9_047",
-	  "type": "dialogue",
-	  "sprite": "boss_chill",
-	  "name": "บอส",
-	  "text": "ผมไม่ทราบจริงๆ ครับ",
-	  "next": "ch3_s9_048"
-	},
-	{
-	  "id": "ch3_s9_048",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "ส่วนสร้อยนั้น ไม่ใช่ของผมครับ",
-	  "next": "ch3_s9_049"
-	},
-	{
-	  "id": "ch3_s9_049",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "แล้วฝนกับพี่ 2 คน มาตามหาเชอรี่ที่นี่เหรอครับ",
-	  "next": "ch3_s9_050"
-	},
-	{
-	  "id": "ch3_s9_050",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ครับ",
-	  "next": "ch3_s9_051"
-	},
-	{
-	  "id": "ch3_s9_051",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "ขอให้หาเจอเร็วๆ นะครับ ผมขอตัวก่อน",
-	  "next": "ch3_s9_052"
-	},
-	{
-	  "id": "ch3_s9_052",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s9_053"
-	},
-	{
-	  "id": "ch3_s9_053",
-	  "type": "dialogue",
-	  "sprite": "boss_chill",
-	  "sprite_hide": true,
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s9_054"
-	},
-	{
-	  "id": "ch3_s9_054",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เดี๋ยวครับ!",
-	  "next": "ch3_s9_055"
-	},
-	{
-	  "id": "ch3_s9_055",
-	  "type": "dialogue",
-	  "sprite": "boss_chill",
-	  "name": "บอส",
-	  "text": "?",
-	  "next": "ch3_s9_056"
-	},
-	{
-	  "id": "ch3_s9_056",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ประธานชมรมของบอสหายตัวไปทั้งคน.. ไม่อยากช่วยพี่หาหน่อยเหรอครับ",
-	  "next": "ch3_s9_057"
-	},
-	{
-	  "id": "ch3_s9_057",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "อ๋อ ได้สิครับ จะให้ผมช่วยอะไร",
-	  "next": "ch3_s9_058"
-	},
-	{
-	  "id": "ch3_s9_058",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s9_059"
-	},
-	{
-	  "id": "ch3_s9_059",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ไม่ใช่แบบนั้นครับ",
-	  "next": "ch3_s9_060"
-	},
-	{
-	  "id": "ch3_s9_060",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ช่วยก็เรื่องนึง แต่คนเรา ถ้าเพื่อนหรือคนรู้จักหายตัว หรือโดนลักพาตัวไป",
-	  "next": "ch3_s9_061"
-	},
-	{
-	  "id": "ch3_s9_061",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อย่างน้อย ก็น่าจะเสนอความช่วยเหลือนะครับ",
-	  "next": "ch3_s9_062"
-	},
-	{
-	  "id": "ch3_s9_062",
-	  "type": "dialogue",
-	  "sprite": "boss_chill",
-	  "name": "บอส",
-	  "text": "..",
-	  "next": "ch3_s9_063"
-	},
-	{
-	  "id": "ch3_s9_063",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "งั้นพี่ต้องการให้ผมทำอะไรครับ",
-	  "next": "ch3_s9_064"
-	},
-	{
-	  "id": "ch3_s9_064",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่ต้องการให้บอสเลิกโกหก แล้วบอกพี่มาว่าพีทอยู่ไหน",
-	  "next": "ch3_s9_065"
-	},
-	{
-	  "id": "ch3_s9_065",
-	  "type": "dialogue",
-	  "sprite": "fon_shocked_student",
-	  "name": "ฝน",
-	  "text": "!?",
-	  "next": "ch3_s9_066"
-	},
-	{
-	  "id": "ch3_s9_066",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "!?",
-	  "next": "ch3_s9_067"
-	},
-	{
-	  "id": "ch3_s9_067",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่จะถามให้ชัดๆ นะ",
-	  "next": "ch3_s9_068"
-	},
-	{
-	  "id": "ch3_s9_068",
-	  "type": "dialogue",
-	  "sprite": "boss_chill",
-	  "name": "เมฆ",
-	  "text": "สร้อยจี้พระจันทร์สีน้ำเงินนี่.. เป็นของบอส",
-	  "next": "ch3_s9_069"
-	},
-	{
-	  "id": "ch3_s9_069",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แล้วบอสเป็นคนลักพาตัวพีทไปใช่มั้ย",
-	  "next": "ch3_s9_070"
-	},
-	{
-	  "id": "ch3_s9_070",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "……..",
-	  "next": "ch3_s9_071"
-	},
-	{
-	  "id": "ch3_s9_071",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "สร้อยเส้นนั้นน่ะ มันควรอยู่ในมือของคนที่ผมรัก",
-	  "next": "ch3_s9_072"
-	},
-	{
-	  "id": "ch3_s9_072",
-	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "name": "บอส",
-	  "text": "เพราะไอพวกเวรนั่นมาวุ่นวายกับสร้อย ผมก็ไม่ต้องการมันอีกต่อไปแล้ว!",
-	  "next": "ch3_s9_073"
-	},
-	{
-	  "id": "ch3_s9_073",
-	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "sprite_hide": true,
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s9_074"
-	},
-	{
-	  "id": "ch3_s9_074",
-	  "type": "dialogue",
-	  "sfx": "run.mp3",
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s9_075"
-	},
-	{
-	  "id": "ch3_s9_075",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เห้ย หยุดก่อน!",
-	  "next": "ch3_s9_076"
-	},
-	{
-	  "id": "ch3_s9_076",
-	  "type": "dialogue",
-	  "sprite": "fon_shocked_student",
-	  "name": "ฝน",
-	  "text": "พี่บอสวิ่งเข้าไปในตึกแล้ว!",
-	  "next": "ch3_s9_077"
-	},
-	{
-	  "id": "ch3_s9_077",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "โธ่เว้ย",
-	  "thought": true,
-	  "next": "ch3_s9_078"
-	},
-	{
-	  "id": "ch3_s9_078",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ฝนรอข้างนอกนี่นะ พี่เต้มากับผม!",
-	  "next": "ch3_s9_079"
-	},
-	{
-	  "id": "ch3_s9_079",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "ได้!",
-	  "next": "ch3_s10_001"
-	},
-	{
-	  "id": "ch3_s10_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_10_astronomy_club_main_inside",
-	  "bgm": "suspense_music.mp3",
-	  "name": "เมฆ",
-	  "text": "บอส!!",
-	  "next": "ch3_s10_002"
-	},
-	{
-	  "id": "ch3_s10_002",
-	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "name": "บอส",
-	  "text": "มึงไม่มีวันหาพวกนั้นเจอหรอก!",
-	  "next": "ch3_s10_003"
-	},
-	{
-	  "id": "ch3_s10_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พวกนั้น!? บอสลักพาตัวเชอรี่ไปด้วยเหรอ!?",
-	  "next": "ch3_s10_004"
-	},
-	{
-	  "id": "ch3_s10_004",
-	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "sprite_hide": true,
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s10_005"
-	},
-	{
-	  "id": "ch3_s10_005",
-	  "type": "dialogue",
-	  "sfx": "run.mp3",
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s10_006"
-	},
-	{
-	  "id": "ch3_s10_006",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "รีบตามไปก่อน อย่าเพิ่งถามมัน!",
-	  "next": "ch3_s10_007"
-	},
-	{
-	  "id": "ch3_s10_007",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "มันวิ่งไปออกทางหลังตึก!",
-	  "next": "ch3_s11_001"
-	},
-	{
-	  "id": "ch3_s11_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_11_astronomy_club_back_night",
-	  "bgm": "suspense_music.mp3",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s11_002"
-	},
-	{
-	  "id": "ch3_s11_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ห-หายไปแล้วเหรอ!?",
-	  "next": "ch3_s11_003"
-	},
-	{
-	  "id": "ch3_s11_003",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "….",
-	  "next": "ch3_s11_004"
-	},
-	{
-	  "id": "ch3_s11_004",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ไอบอส!!!!",
-	  "next": "ch3_s11_005"
-	},
-	{
-	  "id": "ch3_s11_005",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อยู่ดีๆ จะหายไปได้ไงกัน คลาดกันแป๊บเดียวเอง",
-	  "thought": true,
-	  "next": "ch3_s11_006"
-	},
-	{
-	  "id": "ch3_s11_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "หืม…",
-	  "thought": true,
-	  "next": "ch3_s11_007"
-	},
-	{
-	  "id": "ch3_s11_007",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s11_008"
-	},
-	{
-	  "id": "ch3_s11_008",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่เต้..",
-	  "next": "ch3_s11_009"
-	},
-	{
-	  "id": "ch3_s11_009",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ไปดูที่ถังขยะใบนั้นกันครับ",
-	  "next": "ch3_s11_010"
-	},
-	{
-	  "id": "ch3_s11_010",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "??",
-	  "next": "ch3_s12_001"
-	},
-	{
-	  "id": "ch3_s12_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_12_astronomy_club_dumpster_gate_closed",
-	  "bgm": "suspense_music.mp3",
-	  "name": "เมฆ",
-	  "text": "ป-ประตู… มีประตูลับไปห้องใต้ดินเหรอ!!??",
-	  "next": "ch3_s12_002"
-	},
-	{
-	  "id": "ch3_s12_002",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "..",
-	  "next": "ch3_s12_003"
-	},
-	{
-	  "id": "ch3_s12_003",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ชักจะเลอะเทอะไปกันใหญ่แล้ว",
-	  "next": "ch3_s12_004"
-	},
-	{
-	  "id": "ch3_s12_004",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ไอเด็กเวร",
-	  "next": "ch3_s12_005"
-	},
-	{
-	  "id": "ch3_s12_005",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "อ๊าา!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-	  "next": "ch3_s12_006"
-	},
-	{
-	  "id": "ch3_s12_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!!!!!!!!!!???",
-	  "next": "ch3_s12_007"
-	},
-	{
-	  "id": "ch3_s12_007",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ฝน!!!!!!????????",
-	  "next": "ch3_s12_008"
-	},
-	{
-	  "id": "ch3_s12_008",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "เสียงมาจากในตึก!!!!!",
-	  "next": "ch3_s13_001"
-	},
-	{
-	  "id": "ch3_s13_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_13_astronomy_club_main_inside",
-	  "bgm": "suspense_music.mp3",
-	  "name": "เมฆ",
-	  "text": "ฝน!!! ฝนอยู่ไหน!!!????",
-	  "next": "ch3_s13_002"
-	},
-	{
-	  "id": "ch3_s13_002",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "หนูอยู่ห้องเก็บของค่ะ!!!!",
-	  "next": "ch3_s14_001"
-	},
-	{
-	  "id": "ch3_s14_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_14_astronomy_club_storage_inside_night",
-	  "bgm": "suspense_music.mp3",
-	  "sfx": "door_open_quick.mp3",
-	  "name": "เมฆ",
-	  "text": "ฝน!!!",
-	  "next": "ch3_s14_002"
-	},
-	{
-	  "id": "ch3_s14_002",
-	  "type": "dialogue",
-	  "sprite": "fon_shocked_with_tears_student",
-	  "name": "ฝน",
-	  "text": "พี่เมฆ!!!!!",
-	  "next": "ch3_s14_003"
-	},
-	{
-	  "id": "ch3_s14_003",
-	  "type": "dialogue",
-	  "sprite": "fon_shocked_with_tears_point_at_door_student",
-	  "name": "ฝน",
-	  "text": "ข้างในนั้น… ข้างใน!!!!",
-	  "next": "ch3_s14_004"
-	},
-	{
-	  "id": "ch3_s14_004",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "หลังประตูนั้นเหรอ!?",
-	  "next": "ch3_s14_005"
-	},
-	{
-	  "id": "ch3_s14_005",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ก่อนหน้านี้ที่เข้ามา มีชั้นวางของกั้นประตูไว้อยู่สินะ",
-	  "thought": true,
-	  "next": "ch3_s14_006"
-	},
-	{
-	  "id": "ch3_s14_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ม.. มีกลิ่นแปลกๆ ด้วย",
-	  "next": "ch3_s14_007"
-	},
-	{
-	  "id": "ch3_s14_007",
-	  "type": "dialogue",
-	  "sfx": "door_open.mp3",
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s15_001"
-	},
-	{
-	  "id": "ch3_s15_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_15_cherry_body",
-	  "bgm": "",
-	  "name": "เมฆ",
-	  "text": "เห้ย!!",
-	  "next": "ch3_s15_002"
-	},
-	{
-	  "id": "ch3_s15_002",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "!!!!!!!!!!!!!!!!!!!!!!!??????????????????????????????????????",
-	  "next": "ch3_s16_001"
-	},
-	{
-	  "id": "ch3_s16_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_16_mek_fon_tae_found_cherry_body_artwork",
-	  "bgm": "extremely_sad_music.mp3",
-	  "name": "เต้",
-	  "text": "ช-เชอรี่!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-	  "next": "ch3_s16_002"
-	},
-	{
-	  "id": "ch3_s16_002",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ลูกพ่อ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-	  "next": "ch3_s16_003"
-	},
-	{
-	  "id": "ch3_s16_003",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ลูกพ่ออออออ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-	  "next": "ch3_s17_001"
-	},
-	{
-	  "id": "ch3_s17_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_17_cherry_body",
-	  "bgm": "extremely_sad_music.mp3",
-	  "sprite": "tae_angry_with_tears",
-	  "name": "เต้",
-	  "text": "ไอเหี้ยบอสส มึงใช่มั้ย!!!!?????????",
-	  "next": "ch3_s17_002"
-	},
-	{
-	  "id": "ch3_s17_002",
-	  "type": "dialogue",
-	  "sprite": "tae_angry_with_tears",
-	  "sprite_hide": true,
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s17_003"
-	},
-	{
-	  "id": "ch3_s17_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่เต้!!!!",
-	  "next": "ch3_s17_004"
-	},
-	{
-	  "id": "ch3_s17_004",
-	  "type": "dialogue",
-	  "sprite": "fon_shout_with_tears_student",
-	  "name": "ฝน",
-	  "text": "รีบตามพี่เต้เร็วค่ะ!!!",
-	  "next": "ch3_s17_005"
-	},
-	{
-	  "id": "ch3_s17_005",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "โธ่เว้ยย!!",
-	  "thought": true,
-	  "next": "ch3_s18_001"
-	},
-	{
-	  "id": "ch3_s18_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_18_astronomy_club_back_night",
-	  "bgm": "suspense_music.mp3",
-	  "name": "เมฆ",
-	  "text": "พี่เต้เข้าประตูใต้ดินไปแล้วแน่เลย!!",
-	  "next": "ch3_s18_002"
-	},
-	{
-	  "id": "ch3_s18_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ฝนรอนี่นะ-",
-	  "next": "ch3_s18_003"
-	},
-	{
-	  "id": "ch3_s18_003",
-	  "type": "dialogue",
-	  "sprite": "fon_shout_with_tears_student",
-	  "name": "ฝน",
-	  "text": "หนูจะไปด้วยค่ะ!!!!",
-	  "next": "ch3_s18_004"
-	},
-	{
-	  "id": "ch3_s18_004",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s18_005"
-	},
-	{
-	  "id": "ch3_s18_005",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "…",
-	  "next": "ch3_s18_006"
-	},
-	{
-	  "id": "ch3_s18_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ก็ได้ มาเร็ว!",
-	  "next": "ch3_s19_001"
-	},
-	{
-	  "id": "ch3_s19_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_19_astronomy_club_dumpster_gate_open",
-	  "bgm": "suspense_music.mp3",
-	  "name": "เมฆ",
-	  "text": "!!",
-	  "next": "ch3_s19_002"
-	},
-	{
-	  "id": "ch3_s19_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "นี่ไง ประตูใต้ดินจริงๆ ด้วย!",
-	  "next": "ch3_s19_003"
-	},
-	{
-	  "id": "ch3_s19_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "มาเร็ว ฝน!",
-	  "next": "ch3_s19_004"
-	},
-	{
-	  "id": "ch3_s19_004",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ค่ะ!",
-	  "next": "ch3_s20_001"
-	},
-	{
-	  "id": "ch3_s20_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_20_climbing_ladder",
-	  "bgm": "suspense_music.mp3",
-	  "sfx": "ladder_climb.mp3",
-	  "name": "เมฆ",
-	  "text": "จับบันไดดีๆ นะฝน!",
-	  "next": "ch3_s20_002"
-	},
-	{
-	  "id": "ch3_s20_002",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "พี่เชอรี่….",
-	  "next": "ch3_s20_003"
-	},
-	{
-	  "id": "ch3_s20_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s20_004"
-	},
-	{
-	  "id": "ch3_s20_004",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s20_005"
-	},
-	{
-	  "id": "ch3_s20_005",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ถึงแล้ว!",
-	  "thought": true,
-	  "next": "ch3_s20_006"
-	},
-	{
-	  "id": "ch3_s20_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ห-ห้องใต้ดิน!",
-	  "thought": true,
-	  "next": "ch3_s21_001"
-	},
-	{
-	  "id": "ch3_s21_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_21_astronomy_club_basement_boss_tae_pete",
-	  "bgm": "suspense_music.mp3",
-	  "name": "เมฆ",
-	  "text": "บอส!!!! พี่เต้!!!!!",
-	  "next": "ch3_s21_002"
-	},
-	{
-	  "id": "ch3_s21_002",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "พีท!!!",
-	  "next": "ch3_s22_001"
-	},
-	{
-	  "id": "ch3_s22_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_22_astronomy_club_basement",
-	  "bgm": "extremely_sad_music.mp3",
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s22_002"
-	},
-	{
-	  "id": "ch3_s22_002",
-	  "type": "dialogue",
-	  "bgm_stop": true,
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s22_003"
-	},
-	{
-	  "id": "ch3_s22_003",
-	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "name": "บอส",
-	  "text": "จะยิงเหรอ!?",
-	  "next": "ch3_s22_004"
-	},
-	{
-	  "id": "ch3_s22_004",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "ผมปาดคอไอพีทเลยดีมั้ย!?",
-	  "next": "ch3_s22_005"
-	},
-	{
-	  "id": "ch3_s22_005",
-	  "type": "dialogue",
-	  "sprite": "pete_cry",
-	  "name": "พีท",
-	  "text": "พี่บอส ปล่อยผมไปเถอะ!!",
-	  "next": "ch3_s22_006"
-	},
-	{
-	  "id": "ch3_s22_006",
-	  "type": "dialogue",
-	  "sprite": "tae_angry_hold_gun",
-	  "name": "เต้",
-	  "text": "มึงฆ่าลูกกูทำไม!!!???",
-	  "next": "ch3_s22_007"
-	},
-	{
-	  "id": "ch3_s22_007",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "คิดว่ากูไม่กล้ายิงมึงเหรอ ไอเด็กนรก!!!",
-	  "next": "ch3_s22_008"
-	},
-	{
-	  "id": "ch3_s22_008",
-	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "name": "บอส",
-	  "text": "..",
-	  "next": "ch3_s22_009"
-	},
-	{
-	  "id": "ch3_s22_009",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "ไอเชอรี่ มันมาลองของกับผมก่อนเองนี่",
-	  "next": "ch3_s22_010"
-	},
-	{
-	  "id": "ch3_s22_010",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "มันใช้ไอพีท มาขโมยสร้อยของผม",
-	  "next": "ch3_s22_011"
-	},
-	{
-	  "id": "ch3_s22_011",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "เพราะมันไม่อยากให้ผมได้ฝน!!",
-	  "next": "ch3_s22_012"
-	},
-	{
-	  "id": "ch3_s22_012",
-	  "type": "dialogue",
-	  "bgm": "extremely_sad_music.mp3",
-	  "sprite": "fon_shocked_student",
-	  "name": "ฝน",
-	  "text": "!!??",
-	  "next": "ch3_s22_013"
-	},
-	{
-	  "id": "ch3_s22_013",
-	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "name": "บอส",
-	  "text": "ผมอุตส่าห์ตั้งใจทำสร้อยเส้นนั้น",
-	  "next": "ch3_s22_014"
-	},
-	{
-	  "id": "ch3_s22_014",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "เพื่อให้ฝนเป็นของขวัญ…",
-	  "next": "ch3_s22_015"
-	},
-	{
-	  "id": "ch3_s22_015",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "แต่ทุกอย่างมันพังหมด",
-	  "next": "ch3_s22_016"
-	},
-	{
-	  "id": "ch3_s22_016",
-	  "type": "dialogue",
-	  "sprite": "tae_angry_hold_gun",
-	  "name": "เต้",
-	  "text": "มึงเลยฆ่าลูกกูเหรอ ไอเหี้ย!!???",
-	  "next": "ch3_s22_017"
-	},
-	{
-	  "id": "ch3_s22_017",
-	  "type": "dialogue",
-	  "sfx": "rack_gun_slide.mp3",
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s22_018"
-	},
-	{
-	  "id": "ch3_s22_018",
-	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "name": "บอส",
-	  "text": "ยิงเลยสิ!!",
-	  "next": "ch3_s22_019"
-	},
-	{
-	  "id": "ch3_s22_019",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "ผมจะได้ฆ่าไอพีทก่อน!!",
-	  "next": "ch3_s22_020"
-	},
-	{
-	  "id": "ch3_s22_020",
-	  "type": "dialogue",
-	  "sprite": "pete_cry",
-	  "name": "พีท",
-	  "text": "อย่าฆ่าผมเลยนะ.. ผมแค่ทำตามที่พี่เชอรี่ขอ…",
-	  "next": "ch3_s22_021"
-	},
-	{
-	  "id": "ch3_s22_021",
-	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "name": "บอส",
-	  "text": "มึงจะได้ตามสุดที่รักของมึงไปนรกไง ไอพีท!!",
-	  "next": "ch3_s22_022"
-	},
-	{
-	  "id": "ch3_s22_022",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ทุกคนหยุด!!!",
-	  "next": "ch3_s22_023"
-	},
-	{
-	  "id": "ch3_s22_023",
-	  "type": "dialogue",
-	  "bgm_stop": true,
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s22_024"
-	},
-	{
-	  "id": "ch3_s22_024",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ตอนนี้ถอยกลับไม่ได้แล้ว",
-	  "thought": true,
-	  "next": "ch3_s22_025"
-	},
-	{
-	  "id": "ch3_s22_025",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ต้องคิดให้ดีว่าจะกล่อมยังไง",
-	  "thought": true,
-	  "next": "ch3_s22_026"
-	},
-	{
-	  "id": "ch3_s22_026",
-	  "type": "choice",
-	  "choices": [
-		{
-		  "text": "อธิบายให้บอสเข้าใจว่า บอสไม่มีทางหนีรอด",
-		  "condition": "INT >= 6",
-		  "next": "ch3_s22_A_001"
-		},
-		{
-		  "text": "จับจุดอ่อนทางอารมณ์ ความรู้สึกของบอส",
-		  "condition": "CHA >= 6",
-		  "next": "ch3_s22_B_001"
-		},
-		{
-		  "text": "ให้เต้เป็นคนจัดการกับบอส",
-		  "next": "ch3_s22_C_001"
-		}
-	  ]
-	},
-	{
-	  "id": "ch3_s22_A_001",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "บอส ฟังพี่ให้ดีนะ",
-	  "next": "ch3_s22_A_002"
-	},
-	{
-	  "id": "ch3_s22_A_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ตอนนี้บอสฆ่าคนไปแล้ว 1 คน",
-	  "next": "ch3_s22_A_003"
-	},
-	{
-	  "id": "ch3_s22_A_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ลักพาตัวคนอีก 1 คน",
-	  "next": "ch3_s22_A_004"
-	},
-	{
-	  "id": "ch3_s22_A_004",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "หลักฐานมัดตัวแบบนี้",
-	  "next": "ch3_s22_A_005"
-	},
-	{
-	  "id": "ch3_s22_A_005",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ต่อให้บอสรอดออกไปได้ บอสก็จะเป็นอาชญากร",
-	  "next": "ch3_s22_A_006"
-	},
-	{
-	  "id": "ch3_s22_A_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ตำรวจจะไล่ล่าบอส แล้วบอสต้องหนีไปตลอดชีวิตนะ",
-	  "next": "ch3_s22_A_007"
-	},
-	{
-	  "id": "ch3_s22_A_007",
-	  "type": "dialogue",
-	  "bgm": "extremely_sad_music.mp3",
-	  "sprite": "boss_angry",
-	  "name": "บอส",
-	  "text": "..",
-	  "next": "ch3_s22_A_008"
-	},
-	{
-	  "id": "ch3_s22_A_008",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แต่ถ้าบอสหยุดซะตอนนี้",
-	  "next": "ch3_s22_A_009"
-	},
-	{
-	  "id": "ch3_s22_A_009",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "บอสยังมีโอกาสมอบตัว แล้วก็รับโทษตามที่ควรจะได้รับนะ",
-	  "next": "ch3_s22_A_010"
-	},
-	{
-	  "id": "ch3_s22_A_010",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ตอนนี้พี่เต้เขากำลังเสียใจมากกับสิ่งที่บอสทำลงไป",
-	  "next": "ch3_s22_A_011"
-	},
-	{
-	  "id": "ch3_s22_A_011",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แล้วบอสอยากจะให้พีทต้องมาตายไปอีกคนเหรอ",
-	  "next": "ch3_s22_A_012"
-	},
-	{
-	  "id": "ch3_s22_A_012",
-	  "type": "dialogue",
-	  "sprite": "pete_cry",
-	  "name": "พีท",
-	  "text": "…",
-	  "next": "ch3_s22_A_013"
-	},
-	{
-	  "id": "ch3_s22_A_013",
-	  "type": "dialogue",
-	  "sprite": "boss_sad",
-	  "name": "บอส",
-	  "text": "ผมน่ะ….",
-	  "next": "ch3_s22_A_014"
-	},
-	{
-	  "id": "ch3_s22_A_014",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "ก็ไม่ได้อยากให้มันเป็นแบบนี้!!!",
-	  "next": "ch3_s22_A_015"
-	},
-	{
-	  "id": "ch3_s22_A_015",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "เชอรี่มันรักผม แล้วทำไม.. ต้องมาขัดขวางความรักของผมล่ะ!!",
-	  "next": "ch3_s22_A_016"
-	},
-	{
-	  "id": "ch3_s22_A_016",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s22_A_017"
-	},
-	{
-	  "id": "ch3_s22_A_017",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่เต้อย่ายิงนะครับ",
-	  "next": "ch3_s22_A_018"
-	},
-	{
-	  "id": "ch3_s22_A_018",
-	  "type": "dialogue",
-	  "sprite": "tae_angry",
-	  "name": "เต้",
-	  "text": "…",
-	  "next": "ch3_s22_A_019"
-	},
-	{
-	  "id": "ch3_s22_A_019",
-	  "type": "dialogue",
-	  "sprite": "boss_sad",
-	  "name": "เมฆ",
-	  "text": "บอส.. วางมีดลงเถอะนะ…",
-	  "next": "ch3_s22_J_001"
-	},
-	{
-	  "id": "ch3_s22_B_001",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "บอส",
-	  "next": "ch3_s22_B_002"
-	},
-	{
-	  "id": "ch3_s22_B_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "บอสรักฝนใช่มั้ย",
-	  "next": "ch3_s22_B_003"
-	},
-	{
-	  "id": "ch3_s22_B_003",
-	  "type": "dialogue",
-	  "bgm": "extremely_sad_music.mp3",
-	  "name": "บอส",
-	  "text": "!?",
-	  "next": "ch3_s22_B_004"
-	},
-	{
-	  "id": "ch3_s22_B_004",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ถ้าความรักของบอสที่ต่อฝน เป็นเรื่องจริง",
-	  "next": "ch3_s22_B_005"
-	},
-	{
-	  "id": "ch3_s22_B_005",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "บอสอยากกลายเป็นฆาตกร ฆ่าคน ต่อหน้าฝนเหรอ",
-	  "next": "ch3_s22_B_006"
-	},
-	{
-	  "id": "ch3_s22_B_006",
-	  "type": "dialogue",
-	  "sprite": "pete_cry",
-	  "name": "พีท",
-	  "text": "…",
-	  "next": "ch3_s22_B_007"
-	},
-	{
-	  "id": "ch3_s22_B_007",
-	  "type": "dialogue",
-	  "sprite": "fon_shout_with_tears_student",
-	  "name": "ฝน",
-	  "text": "พี่บอส..",
-	  "next": "ch3_s22_B_008"
-	},
-	{
-	  "id": "ch3_s22_B_008",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ถึงหนูจะรู้สึกอึดอัดที่พี่พยายามจีบหนู",
-	  "next": "ch3_s22_B_009"
-	},
-	{
-	  "id": "ch3_s22_B_009",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "หนูก็ไม่เคยเกลียดพี่นะคะ!",
-	  "next": "ch3_s22_B_010"
-	},
-	{
-	  "id": "ch3_s22_B_010",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "แต่ถ้าพี่ฆ่าพีท หรือฆ่าใครอีก..",
-	  "next": "ch3_s22_B_011"
-	},
-	{
-	  "id": "ch3_s22_B_011",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "หนูจะไม่มีวันให้อภัยพี่เลย….",
-	  "next": "ch3_s22_B_012"
-	},
-	{
-	  "id": "ch3_s22_B_012",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "….",
-	  "next": "ch3_s22_B_013"
-	},
-	{
-	  "id": "ch3_s22_B_013",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "พี่แค่….",
-	  "next": "ch3_s22_B_014"
-	},
-	{
-	  "id": "ch3_s22_B_014",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "อยากได้รักที่สมหวังบ้าง…",
-	  "next": "ch3_s22_B_015"
-	},
-	{
-	  "id": "ch3_s22_B_015",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่เต้อย่ายิงนะครับ",
-	  "next": "ch3_s22_B_016"
-	},
-	{
-	  "id": "ch3_s22_B_016",
-	  "type": "dialogue",
-	  "sprite": "tae_angry",
-	  "name": "เต้",
-	  "text": "…",
-	  "next": "ch3_s22_B_017"
-	},
-	{
-	  "id": "ch3_s22_B_017",
-	  "type": "dialogue",
-	  "sprite": "boss_sad",
-	  "name": "เมฆ",
-	  "text": "บอส.. วางมีดลงเถอะนะ…",
-	  "next": "ch3_s22_J_001"
-	},
-	{
-	  "id": "ch3_s22_C_001",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "...",
-	  "thought": true,
-	  "next": "ch3_s22_C_002"
-	},
-	{
-	  "id": "ch3_s22_C_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แต่มาพูดเอาตอนนี้ คงไม่ได้อะไรขึ้นมา",
-	  "thought": true,
-	  "next": "ch3_s22_C_003"
-	},
-	{
-	  "id": "ch3_s22_C_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่เต้!! ยิงที่ขาเลย!!",
-	  "next": "ch3_s22_C_004"
-	},
-	{
-	  "id": "ch3_s22_C_004",
-	  "type": "dialogue",
-	  "bgm": "suspense_music.mp3",
-	  "sprite": "tae_angry_hold_gun",
-	  "name": "เต้",
-	  "text": "!!??",
-	  "next": "ch3_s22_C_005"
-	},
-	{
-	  "id": "ch3_s22_C_005",
-	  "type": "dialogue",
-	  "sfx": "shoot.mp3",
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s22_C_006"
-	},
-	{
-	  "id": "ch3_s22_C_006",
-	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "name": "บอส",
-	  "text": "!?",
-	  "next": "ch3_s22_C_007"
-	},
-	{
-	  "id": "ch3_s22_C_007",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "ม-แม่งเอ๊ย จะเอาใช่มั้ย!!??",
-	  "next": "ch3_s22_C_008"
-	},
-	{
-	  "id": "ch3_s22_C_008",
-	  "type": "dialogue",
-	  "sfx": "shoot_3_times.mp3",
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s22_C_009"
-	},
-	{
-	  "id": "ch3_s22_C_009",
-	  "type": "dialogue",
-	  "sprite": "pete_cry",
-	  "name": "พีท",
-	  "text": "อ๊ากกก!!!!!",
-	  "next": "ch3_s22_C_010"
-	},
-	{
-	  "id": "ch3_s22_C_010",
-	  "type": "dialogue",
-	  "sprite": "boss_dying",
-	  "name": "บอส",
-	  "text": "อึก..",
-	  "next": "ch3_s22_C_011"
-	},
-	{
-	  "id": "ch3_s22_C_011",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "เล่นทีเผลอเหรอ…",
-	  "next": "ch3_s22_C_012"
-	},
-	{
-	  "id": "ch3_s22_C_012",
-	  "type": "dialogue",
-	  "sprite": "tae_angry",
-	  "name": "เต้",
-	  "text": "…",
-	  "next": "ch3_s22_C_013"
-	},
-	{
-	  "id": "ch3_s22_C_013",
-	  "type": "dialogue",
-	  "sprite": "fon_shout_with_tears_student",
-	  "name": "ฝน",
-	  "text": "พี่เต้!!!",
-	  "next": "ch3_s22_C_014"
-	},
-	{
-	  "id": "ch3_s22_C_014",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "สุดท้ายก็ต้องจบแบบนี้สินะ",
-	  "thought": true,
-	  "next": "ch3_s22_C_015"
-	},
-	{
-	  "id": "ch3_s22_C_015",
-	  "type": "dialogue",
-	  "sprite": "boss_dying",
-	  "name": "บอส",
-	  "text": "เชอรี่… ขอโทษนะ… พีท… ฝนก็ด้วย… ขอโทษ….",
-	  "next": "ch3_s22_C_016"
-	},
-	{
-	  "id": "ch3_s22_C_016",
-	  "type": "dialogue",
-	  "sprite": "tae_angry_with_tears",
-	  "name": "เต้",
-	  "text": "พ่อชดใช้ให้แล้วนะลูก..",
-	  "next": "ch3_s23C_001"
-	},
-	{
-	  "id": "ch3_s22_J_001",
-	  "type": "dialogue",
-	  "bgm": "sad_music.mp3",
-	  "sprite": "boss_sad",
-	  "name": "บอส",
-	  "text": "…",
-	  "next": "ch3_s22_J_002"
-	},
-	{
-	  "id": "ch3_s22_J_002",
-	  "type": "dialogue",
-	  "sfx": "knife_drop_onto_floor.mp3",
-	  "name": "",
-	  "text": "",
-	  "next": "ch3_s22_J_003"
-	},
-	{
-	  "id": "ch3_s22_J_003",
-	  "type": "dialogue",
-	  "sprite": "pete_cry",
-	  "name": "พีท",
-	  "text": "!?",
-	  "next": "ch3_s22_J_004"
-	},
-	{
-	  "id": "ch3_s22_J_004",
-	  "type": "dialogue",
-	  "sprite": "boss_sad",
-	  "name": "บอส",
-	  "text": "แม่งเอ๊ย….",
-	  "next": "ch3_s22_J_005"
-	},
-	{
-	  "id": "ch3_s22_J_005",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "…",
-	  "next": "ch3_s22_J_006"
-	},
-	{
-	  "id": "ch3_s22_J_006",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "พีท ฝน ขอโทษด้วยนะ",
-	  "next": "ch3_s22_J_007"
-	},
-	{
-	  "id": "ch3_s22_J_007",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "พี่นี่ โง่จริงๆ",
-	  "next": "ch3_s22_J_008"
-	},
-	{
-	  "id": "ch3_s22_J_008",
-	  "type": "dialogue",
-	  "name": "บอส",
-	  "text": "ขอโทษด้วยนะ.. เชอรี่…",
-	  "next": "ch3_s22_J_009"
-	},
-	{
-	  "id": "ch3_s22_J_009",
-	  "type": "dialogue",
-	  "sprite": "tae_angry",
-	  "name": "เต้",
-	  "text": "ไปสำนึกต่อในคุกก็แล้วกัน",
-	  "next": "ch3_s22_J_010"
-	},
-	{
-	  "id": "ch3_s22_J_010",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "สุดท้ายก็.. ยอมสินะ..",
-	  "thought": true,
-	  "next": "ch3_s22_J_011"
-	},
-	{
-	  "id": "ch3_s22_J_011",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s22_J_012"
-	},
-	{
-	  "id": "ch3_s22_J_012",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "น้องเชอรี่…",
-	  "thought": true,
-	  "next": "ch3_s22_J_013"
-	},
-	{
-	  "id": "ch3_s22_J_013",
-	  "type": "dialogue",
-	  "sprite": "fon_upset_student",
-	  "name": "ฝน",
-	  "text": "พี่เมฆ.. พี่บอสเขา..",
-	  "next": "ch3_s22_J_014"
-	},
-	{
-	  "id": "ch3_s22_J_014",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s22_J_015"
-	},
-	{
-	  "id": "ch3_s22_J_015",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อืม ก็ต้องรับโทษในสิ่งที่.. ทำไว้นั่นแหละ",
-	  "next": "ch3_s22_J_016"
-	},
-	{
-	  "id": "ch3_s22_J_016",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พีท ยังไหวใช่มั้ย",
-	  "next": "ch3_s22_J_017"
-	},
-	{
-	  "id": "ch3_s22_J_017",
-	  "type": "dialogue",
-	  "sprite": "pete_sad",
-	  "name": "พีท",
-	  "text": "ครับ..",
-	  "next": "ch3_s22_J_018"
-	},
-	{
-	  "id": "ch3_s22_J_018",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ทุกคนครับ เราออกจากที่นี่กันก่อนเถอะ",
-	  "next": "ch3_s23AB_001"
-	},
-	{
-	  "id": "ch3_s23AB_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_23_astronomy_club_night_with_cops",
-	  "bgm": "music_with_hope.mp3",
-	  "sprite": "tana_serious",
-	  "name": "สารวัตรธนา",
-	  "text": "…",
-	  "next": "ch3_s23AB_002"
-	},
-	{
-	  "id": "ch3_s23AB_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s23AB_003"
-	},
-	{
-	  "id": "ch3_s23AB_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "สารวัตร ผมไม่มีอะไรจะแก้ตัวครับ ผมขอโทษทุกอย่าง เงินค่าจ้างเดี๋ยวผมคืนให้-",
-	  "next": "ch3_s23AB_004"
-	},
-	{
-	  "id": "ch3_s23AB_004",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "เรื่องที่บุกรุกสถานที่โดยไม่ได้รับอนุญาต และทุกอย่างที่คุณกระทำโดยมิชอบในช่วง 2 วันที่ผ่านมา ผมจะหลับหูหลับตาให้ละกันนะ",
-	  "next": "ch3_s23AB_005"
-	},
-	{
-	  "id": "ch3_s23AB_005",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "เพราะสุดท้าย.. คุณทำได้ดีมาก",
-	  "next": "ch3_s23AB_006"
-	},
-	{
-	  "id": "ch3_s23AB_006",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "ค่าจ้างคุณเก็บไว้นั่นแหละ",
-	  "next": "ch3_s23AB_007"
-	},
-	{
-	  "id": "ch3_s23AB_007",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "แต่..",
-	  "next": "ch3_s23AB_008"
-	},
-	{
-	  "id": "ch3_s23AB_008",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "คุณต้องอธิบายให้ได้ว่า..",
-	  "next": "ch3_s23AB_009"
-	},
-	{
-	  "id": "ch3_s23AB_009",
-	  "type": "dialogue",
-	  "sprite": "tana_shout",
-	  "name": "สารวัตรธนา",
-	  "text": "ทำไมลูกผมถึงอยู่กับคุณ!!?????",
-	  "next": "ch3_s23AB_010"
-	},
-	{
-	  "id": "ch3_s23AB_010",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "ผมก็สงสัยว่าทำไมติดต่อลูกไม่ได้-",
-	  "next": "ch3_s23AB_011"
-	},
-	{
-	  "id": "ch3_s23AB_011",
-	  "type": "dialogue",
-	  "sprite": "fon_smile_student",
-	  "name": "ฝน",
-	  "text": "หนูสบายดีค่ะพ่อ!",
-	  "next": "ch3_s23AB_012"
-	},
-	{
-	  "id": "ch3_s23AB_012",
-	  "type": "dialogue",
-	  "sprite": "tana_serious",
-	  "name": "สารวัตรธนา",
-	  "text": "..",
-	  "next": "ch3_s23AB_013"
-	},
-	{
-	  "id": "ch3_s23AB_013",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "ฝน พ่อไม่ตลกด้วยนะ",
-	  "next": "ch3_s23AB_014"
-	},
-	{
-	  "id": "ch3_s23AB_014",
-	  "type": "dialogue",
-	  "sprite": "fon_upset_student",
-	  "name": "ฝน",
-	  "text": "หนู.. ขอโทษค่ะ",
-	  "next": "ch3_s23AB_015"
-	},
-	{
-	  "id": "ch3_s23AB_015",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "อย่าโกรธพี่เมฆเลยนะคะ หนูเป็นคนขอไปด้วยกันกับเขาเอง",
-	  "next": "ch3_s23AB_016"
-	},
-	{
-	  "id": "ch3_s23AB_016",
-	  "type": "dialogue",
-	  "sprite": "tana_serious",
-	  "name": "สารวัตรธนา",
-	  "text": "ไม่ง่ายแบบนั้นหรอก",
-	  "next": "ch3_s23AB_017"
-	},
-	{
-	  "id": "ch3_s23AB_017",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "..",
-	  "next": "ch3_s23AB_018"
-	},
-	{
-	  "id": "ch3_s23AB_018",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "เดี๋ยวคุณกับผม ต้องเคลียร์กันทีหลัง ผมต้องพาตัวน้องพีทไปหาครอบครัว แล้วต้องพาผู้ต้องหาไปที่ สน. ก่อน ไว้เจอกัน",
-	  "next": "ch3_s23AB_019"
-	},
-	{
-	  "id": "ch3_s23AB_019",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s23AB_020"
-	},
-	{
-	  "id": "ch3_s23AB_020",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "งานงอก…",
-	  "thought": true,
-	  "next": "ch3_s23AB_021"
-	},
-	{
-	  "id": "ch3_s23AB_021",
-	  "type": "dialogue",
-	  "sprite": "fon_smile_student",
-	  "name": "ฝน",
-	  "text": "ไม่ต้องห่วงพี่ค่ะ เดี๋ยวหนูจัดการให้เองค่ะ!",
-	  "next": "ch3_s23AB_022"
-	},
-	{
-	  "id": "ch3_s23AB_022",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เอ่อ.. ขอบใจนะ",
-	  "next": "ch3_s23AB_023"
-	},
-	{
-	  "id": "ch3_s23AB_023",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แต่พี่.. ก็มีส่วนผิดจริงๆ นั่นแหละ ที่พาฝนไปเสี่ยงที่ห้องใต้ดิน",
-	  "next": "ch3_s23AB_024"
-	},
-	{
-	  "id": "ch3_s23AB_024",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "หายห่วงค่ะๆๆๆ อย่าเครียดไปเลยค่ะ",
-	  "next": "ch3_s23AB_025"
-	},
-	{
-	  "id": "ch3_s23AB_025",
-	  "type": "dialogue",
-	  "sprite": "fon_upset_student",
-	  "name": "ฝน",
-	  "text": "แต่หนู.. สงสารพี่เชอรี่จัง… พีทก็ด้วย…",
-	  "next": "ch3_s23AB_026"
-	},
-	{
-	  "id": "ch3_s23AB_026",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่ก็รู้สึกแบบนั้นเหมือนกัน.. สงสารพี่เต้ชะมัด",
-	  "next": "ch3_s23AB_027"
-	},
-	{
-	  "id": "ch3_s23AB_027",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แต่ว่ากันตามตรง มันมี.. หลายอย่างที่ไม่สมเหตุสมผลอยู่นะ…",
-	  "next": "ch3_s23AB_028"
-	},
-	{
-	  "id": "ch3_s23AB_028",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "เรื่องไหนเหรอคะ?",
-	  "next": "ch3_s23AB_029"
-	},
-	{
-	  "id": "ch3_s23AB_029",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ถ้าคิดๆ ดู.. ทำไมบอสต้องทำถึงขนาดนี้ด้วย..",
-	  "next": "ch3_s23AB_030"
-	},
-	{
-	  "id": "ch3_s23AB_030",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "สรุปแล้วก็คือเพราะน้องเชอรี่จะแย่งสร้อย แล้วร่วมมือกับพีท… แค่โดนแย่งของขวัญที่จะให้คนที่ชอบ ถึงกับต้องฆ่ากันเลยเหรอ",
-	  "next": "ch3_s23AB_031"
-	},
-	{
-	  "id": "ch3_s23AB_031",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "..",
-	  "next": "ch3_s23AB_032"
-	},
-	{
-	  "id": "ch3_s23AB_032",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "หนูคิดว่า.. ส่วนหนึ่งน่าจะเพราะครอบครัวพี่บอสค่ะ…",
-	  "next": "ch3_s23AB_033"
-	},
-	{
-	  "id": "ch3_s23AB_033",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "?",
-	  "next": "ch3_s23AB_034"
-	},
-	{
-	  "id": "ch3_s23AB_034",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ดูจากครอบครัวเขา… เขาน่าจะถูกปลูกฝังให้เป็นคนที่อยากได้อะไรก็ต้องได้น่ะค่ะ",
-	  "next": "ch3_s23AB_035"
-	},
-	{
-	  "id": "ch3_s23AB_035",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "สุดท้าย นิสัยแบบนั้นก็กัดกินเขา",
-	  "next": "ch3_s23AB_036"
-	},
-	{
-	  "id": "ch3_s23AB_036",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ฝนรู้จักครอบครัวบอสด้วยเหรอ",
-	  "next": "ch3_s23AB_037"
-	},
-	{
-	  "id": "ch3_s23AB_037",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ค่ะ.. จริงๆ คนรู้จักกับเพื่อนเขา ก็รู้กันหลายคนค่ะ…",
-	  "next": "ch3_s23AB_038"
-	},
-	{
-	  "id": "ch3_s23AB_038",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "เขาเป็นลูกของอธิการบดี มหาลัยนี้ค่ะ",
-	  "next": "ch3_s23AB_039"
-	},
-	{
-	  "id": "ch3_s23AB_039",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!!??",
-	  "next": "ch3_s23AB_040"
-	},
-	{
-	  "id": "ch3_s23AB_040",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "จ-จริงเหรอ!?",
-	  "next": "ch3_s23AB_041"
-	},
-	{
-	  "id": "ch3_s23AB_041",
-	  "type": "dialogue",
-	  "sprite": "tae_serious",
-	  "name": "เต้",
-	  "text": "เมฆ",
-	  "next": "ch3_s23AB_042"
-	},
-	{
-	  "id": "ch3_s23AB_042",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ครับ พี่เต้",
-	  "next": "ch3_s23AB_043"
-	},
-	{
-	  "id": "ch3_s23AB_043",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พี่ขอบใจเมฆมากนะ",
-	  "next": "ch3_s23AB_044"
-	},
-	{
-	  "id": "ch3_s23AB_044",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "สำหรับทุกอย่างเลย",
-	  "next": "ch3_s23AB_045"
-	},
-	{
-	  "id": "ch3_s23AB_045",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ไม่เลยพี่ๆ จริงๆ..",
-	  "next": "ch3_s23AB_046"
-	},
-	{
-	  "id": "ch3_s23AB_046",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "เอ๊ะ",
-	  "next": "ch3_s23AB_047"
-	},
-	{
-	  "id": "ch3_s23AB_047",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่เต้ครับ",
-	  "next": "ch3_s23AB_048"
-	},
-	{
-	  "id": "ch3_s23AB_048",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "หืม ว่าไง",
-	  "next": "ch3_s23AB_049"
-	},
-	{
-	  "id": "ch3_s23AB_049",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พอดีเมื่อกี๊คุยกันกับฝน ผมสงสัยเรื่องแรงจูงใจของบอสเรื่องนึงแล้ว ว่าโดนแย่งของขวัญ แต่ถึงกับต้องฆ่าคน",
-	  "next": "ch3_s23AB_050"
-	},
-	{
-	  "id": "ch3_s23AB_050",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แต่พอผมนึกย้อนไป…",
-	  "next": "ch3_s23AB_051"
-	},
-	{
-	  "id": "ch3_s23AB_051",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ทำไมบอสถึงโผล่มาที่ตึกชมรมด้วย",
-	  "next": "ch3_s23AB_052"
-	},
-	{
-	  "id": "ch3_s23AB_052",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "!?",
-	  "next": "ch3_s23AB_053"
-	},
-	{
-	  "id": "ch3_s23AB_053",
-	  "type": "dialogue",
-	  "sprite": "fon_upset_student",
-	  "name": "ฝน",
-	  "text": "..",
-	  "next": "ch3_s23AB_054"
-	},
-	{
-	  "id": "ch3_s23AB_054",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ลึกๆ แล้ว..",
-	  "next": "ch3_s23AB_055"
-	},
-	{
-	  "id": "ch3_s23AB_055",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "เขาอาจจะอยากให้พวกเรา… รู้ก็ได้นะคะ",
-	  "next": "ch3_s23AB_056"
-	},
-	{
-	  "id": "ch3_s23AB_056",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s23AB_057"
-	},
-	{
-	  "id": "ch3_s23AB_057",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "เขาคงรู้สึกผิดกับสิ่งที่ทำค่ะ",
-	  "next": "ch3_s23AB_058"
-	},
-	{
-	  "id": "ch3_s23AB_058",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s23AB_059"
-	},
-	{
-	  "id": "ch3_s23AB_059",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ก็นะ…",
-	  "next": "ch3_s23AB_060"
-	},
-	{
-	  "id": "ch3_s23AB_060",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "จริงสิ ฝน!",
-	  "next": "ch3_s23AB_061"
-	},
-	{
-	  "id": "ch3_s23AB_061",
-	  "type": "dialogue",
-	  "sprite": "moon_necklace",
-	  "name": "ฝน",
-	  "text": "!?",
-	  "next": "ch3_s23AB_062"
-	},
-	{
-	  "id": "ch3_s23AB_062",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อยากเก็บไว้มั้ย มีคนอุตส่าห์ทำให้เลยนะ",
-	  "next": "ch3_s23AB_063"
-	},
-	{
-	  "id": "ch3_s23AB_063",
-	  "type": "dialogue",
-	  "sprite": "fon_smile_student",
-	  "name": "ฝน",
-	  "text": "หืมม พี่เมฆ จะเคลมหนูแทนพี่บอสเหรอคะ???",
-	  "next": "ch3_s23AB_064"
-	},
-	{
-	  "id": "ch3_s23AB_064",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ด-เดี๋ยวสิ ไม่ใช่แบบนั้น!",
-	  "next": "ch3_s23AB_065"
-	},
-	{
-	  "id": "ch3_s23AB_065",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ฮ่าๆๆ",
-	  "next": "ch3_s23AB_066"
-	},
-	{
-	  "id": "ch3_s23AB_066",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "หยอกเล่นค่ะ!",
-	  "next": "ch3_s23AB_067"
-	},
-	{
-	  "id": "ch3_s23AB_067",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "..",
-	  "next": "ch3_s23AB_068"
-	},
-	{
-	  "id": "ch3_s23AB_068",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ได้ค่ะ หนูจะเก็บไว้ค่ะ",
-	  "next": "ch3_s23AB_069"
-	},
-	{
-	  "id": "ch3_s23AB_069",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อืม",
-	  "next": "ch3_s23AB_070"
-	},
-	{
-	  "id": "ch3_s23AB_070",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ปัญหากับปมต่างๆ จบลงได้ในคืนนี้.. ถือว่าดีแล้วล่ะนะ",
-	  "thought": true,
-	  "next": "ch3_end_justice"
-	},
-	{
-	  "id": "ch3_s23C_001",
-	  "type": "dialogue",
-	  "bg": "scene_3_23_astronomy_club_night_with_cops",
-	  "bgm": "sad_music.mp3",
-	  "sprite": "tana_serious",
-	  "name": "สารวัตรธนา",
-	  "text": "…",
-	  "next": "ch3_s23C_002"
-	},
-	{
-	  "id": "ch3_s23C_002",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "next": "ch3_s23C_003"
-	},
-	{
-	  "id": "ch3_s23C_003",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "สารวัตร ผมไม่มีอะไรจะแก้ตัวครับ ผมขอโทษทุกอย่าง เงินค่าจ้างเดี๋ยวผมคืนให้-",
-	  "next": "ch3_s23C_004"
-	},
-	{
-	  "id": "ch3_s23C_004",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "ไม่ต้องคืนหรอก คดีก็คลี่คลายแล้วล่ะนะ",
-	  "next": "ch3_s23C_005"
-	},
-	{
-	  "id": "ch3_s23C_005",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "แต่.. สุดท้ายคนที่ผมต้องจับ ดันเป็นพ่อของเหยื่อซะได้…",
-	  "next": "ch3_s23C_006"
-	},
-	{
-	  "id": "ch3_s23C_006",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "…",
-	  "thought": true,
-	  "next": "ch3_s23C_007"
-	},
-	{
-	  "id": "ch3_s23C_007",
-	  "type": "dialogue",
-	  "sprite": "tae_handcuffed",
-	  "name": "เต้",
-	  "text": "สารวัตรครับ",
-	  "next": "ch3_s23C_008"
-	},
-	{
-	  "id": "ch3_s23C_008",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s23C_009"
-	},
-	{
-	  "id": "ch3_s23C_009",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ผมขอคุยกับเมฆแป๊บนึงได้มั้ยครับ",
-	  "next": "ch3_s23C_010"
-	},
-	{
-	  "id": "ch3_s23C_010",
-	  "type": "dialogue",
-	  "sprite": "tana_serious",
-	  "name": "สารวัตรธนา",
-	  "text": "เอาสิ",
-	  "next": "ch3_s23C_011"
-	},
-	{
-	  "id": "ch3_s23C_011",
-	  "type": "dialogue",
-	  "sprite": "tae_handcuffed",
-	  "name": "เต้",
-	  "text": "..",
-	  "next": "ch3_s23C_012"
-	},
-	{
-	  "id": "ch3_s23C_012",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ขอคุยส่วนตัวน่ะครับ สารวัตร",
-	  "next": "ch3_s23C_013"
-	},
-	{
-	  "id": "ch3_s23C_013",
-	  "type": "dialogue",
-	  "sprite": "tana_serious",
-	  "name": "สารวัตรธนา",
-	  "text": "..",
-	  "next": "ch3_s23C_014"
-	},
-	{
-	  "id": "ch3_s23C_014",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "อย่าลูกไม้ล่ะ ผมจับตาดูอยู่นะ",
-	  "next": "ch3_s23C_015"
-	},
-	{
-	  "id": "ch3_s23C_015",
-	  "type": "dialogue",
-	  "sprite": "tae_handcuffed",
-	  "name": "เต้",
-	  "text": "เมฆ..",
-	  "next": "ch3_s23C_016"
-	},
-	{
-	  "id": "ch3_s23C_016",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "เชอรี่เขา.. จะดีใจใช่มั้ย ที่พี่ล้างแค้นให้เขาแล้ว",
-	  "next": "ch3_s23C_017"
-	},
-	{
-	  "id": "ch3_s23C_017",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ผมเอง..",
-	  "next": "ch3_s23C_018"
-	},
-	{
-	  "id": "ch3_s23C_018",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ก็ไม่มีทางรู้เหมือนกันครับ ว่าเชอรี่เขาจะดีใจมั้ย",
-	  "next": "ch3_s23C_019"
-	},
-	{
-	  "id": "ch3_s23C_019",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แต่อย่างน้อยเชอรี่.. เขาก็ได้รับรู้แล้วครับ",
-	  "next": "ch3_s23C_020"
-	},
-	{
-	  "id": "ch3_s23C_020",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "อืม.. แค่นั้นก็พอแล้วล่ะ",
-	  "next": "ch3_s23C_021"
-	},
-	{
-	  "id": "ch3_s23C_021",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "อ้อ ที่พี่จะมาคุยกับเมฆจริงๆ น่ะ",
-	  "next": "ch3_s23C_022"
-	},
-	{
-	  "id": "ch3_s23C_022",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พี่แค่อยากจะบอกว่า.. เรื่องในห้องใต้ดิน ไม่ต้องกังวลนะ",
-	  "next": "ch3_s23C_023"
-	},
-	{
-	  "id": "ch3_s23C_023",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s23C_024"
-	},
-	{
-	  "id": "ch3_s23C_024",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ที่เมฆช่วยให้พี่จัดการมันได้น่ะ พี่ไม่บอกใครหรอก",
-	  "next": "ch3_s23C_025"
-	},
-	{
-	  "id": "ch3_s23C_025",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "พี่ตั้งใจจะรับผิดทั้งหมดอยู่แล้ว",
-	  "next": "ch3_s23C_026"
-	},
-	{
-	  "id": "ch3_s23C_026",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "..",
-	  "next": "ch3_s23C_027"
-	},
-	{
-	  "id": "ch3_s23C_027",
-	  "type": "dialogue",
-	  "name": "เต้",
-	  "text": "ดูแลน้องฝนดีๆ ด้วยล่ะ",
-	  "next": "ch3_s23C_028"
-	},
-	{
-	  "id": "ch3_s23C_028",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s23C_029"
-	},
-	{
-	  "id": "ch3_s23C_029",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ครับ…",
-	  "next": "ch3_s23C_030"
-	},
-	{
-	  "id": "ch3_s23C_030",
-	  "type": "dialogue",
-	  "sprite": "fon_upset_student",
-	  "name": "ฝน",
-	  "text": "..",
-	  "next": "ch3_s23C_031"
-	},
-	{
-	  "id": "ch3_s23C_031",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "พี่เมฆ",
-	  "next": "ch3_s23C_032"
-	},
-	{
-	  "id": "ch3_s23C_032",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "เราทำถูกแล้วใช่มั้ยคะ..",
-	  "next": "ch3_s23C_033"
-	},
-	{
-	  "id": "ch3_s23C_033",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "พี่แค่.. ต้องระวังไม่ให้เหตุการณ์มันบานปลายน่ะ",
-	  "next": "ch3_s23C_034"
-	},
-	{
-	  "id": "ch3_s23C_034",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "..",
-	  "next": "ch3_s23C_035"
-	},
-	{
-	  "id": "ch3_s23C_035",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "ค่ะ..",
-	  "next": "ch3_s23C_036"
-	},
-	{
-	  "id": "ch3_s23C_036",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "จริงสิ ฝน!",
-	  "next": "ch3_s23C_037"
-	},
-	{
-	  "id": "ch3_s23C_037",
-	  "type": "dialogue",
-	  "sprite": "moon_necklace",
-	  "name": "ฝน",
-	  "text": "!?",
-	  "next": "ch3_s23C_038"
-	},
-	{
-	  "id": "ch3_s23C_038",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "อยากเก็บไว้มั้ย มีคนอุตส่าห์ทำให้เลยนะ",
-	  "next": "ch3_s23C_039"
-	},
-	{
-	  "id": "ch3_s23C_039",
-	  "type": "dialogue",
-	  "sprite": "fon_upset_student",
-	  "name": "ฝน",
-	  "text": "..",
-	  "next": "ch3_s23C_040"
-	},
-	{
-	  "id": "ch3_s23C_040",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "หนูขอ.. ฝากไว้ที่พี่ดีกว่าค่ะ..",
-	  "next": "ch3_s23C_041"
-	},
-	{
-	  "id": "ch3_s23C_041",
-	  "type": "dialogue",
-	  "name": "ฝน",
-	  "text": "หนูรู้สึกผิดกับพี่บอส…",
-	  "next": "ch3_s23C_042"
-	},
-	{
-	  "id": "ch3_s23C_042",
-	  "type": "dialogue",
-	  "sprite": "tana_serious",
-	  "name": "สารวัตรธนา",
-	  "text": "..",
-	  "next": "ch3_s23C_043"
-	},
-	{
-	  "id": "ch3_s23C_043",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "เมฆ เดี๋ยวคุณต้องมาเคลียร์กับผมนะ ว่าทำไมลูกผมถึงมาอยู่กับคุณได้",
-	  "next": "ch3_s23C_044"
-	},
-	{
-	  "id": "ch3_s23C_044",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "!?",
-	  "next": "ch3_s23C_045"
-	},
-	{
-	  "id": "ch3_s23C_045",
-	  "type": "dialogue",
-	  "name": "สารวัตรธนา",
-	  "text": "ผมต้องพาตัวน้องพีทไปหาครอบครัว แล้วต้องพาผู้ต้องหาไปที่ สน. ก่อน ไว้เจอกัน",
-	  "next": "ch3_s23C_046"
-	},
-	{
-	  "id": "ch3_s23C_046",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "..",
-	  "next": "ch3_s23C_047"
-	},
-	{
-	  "id": "ch3_s23C_047",
-	  "type": "dialogue",
-	  "sprite": "fon_upset_student",
-	  "name": "ฝน",
-	  "text": "ไว้เจอกันนะคะ พี่เมฆ",
-	  "next": "ch3_s23C_048"
-	},
-	{
-	  "id": "ch3_s23C_048",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ได้สิ",
-	  "next": "ch3_s23C_049"
-	},
-	{
-	  "id": "ch3_s23C_049",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "ปัญหากับปมต่างๆ จบลงได้ในคืนนี้.. แต่ว่า..",
-	  "thought": true,
-	  "next": "ch3_s23C_050"
-	},
-	{
-	  "id": "ch3_s23C_050",
-	  "type": "dialogue",
-	  "name": "เมฆ",
-	  "text": "แบบนี้มันถูกต้องแล้วรึเปล่านะ…",
-	  "thought": true,
-	  "next": "ch3_end_bloody"
-	},
-	{
-	  "id": "ch3_end_justice",
-	  "type": "end",
-	  "bg": "justice_route",
-	  "bgm": "",
-	  "name": "",
-	  "text": "",
-	  "next": ""
-	},
-	{
-	  "id": "ch3_end_bloody",
-	  "type": "end",
-	  "bg": "bloody_route",
-	  "bgm": "",
-	  "name": "",
-	  "text": "",
-	  "next": ""
-	}
+    {
+      "id": "ch3_s1_001",
+      "type": "dialogue",
+      "bg": "scene_3_1_astronomy_club_main_inside_evening",
+      "master_sfx": "indoor_ambient",
+      "name": "เมฆ",
+      "text": "นี่เหรอ ข้างในตึกชมรมเก่า…",
+      "thought": true,
+      "next": "ch3_s1_002"
+    },
+    {
+      "id": "ch3_s1_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ชมรมนี้ ยุบไปนานแล้ว แต่ฝนมีกุญแจไขประตูเข้าตึกชมรมด้วยเหรอ",
+      "next": "ch3_s1_003"
+    },
+    {
+      "id": "ch3_s1_003",
+      "type": "dialogue",
+      "sprite": "fon_upset_student",
+      "name": "ฝน",
+      "text": "พี่บอสเขารู้จักกับหนูค่ะ เขาเป็นสมาชิกชมรมนี้",
+      "next": "ch3_s1_004"
+    },
+    {
+      "id": "ch3_s1_004",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อ๋อ คนที่เราบอกว่า เอ่อ.. เป็นรุ่นพี่ที่ Block ไปแล้วน่ะเหรอ",
+      "next": "ch3_s1_005"
+    },
+    {
+      "id": "ch3_s1_005",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ค่ะ.. เขาเคยให้กุญแจสำรองไว้กับหนู",
+      "next": "ch3_s1_006"
+    },
+    {
+      "id": "ch3_s1_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อืม.. ถามซักไซร้ต่อก็คงจะไม่ดี",
+      "thought": true,
+      "next": "ch3_s1_007"
+    },
+    {
+      "id": "ch3_s1_007",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "โอเค เรามาหาของที่น่าจะเชื่อมโยงกับสร้อยพระจันทร์เสี้ยวกันดีกว่าเนอะ",
+      "next": "ch3_s1_008"
+    },
+    {
+      "id": "ch3_s1_008",
+      "type": "dialogue",
+      "sprite": "fon_smile_student",
+      "name": "ฝน",
+      "text": "ค-ค่ะ",
+      "next": "ch3_s1_009"
+    },
+    {
+      "id": "ch3_s1_009",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เริ่มที่ห้องนั้นละกัน. ป้ายเขียนว่าเป็น. ห้องประธานชมรมสินะ",
+      "next": "ch3_s2_001"
+    },
+    {
+      "id": "ch3_s2_001",
+      "type": "dialogue",
+      "bg": "scene_3_2_astronomy_club_president_inside",
+      "master_sfx": "indoor_ambient",
+      "name": "เมฆ",
+      "text": "อืมม ห้องของประธานจะมีอะไรที่เกี่ยวกับสร้อยมั้ยนะ",
+      "next": "ch3_s2_mg1"
+    },
+    {
+      "id": "ch3_s2_mg1",
+      "type": "minigame",
+      "minigame_id": "minigame_2",
+      "next": "ch3_s2_002"
+    },
+    {
+      "id": "ch3_s2_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ฝน",
+      "next": "ch3_s2_003"
+    },
+    {
+      "id": "ch3_s2_003",
+      "type": "dialogue",
+      "sprite": "fon_curious_student",
+      "name": "ฝน",
+      "text": "คะพี่เมฆ",
+      "next": "ch3_s2_004"
+    },
+    {
+      "id": "ch3_s2_004",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เห็นว่าฝนรู้จักรุ่นพี่ที่เคยอยู่ชมรมนี้ แล้วฝนรู้จักประธานชมรมรึเปล่า",
+      "next": "ch3_s2_005"
+    },
+    {
+      "id": "ch3_s2_005",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ก็. รู้ค่ะ ถ้าประธานรุ่นสุดท้ายก็คือ พี่เชอรี่ ค่ะ",
+      "next": "ch3_s2_006"
+    },
+    {
+      "id": "ch3_s2_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อืม โอเค ในนี้ก็มีข้าวของอยู่บ้างน่ะแหละ แต่คิดว่าน่าจะไม่ได้เกี่ยวข้องกับเรื่องพระจันทร์เสี้ยวโดยตรง ในโปสเตอร์ก็เหมือนจะไม่มี Logo พระจันทร์ด้วย",
+      "next": "ch3_s2_007"
+    },
+    {
+      "id": "ch3_s2_007",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "งั้นลองไปดูที่ห้องเก็บของมั้ยคะ",
+      "next": "ch3_s2_008"
+    },
+    {
+      "id": "ch3_s2_008",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ห้องเก็บของอยู่ตรงไหนเหรอ",
+      "next": "ch3_s2_009"
+    },
+    {
+      "id": "ch3_s2_009",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ชั้น 2 ค่ะ",
+      "next": "ch3_s2_010"
+    },
+    {
+      "id": "ch3_s2_010",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "โอเค ไปดูกันเถอะ",
+      "next": "ch3_s3_001"
+    },
+    {
+      "id": "ch3_s3_001",
+      "type": "dialogue",
+      "bg": "scene_3_3_astronomy_club_storage_inside_evening",
+      "master_sfx": "indoor_ambient",
+      "bgm": "mysterious",
+      "name": "เมฆ",
+      "text": "โอ้ ห้องนี้ดูรกกว่าข้างล่างเยอะเลยนะ",
+      "next": "ch3_s3_002"
+    },
+    {
+      "id": "ch3_s3_002",
+      "type": "dialogue",
+      "sprite": "fon_upset_student",
+      "name": "ฝน",
+      "text": "ดูไม่ค่อยน่าไว้ใจนะคะพี่..",
+      "next": "ch3_s3_003"
+    },
+    {
+      "id": "ch3_s3_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ก็จริงนะ ถึงจะตึกเก่า แต่ปล่อยให้ห้องรกแบบนี้เลยเหรอ",
+      "next": "ch3_s3_004"
+    },
+    {
+      "id": "ch3_s3_004",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ลองหาดูละกันว่ามีอะไรแปลกๆ มั้ย",
+      "thought": true,
+      "next": "ch3_s3_mg1"
+    },
+    {
+      "id": "ch3_s3_mg1",
+      "type": "minigame",
+      "minigame_id": "minigame_2",
+      "next": "ch3_s3_005"
+    },
+    {
+      "id": "ch3_s3_005",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ยังไม่มีวี่แววเรื่องพระจันทร์สีน้ำเงินเลยแฮะ..",
+      "next": "ch3_s3_006"
+    },
+    {
+      "id": "ch3_s3_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แล้วฝนไปเห็น Logo ของชมรมมาจากไหนเหรอ ที่บอกว่าคล้ายกันกับพระจันทร์ในสร้อยนี้",
+      "next": "ch3_s3_007"
+    },
+    {
+      "id": "ch3_s3_007",
+      "type": "dialogue",
+      "sprite": "fon_curious_student",
+      "name": "ฝน",
+      "text": "พี่เชอรี่เคยให้หนูดูรูปค่ะ เขาบอกว่าเป็น Logo ที่ตั้งใจทำกันกับสมาชิกชมรม",
+      "next": "ch3_s3_008"
+    },
+    {
+      "id": "ch3_s3_008",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อืม.. แต่ตอนนี้เรายังไม่เจอ Logo ที่ว่านั่นเลยน่ะสิ",
+      "next": "ch3_s3_009"
+    },
+    {
+      "id": "ch3_s3_009",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ถ้าเราไม่สะดวกติดต่อรุ่นพี่ที่ชื่อบอส งั้นติดต่อประธานเชอรี่ให้พี่ได้มั้ย",
+      "next": "ch3_s3_010"
+    },
+    {
+      "id": "ch3_s3_010",
+      "type": "dialogue",
+      "sprite": "fon_upset_student",
+      "name": "ฝน",
+      "text": "หนูไม่มีเบอร์พี่เขาน่ะค่ะ IG หรือ Facebook ของพี่เขา หนูก็ไม่มี",
+      "next": "ch3_s3_011"
+    },
+    {
+      "id": "ch3_s3_011",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "...",
+      "next": "ch3_s3_012"
+    },
+    {
+      "id": "ch3_s3_012",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "โอเค.. พี่ขอ.. ออกไปข้างนอกก่อนนะ ไปคิดก่อนว่าจะเอายังไงดี",
+      "next": "ch3_s3_013"
+    },
+    {
+      "id": "ch3_s3_013",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ค่ะ งั้นหนูจะลองหาของในนี้ดูอีกหน่อยนะคะ",
+      "next": "ch3_s3_014"
+    },
+    {
+      "id": "ch3_s3_014",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ขอบใจมากนะ.. อย่าฝืนตัวเองล่ะ",
+      "next": "ch3_s3_015"
+    },
+    {
+      "id": "ch3_s3_015",
+      "type": "dialogue",
+      "sprite": "fon_smile_student",
+      "name": "ฝน",
+      "text": "ค่ะ!",
+      "next": "ch3_s4_001"
+    },
+    {
+      "id": "ch3_s4_001",
+      "type": "dialogue",
+      "bg": "scene_3_4_astronomy_club_main_inside_evening",
+      "master_sfx": "indoor_ambient",
+      "bgm": "sad",
+      "name": "เมฆ",
+      "text": "เรานี่ ไม่ได้เรื่องจริงๆ นะ",
+      "thought": true,
+      "next": "ch3_s4_002"
+    },
+    {
+      "id": "ch3_s4_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เบาะแสก็ไม่คืบหน้า แล้วให้ลูกหัวหน้ามาเหนื่อยด้วยอีก",
+      "thought": true,
+      "next": "ch3_s4_003"
+    },
+    {
+      "id": "ch3_s4_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "...",
+      "thought": true,
+      "next": "ch3_s4_004"
+    },
+    {
+      "id": "ch3_s4_004",
+      "type": "dialogue",
+      "sprite": "moon_necklace",
+      "name": "เมฆ",
+      "text": "เจ้าสร้อยนี่ มันยังไงกันแน่นะ!?",
+      "thought": true,
+      "next": "ch3_s4_005"
+    },
+    {
+      "id": "ch3_s4_005",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "หืม",
+      "thought": true,
+      "next": "ch3_s4_006"
+    },
+    {
+      "id": "ch3_s4_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ด้านหลังจี้ มันมีผิวนูนออกมาเหรอ",
+      "thought": true,
+      "next": "ch3_s4_007"
+    },
+    {
+      "id": "ch3_s4_007",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "มีตัว F สลักอยู่เหรอ?",
+      "bg": "scene_3_4_moon_necklace_back_side_with_F",
+      "sprite": "",
+      "next": "ch3_s4_008",
+      "thought": true,
+      "sfx": "dried_leaves.mp3"
+    },
+    {
+      "id": "ch3_s4_008",
+      "type": "dialogue",
+      "bgm": "",
+      "sfx": "doorknob.mp3",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s5_001"
+    },
+    {
+      "id": "ch3_s5_001",
+      "type": "dialogue",
+      "bg": "scene_3_5_astronomy_club_main_inside_evening",
+      "bgm": "wholesome",
+      "name": "???",
+      "text": "น้องนักสืบอยู่ในนั้นรึเปล่าครับ",
+      "next": "ch3_s5_002"
+    },
+    {
+      "id": "ch3_s5_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่เต้เหรอครับ!?",
+      "next": "ch3_s5_003"
+    },
+    {
+      "id": "ch3_s5_003",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "อ้าว อยู่สินะ พี่ขอเข้าไปหน่อยสิ",
+      "next": "ch3_s5_004"
+    },
+    {
+      "id": "ch3_s5_004",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อ-อะไรเนี่ย ตามเรามาที่ตึกด้วยเหรอ",
+      "thought": true,
+      "next": "ch3_s5_005"
+    },
+    {
+      "id": "ch3_s5_005",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ถ้าเกิดว่าให้เข้ามา แล้วเรื่องคดีจะมีปัญหามั้ยเนี่ย..",
+      "thought": true,
+      "next": "ch3_s5_choice_001"
+    },
+    {
+      "id": "ch3_s5_choice_001",
+      "type": "choice",
+      "choices": [
+        {
+          "label": "A) เปิดประตูให้",
+          "say": "อ๋อ แป๊บนะครับ เดี๋ยวผมเปิดให้",
+          "effects": {
+            "CHA": 2
+          },
+          "next": "ch3_s5_006"
+        },
+        {
+          "label": "B) ไม่เปิดประตูให้",
+          "say": "ผมทำงานอยู่น่ะครับ พี่รออยู่ข้างนอกก่อนนะครับ",
+          "effects": {},
+          "next": "ch3_s5_006"
+        }
+      ]
+    },
+    {
+      "id": "ch3_s5_006",
+      "type": "dialogue",
+      "sfx": "door_unlock.mp3",
+      "name": "เมฆ",
+      "text": "!!??",
+      "next": "ch3_s5_007"
+    },
+    {
+      "id": "ch3_s5_007",
+      "type": "dialogue",
+      "sfx": "door_open.mp3",
+      "sprite": "tae_smile",
+      "name": "เมฆ",
+      "text": "เอ่อ..",
+      "next": "ch3_s5_008"
+    },
+    {
+      "id": "ch3_s5_008",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ฮ่าๆ พี่มีกุญแจไขเข้ามาได้อยู่แล้วน่ะ",
+      "next": "ch3_s5_009"
+    },
+    {
+      "id": "ch3_s5_009",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s5_010"
+    },
+    {
+      "id": "ch3_s5_010",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่มีธุระอะไรที่นี่รึเปล่าครับ",
+      "next": "ch3_s5_011"
+    },
+    {
+      "id": "ch3_s5_011",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "น้องต่างหากล่ะ",
+      "next": "ch3_s5_012"
+    },
+    {
+      "id": "ch3_s5_012",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "bgm": "",
+      "name": "เต้",
+      "text": "มาทำอะไรที่นี่",
+      "next": "ch3_s5_013"
+    },
+    {
+      "id": "ch3_s5_013",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!!!!????",
+      "next": "ch3_s5_014"
+    },
+    {
+      "id": "ch3_s5_014",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "พี่เมฆ เมื่อกี๊ใครมาเคาะประตูเหรอคะ!?",
+      "next": "ch3_s5_015"
+    },
+    {
+      "id": "ch3_s5_015",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เห้ย ฝน!?",
+      "thought": true,
+      "next": "ch3_s5_016"
+    },
+    {
+      "id": "ch3_s5_016",
+      "type": "dialogue",
+      "sprite": "fon_curious_student",
+      "name": "ฝน",
+      "text": "เอ๊ะ พี่ยาม เอ่อ…",
+      "next": "ch3_s5_017"
+    },
+    {
+      "id": "ch3_s5_017",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "สวัสดีค่ะ พอดีหนูพาพี่เขามาดูเรื่องคดีน่ะค่ะ เบาะแสเหมือนจะเกี่ยวข้องกับชมรมนี้",
+      "next": "ch3_s5_018"
+    },
+    {
+      "id": "ch3_s5_018",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เห้ย ฝน-",
+      "next": "ch3_s5_019"
+    },
+    {
+      "id": "ch3_s5_019",
+      "type": "dialogue",
+      "sprite": "fon_shocked_student",
+      "name": "ฝน",
+      "text": "อ๊ะ-",
+      "next": "ch3_s5_020"
+    },
+    {
+      "id": "ch3_s5_020",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "…",
+      "next": "ch3_s5_021"
+    },
+    {
+      "id": "ch3_s5_021",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "เบาะแสอะไรครับ",
+      "next": "ch3_s5_022"
+    },
+    {
+      "id": "ch3_s5_022",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s5_023"
+    },
+    {
+      "id": "ch3_s5_023",
+      "type": "dialogue",
+      "bgm": "suspense",
+      "name": "เต้",
+      "text": "หาพีทกันอยู่ใช่มั้ย",
+      "next": "ch3_s5_024"
+    },
+    {
+      "id": "ch3_s5_024",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!!??",
+      "next": "ch3_s5_025"
+    },
+    {
+      "id": "ch3_s5_025",
+      "type": "dialogue",
+      "sprite": "fon_shocked_student",
+      "name": "ฝน",
+      "text": "!!??",
+      "next": "ch3_s5_026"
+    },
+    {
+      "id": "ch3_s5_026",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "พี่รู้เหรอคะว่าพีทอยู่ไหน!?",
+      "next": "ch3_s5_027"
+    },
+    {
+      "id": "ch3_s5_027",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "พี่ไม่จำเป็นต้องตอบครับ",
+      "next": "ch3_s5_028"
+    },
+    {
+      "id": "ch3_s5_028",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ต้องขอให้น้อง 2 คน ออกไปด้วยครับ",
+      "next": "ch3_s5_029"
+    },
+    {
+      "id": "ch3_s5_029",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s5_030"
+    },
+    {
+      "id": "ch3_s5_030",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เดี๋ยวสิครับ เราเข้ามาที่นี่ไม่ได้รึไงครับ",
+      "next": "ch3_s5_031"
+    },
+    {
+      "id": "ch3_s5_031",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่เป็นคนบอกทางให้ผมเองนะ",
+      "next": "ch3_s5_032"
+    },
+    {
+      "id": "ch3_s5_032",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "..",
+      "next": "ch3_s5_033"
+    },
+    {
+      "id": "ch3_s5_033",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พี่ไม่คิดว่าน้องจะเข้ามาในนี้ได้น่ะสิครับ",
+      "next": "ch3_s5_034"
+    },
+    {
+      "id": "ch3_s5_034",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "เชิญออกไปด้วยครับ",
+      "next": "ch3_s5_035"
+    },
+    {
+      "id": "ch3_s5_035",
+      "type": "dialogue",
+      "sprite": "fon_angry_student",
+      "name": "ฝน",
+      "text": "บ-บอกมาสิคะว่าพีทอยู่ไหน!?",
+      "next": "ch3_s6_001"
+    },
+    {
+      "id": "ch3_s6_001",
+      "type": "dialogue",
+      "bg": "scene_3_6_tae_point_gun",
+      "master_sfx": "",
+      "bgm": "suspense",
+      "sfx": "pull_out_gun.mp3",
+      "name": "เต้",
+      "text": "ไม่ออกไป พี่ยิงนะ",
+      "next": "ch3_s6_002"
+    },
+    {
+      "id": "ch3_s6_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!!!!!!!!!!!!!!???????????",
+      "next": "ch3_s6_003"
+    },
+    {
+      "id": "ch3_s6_003",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "พี่เมฆ!!!!",
+      "next": "ch3_s7_001"
+    },
+    {
+      "id": "ch3_s7_001",
+      "type": "dialogue",
+      "bg": "scene_3_7_astronomy_club_main_inside",
+      "master_sfx": "",
+      "bgm": "suspense",
+      "sprite": "tae_angry_hold_gun",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s7_002"
+    },
+    {
+      "id": "ch3_s7_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่ทำแบบนี้ทำไมครับ",
+      "next": "ch3_s7_003"
+    },
+    {
+      "id": "ch3_s7_003",
+      "type": "dialogue",
+      "sfx": "rack_gun_slide.mp3",
+      "name": "เต้",
+      "text": "ถ้าดื้อด้านถามอยู่ พี่ยิงจริงๆ นะ!",
+      "next": "ch3_s7_004"
+    },
+    {
+      "id": "ch3_s7_004",
+      "type": "dialogue",
+      "sprite": "fon_shout_with_tears_student",
+      "name": "ฝน",
+      "text": "พี่เมฆ หนีเร็ว ยามเขาเป็นบ้าไปแล้ว!!!",
+      "next": "ch3_s7_005"
+    },
+    {
+      "id": "ch3_s7_005",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ไม่หรอกฝน",
+      "next": "ch3_s7_006"
+    },
+    {
+      "id": "ch3_s7_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "คนๆ นี้น่ะ..",
+      "next": "ch3_s7_007"
+    },
+    {
+      "id": "ch3_s7_007",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เขาไม่ยิงหรอก",
+      "next": "ch3_s7_008"
+    },
+    {
+      "id": "ch3_s7_008",
+      "type": "dialogue",
+      "bgm": "",
+      "name": "ฝน",
+      "text": "!!??",
+      "next": "ch3_s7_009"
+    },
+    {
+      "id": "ch3_s7_009",
+      "type": "dialogue",
+      "sprite": "tae_angry_hold_gun",
+      "name": "เต้",
+      "text": "!!??",
+      "next": "ch3_s7_010"
+    },
+    {
+      "id": "ch3_s7_010",
+      "type": "dialogue",
+      "bgm": "mysterious",
+      "name": "เมฆ",
+      "text": "เพราะแม็กปืนพี่เขาน่ะ ไม่ได้ใส่กระสุน",
+      "next": "ch3_s7_011"
+    },
+    {
+      "id": "ch3_s7_011",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ย-อย่ามาล้อเล่นกันนะ!",
+      "next": "ch3_s7_012"
+    },
+    {
+      "id": "ch3_s7_012",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่นั่นแหละครับ ที่กำลังล้อเล่นอยู่",
+      "next": "ch3_s7_013"
+    },
+    {
+      "id": "ch3_s7_013",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "จ่อปืนขู่ผม ต่อหน้าเด็กผู้หญิงแบบนี้",
+      "next": "ch3_s7_014"
+    },
+    {
+      "id": "ch3_s7_014",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่คือคนที่แอบเข้าไปดูกล้องวงจรปิดเมื่อคืนใช่มั้ย",
+      "next": "ch3_s7_015"
+    },
+    {
+      "id": "ch3_s7_015",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "!!??",
+      "next": "ch3_s7_016"
+    },
+    {
+      "id": "ch3_s7_016",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พอผมมานึกดู เมื่อคืน ยามประจำป้อม อยู่ดีๆ ก็หายไป",
+      "next": "ch3_s7_017"
+    },
+    {
+      "id": "ch3_s7_017",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แล้วพอสังเกตพี่ดีๆ ผมจำส่วนสูง สรีระได้ครับ",
+      "next": "ch3_s7_018"
+    },
+    {
+      "id": "ch3_s7_018",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ถ้าพี่เจตนาไม่ดีกับพวกผมจริงๆ แทนที่จะไล่พวกเราออกไป พี่คงยิงพวกเราไปแล้วล่ะครับ",
+      "next": "ch3_s7_019"
+    },
+    {
+      "id": "ch3_s7_019",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "แล้วรู้ได้ไงว่าตอนนี้จะไม่ยิง!?",
+      "next": "ch3_s7_020"
+    },
+    {
+      "id": "ch3_s7_020",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "รู้ได้ไงว่าปืนไม่มีกระสุน!?",
+      "next": "ch3_s7_021"
+    },
+    {
+      "id": "ch3_s7_021",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "สังเกตจากเสียงตอนขึ้นลำปืนเมื่อกี๊ครับ",
+      "next": "ch3_s7_022"
+    },
+    {
+      "id": "ch3_s7_022",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เสียงมันจะต่างจากปืนที่แม็กมีกระสุน",
+      "next": "ch3_s7_023"
+    },
+    {
+      "id": "ch3_s7_023",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "…",
+      "next": "ch3_s7_024"
+    },
+    {
+      "id": "ch3_s7_024",
+      "type": "dialogue",
+      "sprite": "tae_sad",
+      "name": "เมฆ",
+      "text": "ใจเย็นๆ แล้วคุยกันดีกว่านะครับ",
+      "next": "ch3_s7_025"
+    },
+    {
+      "id": "ch3_s7_025",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ทำไม.. ต้องไล่พวกเราออกไปให้ได้",
+      "next": "ch3_s7_026"
+    },
+    {
+      "id": "ch3_s7_026",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "…",
+      "next": "ch3_s8_001"
+    },
+    {
+      "id": "ch3_s8_001",
+      "type": "dialogue",
+      "bg": "scene_3_8_astronomy_club_president_inside_night",
+      "bgm": "sad",
+      "name": "เมฆ",
+      "text": "เรามา.. เปิดอกคุยกันดีกว่านะครับ",
+      "next": "ch3_s8_002"
+    },
+    {
+      "id": "ch3_s8_002",
+      "type": "dialogue",
+      "sprite": "tae_sad",
+      "name": "เมฆ",
+      "text": "พี่รู้ใช่มั้ยครับ ว่าพีทหายไปไหน",
+      "next": "ch3_s8_003"
+    },
+    {
+      "id": "ch3_s8_003",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พี่.. ไม่รู้…",
+      "next": "ch3_s8_004"
+    },
+    {
+      "id": "ch3_s8_004",
+      "type": "dialogue",
+      "sprite": "fon_angry_student",
+      "name": "ฝน",
+      "text": "ไหนว่าจะเปิดอกคุยกันไงคะ ยังจะปิดบังอะไรอีก",
+      "next": "ch3_s8_005"
+    },
+    {
+      "id": "ch3_s8_005",
+      "type": "dialogue",
+      "sprite": "tae_sad",
+      "name": "เต้",
+      "text": "พี่ไม่รู้จริงๆ นะ… พี่ก็อยากรู้เหมือนกัน",
+      "next": "ch3_s8_006"
+    },
+    {
+      "id": "ch3_s8_006",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "คืนก่อนที่ไปดูที่กล้องวงจรปิด เพราะพี่ก็กำลังหาคำตอบเหมือนกัน",
+      "next": "ch3_s8_007"
+    },
+    {
+      "id": "ch3_s8_007",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s8_008"
+    },
+    {
+      "id": "ch3_s8_008",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แล้วทำไมต้องรีบกระโดดหนีพวกผม",
+      "next": "ch3_s8_009"
+    },
+    {
+      "id": "ch3_s8_009",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "…",
+      "next": "ch3_s8_010"
+    },
+    {
+      "id": "ch3_s8_010",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พวกผู้บริหารของมหาลัยนี้น่ะ…",
+      "next": "ch3_s8_011"
+    },
+    {
+      "id": "ch3_s8_011",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ต้องมีส่วนเกี่ยวข้องกับเรื่องนี้แน่ๆ",
+      "next": "ch3_s8_012"
+    },
+    {
+      "id": "ch3_s8_012",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พี่ไม่อยากให้ใครรู้ว่าพี่กำลังสืบอยู่",
+      "next": "ch3_s8_013"
+    },
+    {
+      "id": "ch3_s8_013",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ที่พี่กำลังตามหาตัวพีทเหมือนกัน เพราะรู้จักกับพีทใช่มั้ยครับ",
+      "next": "ch3_s8_014"
+    },
+    {
+      "id": "ch3_s8_014",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ตามหาพีท ก็ส่วนหนึ่ง..",
+      "next": "ch3_s8_015"
+    },
+    {
+      "id": "ch3_s8_015",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "แต่พี่..",
+      "next": "ch3_s8_016"
+    },
+    {
+      "id": "ch3_s8_016",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "กำลังตามหาลูกสาวตัวเองอยู่",
+      "next": "ch3_s8_017"
+    },
+    {
+      "id": "ch3_s8_017",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s8_018"
+    },
+    {
+      "id": "ch3_s8_018",
+      "type": "dialogue",
+      "sprite": "fon_shocked_student",
+      "name": "ฝน",
+      "text": "!?",
+      "next": "ch3_s8_019"
+    },
+    {
+      "id": "ch3_s8_019",
+      "type": "dialogue",
+      "sfx": "phone_ringtone.mp3",
+      "name": "เมฆ",
+      "text": "ค-ใครโทรมาตอนนี้เนี่ย",
+      "thought": true,
+      "next": "ch3_s8_020"
+    },
+    {
+      "id": "ch3_s8_020",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "สารวัตร!?",
+      "thought": true,
+      "next": "ch3_s8_021"
+    },
+    {
+      "id": "ch3_s8_021",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "...",
+      "thought": true,
+      "next": "ch3_s8_022"
+    },
+    {
+      "id": "ch3_s8_022",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "รับสายก่อนละกัน จะได้ไม่มีปัญหาทีหลัง",
+      "thought": true,
+      "next": "ch3_s8_023"
+    },
+    {
+      "id": "ch3_s8_023",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ผมขอคุยโทรศัพท์แป๊บนึงนะครับ พี่เต้",
+      "next": "ch3_s8_024"
+    },
+    {
+      "id": "ch3_s8_024",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ฮัลโหลครับ สารวัตร",
+      "next": "ch3_s8_025"
+    },
+    {
+      "id": "ch3_s8_025",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "เอ้อ คุณเมฆ โทษทีนะ ผมโทรมาซะดึกเลย",
+      "next": "ch3_s8_026"
+    },
+    {
+      "id": "ch3_s8_026",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ดึกเหรอ?",
+      "thought": true,
+      "next": "ch3_s8_027"
+    },
+    {
+      "id": "ch3_s8_027",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ตอนนี้.. มันกี่โมงแล้วเนี่ย",
+      "thought": true,
+      "next": "ch3_s8_028"
+    },
+    {
+      "id": "ch3_s8_028",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "พอดีงานผมก็ยุ่ง ผมก็ลืมเรื่องของฝากนั่นเลย",
+      "next": "ch3_s8_029"
+    },
+    {
+      "id": "ch3_s8_029",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "เดี๋ยวพรุ่งนี้คุณเข้ามาที่ สน. แล้วเอามาให้ผมด้วยนะ",
+      "next": "ch3_s8_030"
+    },
+    {
+      "id": "ch3_s8_030",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "คุณก็ไม่เตือนผมเลยนะ ลืมเหมือนกันรึไง ฮ่าๆ",
+      "next": "ch3_s8_031"
+    },
+    {
+      "id": "ch3_s8_031",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s8_032"
+    },
+    {
+      "id": "ch3_s8_032",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ได้ครับ เดี๋ยวเอาไปให้ครับ",
+      "next": "ch3_s8_033"
+    },
+    {
+      "id": "ch3_s8_033",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "อืม ขอบใจมาก คุณจะสืบเรื่องพีทต่อใช่มั้ยล่ะ พักผ่อนให้เยอะๆ นะ ต้องออมแรงไว้",
+      "next": "ch3_s8_034"
+    },
+    {
+      "id": "ch3_s8_034",
+      "type": "dialogue",
+      "sfx": "phone_hang_up.mp3",
+      "name": "เมฆ",
+      "text": "โอเคครับ พี่เต้",
+      "next": "ch3_s8_035"
+    },
+    {
+      "id": "ch3_s8_035",
+      "type": "dialogue",
+      "sprite": "tae_sad",
+      "name": "เมฆ",
+      "text": "พี่กำลังตามหาน้องพีทกับลูกสาวพี่ใช่มั้ยครับ",
+      "next": "ch3_s8_036"
+    },
+    {
+      "id": "ch3_s8_036",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ลูกสาวพี่กับพีท เขาเป็นเพื่อนกันน่ะ",
+      "next": "ch3_s8_037"
+    },
+    {
+      "id": "ch3_s8_037",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ลูกพี่หายไป 3-4 วันแล้ว…",
+      "next": "ch3_s8_038"
+    },
+    {
+      "id": "ch3_s8_038",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พีทก็มีข่าวว่าหายตัวไป",
+      "next": "ch3_s8_039"
+    },
+    {
+      "id": "ch3_s8_039",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "มันต้องมีอะไรเกี่ยวพันกันแน่ๆ",
+      "next": "ch3_s8_040"
+    },
+    {
+      "id": "ch3_s8_040",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ทำไมพี่ถึงคิดว่าผู้บริหารมีส่วนเกี่ยวข้องครับ",
+      "next": "ch3_s8_041"
+    },
+    {
+      "id": "ch3_s8_041",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ก็เด็กนักศึกษาหายตัวไปตั้ง 2 คน พี่พยายามไปบอกกับพวกนั้นแล้ว",
+      "next": "ch3_s8_042"
+    },
+    {
+      "id": "ch3_s8_042",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "แต่ข่าวยังเงียบแบบนี้",
+      "next": "ch3_s8_043"
+    },
+    {
+      "id": "ch3_s8_043",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พี่ว่ามันแปลกเกินไปแล้ว!",
+      "next": "ch3_s8_044"
+    },
+    {
+      "id": "ch3_s8_044",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s8_045"
+    },
+    {
+      "id": "ch3_s8_045",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "โอเคครับ พี่",
+      "next": "ch3_s8_046"
+    },
+    {
+      "id": "ch3_s8_046",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ตอนนี้เบาะแสสำคัญที่ผมมีคือ สร้อยพระจันทร์สีน้ำเงิน",
+      "next": "ch3_s8_047"
+    },
+    {
+      "id": "ch3_s8_047",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เพราะเป็นของที่เราคิดว่า พีทน่าจะเอาไปฝังไว้ครับ",
+      "next": "ch3_s8_048"
+    },
+    {
+      "id": "ch3_s8_048",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ที่น้องขุดขึ้นมาใช่มั้ย",
+      "next": "ch3_s8_049"
+    },
+    {
+      "id": "ch3_s8_049",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พี่ขอดูหน่อย",
+      "next": "ch3_s8_050"
+    },
+    {
+      "id": "ch3_s8_050",
+      "type": "dialogue",
+      "sprite": "moon_necklace",
+      "name": "เต้",
+      "text": "พระจันทร์สีน้ำเงิน..",
+      "next": "ch3_s8_051"
+    },
+    {
+      "id": "ch3_s8_051",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "!?",
+      "next": "ch3_s8_052"
+    },
+    {
+      "id": "ch3_s8_052",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "แบบนี้นี่เอง.. น้อง 2 คนถึงมาที่นี่สินะ",
+      "next": "ch3_s8_053"
+    },
+    {
+      "id": "ch3_s8_053",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "??",
+      "next": "ch3_s8_054"
+    },
+    {
+      "id": "ch3_s8_054",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แปลว่าชมรมดาราศาสตร์กับสร้อยนี้ เกี่ยวข้องกันจริงๆ ใช่มั้ยครับ",
+      "next": "ch3_s8_055"
+    },
+    {
+      "id": "ch3_s8_055",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "เรื่องสร้อยพี่ไน่แน่ใจ แต่ไอรูปพระจันทร์สีน้ำเงินนี่แหละ",
+      "next": "ch3_s8_056"
+    },
+    {
+      "id": "ch3_s8_056",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "มันเป็นรูปที่ลูกพี่ตั้งใจจะออกแบบให้เป็น Logo ของชมรมดาราศาสตร์",
+      "next": "ch3_s8_057"
+    },
+    {
+      "id": "ch3_s8_057",
+      "type": "dialogue",
+      "sprite": "tae_sad",
+      "name": "เต้",
+      "text": "แต่หลังจากนั้น ลูกพี่.. ก็หายตัวไป…",
+      "next": "ch3_s8_058"
+    },
+    {
+      "id": "ch3_s8_058",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s8_059"
+    },
+    {
+      "id": "ch3_s8_059",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "จริงๆ ผมน่าจะถามตั้งนานแล้ว",
+      "next": "ch3_s8_060"
+    },
+    {
+      "id": "ch3_s8_060",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ลูกสาวพี่เต้.. ชื่อเชอรี่ใช่มั้ยครับ",
+      "next": "ch3_s8_061"
+    },
+    {
+      "id": "ch3_s8_061",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "!!!???",
+      "next": "ch3_s8_062"
+    },
+    {
+      "id": "ch3_s8_062",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ช-ใช่ น้องเมฆรู้ได้ไง!?",
+      "next": "ch3_s8_063"
+    },
+    {
+      "id": "ch3_s8_063",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "น้องที่มากับผมคนนี้ ชื่อฝนครับ",
+      "next": "ch3_s8_064"
+    },
+    {
+      "id": "ch3_s8_064",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เขาเล่าให้ฟังว่า เชอรี่เคยเอารูป Logo พระจันทร์เสี้ยวให้ดู",
+      "next": "ch3_s8_065"
+    },
+    {
+      "id": "ch3_s8_065",
+      "type": "dialogue",
+      "sprite": "tae_sad",
+      "name": "เต้",
+      "text": "...",
+      "next": "ch3_s8_066"
+    },
+    {
+      "id": "ch3_s8_066",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "เชอรี่กับพีทหายตัวไปแบบไม่มีปี่ไม่มีขลุ่ย",
+      "next": "ch3_s8_067"
+    },
+    {
+      "id": "ch3_s8_067",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "แถมพีทเอา.. สร้อยนี้ไปฝังไว้",
+      "next": "ch3_s8_068"
+    },
+    {
+      "id": "ch3_s8_068",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ตอนแรกพี่สังหรณ์ใจว่า มันไม่ใช่เรื่องดีแน่ๆ พี่เลย.. ขู่เพื่อไล่น้อง 2 คนออกไป",
+      "next": "ch3_s8_069"
+    },
+    {
+      "id": "ch3_s8_069",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พี่ขอโทษนะ",
+      "next": "ch3_s8_070"
+    },
+    {
+      "id": "ch3_s8_070",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ไม่เป็นไรครับ ผมเข้าใจ",
+      "next": "ch3_s8_071"
+    },
+    {
+      "id": "ch3_s8_071",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แต่ว่า.. พี่ไปซื้อปืนเถื่อนมาใช่มั้ยครับ",
+      "next": "ch3_s8_072"
+    },
+    {
+      "id": "ch3_s8_072",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ถึงเมื่อกี๊จะไม่ได้ลั่นไก แต่มีปืนไว้ในครอบครองโดยไม่มีใบอนุญาต ถือว่าผิดกฎหมายนะครับ",
+      "next": "ch3_s8_073"
+    },
+    {
+      "id": "ch3_s8_073",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "...",
+      "next": "ch3_s8_074"
+    },
+    {
+      "id": "ch3_s8_074",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่จะเอามายิงคนที่อยู่เบื้องหลังเหรอครับ",
+      "next": "ch3_s8_075"
+    },
+    {
+      "id": "ch3_s8_075",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "คนที่มันทำเรื่องแบบนี้ มันต้องชดใช้สิ..",
+      "next": "ch3_s8_076"
+    },
+    {
+      "id": "ch3_s8_076",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "...",
+      "next": "ch3_s8_077"
+    },
+    {
+      "id": "ch3_s8_077",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "มันไม่คุ้มหรอกพี่ เชื่อผมเถอะนะ",
+      "next": "ch3_s8_078"
+    },
+    {
+      "id": "ch3_s8_078",
+      "type": "dialogue",
+      "sprite": "tae_sad",
+      "name": "เต้",
+      "text": "...",
+      "next": "ch3_s9_001"
+    },
+    {
+      "id": "ch3_s9_001",
+      "type": "dialogue",
+      "bg": "scene_3_9_astronomy_club_night",
+      "bgm": "sad",
+      "sprite": "tae_sad",
+      "name": "เมฆ",
+      "text": "ตอนนี้ผมได้เบาะแสเพิ่มแล้วว่า พีทเป็นเพื่อนกับเชอรี่ ซึ่งเชอรี่เป็นประธานชมรมดาราศาสตร์ แต่หายตัวไปทั้งคู่",
+      "next": "ch3_s9_002"
+    },
+    {
+      "id": "ch3_s9_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แล้วพีทต้องมีเหตุผลอะไรบางอย่าง ที่เอาสร้อยนี้ไปซ่อน",
+      "next": "ch3_s9_003"
+    },
+    {
+      "id": "ch3_s9_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s9_004"
+    },
+    {
+      "id": "ch3_s9_004",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่เต้ติดต่อน้องเชอรี่ไม่ได้เลยใช่มั้ยครับ",
+      "next": "ch3_s9_005"
+    },
+    {
+      "id": "ch3_s9_005",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ไม่เลย..",
+      "next": "ch3_s9_006"
+    },
+    {
+      "id": "ch3_s9_006",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "โทรก็ไม่รับสาย",
+      "next": "ch3_s9_007"
+    },
+    {
+      "id": "ch3_s9_007",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "LINE ก็ไม่อ่าน",
+      "next": "ch3_s9_008"
+    },
+    {
+      "id": "ch3_s9_008",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ทุกช่องทางแล้ว เมฆ..",
+      "next": "ch3_s9_009"
+    },
+    {
+      "id": "ch3_s9_009",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ครับ..",
+      "next": "ch3_s9_010"
+    },
+    {
+      "id": "ch3_s9_010",
+      "type": "dialogue",
+      "sprite": "fon_curious_student",
+      "name": "ฝน",
+      "text": "แล้วเราจะเอายังไงต่อดีคะ พี่เมฆ",
+      "next": "ch3_s9_011"
+    },
+    {
+      "id": "ch3_s9_011",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s9_012"
+    },
+    {
+      "id": "ch3_s9_012",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "จ-จริงสิ สร้อยคอ",
+      "thought": true,
+      "next": "ch3_s9_013"
+    },
+    {
+      "id": "ch3_s9_013",
+      "type": "dialogue",
+      "bg": "scene_3_4_moon_necklace_back_side_with_F",
+      "name": "เมฆ",
+      "text": "Logo… ตัว F…",
+      "thought": true,
+      "next": "ch3_s9_014"
+    },
+    {
+      "id": "ch3_s9_014",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s9_015"
+    },
+    {
+      "id": "ch3_s9_015",
+      "type": "dialogue",
+      "bg": "scene_3_9_astronomy_club_night",
+      "name": "เมฆ",
+      "text": "ฝน.. ชื่อฝนนี่ ภาษาอังกฤษ ขึ้นด้วยตัว F ใช่มั้ย",
+      "next": "ch3_s9_016"
+    },
+    {
+      "id": "ch3_s9_016",
+      "type": "dialogue",
+      "sprite": "fon_curious_student",
+      "name": "ฝน",
+      "text": "เอ๊ะ ก็ใช่ค่ะ…",
+      "next": "ch3_s9_017"
+    },
+    {
+      "id": "ch3_s9_017",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แปลว่าสร้อยที่พีทเอาซ่อน อาจไม่ใช่ทั้งของพีทหรือของเชอรี่..",
+      "thought": true,
+      "next": "ch3_s9_018"
+    },
+    {
+      "id": "ch3_s9_018",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "คนที่อยู่สมาชิกชมรมนี้ แล้วฝน Block เขาไป นี่ใครเหรอ",
+      "next": "ch3_s9_019"
+    },
+    {
+      "id": "ch3_s9_019",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "เอ่อ.. พี่บอสค่ะ…",
+      "next": "ch3_s9_020"
+    },
+    {
+      "id": "ch3_s9_020",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "พอดีว่า.. เหมือนเขาพยายามจีบหนู แล้วหลายๆ ครั้ง หนูรู้สึกว่า..",
+      "next": "ch3_s9_021"
+    },
+    {
+      "id": "ch3_s9_021",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s9_022"
+    },
+    {
+      "id": "ch3_s9_022",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "โอเค บอสก็น่าจะรู้จักกับเชอรี่.. แล้วเขารู้จักพีทมั้ย",
+      "next": "ch3_s9_023"
+    },
+    {
+      "id": "ch3_s9_023",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ไม่แน่ใจเหมือนกันค่ะ..",
+      "next": "ch3_s9_024"
+    },
+    {
+      "id": "ch3_s9_024",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ตอนนี้.. พี่กำลังคิดว่าสร้อยนี้ไม่ใช่ของพีทหรือของเชอรี่เลย..",
+      "next": "ch3_s9_025"
+    },
+    {
+      "id": "ch3_s9_025",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ต้องเป็นของคนในชมรมดาราศาสตร์ แต่จุดสำคัญคือมีตัว F สลักอยู่ด้านหลังจี้",
+      "next": "ch3_s9_026"
+    },
+    {
+      "id": "ch3_s9_026",
+      "type": "dialogue",
+      "sprite": "fon_shocked_student",
+      "name": "ฝน",
+      "text": "!?",
+      "next": "ch3_s9_027"
+    },
+    {
+      "id": "ch3_s9_027",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่คิดว่า เจ้าของสร้อยเส้นนี้ ตั้งใจทำสร้อยมาให้ฝน.. ซึ่งถ้าตามที่ฝนเล่าเมื่อกี๊ พี่คิดว่าน่าจะเป็น-",
+      "next": "ch3_s9_028"
+    },
+    {
+      "id": "ch3_s9_028",
+      "type": "dialogue",
+      "name": "???",
+      "text": "สวัสดีครับทุกคน",
+      "next": "ch3_s9_029"
+    },
+    {
+      "id": "ch3_s9_029",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s9_030"
+    },
+    {
+      "id": "ch3_s9_030",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "!?",
+      "next": "ch3_s9_031"
+    },
+    {
+      "id": "ch3_s9_031",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "!?",
+      "next": "ch3_s9_032"
+    },
+    {
+      "id": "ch3_s9_032",
+      "type": "dialogue",
+      "sprite": "boss_chill",
+      "name": "???",
+      "text": "มีธุระอะไรที่นี่รึเปล่าครับ",
+      "next": "ch3_s9_033"
+    },
+    {
+      "id": "ch3_s9_033",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "พี่บอส…",
+      "next": "ch3_s9_034"
+    },
+    {
+      "id": "ch3_s9_034",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "thought": true,
+      "next": "ch3_s9_035"
+    },
+    {
+      "id": "ch3_s9_035",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "คนนี้เหรอ!?",
+      "thought": true,
+      "next": "ch3_s9_036"
+    },
+    {
+      "id": "ch3_s9_036",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "…",
+      "next": "ch3_s9_037"
+    },
+    {
+      "id": "ch3_s9_037",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "เมฆ",
+      "next": "ch3_s9_038"
+    },
+    {
+      "id": "ch3_s9_038",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "เมื่อกี๊เมฆกำลังจะบอกว่า เจ้าของสร้อยคือ",
+      "next": "ch3_s9_039"
+    },
+    {
+      "id": "ch3_s9_039",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "น้องบอสใช่มั้ย",
+      "next": "ch3_s9_040"
+    },
+    {
+      "id": "ch3_s9_040",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ช-ใช่ครับ สันนิษฐานจากรูปการณ์ทั้งหมด ถ้าตัว F ที่สร้อย หมายถึงน้องฝน",
+      "next": "ch3_s9_041"
+    },
+    {
+      "id": "ch3_s9_041",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "คิดว่า.. บอสเป็นคนทำสร้อยเส้นนี้ครับ",
+      "next": "ch3_s9_042"
+    },
+    {
+      "id": "ch3_s9_042",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "…",
+      "next": "ch3_s9_043"
+    },
+    {
+      "id": "ch3_s9_043",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "บอสรู้รึเปล่า ว่าเชอรี่อยู่ที่ไหน",
+      "next": "ch3_s9_044"
+    },
+    {
+      "id": "ch3_s9_044",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "..",
+      "next": "ch3_s9_045"
+    },
+    {
+      "id": "ch3_s9_045",
+      "type": "dialogue",
+      "sprite": "boss_chill",
+      "name": "บอส",
+      "text": "พี่รู้จักเชอรี่เหรอครับ แล้วมาถามผมทำไม",
+      "next": "ch3_s9_046"
+    },
+    {
+      "id": "ch3_s9_046",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "เชอรี่เป็นลูกสาวของพี่ ตอนนี้หายไปไหนไม่รู้ 2-3 วันแล้ว",
+      "next": "ch3_s9_047"
+    },
+    {
+      "id": "ch3_s9_047",
+      "type": "dialogue",
+      "sprite": "boss_chill",
+      "name": "บอส",
+      "text": "ผมไม่ทราบจริงๆ ครับ",
+      "next": "ch3_s9_048"
+    },
+    {
+      "id": "ch3_s9_048",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "ส่วนสร้อยนั้น ไม่ใช่ของผมครับ",
+      "next": "ch3_s9_049"
+    },
+    {
+      "id": "ch3_s9_049",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "แล้วฝนกับพี่ 2 คน มาตามหาเชอรี่ที่นี่เหรอครับ",
+      "next": "ch3_s9_050"
+    },
+    {
+      "id": "ch3_s9_050",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ครับ",
+      "next": "ch3_s9_051"
+    },
+    {
+      "id": "ch3_s9_051",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "ขอให้หาเจอเร็วๆ นะครับ ผมขอตัวก่อน",
+      "next": "ch3_s9_052"
+    },
+    {
+      "id": "ch3_s9_052",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s9_053"
+    },
+    {
+      "id": "ch3_s9_053",
+      "type": "dialogue",
+      "sprite": "boss_chill",
+      "sprite_hide": true,
+      "name": "",
+      "text": "",
+      "next": "ch3_s9_054"
+    },
+    {
+      "id": "ch3_s9_054",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เดี๋ยวครับ!",
+      "next": "ch3_s9_055"
+    },
+    {
+      "id": "ch3_s9_055",
+      "type": "dialogue",
+      "sprite": "boss_chill",
+      "name": "บอส",
+      "text": "?",
+      "next": "ch3_s9_056"
+    },
+    {
+      "id": "ch3_s9_056",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ประธานชมรมของบอสหายตัวไปทั้งคน.. ไม่อยากช่วยพี่หาหน่อยเหรอครับ",
+      "next": "ch3_s9_057"
+    },
+    {
+      "id": "ch3_s9_057",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "อ๋อ ได้สิครับ จะให้ผมช่วยอะไร",
+      "next": "ch3_s9_058"
+    },
+    {
+      "id": "ch3_s9_058",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s9_059"
+    },
+    {
+      "id": "ch3_s9_059",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ไม่ใช่แบบนั้นครับ",
+      "next": "ch3_s9_060"
+    },
+    {
+      "id": "ch3_s9_060",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ช่วยก็เรื่องนึง แต่คนเรา ถ้าเพื่อนหรือคนรู้จักหายตัว หรือโดนลักพาตัวไป",
+      "next": "ch3_s9_061"
+    },
+    {
+      "id": "ch3_s9_061",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อย่างน้อย ก็น่าจะเสนอความช่วยเหลือนะครับ",
+      "next": "ch3_s9_062"
+    },
+    {
+      "id": "ch3_s9_062",
+      "type": "dialogue",
+      "sprite": "boss_chill",
+      "name": "บอส",
+      "text": "..",
+      "next": "ch3_s9_063"
+    },
+    {
+      "id": "ch3_s9_063",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "งั้นพี่ต้องการให้ผมทำอะไรครับ",
+      "next": "ch3_s9_064"
+    },
+    {
+      "id": "ch3_s9_064",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่ต้องการให้บอสเลิกโกหก แล้วบอกพี่มาว่าพีทอยู่ไหน",
+      "next": "ch3_s9_065"
+    },
+    {
+      "id": "ch3_s9_065",
+      "type": "dialogue",
+      "sprite": "fon_shocked_student",
+      "name": "ฝน",
+      "text": "!?",
+      "next": "ch3_s9_066"
+    },
+    {
+      "id": "ch3_s9_066",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "!?",
+      "next": "ch3_s9_067"
+    },
+    {
+      "id": "ch3_s9_067",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่จะถามให้ชัดๆ นะ",
+      "next": "ch3_s9_068"
+    },
+    {
+      "id": "ch3_s9_068",
+      "type": "dialogue",
+      "sprite": "boss_chill",
+      "name": "เมฆ",
+      "text": "สร้อยจี้พระจันทร์สีน้ำเงินนี่.. เป็นของบอส",
+      "next": "ch3_s9_069"
+    },
+    {
+      "id": "ch3_s9_069",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แล้วบอสเป็นคนลักพาตัวพีทไปใช่มั้ย",
+      "next": "ch3_s9_070"
+    },
+    {
+      "id": "ch3_s9_070",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "……..",
+      "next": "ch3_s9_071"
+    },
+    {
+      "id": "ch3_s9_071",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "สร้อยเส้นนั้นน่ะ มันควรอยู่ในมือของคนที่ผมรัก",
+      "next": "ch3_s9_072"
+    },
+    {
+      "id": "ch3_s9_072",
+      "type": "dialogue",
+      "sprite": "boss_angry",
+      "name": "บอส",
+      "text": "เพราะไอพวกเวรนั่นมาวุ่นวายกับสร้อย ผมก็ไม่ต้องการมันอีกต่อไปแล้ว!",
+      "next": "ch3_s9_073"
+    },
+    {
+      "id": "ch3_s9_073",
+      "type": "dialogue",
+      "sprite": "boss_angry",
+      "sprite_hide": true,
+      "name": "",
+      "text": "",
+      "next": "ch3_s9_074"
+    },
+    {
+      "id": "ch3_s9_074",
+      "type": "dialogue",
+      "sfx": "run.mp3",
+      "name": "",
+      "text": "",
+      "next": "ch3_s9_075"
+    },
+    {
+      "id": "ch3_s9_075",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เห้ย หยุดก่อน!",
+      "next": "ch3_s9_076"
+    },
+    {
+      "id": "ch3_s9_076",
+      "type": "dialogue",
+      "sprite": "fon_shocked_student",
+      "name": "ฝน",
+      "text": "พี่บอสวิ่งเข้าไปในตึกแล้ว!",
+      "next": "ch3_s9_077"
+    },
+    {
+      "id": "ch3_s9_077",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "โธ่เว้ย",
+      "thought": true,
+      "next": "ch3_s9_078"
+    },
+    {
+      "id": "ch3_s9_078",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ฝนรอข้างนอกนี่นะ พี่เต้มากับผม!",
+      "next": "ch3_s9_079"
+    },
+    {
+      "id": "ch3_s9_079",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "ได้!",
+      "next": "ch3_s10_001"
+    },
+    {
+      "id": "ch3_s10_001",
+      "type": "dialogue",
+      "bg": "scene_3_10_astronomy_club_main_inside",
+      "bgm": "suspense_music.mp3",
+      "name": "เมฆ",
+      "text": "บอส!!",
+      "next": "ch3_s10_002"
+    },
+    {
+      "id": "ch3_s10_002",
+      "type": "dialogue",
+      "sprite": "boss_angry",
+      "name": "บอส",
+      "text": "มึงไม่มีวันหาพวกนั้นเจอหรอก!",
+      "next": "ch3_s10_003"
+    },
+    {
+      "id": "ch3_s10_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พวกนั้น!? บอสลักพาตัวเชอรี่ไปด้วยเหรอ!?",
+      "next": "ch3_s10_004"
+    },
+    {
+      "id": "ch3_s10_004",
+      "type": "dialogue",
+      "sprite": "boss_angry",
+      "sprite_hide": true,
+      "name": "",
+      "text": "",
+      "next": "ch3_s10_005"
+    },
+    {
+      "id": "ch3_s10_005",
+      "type": "dialogue",
+      "sfx": "run.mp3",
+      "name": "",
+      "text": "",
+      "next": "ch3_s10_006"
+    },
+    {
+      "id": "ch3_s10_006",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "รีบตามไปก่อน อย่าเพิ่งถามมัน!",
+      "next": "ch3_s10_007"
+    },
+    {
+      "id": "ch3_s10_007",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "มันวิ่งไปออกทางหลังตึก!",
+      "next": "ch3_s11_001"
+    },
+    {
+      "id": "ch3_s11_001",
+      "type": "dialogue",
+      "bg": "scene_3_11_astronomy_club_back_night",
+      "bgm": "suspense_music.mp3",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s11_002"
+    },
+    {
+      "id": "ch3_s11_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ห-หายไปแล้วเหรอ!?",
+      "next": "ch3_s11_003"
+    },
+    {
+      "id": "ch3_s11_003",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "….",
+      "next": "ch3_s11_004"
+    },
+    {
+      "id": "ch3_s11_004",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ไอบอส!!!!",
+      "next": "ch3_s11_005"
+    },
+    {
+      "id": "ch3_s11_005",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อยู่ดีๆ จะหายไปได้ไงกัน คลาดกันแป๊บเดียวเอง",
+      "thought": true,
+      "next": "ch3_s11_006"
+    },
+    {
+      "id": "ch3_s11_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "หืม…",
+      "thought": true,
+      "next": "ch3_s11_007"
+    },
+    {
+      "id": "ch3_s11_007",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s11_008"
+    },
+    {
+      "id": "ch3_s11_008",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่เต้..",
+      "next": "ch3_s11_009"
+    },
+    {
+      "id": "ch3_s11_009",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ไปดูที่ถังขยะใบนั้นกันครับ",
+      "next": "ch3_s11_010"
+    },
+    {
+      "id": "ch3_s11_010",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "??",
+      "next": "ch3_s12_001"
+    },
+    {
+      "id": "ch3_s12_001",
+      "type": "dialogue",
+      "bg": "scene_3_12_astronomy_club_dumpster_gate_closed",
+      "bgm": "suspense_music.mp3",
+      "name": "เมฆ",
+      "text": "ป-ประตู… มีประตูลับไปห้องใต้ดินเหรอ!!??",
+      "next": "ch3_s12_002"
+    },
+    {
+      "id": "ch3_s12_002",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "..",
+      "next": "ch3_s12_003"
+    },
+    {
+      "id": "ch3_s12_003",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ชักจะเลอะเทอะไปกันใหญ่แล้ว",
+      "next": "ch3_s12_004"
+    },
+    {
+      "id": "ch3_s12_004",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ไอเด็กเวร",
+      "next": "ch3_s12_005"
+    },
+    {
+      "id": "ch3_s12_005",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "อ๊าา!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "next": "ch3_s12_006"
+    },
+    {
+      "id": "ch3_s12_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!!!!!!!!!!???",
+      "next": "ch3_s12_007"
+    },
+    {
+      "id": "ch3_s12_007",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ฝน!!!!!!????????",
+      "next": "ch3_s12_008"
+    },
+    {
+      "id": "ch3_s12_008",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "เสียงมาจากในตึก!!!!!",
+      "next": "ch3_s13_001"
+    },
+    {
+      "id": "ch3_s13_001",
+      "type": "dialogue",
+      "bg": "scene_3_13_astronomy_club_main_inside",
+      "bgm": "suspense_music.mp3",
+      "name": "เมฆ",
+      "text": "ฝน!!! ฝนอยู่ไหน!!!????",
+      "next": "ch3_s13_002"
+    },
+    {
+      "id": "ch3_s13_002",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "หนูอยู่ห้องเก็บของค่ะ!!!!",
+      "next": "ch3_s14_001"
+    },
+    {
+      "id": "ch3_s14_001",
+      "type": "dialogue",
+      "bg": "scene_3_14_astronomy_club_storage_inside_night",
+      "bgm": "suspense_music.mp3",
+      "sfx": "door_open_quick.mp3",
+      "name": "เมฆ",
+      "text": "ฝน!!!",
+      "next": "ch3_s14_002"
+    },
+    {
+      "id": "ch3_s14_002",
+      "type": "dialogue",
+      "sprite": "fon_shocked_with_tears_student",
+      "name": "ฝน",
+      "text": "พี่เมฆ!!!!!",
+      "next": "ch3_s14_003"
+    },
+    {
+      "id": "ch3_s14_003",
+      "type": "dialogue",
+      "sprite": "fon_shocked_with_tears_point_at_door_student",
+      "name": "ฝน",
+      "text": "ข้างในนั้น… ข้างใน!!!!",
+      "next": "ch3_s14_004"
+    },
+    {
+      "id": "ch3_s14_004",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "หลังประตูนั้นเหรอ!?",
+      "next": "ch3_s14_005"
+    },
+    {
+      "id": "ch3_s14_005",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ก่อนหน้านี้ที่เข้ามา มีชั้นวางของกั้นประตูไว้อยู่สินะ",
+      "thought": true,
+      "next": "ch3_s14_006"
+    },
+    {
+      "id": "ch3_s14_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ม.. มีกลิ่นแปลกๆ ด้วย",
+      "next": "ch3_s14_007"
+    },
+    {
+      "id": "ch3_s14_007",
+      "type": "dialogue",
+      "sfx": "door_open.mp3",
+      "name": "",
+      "text": "",
+      "next": "ch3_s15_001"
+    },
+    {
+      "id": "ch3_s15_001",
+      "type": "dialogue",
+      "bg": "scene_3_15_cherry_body",
+      "bgm": "",
+      "name": "เมฆ",
+      "text": "เห้ย!!",
+      "next": "ch3_s15_002"
+    },
+    {
+      "id": "ch3_s15_002",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "!!!!!!!!!!!!!!!!!!!!!!!??????????????????????????????????????",
+      "next": "ch3_s16_001"
+    },
+    {
+      "id": "ch3_s16_001",
+      "type": "dialogue",
+      "bg": "scene_3_16_mek_fon_tae_found_cherry_body_artwork",
+      "bgm": "extremely_sad_music.mp3",
+      "name": "เต้",
+      "text": "ช-เชอรี่!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "next": "ch3_s16_002"
+    },
+    {
+      "id": "ch3_s16_002",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ลูกพ่อ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "next": "ch3_s16_003"
+    },
+    {
+      "id": "ch3_s16_003",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ลูกพ่ออออออ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "next": "ch3_s17_001"
+    },
+    {
+      "id": "ch3_s17_001",
+      "type": "dialogue",
+      "bg": "scene_3_17_cherry_body",
+      "bgm": "extremely_sad_music.mp3",
+      "sprite": "tae_angry_with_tears",
+      "name": "เต้",
+      "text": "ไอเหี้ยบอสส มึงใช่มั้ย!!!!?????????",
+      "next": "ch3_s17_002"
+    },
+    {
+      "id": "ch3_s17_002",
+      "type": "dialogue",
+      "sprite": "tae_angry_with_tears",
+      "sprite_hide": true,
+      "name": "",
+      "text": "",
+      "next": "ch3_s17_003"
+    },
+    {
+      "id": "ch3_s17_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่เต้!!!!",
+      "next": "ch3_s17_004"
+    },
+    {
+      "id": "ch3_s17_004",
+      "type": "dialogue",
+      "sprite": "fon_shout_with_tears_student",
+      "name": "ฝน",
+      "text": "รีบตามพี่เต้เร็วค่ะ!!!",
+      "next": "ch3_s17_005"
+    },
+    {
+      "id": "ch3_s17_005",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "โธ่เว้ยย!!",
+      "thought": true,
+      "next": "ch3_s18_001"
+    },
+    {
+      "id": "ch3_s18_001",
+      "type": "dialogue",
+      "bg": "scene_3_18_astronomy_club_back_night",
+      "bgm": "suspense_music.mp3",
+      "name": "เมฆ",
+      "text": "พี่เต้เข้าประตูใต้ดินไปแล้วแน่เลย!!",
+      "next": "ch3_s18_002"
+    },
+    {
+      "id": "ch3_s18_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ฝนรอนี่นะ-",
+      "next": "ch3_s18_003"
+    },
+    {
+      "id": "ch3_s18_003",
+      "type": "dialogue",
+      "sprite": "fon_shout_with_tears_student",
+      "name": "ฝน",
+      "text": "หนูจะไปด้วยค่ะ!!!!",
+      "next": "ch3_s18_004"
+    },
+    {
+      "id": "ch3_s18_004",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s18_005"
+    },
+    {
+      "id": "ch3_s18_005",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "…",
+      "next": "ch3_s18_006"
+    },
+    {
+      "id": "ch3_s18_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ก็ได้ มาเร็ว!",
+      "next": "ch3_s19_001"
+    },
+    {
+      "id": "ch3_s19_001",
+      "type": "dialogue",
+      "bg": "scene_3_19_astronomy_club_dumpster_gate_open",
+      "bgm": "suspense_music.mp3",
+      "name": "เมฆ",
+      "text": "!!",
+      "next": "ch3_s19_002"
+    },
+    {
+      "id": "ch3_s19_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "นี่ไง ประตูใต้ดินจริงๆ ด้วย!",
+      "next": "ch3_s19_003"
+    },
+    {
+      "id": "ch3_s19_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "มาเร็ว ฝน!",
+      "next": "ch3_s19_004"
+    },
+    {
+      "id": "ch3_s19_004",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ค่ะ!",
+      "next": "ch3_s20_001"
+    },
+    {
+      "id": "ch3_s20_001",
+      "type": "dialogue",
+      "bg": "scene_3_20_climbing_ladder",
+      "bgm": "suspense_music.mp3",
+      "sfx": "ladder_climb.mp3",
+      "name": "เมฆ",
+      "text": "จับบันไดดีๆ นะฝน!",
+      "next": "ch3_s20_002"
+    },
+    {
+      "id": "ch3_s20_002",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "พี่เชอรี่….",
+      "next": "ch3_s20_003"
+    },
+    {
+      "id": "ch3_s20_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s20_004"
+    },
+    {
+      "id": "ch3_s20_004",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s20_005"
+    },
+    {
+      "id": "ch3_s20_005",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ถึงแล้ว!",
+      "thought": true,
+      "next": "ch3_s20_006"
+    },
+    {
+      "id": "ch3_s20_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ห-ห้องใต้ดิน!",
+      "thought": true,
+      "next": "ch3_s21_001"
+    },
+    {
+      "id": "ch3_s21_001",
+      "type": "dialogue",
+      "bg": "scene_3_21_astronomy_club_basement_boss_tae_pete",
+      "bgm": "suspense_music.mp3",
+      "name": "เมฆ",
+      "text": "บอส!!!! พี่เต้!!!!!",
+      "next": "ch3_s21_002"
+    },
+    {
+      "id": "ch3_s21_002",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "พีท!!!",
+      "next": "ch3_s22_001"
+    },
+    {
+      "id": "ch3_s22_001",
+      "type": "dialogue",
+      "bg": "scene_3_22_astronomy_club_basement",
+      "bgm": "extremely_sad_music.mp3",
+      "name": "",
+      "text": "",
+      "next": "ch3_s22_002"
+    },
+    {
+      "id": "ch3_s22_002",
+      "type": "dialogue",
+      "bgm_stop": true,
+      "name": "",
+      "text": "",
+      "next": "ch3_s22_003"
+    },
+    {
+      "id": "ch3_s22_003",
+      "type": "dialogue",
+      "sprite": "boss_angry",
+      "name": "บอส",
+      "text": "จะยิงเหรอ!?",
+      "next": "ch3_s22_004"
+    },
+    {
+      "id": "ch3_s22_004",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "ผมปาดคอไอพีทเลยดีมั้ย!?",
+      "next": "ch3_s22_005"
+    },
+    {
+      "id": "ch3_s22_005",
+      "type": "dialogue",
+      "sprite": "pete_cry",
+      "name": "พีท",
+      "text": "พี่บอส ปล่อยผมไปเถอะ!!",
+      "next": "ch3_s22_006"
+    },
+    {
+      "id": "ch3_s22_006",
+      "type": "dialogue",
+      "sprite": "tae_angry_hold_gun",
+      "name": "เต้",
+      "text": "มึงฆ่าลูกกูทำไม!!!???",
+      "next": "ch3_s22_007"
+    },
+    {
+      "id": "ch3_s22_007",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "คิดว่ากูไม่กล้ายิงมึงเหรอ ไอเด็กนรก!!!",
+      "next": "ch3_s22_008"
+    },
+    {
+      "id": "ch3_s22_008",
+      "type": "dialogue",
+      "sprite": "boss_angry",
+      "name": "บอส",
+      "text": "..",
+      "next": "ch3_s22_009"
+    },
+    {
+      "id": "ch3_s22_009",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "ไอเชอรี่ มันมาลองของกับผมก่อนเองนี่",
+      "next": "ch3_s22_010"
+    },
+    {
+      "id": "ch3_s22_010",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "มันใช้ไอพีท มาขโมยสร้อยของผม",
+      "next": "ch3_s22_011"
+    },
+    {
+      "id": "ch3_s22_011",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "เพราะมันไม่อยากให้ผมได้ฝน!!",
+      "next": "ch3_s22_012"
+    },
+    {
+      "id": "ch3_s22_012",
+      "type": "dialogue",
+      "bgm": "extremely_sad_music.mp3",
+      "sprite": "fon_shocked_student",
+      "name": "ฝน",
+      "text": "!!??",
+      "next": "ch3_s22_013"
+    },
+    {
+      "id": "ch3_s22_013",
+      "type": "dialogue",
+      "sprite": "boss_angry",
+      "name": "บอส",
+      "text": "ผมอุตส่าห์ตั้งใจทำสร้อยเส้นนั้น",
+      "next": "ch3_s22_014"
+    },
+    {
+      "id": "ch3_s22_014",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "เพื่อให้ฝนเป็นของขวัญ…",
+      "next": "ch3_s22_015"
+    },
+    {
+      "id": "ch3_s22_015",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "แต่ทุกอย่างมันพังหมด",
+      "next": "ch3_s22_016"
+    },
+    {
+      "id": "ch3_s22_016",
+      "type": "dialogue",
+      "sprite": "tae_angry_hold_gun",
+      "name": "เต้",
+      "text": "มึงเลยฆ่าลูกกูเหรอ ไอเหี้ย!!???",
+      "next": "ch3_s22_017"
+    },
+    {
+      "id": "ch3_s22_017",
+      "type": "dialogue",
+      "sfx": "rack_gun_slide.mp3",
+      "name": "",
+      "text": "",
+      "next": "ch3_s22_018"
+    },
+    {
+      "id": "ch3_s22_018",
+      "type": "dialogue",
+      "sprite": "boss_angry",
+      "name": "บอส",
+      "text": "ยิงเลยสิ!!",
+      "next": "ch3_s22_019"
+    },
+    {
+      "id": "ch3_s22_019",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "ผมจะได้ฆ่าไอพีทก่อน!!",
+      "next": "ch3_s22_020"
+    },
+    {
+      "id": "ch3_s22_020",
+      "type": "dialogue",
+      "sprite": "pete_cry",
+      "name": "พีท",
+      "text": "อย่าฆ่าผมเลยนะ.. ผมแค่ทำตามที่พี่เชอรี่ขอ…",
+      "next": "ch3_s22_021"
+    },
+    {
+      "id": "ch3_s22_021",
+      "type": "dialogue",
+      "sprite": "boss_angry",
+      "name": "บอส",
+      "text": "มึงจะได้ตามสุดที่รักของมึงไปนรกไง ไอพีท!!",
+      "next": "ch3_s22_022"
+    },
+    {
+      "id": "ch3_s22_022",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ทุกคนหยุด!!!",
+      "next": "ch3_s22_023"
+    },
+    {
+      "id": "ch3_s22_023",
+      "type": "dialogue",
+      "bgm_stop": true,
+      "name": "",
+      "text": "",
+      "next": "ch3_s22_024"
+    },
+    {
+      "id": "ch3_s22_024",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ตอนนี้ถอยกลับไม่ได้แล้ว",
+      "thought": true,
+      "next": "ch3_s22_025"
+    },
+    {
+      "id": "ch3_s22_025",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ต้องคิดให้ดีว่าจะกล่อมยังไง",
+      "thought": true,
+      "next": "ch3_s22_026"
+    },
+    {
+      "id": "ch3_s22_026",
+      "type": "choice",
+      "choices": [
+        {
+          "text": "อธิบายให้บอสเข้าใจว่า บอสไม่มีทางหนีรอด",
+          "condition": "INT >= 6",
+          "next": "ch3_s22_A_001"
+        },
+        {
+          "text": "จับจุดอ่อนทางอารมณ์ ความรู้สึกของบอส",
+          "condition": "CHA >= 6",
+          "next": "ch3_s22_B_001"
+        },
+        {
+          "text": "ให้เต้เป็นคนจัดการกับบอส",
+          "next": "ch3_s22_C_001"
+        }
+      ]
+    },
+    {
+      "id": "ch3_s22_A_001",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "บอส ฟังพี่ให้ดีนะ",
+      "next": "ch3_s22_A_002"
+    },
+    {
+      "id": "ch3_s22_A_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ตอนนี้บอสฆ่าคนไปแล้ว 1 คน",
+      "next": "ch3_s22_A_003"
+    },
+    {
+      "id": "ch3_s22_A_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ลักพาตัวคนอีก 1 คน",
+      "next": "ch3_s22_A_004"
+    },
+    {
+      "id": "ch3_s22_A_004",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "หลักฐานมัดตัวแบบนี้",
+      "next": "ch3_s22_A_005"
+    },
+    {
+      "id": "ch3_s22_A_005",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ต่อให้บอสรอดออกไปได้ บอสก็จะเป็นอาชญากร",
+      "next": "ch3_s22_A_006"
+    },
+    {
+      "id": "ch3_s22_A_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ตำรวจจะไล่ล่าบอส แล้วบอสต้องหนีไปตลอดชีวิตนะ",
+      "next": "ch3_s22_A_007"
+    },
+    {
+      "id": "ch3_s22_A_007",
+      "type": "dialogue",
+      "bgm": "extremely_sad_music.mp3",
+      "sprite": "boss_angry",
+      "name": "บอส",
+      "text": "..",
+      "next": "ch3_s22_A_008"
+    },
+    {
+      "id": "ch3_s22_A_008",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แต่ถ้าบอสหยุดซะตอนนี้",
+      "next": "ch3_s22_A_009"
+    },
+    {
+      "id": "ch3_s22_A_009",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "บอสยังมีโอกาสมอบตัว แล้วก็รับโทษตามที่ควรจะได้รับนะ",
+      "next": "ch3_s22_A_010"
+    },
+    {
+      "id": "ch3_s22_A_010",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ตอนนี้พี่เต้เขากำลังเสียใจมากกับสิ่งที่บอสทำลงไป",
+      "next": "ch3_s22_A_011"
+    },
+    {
+      "id": "ch3_s22_A_011",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แล้วบอสอยากจะให้พีทต้องมาตายไปอีกคนเหรอ",
+      "next": "ch3_s22_A_012"
+    },
+    {
+      "id": "ch3_s22_A_012",
+      "type": "dialogue",
+      "sprite": "pete_cry",
+      "name": "พีท",
+      "text": "…",
+      "next": "ch3_s22_A_013"
+    },
+    {
+      "id": "ch3_s22_A_013",
+      "type": "dialogue",
+      "sprite": "boss_sad",
+      "name": "บอส",
+      "text": "ผมน่ะ….",
+      "next": "ch3_s22_A_014"
+    },
+    {
+      "id": "ch3_s22_A_014",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "ก็ไม่ได้อยากให้มันเป็นแบบนี้!!!",
+      "next": "ch3_s22_A_015"
+    },
+    {
+      "id": "ch3_s22_A_015",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "เชอรี่มันรักผม แล้วทำไม.. ต้องมาขัดขวางความรักของผมล่ะ!!",
+      "next": "ch3_s22_A_016"
+    },
+    {
+      "id": "ch3_s22_A_016",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s22_A_017"
+    },
+    {
+      "id": "ch3_s22_A_017",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่เต้อย่ายิงนะครับ",
+      "next": "ch3_s22_A_018"
+    },
+    {
+      "id": "ch3_s22_A_018",
+      "type": "dialogue",
+      "sprite": "tae_angry",
+      "name": "เต้",
+      "text": "…",
+      "next": "ch3_s22_A_019"
+    },
+    {
+      "id": "ch3_s22_A_019",
+      "type": "dialogue",
+      "sprite": "boss_sad",
+      "name": "เมฆ",
+      "text": "บอส.. วางมีดลงเถอะนะ…",
+      "next": "ch3_s22_J_001"
+    },
+    {
+      "id": "ch3_s22_B_001",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "บอส",
+      "next": "ch3_s22_B_002"
+    },
+    {
+      "id": "ch3_s22_B_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "บอสรักฝนใช่มั้ย",
+      "next": "ch3_s22_B_003"
+    },
+    {
+      "id": "ch3_s22_B_003",
+      "type": "dialogue",
+      "bgm": "extremely_sad_music.mp3",
+      "name": "บอส",
+      "text": "!?",
+      "next": "ch3_s22_B_004"
+    },
+    {
+      "id": "ch3_s22_B_004",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ถ้าความรักของบอสที่ต่อฝน เป็นเรื่องจริง",
+      "next": "ch3_s22_B_005"
+    },
+    {
+      "id": "ch3_s22_B_005",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "บอสอยากกลายเป็นฆาตกร ฆ่าคน ต่อหน้าฝนเหรอ",
+      "next": "ch3_s22_B_006"
+    },
+    {
+      "id": "ch3_s22_B_006",
+      "type": "dialogue",
+      "sprite": "pete_cry",
+      "name": "พีท",
+      "text": "…",
+      "next": "ch3_s22_B_007"
+    },
+    {
+      "id": "ch3_s22_B_007",
+      "type": "dialogue",
+      "sprite": "fon_shout_with_tears_student",
+      "name": "ฝน",
+      "text": "พี่บอส..",
+      "next": "ch3_s22_B_008"
+    },
+    {
+      "id": "ch3_s22_B_008",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ถึงหนูจะรู้สึกอึดอัดที่พี่พยายามจีบหนู",
+      "next": "ch3_s22_B_009"
+    },
+    {
+      "id": "ch3_s22_B_009",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "หนูก็ไม่เคยเกลียดพี่นะคะ!",
+      "next": "ch3_s22_B_010"
+    },
+    {
+      "id": "ch3_s22_B_010",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "แต่ถ้าพี่ฆ่าพีท หรือฆ่าใครอีก..",
+      "next": "ch3_s22_B_011"
+    },
+    {
+      "id": "ch3_s22_B_011",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "หนูจะไม่มีวันให้อภัยพี่เลย….",
+      "next": "ch3_s22_B_012"
+    },
+    {
+      "id": "ch3_s22_B_012",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "….",
+      "next": "ch3_s22_B_013"
+    },
+    {
+      "id": "ch3_s22_B_013",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "พี่แค่….",
+      "next": "ch3_s22_B_014"
+    },
+    {
+      "id": "ch3_s22_B_014",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "อยากได้รักที่สมหวังบ้าง…",
+      "next": "ch3_s22_B_015"
+    },
+    {
+      "id": "ch3_s22_B_015",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่เต้อย่ายิงนะครับ",
+      "next": "ch3_s22_B_016"
+    },
+    {
+      "id": "ch3_s22_B_016",
+      "type": "dialogue",
+      "sprite": "tae_angry",
+      "name": "เต้",
+      "text": "…",
+      "next": "ch3_s22_B_017"
+    },
+    {
+      "id": "ch3_s22_B_017",
+      "type": "dialogue",
+      "sprite": "boss_sad",
+      "name": "เมฆ",
+      "text": "บอส.. วางมีดลงเถอะนะ…",
+      "next": "ch3_s22_J_001"
+    },
+    {
+      "id": "ch3_s22_C_001",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "...",
+      "thought": true,
+      "next": "ch3_s22_C_002"
+    },
+    {
+      "id": "ch3_s22_C_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แต่มาพูดเอาตอนนี้ คงไม่ได้อะไรขึ้นมา",
+      "thought": true,
+      "next": "ch3_s22_C_003"
+    },
+    {
+      "id": "ch3_s22_C_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่เต้!! ยิงที่ขาเลย!!",
+      "next": "ch3_s22_C_004"
+    },
+    {
+      "id": "ch3_s22_C_004",
+      "type": "dialogue",
+      "bgm": "suspense_music.mp3",
+      "sprite": "tae_angry_hold_gun",
+      "name": "เต้",
+      "text": "!!??",
+      "next": "ch3_s22_C_005"
+    },
+    {
+      "id": "ch3_s22_C_005",
+      "type": "dialogue",
+      "sfx": "shoot.mp3",
+      "name": "",
+      "text": "",
+      "next": "ch3_s22_C_006"
+    },
+    {
+      "id": "ch3_s22_C_006",
+      "type": "dialogue",
+      "sprite": "boss_angry",
+      "name": "บอส",
+      "text": "!?",
+      "next": "ch3_s22_C_007"
+    },
+    {
+      "id": "ch3_s22_C_007",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "ม-แม่งเอ๊ย จะเอาใช่มั้ย!!??",
+      "next": "ch3_s22_C_008"
+    },
+    {
+      "id": "ch3_s22_C_008",
+      "type": "dialogue",
+      "sfx": "shoot_3_times.mp3",
+      "name": "",
+      "text": "",
+      "next": "ch3_s22_C_009"
+    },
+    {
+      "id": "ch3_s22_C_009",
+      "type": "dialogue",
+      "sprite": "pete_cry",
+      "name": "พีท",
+      "text": "อ๊ากกก!!!!!",
+      "next": "ch3_s22_C_010"
+    },
+    {
+      "id": "ch3_s22_C_010",
+      "type": "dialogue",
+      "sprite": "boss_dying",
+      "name": "บอส",
+      "text": "อึก..",
+      "next": "ch3_s22_C_011"
+    },
+    {
+      "id": "ch3_s22_C_011",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "เล่นทีเผลอเหรอ…",
+      "next": "ch3_s22_C_012"
+    },
+    {
+      "id": "ch3_s22_C_012",
+      "type": "dialogue",
+      "sprite": "tae_angry",
+      "name": "เต้",
+      "text": "…",
+      "next": "ch3_s22_C_013"
+    },
+    {
+      "id": "ch3_s22_C_013",
+      "type": "dialogue",
+      "sprite": "fon_shout_with_tears_student",
+      "name": "ฝน",
+      "text": "พี่เต้!!!",
+      "next": "ch3_s22_C_014"
+    },
+    {
+      "id": "ch3_s22_C_014",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "สุดท้ายก็ต้องจบแบบนี้สินะ",
+      "thought": true,
+      "next": "ch3_s22_C_015"
+    },
+    {
+      "id": "ch3_s22_C_015",
+      "type": "dialogue",
+      "sprite": "boss_dying",
+      "name": "บอส",
+      "text": "เชอรี่… ขอโทษนะ… พีท… ฝนก็ด้วย… ขอโทษ….",
+      "next": "ch3_s22_C_016"
+    },
+    {
+      "id": "ch3_s22_C_016",
+      "type": "dialogue",
+      "sprite": "tae_angry_with_tears",
+      "name": "เต้",
+      "text": "พ่อชดใช้ให้แล้วนะลูก..",
+      "next": "ch3_s23C_001"
+    },
+    {
+      "id": "ch3_s22_J_001",
+      "type": "dialogue",
+      "bgm": "sad_music.mp3",
+      "sprite": "boss_sad",
+      "name": "บอส",
+      "text": "…",
+      "next": "ch3_s22_J_002"
+    },
+    {
+      "id": "ch3_s22_J_002",
+      "type": "dialogue",
+      "sfx": "knife_drop_onto_floor.mp3",
+      "name": "",
+      "text": "",
+      "next": "ch3_s22_J_003"
+    },
+    {
+      "id": "ch3_s22_J_003",
+      "type": "dialogue",
+      "sprite": "pete_cry",
+      "name": "พีท",
+      "text": "!?",
+      "next": "ch3_s22_J_004"
+    },
+    {
+      "id": "ch3_s22_J_004",
+      "type": "dialogue",
+      "sprite": "boss_sad",
+      "name": "บอส",
+      "text": "แม่งเอ๊ย….",
+      "next": "ch3_s22_J_005"
+    },
+    {
+      "id": "ch3_s22_J_005",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "…",
+      "next": "ch3_s22_J_006"
+    },
+    {
+      "id": "ch3_s22_J_006",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "พีท ฝน ขอโทษด้วยนะ",
+      "next": "ch3_s22_J_007"
+    },
+    {
+      "id": "ch3_s22_J_007",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "พี่นี่ โง่จริงๆ",
+      "next": "ch3_s22_J_008"
+    },
+    {
+      "id": "ch3_s22_J_008",
+      "type": "dialogue",
+      "name": "บอส",
+      "text": "ขอโทษด้วยนะ.. เชอรี่…",
+      "next": "ch3_s22_J_009"
+    },
+    {
+      "id": "ch3_s22_J_009",
+      "type": "dialogue",
+      "sprite": "tae_angry",
+      "name": "เต้",
+      "text": "ไปสำนึกต่อในคุกก็แล้วกัน",
+      "next": "ch3_s22_J_010"
+    },
+    {
+      "id": "ch3_s22_J_010",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "สุดท้ายก็.. ยอมสินะ..",
+      "thought": true,
+      "next": "ch3_s22_J_011"
+    },
+    {
+      "id": "ch3_s22_J_011",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s22_J_012"
+    },
+    {
+      "id": "ch3_s22_J_012",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "น้องเชอรี่…",
+      "thought": true,
+      "next": "ch3_s22_J_013"
+    },
+    {
+      "id": "ch3_s22_J_013",
+      "type": "dialogue",
+      "sprite": "fon_upset_student",
+      "name": "ฝน",
+      "text": "พี่เมฆ.. พี่บอสเขา..",
+      "next": "ch3_s22_J_014"
+    },
+    {
+      "id": "ch3_s22_J_014",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s22_J_015"
+    },
+    {
+      "id": "ch3_s22_J_015",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อืม ก็ต้องรับโทษในสิ่งที่.. ทำไว้นั่นแหละ",
+      "next": "ch3_s22_J_016"
+    },
+    {
+      "id": "ch3_s22_J_016",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พีท ยังไหวใช่มั้ย",
+      "next": "ch3_s22_J_017"
+    },
+    {
+      "id": "ch3_s22_J_017",
+      "type": "dialogue",
+      "sprite": "pete_sad",
+      "name": "พีท",
+      "text": "ครับ..",
+      "next": "ch3_s22_J_018"
+    },
+    {
+      "id": "ch3_s22_J_018",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ทุกคนครับ เราออกจากที่นี่กันก่อนเถอะ",
+      "next": "ch3_s23AB_001"
+    },
+    {
+      "id": "ch3_s23AB_001",
+      "type": "dialogue",
+      "bg": "scene_3_23_astronomy_club_night_with_cops",
+      "bgm": "music_with_hope.mp3",
+      "sprite": "tana_serious",
+      "name": "สารวัตรธนา",
+      "text": "…",
+      "next": "ch3_s23AB_002"
+    },
+    {
+      "id": "ch3_s23AB_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s23AB_003"
+    },
+    {
+      "id": "ch3_s23AB_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "สารวัตร ผมไม่มีอะไรจะแก้ตัวครับ ผมขอโทษทุกอย่าง เงินค่าจ้างเดี๋ยวผมคืนให้-",
+      "next": "ch3_s23AB_004"
+    },
+    {
+      "id": "ch3_s23AB_004",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "เรื่องที่บุกรุกสถานที่โดยไม่ได้รับอนุญาต และทุกอย่างที่คุณกระทำโดยมิชอบในช่วง 2 วันที่ผ่านมา ผมจะหลับหูหลับตาให้ละกันนะ",
+      "next": "ch3_s23AB_005"
+    },
+    {
+      "id": "ch3_s23AB_005",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "เพราะสุดท้าย.. คุณทำได้ดีมาก",
+      "next": "ch3_s23AB_006"
+    },
+    {
+      "id": "ch3_s23AB_006",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "ค่าจ้างคุณเก็บไว้นั่นแหละ",
+      "next": "ch3_s23AB_007"
+    },
+    {
+      "id": "ch3_s23AB_007",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "แต่..",
+      "next": "ch3_s23AB_008"
+    },
+    {
+      "id": "ch3_s23AB_008",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "คุณต้องอธิบายให้ได้ว่า..",
+      "next": "ch3_s23AB_009"
+    },
+    {
+      "id": "ch3_s23AB_009",
+      "type": "dialogue",
+      "sprite": "tana_shout",
+      "name": "สารวัตรธนา",
+      "text": "ทำไมลูกผมถึงอยู่กับคุณ!!?????",
+      "next": "ch3_s23AB_010"
+    },
+    {
+      "id": "ch3_s23AB_010",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "ผมก็สงสัยว่าทำไมติดต่อลูกไม่ได้-",
+      "next": "ch3_s23AB_011"
+    },
+    {
+      "id": "ch3_s23AB_011",
+      "type": "dialogue",
+      "sprite": "fon_smile_student",
+      "name": "ฝน",
+      "text": "หนูสบายดีค่ะพ่อ!",
+      "next": "ch3_s23AB_012"
+    },
+    {
+      "id": "ch3_s23AB_012",
+      "type": "dialogue",
+      "sprite": "tana_serious",
+      "name": "สารวัตรธนา",
+      "text": "..",
+      "next": "ch3_s23AB_013"
+    },
+    {
+      "id": "ch3_s23AB_013",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "ฝน พ่อไม่ตลกด้วยนะ",
+      "next": "ch3_s23AB_014"
+    },
+    {
+      "id": "ch3_s23AB_014",
+      "type": "dialogue",
+      "sprite": "fon_upset_student",
+      "name": "ฝน",
+      "text": "หนู.. ขอโทษค่ะ",
+      "next": "ch3_s23AB_015"
+    },
+    {
+      "id": "ch3_s23AB_015",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "อย่าโกรธพี่เมฆเลยนะคะ หนูเป็นคนขอไปด้วยกันกับเขาเอง",
+      "next": "ch3_s23AB_016"
+    },
+    {
+      "id": "ch3_s23AB_016",
+      "type": "dialogue",
+      "sprite": "tana_serious",
+      "name": "สารวัตรธนา",
+      "text": "ไม่ง่ายแบบนั้นหรอก",
+      "next": "ch3_s23AB_017"
+    },
+    {
+      "id": "ch3_s23AB_017",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "..",
+      "next": "ch3_s23AB_018"
+    },
+    {
+      "id": "ch3_s23AB_018",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "เดี๋ยวคุณกับผม ต้องเคลียร์กันทีหลัง ผมต้องพาตัวน้องพีทไปหาครอบครัว แล้วต้องพาผู้ต้องหาไปที่ สน. ก่อน ไว้เจอกัน",
+      "next": "ch3_s23AB_019"
+    },
+    {
+      "id": "ch3_s23AB_019",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s23AB_020"
+    },
+    {
+      "id": "ch3_s23AB_020",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "งานงอก…",
+      "thought": true,
+      "next": "ch3_s23AB_021"
+    },
+    {
+      "id": "ch3_s23AB_021",
+      "type": "dialogue",
+      "sprite": "fon_smile_student",
+      "name": "ฝน",
+      "text": "ไม่ต้องห่วงพี่ค่ะ เดี๋ยวหนูจัดการให้เองค่ะ!",
+      "next": "ch3_s23AB_022"
+    },
+    {
+      "id": "ch3_s23AB_022",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เอ่อ.. ขอบใจนะ",
+      "next": "ch3_s23AB_023"
+    },
+    {
+      "id": "ch3_s23AB_023",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แต่พี่.. ก็มีส่วนผิดจริงๆ นั่นแหละ ที่พาฝนไปเสี่ยงที่ห้องใต้ดิน",
+      "next": "ch3_s23AB_024"
+    },
+    {
+      "id": "ch3_s23AB_024",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "หายห่วงค่ะๆๆๆ อย่าเครียดไปเลยค่ะ",
+      "next": "ch3_s23AB_025"
+    },
+    {
+      "id": "ch3_s23AB_025",
+      "type": "dialogue",
+      "sprite": "fon_upset_student",
+      "name": "ฝน",
+      "text": "แต่หนู.. สงสารพี่เชอรี่จัง… พีทก็ด้วย…",
+      "next": "ch3_s23AB_026"
+    },
+    {
+      "id": "ch3_s23AB_026",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่ก็รู้สึกแบบนั้นเหมือนกัน.. สงสารพี่เต้ชะมัด",
+      "next": "ch3_s23AB_027"
+    },
+    {
+      "id": "ch3_s23AB_027",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แต่ว่ากันตามตรง มันมี.. หลายอย่างที่ไม่สมเหตุสมผลอยู่นะ…",
+      "next": "ch3_s23AB_028"
+    },
+    {
+      "id": "ch3_s23AB_028",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "เรื่องไหนเหรอคะ?",
+      "next": "ch3_s23AB_029"
+    },
+    {
+      "id": "ch3_s23AB_029",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ถ้าคิดๆ ดู.. ทำไมบอสต้องทำถึงขนาดนี้ด้วย..",
+      "next": "ch3_s23AB_030"
+    },
+    {
+      "id": "ch3_s23AB_030",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "สรุปแล้วก็คือเพราะน้องเชอรี่จะแย่งสร้อย แล้วร่วมมือกับพีท… แค่โดนแย่งของขวัญที่จะให้คนที่ชอบ ถึงกับต้องฆ่ากันเลยเหรอ",
+      "next": "ch3_s23AB_031"
+    },
+    {
+      "id": "ch3_s23AB_031",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "..",
+      "next": "ch3_s23AB_032"
+    },
+    {
+      "id": "ch3_s23AB_032",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "หนูคิดว่า.. ส่วนหนึ่งน่าจะเพราะครอบครัวพี่บอสค่ะ…",
+      "next": "ch3_s23AB_033"
+    },
+    {
+      "id": "ch3_s23AB_033",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "?",
+      "next": "ch3_s23AB_034"
+    },
+    {
+      "id": "ch3_s23AB_034",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ดูจากครอบครัวเขา… เขาน่าจะถูกปลูกฝังให้เป็นคนที่อยากได้อะไรก็ต้องได้น่ะค่ะ",
+      "next": "ch3_s23AB_035"
+    },
+    {
+      "id": "ch3_s23AB_035",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "สุดท้าย นิสัยแบบนั้นก็กัดกินเขา",
+      "next": "ch3_s23AB_036"
+    },
+    {
+      "id": "ch3_s23AB_036",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ฝนรู้จักครอบครัวบอสด้วยเหรอ",
+      "next": "ch3_s23AB_037"
+    },
+    {
+      "id": "ch3_s23AB_037",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ค่ะ.. จริงๆ คนรู้จักกับเพื่อนเขา ก็รู้กันหลายคนค่ะ…",
+      "next": "ch3_s23AB_038"
+    },
+    {
+      "id": "ch3_s23AB_038",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "เขาเป็นลูกของอธิการบดี มหาลัยนี้ค่ะ",
+      "next": "ch3_s23AB_039"
+    },
+    {
+      "id": "ch3_s23AB_039",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!!??",
+      "next": "ch3_s23AB_040"
+    },
+    {
+      "id": "ch3_s23AB_040",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "จ-จริงเหรอ!?",
+      "next": "ch3_s23AB_041"
+    },
+    {
+      "id": "ch3_s23AB_041",
+      "type": "dialogue",
+      "sprite": "tae_serious",
+      "name": "เต้",
+      "text": "เมฆ",
+      "next": "ch3_s23AB_042"
+    },
+    {
+      "id": "ch3_s23AB_042",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ครับ พี่เต้",
+      "next": "ch3_s23AB_043"
+    },
+    {
+      "id": "ch3_s23AB_043",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พี่ขอบใจเมฆมากนะ",
+      "next": "ch3_s23AB_044"
+    },
+    {
+      "id": "ch3_s23AB_044",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "สำหรับทุกอย่างเลย",
+      "next": "ch3_s23AB_045"
+    },
+    {
+      "id": "ch3_s23AB_045",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ไม่เลยพี่ๆ จริงๆ..",
+      "next": "ch3_s23AB_046"
+    },
+    {
+      "id": "ch3_s23AB_046",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "เอ๊ะ",
+      "next": "ch3_s23AB_047"
+    },
+    {
+      "id": "ch3_s23AB_047",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่เต้ครับ",
+      "next": "ch3_s23AB_048"
+    },
+    {
+      "id": "ch3_s23AB_048",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "หืม ว่าไง",
+      "next": "ch3_s23AB_049"
+    },
+    {
+      "id": "ch3_s23AB_049",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พอดีเมื่อกี๊คุยกันกับฝน ผมสงสัยเรื่องแรงจูงใจของบอสเรื่องนึงแล้ว ว่าโดนแย่งของขวัญ แต่ถึงกับต้องฆ่าคน",
+      "next": "ch3_s23AB_050"
+    },
+    {
+      "id": "ch3_s23AB_050",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แต่พอผมนึกย้อนไป…",
+      "next": "ch3_s23AB_051"
+    },
+    {
+      "id": "ch3_s23AB_051",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ทำไมบอสถึงโผล่มาที่ตึกชมรมด้วย",
+      "next": "ch3_s23AB_052"
+    },
+    {
+      "id": "ch3_s23AB_052",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "!?",
+      "next": "ch3_s23AB_053"
+    },
+    {
+      "id": "ch3_s23AB_053",
+      "type": "dialogue",
+      "sprite": "fon_upset_student",
+      "name": "ฝน",
+      "text": "..",
+      "next": "ch3_s23AB_054"
+    },
+    {
+      "id": "ch3_s23AB_054",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ลึกๆ แล้ว..",
+      "next": "ch3_s23AB_055"
+    },
+    {
+      "id": "ch3_s23AB_055",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "เขาอาจจะอยากให้พวกเรา… รู้ก็ได้นะคะ",
+      "next": "ch3_s23AB_056"
+    },
+    {
+      "id": "ch3_s23AB_056",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s23AB_057"
+    },
+    {
+      "id": "ch3_s23AB_057",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "เขาคงรู้สึกผิดกับสิ่งที่ทำค่ะ",
+      "next": "ch3_s23AB_058"
+    },
+    {
+      "id": "ch3_s23AB_058",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s23AB_059"
+    },
+    {
+      "id": "ch3_s23AB_059",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ก็นะ…",
+      "next": "ch3_s23AB_060"
+    },
+    {
+      "id": "ch3_s23AB_060",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "จริงสิ ฝน!",
+      "next": "ch3_s23AB_061"
+    },
+    {
+      "id": "ch3_s23AB_061",
+      "type": "dialogue",
+      "sprite": "moon_necklace",
+      "name": "ฝน",
+      "text": "!?",
+      "next": "ch3_s23AB_062"
+    },
+    {
+      "id": "ch3_s23AB_062",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อยากเก็บไว้มั้ย มีคนอุตส่าห์ทำให้เลยนะ",
+      "next": "ch3_s23AB_063"
+    },
+    {
+      "id": "ch3_s23AB_063",
+      "type": "dialogue",
+      "sprite": "fon_smile_student",
+      "name": "ฝน",
+      "text": "หืมม พี่เมฆ จะเคลมหนูแทนพี่บอสเหรอคะ???",
+      "next": "ch3_s23AB_064"
+    },
+    {
+      "id": "ch3_s23AB_064",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ด-เดี๋ยวสิ ไม่ใช่แบบนั้น!",
+      "next": "ch3_s23AB_065"
+    },
+    {
+      "id": "ch3_s23AB_065",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ฮ่าๆๆ",
+      "next": "ch3_s23AB_066"
+    },
+    {
+      "id": "ch3_s23AB_066",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "หยอกเล่นค่ะ!",
+      "next": "ch3_s23AB_067"
+    },
+    {
+      "id": "ch3_s23AB_067",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "..",
+      "next": "ch3_s23AB_068"
+    },
+    {
+      "id": "ch3_s23AB_068",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ได้ค่ะ หนูจะเก็บไว้ค่ะ",
+      "next": "ch3_s23AB_069"
+    },
+    {
+      "id": "ch3_s23AB_069",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อืม",
+      "next": "ch3_s23AB_070"
+    },
+    {
+      "id": "ch3_s23AB_070",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ปัญหากับปมต่างๆ จบลงได้ในคืนนี้.. ถือว่าดีแล้วล่ะนะ",
+      "thought": true,
+      "next": "ch3_end_justice"
+    },
+    {
+      "id": "ch3_s23C_001",
+      "type": "dialogue",
+      "bg": "scene_3_23_astronomy_club_night_with_cops",
+      "bgm": "sad_music.mp3",
+      "sprite": "tana_serious",
+      "name": "สารวัตรธนา",
+      "text": "…",
+      "next": "ch3_s23C_002"
+    },
+    {
+      "id": "ch3_s23C_002",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "next": "ch3_s23C_003"
+    },
+    {
+      "id": "ch3_s23C_003",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "สารวัตร ผมไม่มีอะไรจะแก้ตัวครับ ผมขอโทษทุกอย่าง เงินค่าจ้างเดี๋ยวผมคืนให้-",
+      "next": "ch3_s23C_004"
+    },
+    {
+      "id": "ch3_s23C_004",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "ไม่ต้องคืนหรอก คดีก็คลี่คลายแล้วล่ะนะ",
+      "next": "ch3_s23C_005"
+    },
+    {
+      "id": "ch3_s23C_005",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "แต่.. สุดท้ายคนที่ผมต้องจับ ดันเป็นพ่อของเหยื่อซะได้…",
+      "next": "ch3_s23C_006"
+    },
+    {
+      "id": "ch3_s23C_006",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "…",
+      "thought": true,
+      "next": "ch3_s23C_007"
+    },
+    {
+      "id": "ch3_s23C_007",
+      "type": "dialogue",
+      "sprite": "tae_handcuffed",
+      "name": "เต้",
+      "text": "สารวัตรครับ",
+      "next": "ch3_s23C_008"
+    },
+    {
+      "id": "ch3_s23C_008",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s23C_009"
+    },
+    {
+      "id": "ch3_s23C_009",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ผมขอคุยกับเมฆแป๊บนึงได้มั้ยครับ",
+      "next": "ch3_s23C_010"
+    },
+    {
+      "id": "ch3_s23C_010",
+      "type": "dialogue",
+      "sprite": "tana_serious",
+      "name": "สารวัตรธนา",
+      "text": "เอาสิ",
+      "next": "ch3_s23C_011"
+    },
+    {
+      "id": "ch3_s23C_011",
+      "type": "dialogue",
+      "sprite": "tae_handcuffed",
+      "name": "เต้",
+      "text": "..",
+      "next": "ch3_s23C_012"
+    },
+    {
+      "id": "ch3_s23C_012",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ขอคุยส่วนตัวน่ะครับ สารวัตร",
+      "next": "ch3_s23C_013"
+    },
+    {
+      "id": "ch3_s23C_013",
+      "type": "dialogue",
+      "sprite": "tana_serious",
+      "name": "สารวัตรธนา",
+      "text": "..",
+      "next": "ch3_s23C_014"
+    },
+    {
+      "id": "ch3_s23C_014",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "อย่าลูกไม้ล่ะ ผมจับตาดูอยู่นะ",
+      "next": "ch3_s23C_015"
+    },
+    {
+      "id": "ch3_s23C_015",
+      "type": "dialogue",
+      "sprite": "tae_handcuffed",
+      "name": "เต้",
+      "text": "เมฆ..",
+      "next": "ch3_s23C_016"
+    },
+    {
+      "id": "ch3_s23C_016",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "เชอรี่เขา.. จะดีใจใช่มั้ย ที่พี่ล้างแค้นให้เขาแล้ว",
+      "next": "ch3_s23C_017"
+    },
+    {
+      "id": "ch3_s23C_017",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ผมเอง..",
+      "next": "ch3_s23C_018"
+    },
+    {
+      "id": "ch3_s23C_018",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ก็ไม่มีทางรู้เหมือนกันครับ ว่าเชอรี่เขาจะดีใจมั้ย",
+      "next": "ch3_s23C_019"
+    },
+    {
+      "id": "ch3_s23C_019",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แต่อย่างน้อยเชอรี่.. เขาก็ได้รับรู้แล้วครับ",
+      "next": "ch3_s23C_020"
+    },
+    {
+      "id": "ch3_s23C_020",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "อืม.. แค่นั้นก็พอแล้วล่ะ",
+      "next": "ch3_s23C_021"
+    },
+    {
+      "id": "ch3_s23C_021",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "อ้อ ที่พี่จะมาคุยกับเมฆจริงๆ น่ะ",
+      "next": "ch3_s23C_022"
+    },
+    {
+      "id": "ch3_s23C_022",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พี่แค่อยากจะบอกว่า.. เรื่องในห้องใต้ดิน ไม่ต้องกังวลนะ",
+      "next": "ch3_s23C_023"
+    },
+    {
+      "id": "ch3_s23C_023",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s23C_024"
+    },
+    {
+      "id": "ch3_s23C_024",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ที่เมฆช่วยให้พี่จัดการมันได้น่ะ พี่ไม่บอกใครหรอก",
+      "next": "ch3_s23C_025"
+    },
+    {
+      "id": "ch3_s23C_025",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "พี่ตั้งใจจะรับผิดทั้งหมดอยู่แล้ว",
+      "next": "ch3_s23C_026"
+    },
+    {
+      "id": "ch3_s23C_026",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "..",
+      "next": "ch3_s23C_027"
+    },
+    {
+      "id": "ch3_s23C_027",
+      "type": "dialogue",
+      "name": "เต้",
+      "text": "ดูแลน้องฝนดีๆ ด้วยล่ะ",
+      "next": "ch3_s23C_028"
+    },
+    {
+      "id": "ch3_s23C_028",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s23C_029"
+    },
+    {
+      "id": "ch3_s23C_029",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ครับ…",
+      "next": "ch3_s23C_030"
+    },
+    {
+      "id": "ch3_s23C_030",
+      "type": "dialogue",
+      "sprite": "fon_upset_student",
+      "name": "ฝน",
+      "text": "..",
+      "next": "ch3_s23C_031"
+    },
+    {
+      "id": "ch3_s23C_031",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "พี่เมฆ",
+      "next": "ch3_s23C_032"
+    },
+    {
+      "id": "ch3_s23C_032",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "เราทำถูกแล้วใช่มั้ยคะ..",
+      "next": "ch3_s23C_033"
+    },
+    {
+      "id": "ch3_s23C_033",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "พี่แค่.. ต้องระวังไม่ให้เหตุการณ์มันบานปลายน่ะ",
+      "next": "ch3_s23C_034"
+    },
+    {
+      "id": "ch3_s23C_034",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "..",
+      "next": "ch3_s23C_035"
+    },
+    {
+      "id": "ch3_s23C_035",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "ค่ะ..",
+      "next": "ch3_s23C_036"
+    },
+    {
+      "id": "ch3_s23C_036",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "จริงสิ ฝน!",
+      "next": "ch3_s23C_037"
+    },
+    {
+      "id": "ch3_s23C_037",
+      "type": "dialogue",
+      "sprite": "moon_necklace",
+      "name": "ฝน",
+      "text": "!?",
+      "next": "ch3_s23C_038"
+    },
+    {
+      "id": "ch3_s23C_038",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "อยากเก็บไว้มั้ย มีคนอุตส่าห์ทำให้เลยนะ",
+      "next": "ch3_s23C_039"
+    },
+    {
+      "id": "ch3_s23C_039",
+      "type": "dialogue",
+      "sprite": "fon_upset_student",
+      "name": "ฝน",
+      "text": "..",
+      "next": "ch3_s23C_040"
+    },
+    {
+      "id": "ch3_s23C_040",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "หนูขอ.. ฝากไว้ที่พี่ดีกว่าค่ะ..",
+      "next": "ch3_s23C_041"
+    },
+    {
+      "id": "ch3_s23C_041",
+      "type": "dialogue",
+      "name": "ฝน",
+      "text": "หนูรู้สึกผิดกับพี่บอส…",
+      "next": "ch3_s23C_042"
+    },
+    {
+      "id": "ch3_s23C_042",
+      "type": "dialogue",
+      "sprite": "tana_serious",
+      "name": "สารวัตรธนา",
+      "text": "..",
+      "next": "ch3_s23C_043"
+    },
+    {
+      "id": "ch3_s23C_043",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "เมฆ เดี๋ยวคุณต้องมาเคลียร์กับผมนะ ว่าทำไมลูกผมถึงมาอยู่กับคุณได้",
+      "next": "ch3_s23C_044"
+    },
+    {
+      "id": "ch3_s23C_044",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "!?",
+      "next": "ch3_s23C_045"
+    },
+    {
+      "id": "ch3_s23C_045",
+      "type": "dialogue",
+      "name": "สารวัตรธนา",
+      "text": "ผมต้องพาตัวน้องพีทไปหาครอบครัว แล้วต้องพาผู้ต้องหาไปที่ สน. ก่อน ไว้เจอกัน",
+      "next": "ch3_s23C_046"
+    },
+    {
+      "id": "ch3_s23C_046",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "..",
+      "next": "ch3_s23C_047"
+    },
+    {
+      "id": "ch3_s23C_047",
+      "type": "dialogue",
+      "sprite": "fon_upset_student",
+      "name": "ฝน",
+      "text": "ไว้เจอกันนะคะ พี่เมฆ",
+      "next": "ch3_s23C_048"
+    },
+    {
+      "id": "ch3_s23C_048",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ได้สิ",
+      "next": "ch3_s23C_049"
+    },
+    {
+      "id": "ch3_s23C_049",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "ปัญหากับปมต่างๆ จบลงได้ในคืนนี้.. แต่ว่า..",
+      "thought": true,
+      "next": "ch3_s23C_050"
+    },
+    {
+      "id": "ch3_s23C_050",
+      "type": "dialogue",
+      "name": "เมฆ",
+      "text": "แบบนี้มันถูกต้องแล้วรึเปล่านะ…",
+      "thought": true,
+      "next": "ch3_end_bloody"
+    },
+    {
+      "id": "ch3_end_justice",
+      "type": "end",
+      "bg": "justice_route",
+      "bgm": "",
+      "name": "",
+      "text": "",
+      "next": ""
+    },
+    {
+      "id": "ch3_end_bloody",
+      "type": "end",
+      "bg": "bloody_route",
+      "bgm": "",
+      "name": "",
+      "text": "",
+      "next": ""
+    }
   ]
 }
