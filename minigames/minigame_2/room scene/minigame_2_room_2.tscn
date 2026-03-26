@@ -1,0 +1,160 @@
+[gd_scene load_steps=27 format=3 uid="uid://t4xiasd4bpc2"]
+
+[ext_resource type="Texture2D" uid="uid://curaudblvmvw5" path="res://minigames/minigame_2/art_room2/room2.png" id="1_gxxiq"]
+[ext_resource type="PackedScene" uid="uid://bwbtuiqc531ng" path="res://minigames/minigame_2/scene/player.tscn" id="2_xq486"]
+[ext_resource type="PackedScene" uid="uid://cddo0ywqpsbtu" path="res://minigames/minigame_2/scene/galaxy.tscn" id="3_40cil"]
+[ext_resource type="Texture2D" uid="uid://bl1misf158ekh" path="res://minigames/minigame_2/art_room2/box top.png" id="3_xq486"]
+[ext_resource type="Texture2D" uid="uid://c7f8l7toicmwi" path="res://minigames/minigame_2/art_room2/lamp.png" id="4_gq70g"]
+[ext_resource type="Texture2D" uid="uid://3n557i21ev0v" path="res://minigames/minigame_2/art_room2/galaxy top.png" id="4_y6u8y"]
+[ext_resource type="Texture2D" uid="uid://djjy0db6fc5vj" path="res://minigames/minigame_2/art_room2/two box.png" id="5_40cil"]
+[ext_resource type="PackedScene" uid="uid://c4ske5qexui7d" path="res://minigames/minigame_2/scene/file.tscn" id="8_wbi2m"]
+[ext_resource type="PackedScene" uid="uid://cxi6pug4vb0b2" path="res://minigames/minigame_2/scene/shirt.tscn" id="9_2junf"]
+[ext_resource type="PackedScene" uid="uid://bsebmserdf24s" path="res://minigames/minigame_2/scene/chest.tscn" id="10_x011u"]
+[ext_resource type="PackedScene" uid="uid://6yw11116kwo2" path="res://minigames/minigame_2/scene/trace.tscn" id="11_hutva"]
+[ext_resource type="AudioStream" uid="uid://buebjx1e4h47t" path="res://minigames/minigame_2/sound/room 2 bgm.mp3" id="12_eio16"]
+[ext_resource type="PackedScene" uid="uid://bev7f5y31u5re" path="res://minigames/minigame_2/scene/game_ui.tscn" id="13_sey0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0ryq"]
+size = Vector2(234, 195.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq70g"]
+size = Vector2(22, 461)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40cil"]
+size = Vector2(921, 115.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6u8y"]
+size = Vector2(80, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbi2m"]
+size = Vector2(1134.5, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2junf"]
+size = Vector2(68, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x011u"]
+size = Vector2(85.5, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hutva"]
+size = Vector2(605, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eio16"]
+size = Vector2(26.5, 513.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sey0g"]
+size = Vector2(88, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjjsn"]
+size = Vector2(82, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80bgj"]
+size = Vector2(50, 46.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8hrg"]
+size = Vector2(137, 8)
+
+[node name="minigame2_room2" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(577.50006, 324.75)
+scale = Vector2(0.60052085, 0.60787034)
+texture = ExtResource("1_gxxiq")
+
+[node name="InteractableItem" parent="." instance=ExtResource("3_40cil")]
+position = Vector2(551, 310)
+
+[node name="InteractableItem3" parent="." instance=ExtResource("9_2junf")]
+position = Vector2(62, 526)
+
+[node name="InteractableItem4" parent="." instance=ExtResource("10_x011u")]
+position = Vector2(1040, 158)
+
+[node name="InteractableItem5" parent="." instance=ExtResource("11_hutva")]
+position = Vector2(260, 170)
+
+[node name="player" parent="." instance=ExtResource("2_xq486")]
+position = Vector2(1087, 392)
+
+[node name="galaxy top" type="Sprite2D" parent="."]
+position = Vector2(547.5, 303.5)
+scale = Vector2(0.47135416, 0.51574075)
+texture = ExtResource("4_y6u8y")
+
+[node name="boxtop" type="Sprite2D" parent="."]
+position = Vector2(578.00006, 324.99997)
+scale = Vector2(0.6020833, 0.60370374)
+texture = ExtResource("3_xq486")
+
+[node name="lamp" type="Sprite2D" parent="."]
+position = Vector2(577.5, 325.50003)
+scale = Vector2(0.6005208, 0.6027778)
+texture = ExtResource("4_gq70g")
+
+[node name="two box" type="Sprite2D" parent="."]
+position = Vector2(578.5, 324)
+scale = Vector2(0.6015625, 0.59999996)
+texture = ExtResource("5_40cil")
+
+[node name="InteractableItem2" parent="." instance=ExtResource("8_wbi2m")]
+position = Vector2(274, 356)
+
+[node name="wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2(116, 93.75)
+shape = SubResource("RectangleShape2D_j0ryq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall"]
+position = Vector2(12, 420.5)
+shape = SubResource("RectangleShape2D_gq70g")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="wall"]
+position = Vector2(694.5, 55.25)
+shape = SubResource("RectangleShape2D_40cil")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="wall"]
+position = Vector2(79, 272.5)
+shape = SubResource("RectangleShape2D_y6u8y")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="wall"]
+position = Vector2(587.75, 633)
+shape = SubResource("RectangleShape2D_wbi2m")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="wall"]
+position = Vector2(776, 373)
+shape = SubResource("RectangleShape2D_2junf")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="wall"]
+position = Vector2(853.25, 361.5)
+shape = SubResource("RectangleShape2D_x011u")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="wall"]
+position = Vector2(701.5, 149.5)
+shape = SubResource("RectangleShape2D_hutva")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="wall"]
+position = Vector2(1142.75, 355.25)
+shape = SubResource("RectangleShape2D_eio16")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="wall"]
+position = Vector2(387, 391)
+shape = SubResource("RectangleShape2D_sey0g")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="wall"]
+position = Vector2(304, 393.5)
+shape = SubResource("RectangleShape2D_wjjsn")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="wall"]
+position = Vector2(250, 394.875)
+shape = SubResource("RectangleShape2D_80bgj")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="wall"]
+position = Vector2(340, 602)
+shape = SubResource("RectangleShape2D_t8hrg")
+
+[node name="bg_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_eio16")
+volume_db = -11.107
+autoplay = true
+
+[node name="GameUI" parent="." instance=ExtResource("13_sey0g")]

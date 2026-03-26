@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxi6pug4vb0b2"]
+
+[ext_resource type="PackedScene" uid="uid://c3adr3i3gg3qp" path="res://minigames/minigame_2/scene/table.tscn" id="1_2c3bx"]
+[ext_resource type="Texture2D" uid="uid://cbcx04r12nn2g" path="res://minigames/minigame_2/art_room2/shirt.png" id="2_6uo1e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyt34"]
+size = Vector2(55, 58)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5eabd"]
+a = Vector2(108, 12)
+b = Vector2(100, -11)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_e1pbp"]
+a = Vector2(-16, 24)
+b = Vector2(-1, -4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcneo"]
+size = Vector2(2, 2)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_105ub"]
+a = Vector2(22, 24)
+b = Vector2(23, 24)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mbeny"]
+a = Vector2(25, 18)
+b = Vector2(25, 18)
+
+[node name="InteractableItem" instance=ExtResource("1_2c3bx")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(371.99997, -152)
+texture = ExtResource("2_6uo1e")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(25.5, 18)
+shape = SubResource("RectangleShape2D_uyt34")
+
+[node name="CollisionShape2D2" parent="." index="2"]
+position = Vector2(-64, 10)
+shape = SubResource("SegmentShape2D_5eabd")
+
+[node name="CollisionShape2D3" parent="." index="3"]
+position = Vector2(22, -1)
+shape = SubResource("SegmentShape2D_e1pbp")
+
+[node name="DialogText" parent="DialogUI" index="2"]
+text = "มีเสื้อชมรมตัวนึง หลงอยู่ในห้องเก็บของเหรอเนี่ย…"
+
+[node name="CollisionShape2D" parent="hit" index="0"]
+position = Vector2(24, 16)
+shape = SubResource("RectangleShape2D_jcneo")
+
+[node name="CollisionShape2D2" parent="hit" index="1"]
+shape = SubResource("SegmentShape2D_105ub")
+
+[node name="CollisionShape2D3" parent="hit" index="2"]
+shape = SubResource("SegmentShape2D_mbeny")

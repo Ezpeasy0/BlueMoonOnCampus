@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://buebjx1e4h47t"
+path="res://.godot/imported/room 2 bgm.mp3-4ab485417b6234049ca14171d366a6b7.mp3str"
+
+[deps]
+
+source_file="res://minigames/minigame_2/sound/room 2 bgm.mp3"
+dest_files=["res://.godot/imported/room 2 bgm.mp3-4ab485417b6234049ca14171d366a6b7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

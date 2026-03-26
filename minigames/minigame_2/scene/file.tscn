@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4ske5qexui7d"]
+
+[ext_resource type="PackedScene" uid="uid://c3adr3i3gg3qp" path="res://minigames/minigame_2/scene/table.tscn" id="1_qvyb0"]
+[ext_resource type="Texture2D" uid="uid://4lsjg2uyrohj" path="res://minigames/minigame_2/art_room2/file.png" id="2_f0qlo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fumht"]
+size = Vector2(171, 118)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_50gym"]
+a = Vector2(61, 91)
+b = Vector2(61, 91)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_snjh4"]
+a = Vector2(-38, 98)
+b = Vector2(-38, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucxyx"]
+size = Vector2(33, 41)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_doinf"]
+a = Vector2(22, 21)
+b = Vector2(23, 20)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_326ew"]
+a = Vector2(47, 41)
+b = Vector2(47, 42)
+
+[node name="InteractableItem" instance=ExtResource("1_qvyb0")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(220.99998, -35)
+texture = ExtResource("2_f0qlo")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(35.5, 22)
+shape = SubResource("RectangleShape2D_fumht")
+
+[node name="CollisionShape2D2" parent="." index="2"]
+shape = SubResource("SegmentShape2D_50gym")
+
+[node name="CollisionShape2D3" parent="." index="3"]
+shape = SubResource("SegmentShape2D_snjh4")
+
+[node name="DialogText" parent="DialogUI" index="2"]
+text = "รายชื่อสมาชิกชมรมสินะ… นางสาวปิยาพร… นายกวิน…"
+
+[node name="CollisionShape2D" parent="hit" index="0"]
+position = Vector2(21.5, 18.5)
+shape = SubResource("RectangleShape2D_ucxyx")
+
+[node name="CollisionShape2D2" parent="hit" index="1"]
+shape = SubResource("SegmentShape2D_doinf")
+
+[node name="CollisionShape2D3" parent="hit" index="2"]
+position = Vector2(-26, -25)
+shape = SubResource("SegmentShape2D_326ew")

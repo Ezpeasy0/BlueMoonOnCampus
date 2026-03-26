@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://cddo0ywqpsbtu"]
+
+[ext_resource type="PackedScene" uid="uid://c3adr3i3gg3qp" path="res://minigames/minigame_2/scene/table.tscn" id="1_4qvij"]
+[ext_resource type="Texture2D" uid="uid://ckyt84087iafw" path="res://minigames/minigame_2/art_room2/galaxy.png" id="2_41j0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pv2c"]
+size = Vector2(169, 125)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wy3d7"]
+a = Vector2(118, 29)
+b = Vector2(104, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwalq"]
+size = Vector2(96, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhbnp"]
+size = Vector2(91, 31)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_87xsw"]
+a = Vector2(73, -68)
+b = Vector2(59, -71)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_asp21"]
+a = Vector2(51, -49)
+b = Vector2(27, -48)
+
+[node name="InteractableItem" instance=ExtResource("1_4qvij")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-3.0000114, -5.999996)
+scale = Vector2(0.46901038, 0.50648147)
+texture = ExtResource("2_41j0m")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(22.5, 13.5)
+shape = SubResource("RectangleShape2D_5pv2c")
+
+[node name="CollisionShape2D2" parent="." index="2"]
+position = Vector2(-75, 64)
+shape = SubResource("SegmentShape2D_wy3d7")
+
+[node name="CollisionShape2D3" parent="." index="3"]
+position = Vector2(33, 95.5)
+shape = SubResource("RectangleShape2D_vwalq")
+
+[node name="DialogText" parent="DialogUI" index="2"]
+text = "โอ้ นอกจากสำรวจดาวฤกษ์แล้ว ก็มีพวกดาวเคราะห์ในระบบสุริยะ
+ด้วยเหรอเนี่ย ครบเครื่องจริงๆ"
+
+[node name="CollisionShape2D" parent="hit" index="0"]
+position = Vector2(33.5, 91.5)
+shape = SubResource("RectangleShape2D_qhbnp")
+
+[node name="CollisionShape2D2" parent="hit" index="1"]
+position = Vector2(-14, 156)
+shape = SubResource("SegmentShape2D_87xsw")
+
+[node name="CollisionShape2D3" parent="hit" index="2"]
+position = Vector2(-17, 138)
+shape = SubResource("SegmentShape2D_asp21")

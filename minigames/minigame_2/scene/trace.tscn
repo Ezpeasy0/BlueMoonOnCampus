@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://6yw11116kwo2"]
+
+[ext_resource type="PackedScene" uid="uid://c3adr3i3gg3qp" path="res://minigames/minigame_2/scene/table.tscn" id="1_sjcaq"]
+[ext_resource type="Texture2D" uid="uid://bdno1mm8fb5ig" path="res://minigames/minigame_2/art_room2/trace.png" id="2_5c83p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anc8u"]
+size = Vector2(127, 63)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uap30"]
+a = Vector2(118, 29)
+b = Vector2(100, -11)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x2d83"]
+a = Vector2(-41, 33)
+b = Vector2(-1, -4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igi1c"]
+size = Vector2(2, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vp22v"]
+a = Vector2(20, 24)
+b = Vector2(20, 24)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_l4pf4"]
+a = Vector2(22, 17)
+b = Vector2(22, 17)
+
+[node name="InteractableItem" instance=ExtResource("1_sjcaq")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(216.99998, 112)
+texture = ExtResource("2_5c83p")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(21.5, 15.5)
+shape = SubResource("RectangleShape2D_anc8u")
+
+[node name="CollisionShape2D2" parent="." index="2"]
+position = Vector2(-83, 5)
+shape = SubResource("SegmentShape2D_uap30")
+
+[node name="CollisionShape2D3" parent="." index="3"]
+position = Vector2(34, 6)
+shape = SubResource("SegmentShape2D_x2d83")
+
+[node name="DialogText" parent="DialogUI" index="2"]
+text = "หืม… รอยอะไรเนี่ย รอยจาก.. ชั้นวางของนี่เหรอ"
+
+[node name="CollisionShape2D" parent="hit" index="0"]
+position = Vector2(21, 15)
+shape = SubResource("RectangleShape2D_igi1c")
+
+[node name="CollisionShape2D2" parent="hit" index="1"]
+shape = SubResource("SegmentShape2D_vp22v")
+
+[node name="CollisionShape2D3" parent="hit" index="2"]
+shape = SubResource("SegmentShape2D_l4pf4")

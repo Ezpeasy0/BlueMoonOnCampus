@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsebmserdf24s"]
+
+[ext_resource type="PackedScene" uid="uid://c3adr3i3gg3qp" path="res://minigames/minigame_2/scene/table.tscn" id="1_35re5"]
+[ext_resource type="Texture2D" uid="uid://8eplpsiyv156" path="res://minigames/minigame_2/art_room2/chest.png" id="2_mc53d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rtyb"]
+size = Vector2(81, 72)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wkw85"]
+a = Vector2(65, 83)
+b = Vector2(66, 85)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_88b3w"]
+a = Vector2(-33, 95)
+b = Vector2(-34, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyb7l"]
+size = Vector2(65, 46)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dbho8"]
+a = Vector2(27, 15)
+b = Vector2(26, 14)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f8c7p"]
+a = Vector2(27, 11)
+b = Vector2(26, 8)
+
+[node name="InteractableItem" instance=ExtResource("1_35re5")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-320.99997, 129)
+texture = ExtResource("2_mc53d")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(29.5, 14)
+shape = SubResource("RectangleShape2D_0rtyb")
+
+[node name="CollisionShape2D2" parent="." index="2"]
+shape = SubResource("SegmentShape2D_wkw85")
+
+[node name="CollisionShape2D3" parent="." index="3"]
+shape = SubResource("SegmentShape2D_88b3w")
+
+[node name="DialogText" parent="DialogUI" index="2"]
+text = "เหมือนจะเป็นอุปกรณ์ที่ใช้ทำกิจกรรมชมรมสินะ"
+
+[node name="CollisionShape2D" parent="hit" index="0"]
+position = Vector2(27.5, 9)
+shape = SubResource("RectangleShape2D_cyb7l")
+
+[node name="CollisionShape2D2" parent="hit" index="1"]
+shape = SubResource("SegmentShape2D_dbho8")
+
+[node name="CollisionShape2D3" parent="hit" index="2"]
+shape = SubResource("SegmentShape2D_f8c7p")
