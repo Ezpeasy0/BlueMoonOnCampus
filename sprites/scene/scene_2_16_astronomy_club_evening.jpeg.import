@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dllnuay6qbh3r"
-path="res://.godot/imported/scene_2_16_astronomy_club_evening.png-f75720670ec7fd83b2003f52e7a0da37.ctex"
+uid="uid://dsxiqwpjvvbcf"
+path="res://.godot/imported/scene_2_16_astronomy_club_evening.jpeg-1b50090f8b60fc15a63d0c4e4dd85cc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_2_16_astronomy_club_evening.png"
-dest_files=["res://.godot/imported/scene_2_16_astronomy_club_evening.png-f75720670ec7fd83b2003f52e7a0da37.ctex"]
+source_file="res://sprites/scene/scene_2_16_astronomy_club_evening.jpeg"
+dest_files=["res://.godot/imported/scene_2_16_astronomy_club_evening.jpeg-1b50090f8b60fc15a63d0c4e4dd85cc9.ctex"]
 
 [params]
 
