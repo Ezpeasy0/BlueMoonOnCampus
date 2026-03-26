@@ -50,7 +50,7 @@
 	  "id": "ch2_s2_001",
 	  "type": "dialogue",
 	  "bg": "scene_2_2_inspector_office",
-	  "master_sfx": "ceiling_fan",
+	  "master_sfx": "fan",
 	  "bgm": "wholesome_sad",
 	  "sprite": "tana_chill",
 	  "name": "สารวัตรธนา",
@@ -628,7 +628,7 @@
 	  "type": "dialogue",
 	  "bg": "scene_2_5_bush_evening",
 	  "master_sfx": "",
-	  "bgm": "mysterious_music",
+	  "bgm": "mysterious",
 	  "name": "เมฆ",
 	  "text": "อิงจากภาพ น่าจะตรงนี้นี่แหละ",
 	  "next": "ch2_s5_002"
@@ -1127,7 +1127,7 @@
 	{
 	  "id": "ch2_s10_003",
 	  "type": "dialogue",
-	  "sprite": "fon_smile",
+	  "sprite": "fon_smile_student",
 	  "name": "เมฆ",
 	  "text": "!?",
 	  "next": "ch2_s10_004"
@@ -1156,7 +1156,7 @@
 	{
 	  "id": "ch2_s10_007",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "เรื่องเมื่อคืน.. หนู-",
 	  "next": "ch2_s10_008"
@@ -1171,7 +1171,7 @@
 	{
 	  "id": "ch2_s10_009",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "เมฆ",
 	  "text": "ฝนอุตส่าห์ตั้งใจช่วยพี่ แต่พี่กลับตะคอกใส่",
 	  "next": "ch2_s10_010"
@@ -1186,7 +1186,7 @@
 	{
 	  "id": "ch2_s10_011",
 	  "type": "dialogue",
-	  "sprite": "fon_smile",
+	  "sprite": "fon_smile_student",
 	  "name": "ฝน",
 	  "text": "แหะๆ ไม่เป็นไรหรอกค่ะ หนูเข้าใจว่าพี่เป็นห่วง",
 	  "next": "ch2_s10_012"
@@ -1234,7 +1234,7 @@
 	{
 	  "id": "ch2_s10_merge_002",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "ฝน",
 	  "text": "คุณพ่อน่ะเหรอคะ",
 	  "next": "ch2_s10_merge_003"
@@ -1267,7 +1267,7 @@
 	{
 	  "id": "ch2_food_good_001",
 	  "type": "dialogue",
-	  "sprite": "fon_smile",
+	  "sprite": "fon_smile_student",
 	  "name": "ฝน",
 	  "text": "หูวว ขอบคุณมากนะคะ ของโปรดฝนทั้งนั้นเลย",
 	  "next": "ch2_food_after_001"
@@ -1275,7 +1275,7 @@
 	{
 	  "id": "ch2_food_bad_001",
 	  "type": "dialogue",
-	  "sprite": "fon_curious",
+	  "sprite": "fon_curious_student",
 	  "name": "ฝน",
 	  "text": "อ-อ๋อค่ะ ขอบคุณนะคะ",
 	  "next": "ch2_food_after_001"
@@ -1357,7 +1357,7 @@
 	  "type": "dialogue",
 	  "bg": "scene_2_11_file_room_evening",
 	  "master_sfx": "",
-	  "bgm": "mysterious_music",
+	  "bgm": "mysterious",
 	  "sprite": "",
 	  "name": "สารวัตรธนา",
 	  "text": "แล้วด้านหลังตึก ไม่มีกล้องวงจรปิดเลยเหรอ จะได้เห็นว่าใครเป็นคนกระโดดออกทางหน้าต่างไง",
@@ -1439,7 +1439,7 @@
 	{
 	  "id": "ch2_s12_002",
 	  "type": "dialogue",
-	  "sprite": "fon_smile",
+	  "sprite": "fon_smile_student",
 	  "name": "ฝน",
 	  "text": "พี่เมฆ คุณพ่อว่าไงบ้างคะ",
 	  "next": "ch2_s12_003"
@@ -1549,7 +1549,7 @@
 	{
 	  "id": "ch2_s13_007",
 	  "type": "dialogue",
-	  "sprite": "fon_curious",
+	  "sprite": "fon_curious_student",
 	  "name": "ฝน",
 	  "text": "จี้รูปพระจันทร์ สีฟ้า..",
 	  "next": "ch2_s13_008"
@@ -1585,7 +1585,7 @@
 	{
 	  "id": "ch2_s13_012",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "ฝน",
 	  "text": "เอ๊ะ หรือว่า..",
 	  "next": "ch2_s13_013"
@@ -1614,7 +1614,7 @@
 	{
 	  "id": "ch2_s13_016",
 	  "type": "dialogue",
-	  "sprite": "fon_curious",
+	  "sprite": "fon_curious_student",
 	  "name": "ฝน",
 	  "text": "แต่ชมรมเขา.. ยุบไปพักใหญ่แล้วล่ะค่ะ",
 	  "next": "ch2_s13_017"
@@ -1650,7 +1650,7 @@
 	{
 	  "id": "ch2_s13_021",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "หนู.. มีปัญหากับเขานิดหน่อยน่ะค่ะ หนูลบกับ Block ช่องทางติดต่อเขาไปหมดแล้ว",
 	  "next": "ch2_s13_022"
@@ -1755,13 +1755,13 @@
 	  "id": "ch2_s13_035",
 	  "type": "dialogue",
 	  "name": "เมฆ",
-	  "text": "เรื่องเมื่อคืนน่ะ ฝนยังไม่ได้บอกพ่อใช่มั้ย",
+	  "text": "เรื่องเมื่อคืน่ะ ฝนยังไม่ได้บอกพ่อใช่มั้ย",
 	  "next": "ch2_s13_036"
 	},
 	{
 	  "id": "ch2_s13_036",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "ฝน",
 	  "text": "!?",
 	  "next": "ch2_s13_037"
@@ -1798,7 +1798,7 @@
 	{
 	  "id": "ch2_s13_041",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "",
 	  "text": "",
 	  "next": "ch2_s13_042"
@@ -2328,7 +2328,7 @@
 	{
 	  "id": "ch2_s16_004",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "เก่งนะคะที่หาตึกนี้เจอ",
 	  "next": "ch2_s16_005"
@@ -2407,7 +2407,7 @@
 	{
 	  "id": "ch2_s16_015",
 	  "type": "dialogue",
-	  "sprite": "fon_smile",
+	  "sprite": "fon_smile_student",
 	  "name": "ฝน",
 	  "text": "ค่ะ!!",
 	  "next": "ch2_s17_001"
@@ -2417,7 +2417,7 @@
 	  "type": "dialogue",
 	  "bg": "scene_2_17_mek_fon_astronomy_club_artwork",
 	  "master_sfx": "",
-	  "bgm": "mysterious_music",
+	  "bgm": "",
 	  "sprite": "",
 	  "name": "เมฆ",
 	  "text": "เอาวะ ให้มันรู้แล้วรู้รอดกันไปเลย!",

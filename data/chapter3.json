@@ -21,7 +21,7 @@
 	{
 	  "id": "ch3_s1_003",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "พี่บอสเขารู้จักกับหนูค่ะ เขาเป็นสมาชิกชมรมนี้",
 	  "next": "ch3_s1_004"
@@ -58,7 +58,7 @@
 	{
 	  "id": "ch3_s1_008",
 	  "type": "dialogue",
-	  "sprite": "fon_smile",
+	  "sprite": "fon_smile_student",
 	  "name": "ฝน",
 	  "text": "ค-ค่ะ",
 	  "next": "ch3_s1_009"
@@ -95,7 +95,7 @@
 	{
 	  "id": "ch3_s2_003",
 	  "type": "dialogue",
-	  "sprite": "fon_curious",
+	  "sprite": "fon_curious_student",
 	  "name": "ฝน",
 	  "text": "คะพี่เมฆ",
 	  "next": "ch3_s2_004"
@@ -162,7 +162,7 @@
 	{
 	  "id": "ch3_s3_002",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "ดูไม่ค่อยน่าไว้ใจนะคะพี่..",
 	  "next": "ch3_s3_003"
@@ -205,7 +205,7 @@
 	{
 	  "id": "ch3_s3_007",
 	  "type": "dialogue",
-	  "sprite": "fon_curious",
+	  "sprite": "fon_curious_student",
 	  "name": "ฝน",
 	  "text": "พี่เชอรี่เคยให้หนูดูรูปค่ะ เขาบอกว่าเป็น Logo ที่ตั้งใจทำกันกับสมาชิกชมรม",
 	  "next": "ch3_s3_008"
@@ -227,7 +227,7 @@
 	{
 	  "id": "ch3_s3_010",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "หนูไม่มีเบอร์พี่เขาน่ะค่ะ IG หรือ Facebook ของพี่เขา หนูก็ไม่มี",
 	  "next": "ch3_s3_011"
@@ -263,7 +263,7 @@
 	{
 	  "id": "ch3_s3_015",
 	  "type": "dialogue",
-	  "sprite": "fon_smile",
+	  "sprite": "fon_smile_student",
 	  "name": "ฝน",
 	  "text": "ค่ะ!",
 	  "next": "ch3_s4_001"
@@ -478,7 +478,7 @@
 	{
 	  "id": "ch3_s5_016",
 	  "type": "dialogue",
-	  "sprite": "fon_curious",
+	  "sprite": "fon_curious_student",
 	  "name": "ฝน",
 	  "text": "เอ๊ะ พี่ยาม เอ่อ…",
 	  "next": "ch3_s5_017"
@@ -500,7 +500,7 @@
 	{
 	  "id": "ch3_s5_019",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "ฝน",
 	  "text": "อ๊ะ-",
 	  "next": "ch3_s5_020"
@@ -545,7 +545,7 @@
 	{
 	  "id": "ch3_s5_025",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "ฝน",
 	  "text": "!!??",
 	  "next": "ch3_s5_026"
@@ -617,7 +617,7 @@
 	{
 	  "id": "ch3_s5_035",
 	  "type": "dialogue",
-	  "sprite": "fon_angry",
+	  "sprite": "fon_angry_student",
 	  "name": "ฝน",
 	  "text": "บ-บอกมาสิคะว่าพีทอยู่ไหน!?",
 	  "next": "ch3_s6_001"
@@ -676,7 +676,7 @@
 	{
 	  "id": "ch3_s7_004",
 	  "type": "dialogue",
-	  "sprite": "fon_shout_with_tears",
+	  "sprite": "fon_shout_with_tears_student",
 	  "name": "ฝน",
 	  "text": "พี่เมฆ หนีเร็ว ยามเขาเป็นบ้าไปแล้ว!!!",
 	  "next": "ch3_s7_005"
@@ -866,7 +866,7 @@
 	{
 	  "id": "ch3_s8_004",
 	  "type": "dialogue",
-	  "sprite": "fon_angry",
+	  "sprite": "fon_angry_student",
 	  "name": "ฝน",
 	  "text": "ไหนว่าจะเปิดอกคุยกันไงคะ ยังจะปิดบังอะไรอีก",
 	  "next": "ch3_s8_005"
@@ -966,7 +966,7 @@
 	{
 	  "id": "ch3_s8_018",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "ฝน",
 	  "text": "!?",
 	  "next": "ch3_s8_019"
@@ -1474,7 +1474,7 @@
 	{
 	  "id": "ch3_s9_010",
 	  "type": "dialogue",
-	  "sprite": "fon_curious",
+	  "sprite": "fon_curious_student",
 	  "name": "ฝน",
 	  "text": "แล้วเราจะเอายังไงต่อดีคะ พี่เมฆ",
 	  "next": "ch3_s9_011"
@@ -1521,7 +1521,7 @@
 	{
 	  "id": "ch3_s9_016",
 	  "type": "dialogue",
-	  "sprite": "fon_curious",
+	  "sprite": "fon_curious_student",
 	  "name": "ฝน",
 	  "text": "เอ๊ะ ก็ใช่ค่ะ…",
 	  "next": "ch3_s9_017"
@@ -1593,7 +1593,7 @@
 	{
 	  "id": "ch3_s9_026",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "ฝน",
 	  "text": "!?",
 	  "next": "ch3_s9_027"
@@ -1878,7 +1878,7 @@
 	{
 	  "id": "ch3_s9_065",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "ฝน",
 	  "text": "!?",
 	  "next": "ch3_s9_066"
@@ -1962,7 +1962,7 @@
 	{
 	  "id": "ch3_s9_076",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "ฝน",
 	  "text": "พี่บอสวิ่งเข้าไปในตึกแล้ว!",
 	  "next": "ch3_s9_077"
@@ -2209,7 +2209,7 @@
 	{
 	  "id": "ch3_s14_002",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked_with_tears",
+	  "sprite": "fon_shocked_with_tears_student",
 	  "name": "ฝน",
 	  "text": "พี่เมฆ!!!!!",
 	  "next": "ch3_s14_003"
@@ -2217,7 +2217,7 @@
 	{
 	  "id": "ch3_s14_003",
 	  "type": "dialogue",
-	  "sprite": "fon_shocked_with_tears_point_at_door",
+	  "sprite": "fon_shocked_with_tears_point_at_door_student",
 	  "name": "ฝน",
 	  "text": "ข้างในนั้น… ข้างใน!!!!",
 	  "next": "ch3_s14_004"
@@ -2320,7 +2320,7 @@
 	{
 	  "id": "ch3_s17_004",
 	  "type": "dialogue",
-	  "sprite": "fon_shout_with_tears",
+	  "sprite": "fon_shout_with_tears_student",
 	  "name": "ฝน",
 	  "text": "รีบตามพี่เต้เร็วค่ะ!!!",
 	  "next": "ch3_s17_005"
@@ -2352,7 +2352,7 @@
 	{
 	  "id": "ch3_s18_003",
 	  "type": "dialogue",
-	  "sprite": "fon_shout_with_tears",
+	  "sprite": "fon_shout_with_tears_student",
 	  "name": "ฝน",
 	  "text": "หนูจะไปด้วยค่ะ!!!!",
 	  "next": "ch3_s18_004"
@@ -2411,7 +2411,7 @@
 	{
 	  "id": "ch3_s20_001",
 	  "type": "dialogue",
-	  "bg": "scene_3_20_astronomy_club_basement_boss_tae_pete",
+	  "bg": "scene_3_20_climbing_ladder",
 	  "bgm": "suspense_music.mp3",
 	  "sfx": "ladder_climb.mp3",
 	  "name": "เมฆ",
@@ -2559,7 +2559,7 @@
 	  "id": "ch3_s22_012",
 	  "type": "dialogue",
 	  "bgm": "extremely_sad_music.mp3",
-	  "sprite": "fon_shocked",
+	  "sprite": "fon_shocked_student",
 	  "name": "ฝน",
 	  "text": "!!??",
 	  "next": "ch3_s22_013"
@@ -2670,12 +2670,12 @@
 	  "choices": [
 		{
 		  "text": "อธิบายให้บอสเข้าใจว่า บอสไม่มีทางหนีรอด",
-		  "condition": "INT >= 8",
+		  "condition": "INT >= 6",
 		  "next": "ch3_s22_A_001"
 		},
 		{
 		  "text": "จับจุดอ่อนทางอารมณ์ ความรู้สึกของบอส",
-		  "condition": "CHA >= 8",
+		  "condition": "CHA >= 6",
 		  "next": "ch3_s22_B_001"
 		},
 		{
@@ -2870,7 +2870,7 @@
 	{
 	  "id": "ch3_s22_B_007",
 	  "type": "dialogue",
-	  "sprite": "fon_shout_with_tears",
+	  "sprite": "fon_shout_with_tears_student",
 	  "name": "ฝน",
 	  "text": "พี่บอส..",
 	  "next": "ch3_s22_B_008"
@@ -3044,7 +3044,7 @@
 	{
 	  "id": "ch3_s22_C_013",
 	  "type": "dialogue",
-	  "sprite": "fon_shout_with_tears",
+	  "sprite": "fon_shout_with_tears_student",
 	  "name": "ฝน",
 	  "text": "พี่เต้!!!",
 	  "next": "ch3_s22_C_014"
@@ -3168,7 +3168,7 @@
 	{
 	  "id": "ch3_s22_J_013",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "พี่เมฆ.. พี่บอสเขา..",
 	  "next": "ch3_s22_J_014"
@@ -3286,7 +3286,7 @@
 	{
 	  "id": "ch3_s23AB_011",
 	  "type": "dialogue",
-	  "sprite": "fon_smile",
+	  "sprite": "fon_smile_student",
 	  "name": "ฝน",
 	  "text": "หนูสบายดีค่ะพ่อ!",
 	  "next": "ch3_s23AB_012"
@@ -3309,7 +3309,7 @@
 	{
 	  "id": "ch3_s23AB_014",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "หนู.. ขอโทษค่ะ",
 	  "next": "ch3_s23AB_015"
@@ -3361,7 +3361,7 @@
 	{
 	  "id": "ch3_s23AB_021",
 	  "type": "dialogue",
-	  "sprite": "fon_smile",
+	  "sprite": "fon_smile_student",
 	  "name": "ฝน",
 	  "text": "ไม่ต้องห่วงพี่ค่ะ เดี๋ยวหนูจัดการให้เองค่ะ!",
 	  "next": "ch3_s23AB_022"
@@ -3390,7 +3390,7 @@
 	{
 	  "id": "ch3_s23AB_025",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "แต่หนู.. สงสารพี่เชอรี่จัง… พีทก็ด้วย…",
 	  "next": "ch3_s23AB_026"
@@ -3588,7 +3588,7 @@
 	{
 	  "id": "ch3_s23AB_053",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "..",
 	  "next": "ch3_s23AB_054"
@@ -3660,7 +3660,7 @@
 	{
 	  "id": "ch3_s23AB_063",
 	  "type": "dialogue",
-	  "sprite": "fon_smile",
+	  "sprite": "fon_smile_student",
 	  "name": "ฝน",
 	  "text": "หืมม พี่เมฆ จะเคลมหนูแทนพี่บอสเหรอคะ???",
 	  "next": "ch3_s23AB_064"
@@ -3930,7 +3930,7 @@
 	{
 	  "id": "ch3_s23C_030",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "..",
 	  "next": "ch3_s23C_031"
@@ -3995,7 +3995,7 @@
 	{
 	  "id": "ch3_s23C_039",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "..",
 	  "next": "ch3_s23C_040"
@@ -4053,7 +4053,7 @@
 	{
 	  "id": "ch3_s23C_047",
 	  "type": "dialogue",
-	  "sprite": "fon_upset",
+	  "sprite": "fon_upset_student",
 	  "name": "ฝน",
 	  "text": "ไว้เจอกันนะคะ พี่เมฆ",
 	  "next": "ch3_s23C_048"
