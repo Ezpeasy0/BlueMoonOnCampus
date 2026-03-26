@@ -725,6 +725,8 @@ func _on_choice(opt: Dictionary) -> void:
 	await _show_current()
 
 func _ensure_flags() -> void:
+	if not (GameSave.state is Dictionary):
+		GameSave.state = {}
 	if not GameSave.state.has("flags") or not (GameSave.state["flags"] is Dictionary):
 		GameSave.state["flags"] = {}
 
@@ -742,7 +744,6 @@ func _start_minigame(minigame_id: String, next_id: String) -> void:
 	else:
 		index += 1
 	_sync_state_to_gamesave()
-	_save_now() 
 	
 	match minigame_id:
 		"lunchbox": 
@@ -751,24 +752,48 @@ func _start_minigame(minigame_id: String, next_id: String) -> void:
 			push_warning("Unknown minigame_id: " + minigame_id)
 			_busy = false
 
-
 func _handle_conditional(line: Dictionary) -> void:
-	var condition_name: String = str(line.get("condition", ""))
-	var true_next: String = str(line.get("true_next", ""))
-	var false_next: String = str(line.get("false_next", ""))
+	var next_id: String = ""
 
-	var condition_result := _get_flag(condition_name, false)
+	if line.has("condition"):
+		var condition_name: String = str(line.get("condition", ""))
+		var true_next: String = str(line.get("true_next", ""))
+		var false_next: String = str(line.get("false_next", ""))
 
-	if condition_result:
-		if true_next != "" and id_to_index.has(true_next):
-			index = int(id_to_index[true_next])
-			await _show_current()
-			return
-	else:
-		if false_next != "" and id_to_index.has(false_next):
-			index = int(id_to_index[false_next])
-			await _show_current()
-			return
+		var condition_result := _get_flag(condition_name, false)
+
+		if condition_result:
+			next_id = true_next
+		else:
+			next_id = false_next
+
+	elif line.has("conditions"):
+		var matched := false
+		var conditions_any: Variant = line.get("conditions", [])
+
+		if conditions_any is Array:
+			for cond_any in conditions_any:
+				if not (cond_any is Dictionary):
+					continue
+
+				var cond: Dictionary = cond_any
+				var cond_name: String = str(cond.get("if", ""))
+				var cond_next: String = str(cond.get("next", ""))
+
+				if _get_flag(cond_name, false):
+					next_id = cond_next
+					matched = true
+					break
+
+		if not matched:
+			next_id = str(line.get("else", ""))
+
+	if next_id != "" and id_to_index.has(next_id):
+		index = int(id_to_index[next_id])
+		await _show_current()
+		return
+
+	push_warning("Conditional event missing valid next path: %s" % [str(line.get("id", ""))])
 
 
 func _resolve_path(root: String, value: String) -> String:

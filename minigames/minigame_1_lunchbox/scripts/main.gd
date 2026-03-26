@@ -101,6 +101,7 @@ func _save_minigame_result() -> void:
 	stats["CHA"] = int(stats.get("CHA", 0)) - old_cha_gain + cha_gain
 
 	flags["minigame_1_perfect"] = perfect
+	flags["perfect_meal"] = perfect
 	flags["minigame_1_cha_gain"] = cha_gain
 
 	GameSave.state["flags"] = flags
