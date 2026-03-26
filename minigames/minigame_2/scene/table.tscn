@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3adr3i3gg3qp"]
+[gd_scene load_steps=12 format=3 uid="uid://c3adr3i3gg3qp"]
 
 [ext_resource type="Script" uid="uid://fxva3fgup1bf" path="res://minigames/minigame_2/script/interactable_item.gd" id="1_k572j"]
 [ext_resource type="Texture2D" uid="uid://bjkgnc676aeh" path="res://minigames/minigame_2/art_room1/table.png" id="2_t4p4n"]
 [ext_resource type="AudioStream" uid="uid://mwvrq3we4iaf" path="res://minigames/minigame_2/sound/think.mp3" id="3_4p5rq"]
+[ext_resource type="FontFile" uid="uid://d2g1dcyt4rtyv" path="res://fonts/LayijiMahaniyomV1_61.ttf" id="3_7c62u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efwmw"]
 size = Vector2(195, 129)
@@ -14,6 +15,18 @@ b = Vector2(100, -11)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0farh"]
 a = Vector2(-41, 33)
 b = Vector2(-1, -4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hanju"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 0.5411765)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k572j"]
 size = Vector2(181.5, 118)
@@ -56,9 +69,9 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 text = "E (interact)"
 
 [node name="DialogUI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Background" type="ColorRect" parent="DialogUI"]
+visible = false
 anchors_preset = -1
 anchor_left = 0.23900001
 anchor_top = 0.61
@@ -70,6 +83,21 @@ offset_right = -0.16802979
 offset_bottom = -0.048034668
 color = Color(0, 0, 0, 0.19215687)
 
+[node name="DialogueLabel" type="RichTextLabel" parent="DialogUI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
+offset_left = 253.0
+offset_top = 367.0
+offset_right = 921.0
+offset_bottom = 568.0
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/line_separation = 10
+theme_override_fonts/normal_font = ExtResource("3_7c62u")
+theme_override_font_sizes/normal_font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_hanju")
+scroll_active = false
+
 [node name="DialogText" type="Label" parent="DialogUI"]
 anchors_preset = -1
 anchor_left = 0.24100001
@@ -78,8 +106,10 @@ anchor_right = 0.78200006
 anchor_bottom = 0.9250001
 offset_left = 0.36798096
 offset_top = -0.22402954
-offset_right = -368.86407
+offset_right = -11.864075
 offset_bottom = -50.400024
+theme_override_fonts/font = ExtResource("3_7c62u")
+theme_override_font_sizes/font_size = 35
 text = "โต๊ะดูเก่า แต่ก็เหมือนจะทนทานดีนะ"
 
 [node name="hit" type="StaticBody2D" parent="."]

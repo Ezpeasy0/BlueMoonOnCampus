@@ -19,8 +19,16 @@ texture = ExtResource("2_cs8ay")
 position = Vector2(23, 14.5)
 shape = SubResource("RectangleShape2D_kq117")
 
+[node name="DialogUI" parent="." index="5"]
+visible = false
+
+[node name="Background" parent="DialogUI" index="0"]
+visible = true
+
 [node name="DialogText" parent="DialogUI" index="1"]
-text = "หืม.. กิ๊บติดผมเหรอ.. ไม่ใช่ว่าชมรมปิดตัวไปนานแล้วเหรอ กิ๊บยังดูใหม่อยู่เลย"
+offset_right = -368.86407
+text = "หืม.. กิ๊บติดผมเหรอ.. ไม่ใช่ว่าชมรมปิดตัวไปนานแล้วเหรอ 
+กิ๊บยังดูใหม่อยู่เลย"
 
 [node name="CollisionShape2D" parent="hit" index="0"]
 position = Vector2(23, 15.5)
