@@ -656,29 +656,107 @@ func _play_master_sfx(filename: String) -> void:
 		master_sfx.play()
 		_current_master_sfx = filename
 
+func _choice_display_text(opt: Dictionary) -> String:
+	if opt.has("label"):
+		return str(opt.get("label", ""))
+	if opt.has("text"):
+		return str(opt.get("text", ""))
+	return "Choice"
 
+
+func _evaluate_choice_condition(condition_text: String) -> bool:
+	var cond := condition_text.strip_edges()
+
+	if cond == "":
+		return true
+
+	# supports:
+	# "INT >= 6"
+	# "CHA >= 6"
+	var parts := cond.split(" ")
+	if parts.size() != 3:
+		return true
+
+	var stat_name := parts[0].strip_edges()
+	var op := parts[1].strip_edges()
+	var value := int(parts[2].strip_edges())
+
+	var current := int(stats.get(stat_name, 0))
+
+	match op:
+		">=":
+			return current >= value
+		">":
+			return current > value
+		"<=":
+			return current <= value
+		"<":
+			return current < value
+		"==":
+			return current == value
+		"!=":
+			return current != value
+		_:
+			return true
+
+func _choice_is_unlocked(opt: Dictionary) -> bool:
+	if opt.has("condition"):
+		return _evaluate_choice_condition(str(opt.get("condition", "")))
+	return true
+
+func _choice_lock_text(opt: Dictionary) -> String:
+	if opt.has("condition"):
+		return "Locked (%s)" % str(opt.get("condition", ""))
+	return "Locked"
+	
 func _show_choices(options_list: Array) -> void:
 	choices_container.visible = true
+
 	for c in choices_box.get_children():
 		c.queue_free()
-		
+
 	var my_style = load("res://sprites/choices/MyButtonStyle.tres")
 	var my_style_hover = load("res://sprites/choices/MyButtonStyle_Hover.tres")
+	var btn_font = load("res://fonts/LayijiMahaniyomV1_61.ttf")
 
 	for opt_any in options_list:
 		if not (opt_any is Dictionary):
 			continue
-		var opt: Dictionary = opt_any
 
-		var b: Button = Button.new()
-		b.text = str(opt.get("label", ""))
+		var opt: Dictionary = opt_any
+		var unlocked := _choice_is_unlocked(opt)
+
+		var b := Button.new()
+		b.text = _choice_display_text(opt)
+
+		if btn_font:
+			b.add_theme_font_override("font", btn_font)
+			b.add_theme_font_size_override("font_size", 24)
+
+		b.add_theme_color_override("font_color", Color.WHITE)
+		b.add_theme_color_override("font_hover_color", Color.WHITE)
+		b.add_theme_color_override("font_pressed_color", Color.WHITE)
+		b.add_theme_color_override("font_focus_color", Color.WHITE)
+		b.add_theme_color_override("font_disabled_color", Color(0.65, 0.65, 0.65, 1.0))
+
 		b.add_theme_stylebox_override("normal", my_style)
 		b.add_theme_stylebox_override("hover", my_style_hover)
-		b.custom_minimum_size.y = 45 
-		_setup_button_sounds(b)
-		b.pressed.connect(func() -> void: _on_choice(opt))
-		choices_box.add_child(b)
 
+		b.custom_minimum_size = Vector2(520, 70)
+		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		b.text_overrun_behavior = TextServer.OVERRUN_NO_TRIMMING
+		b.clip_text = false
+		b.alignment = HORIZONTAL_ALIGNMENT_LEFT
+
+		b.disabled = not unlocked
+
+		_setup_button_sounds(b)
+
+		if unlocked:
+			b.pressed.connect(func() -> void: _on_choice(opt))
+
+		choices_box.add_child(b)
 
 func _on_choice(opt: Dictionary) -> void:
 	_busy = true
@@ -694,12 +772,13 @@ func _on_choice(opt: Dictionary) -> void:
 	var effects: Dictionary = effects_any if effects_any is Dictionary else {}
 
 	for k in effects.keys():
-		var gain = int(effects[k]) 
+		var gain = int(effects[k])
 		stats[k] = int(stats.get(k, 0)) + gain
 		if gain > 0:
 			_show_stat_popup(k, gain)
+
 	_update_stats_display()
-	
+
 	var target_id: String = str(opt.get("next", ""))
 	var say_text: String = str(opt.get("say", "")).strip_edges()
 
@@ -707,22 +786,22 @@ func _on_choice(opt: Dictionary) -> void:
 		index = int(id_to_index[target_id])
 	else:
 		index += 1
-		
+
 	if say_text != "":
-		_update_name_box("เมฆ") 
+		_update_name_box("เมฆ")
 		type_speed_seconds = 0.001 if _is_fast_forwarding else normal_type_speed
 		await _type_text(say_text)
-		
+
 		_busy = false
 		_typing = false
 		_sync_state_to_gamesave()
-		
+
 		_waiting_for_choice_next = true
 
 		if _is_fast_forwarding:
 			_advance()
-		return 
-		
+		return
+
 	_busy = false
 	_sync_state_to_gamesave()
 	await _show_current()

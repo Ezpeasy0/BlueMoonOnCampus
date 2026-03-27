@@ -41,10 +41,7 @@ shape = SubResource("SegmentShape2D_66r8q")
 [node name="CollisionShape2D3" parent="." index="3"]
 shape = SubResource("SegmentShape2D_y3lij")
 
-[node name="Label" parent="." index="4"]
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-
-[node name="DialogText" parent="DialogUI" index="1"]
+[node name="DialogText" parent="DialogUI" index="2"]
 text = "พวกรูปถ่ายกิจกรรม ตั้งกล้องดูดาวสินะ.. ดูอบอุ่นดีจัง"
 
 [node name="CollisionShape2D" parent="hit" index="0"]

@@ -10,6 +10,7 @@ size = Vector2(40, 31)
 size = Vector2(30, 19)
 
 [node name="InteractableItem" instance=ExtResource("1_tl1io")]
+key_item_flag = "mg2_room1_key_found"
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-233, -10)
