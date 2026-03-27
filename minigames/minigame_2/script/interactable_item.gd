@@ -32,7 +32,6 @@ func open_dialog():
 	$DialogUI.show()
 	$InteractSound.play()
 
-	# mark key item as found
 	if key_item_flag.strip_edges() != "":
 		_ensure_gamesave()
 		GameSave.state["flags"][key_item_flag] = true
