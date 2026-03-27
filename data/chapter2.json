@@ -646,7 +646,7 @@
 	  "type": "dialogue",
 	  "bg": "scene_2_6_bush_leaves",
 	  "master_sfx": "",
-	  "bgm": "mysterious",
+	  "bgm": "mysterious_music",
 	  "name": "เมฆ",
 	  "text": "..",
 	  "next": "ch2_s6_002"

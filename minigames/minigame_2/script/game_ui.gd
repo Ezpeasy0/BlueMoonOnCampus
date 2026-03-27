@@ -36,5 +36,5 @@ func _on_btn_yes_pressed():
 func finish_game():
 	print("จอมืดสนิทแล้ว! เตรียมกลับเกมหลัก หรือ โหลดฉากต่อไป")
 	# ถ้าจะโหลดฉากถัดไปให้ลบคอมเมนต์ด้านล่าง แล้วใส่ชื่อไฟล์ฉาก
-	# get_tree().paused = false 
-	# get_tree().change_scene_to_file("res://ชื่อฉากเกมหลัก.tscn")
+	get_tree().paused = false 
+	get_tree().change_scene_to_file("res://scenes/dialogue.tscn")

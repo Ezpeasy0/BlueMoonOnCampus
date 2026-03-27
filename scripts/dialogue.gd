@@ -400,7 +400,10 @@ func _go_to_next_chapter_or_end() -> void:
 var character_box_colors: Dictionary = {
 	"เมฆ": Color("#5AB9E1"),    
 	"ฝน": Color("#9FA8DA"),   
-	"สารวัตรธนา": Color("#b8860b"), 
+	"สารวัตรธนา": Color("#006400"), 
+	"เต้": Color("#B8860B"),
+	"บอส": Color("#BDB76B"),
+	"พีท": Color("#0000FF"),
 }
 
 func _show_current() -> void:
@@ -748,6 +751,10 @@ func _start_minigame(minigame_id: String, next_id: String) -> void:
 	match minigame_id:
 		"lunchbox": 
 			get_tree().change_scene_to_file("res://minigames/minigame_1_lunchbox/scenes/splash_screen.tscn")
+		"minigame_2_1":
+			get_tree().change_scene_to_file("res://minigames/minigame_2/room scene/minigame2_room1.tscn")
+		"minigame_2_2":
+			get_tree().change_scene_to_file("res://minigames/minigame_2/room scene/minigame_2_room_2.tscn")	
 		_:
 			push_warning("Unknown minigame_id: " + minigame_id)
 			_busy = false

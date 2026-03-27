@@ -82,7 +82,7 @@
 	{
 	  "id": "ch3_s2_mg1",
 	  "type": "minigame",
-	  "minigame_id": "minigame_2",
+	  "minigame_id": "minigame_2_1",
 	  "next": "ch3_s2_002"
 	},
 	{
@@ -185,7 +185,7 @@
 	{
 	  "id": "ch3_s3_mg1",
 	  "type": "minigame",
-	  "minigame_id": "minigame_2",
+	  "minigame_id": "minigame_2_2",
 	  "next": "ch3_s3_005"
 	},
 	{
@@ -329,7 +329,7 @@
 	  "sprite": "",
 	  "next": "ch3_s4_008",
 	  "thought": true,
-	  "sfx": "dried_leaves.mp3"
+	  "sfx": "doorknob.mp3"
 	},
 	{
 	  "id": "ch3_s4_008",
@@ -530,7 +530,7 @@
 	{
 	  "id": "ch3_s5_023",
 	  "type": "dialogue",
-	  "bgm": "suspense",
+	  "bgm": "suspense_music",
 	  "name": "เต้",
 	  "text": "หาพีทกันอยู่ใช่มั้ย",
 	  "next": "ch3_s5_024"
@@ -1498,6 +1498,7 @@
 	  "id": "ch3_s9_013",
 	  "type": "dialogue",
 	  "bg": "scene_3_4_moon_necklace_back_side_with_F",
+	  "bgm": "",
 	  "name": "เมฆ",
 	  "text": "Logo… ตัว F…",
 	  "thought": true,
@@ -1514,6 +1515,7 @@
 	  "id": "ch3_s9_015",
 	  "type": "dialogue",
 	  "bg": "scene_3_9_astronomy_club_night",
+	  "bgm": "mysterious_music.mp3",
 	  "name": "เมฆ",
 	  "text": "ฝน.. ชื่อฝนนี่ ภาษาอังกฤษ ขึ้นด้วยตัว F ใช่มั้ย",
 	  "next": "ch3_s9_016"
@@ -1609,6 +1611,7 @@
 	  "id": "ch3_s9_028",
 	  "type": "dialogue",
 	  "name": "???",
+	  "bgm": "",
 	  "text": "สวัสดีครับทุกคน",
 	  "next": "ch3_s9_029"
 	},
@@ -1644,6 +1647,7 @@
 	{
 	  "id": "ch3_s9_033",
 	  "type": "dialogue",
+	  "bgm": "mysterious_music",
 	  "name": "ฝน",
 	  "text": "พี่บอส…",
 	  "next": "ch3_s9_034"
@@ -1879,6 +1883,7 @@
 	  "id": "ch3_s9_065",
 	  "type": "dialogue",
 	  "sprite": "fon_shocked_student",
+	  "bgm": "",
 	  "name": "ฝน",
 	  "text": "!?",
 	  "next": "ch3_s9_066"
@@ -1931,6 +1936,7 @@
 	  "id": "ch3_s9_072",
 	  "type": "dialogue",
 	  "sprite": "boss_angry",
+	  "bgm": "suspense_music",
 	  "name": "บอส",
 	  "text": "เพราะไอพวกเวรนั่นมาวุ่นวายกับสร้อย ผมก็ไม่ต้องการมันอีกต่อไปแล้ว!",
 	  "next": "ch3_s9_073"
@@ -2483,7 +2489,7 @@
 	{
 	  "id": "ch3_s22_002",
 	  "type": "dialogue",
-	  "bgm_stop": true,
+	  "bgm": "",
 	  "name": "",
 	  "text": "",
 	  "next": "ch3_s22_003"
@@ -2643,7 +2649,7 @@
 	{
 	  "id": "ch3_s22_023",
 	  "type": "dialogue",
-	  "bgm_stop": true,
+	  "bgm": "",
 	  "name": "",
 	  "text": "",
 	  "next": "ch3_s22_024"
