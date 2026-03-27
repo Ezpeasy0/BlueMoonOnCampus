@@ -26,7 +26,7 @@ visible = false
 [node name="Background" parent="DialogUI" index="0"]
 visible = true
 
-[node name="DialogText" parent="DialogUI" index="1"]
+[node name="DialogText" parent="DialogUI" index="2"]
 offset_right = -368.86407
 text = "หืม.. กิ๊บติดผมเหรอ.. ไม่ใช่ว่าชมรมปิดตัวไปนานแล้วเหรอ 
 กิ๊บยังดูใหม่อยู่เลย"
