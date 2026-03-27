@@ -26,6 +26,7 @@ a = Vector2(22, 17)
 b = Vector2(22, 17)
 
 [node name="InteractableItem" instance=ExtResource("1_sjcaq")]
+key_item_flag = "mg2_room2_key_found"
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(216.99998, 112)
