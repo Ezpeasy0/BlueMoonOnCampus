@@ -20,3 +20,14 @@ texture = ExtResource("1_6ui2g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_60he1")
+
+[node name="TooltipLabel" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -34.0
+offset_right = 51.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.82141787, 0.6612069, 1)
+theme_override_constants/outline_size = 3
+text = "ข้าวปั้น"
+horizontal_alignment = 1

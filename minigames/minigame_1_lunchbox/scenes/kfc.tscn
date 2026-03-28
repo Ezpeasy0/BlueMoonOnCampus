@@ -1,22 +1,32 @@
 [gd_scene load_steps=4 format=3 uid="uid://ctscdp4jaovmr"]
 
 [ext_resource type="Script" uid="uid://x4vejp81hna2" path="res://minigames/minigame_1_lunchbox/scripts/onigiri.gd" id="1_ljnmi"]
-[ext_resource type="Texture2D" uid="uid://cllwn2l3ornxw" path="res://minigames/minigame_1_lunchbox/assets/food/kfc.png" id="2_ljnmi"]
+[ext_resource type="Texture2D" uid="uid://brqgp4o4kiyhg" path="res://minigames/minigame_1_lunchbox/assets/food/kfc2.png" id="2_6wgy7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60he1"]
-size = Vector2(211, 87)
+size = Vector2(183.5, 87)
 
 [node name="onigiri3" type="Area2D"]
 position = Vector2(217, 119)
 script = ExtResource("1_ljnmi")
-target_slot_name = "Slot1"
 food_id = "kfc"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-6.8110905, -5.1542993)
-scale = Vector2(0.5656172, 0.31196833)
-texture = ExtResource("2_ljnmi")
+position = Vector2(-25, 4.999996)
+scale = Vector2(0.33322087, 0.1699574)
+texture = ExtResource("2_6wgy7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 0)
+position = Vector2(-21, 9)
 shape = SubResource("RectangleShape2D_60he1")
+
+[node name="TooltipLabel" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -34.0
+offset_right = 51.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.86036915, 0.8603692, 0.8603692, 1)
+theme_override_constants/outline_size = 3
+text = "ไก่ทอด"
+horizontal_alignment = 1
