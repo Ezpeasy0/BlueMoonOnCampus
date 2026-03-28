@@ -106,6 +106,8 @@ func _save_minigame_result() -> void:
 
 	GameSave.state["flags"] = flags
 	GameSave.state["stats"] = stats
+	
+	GameSave.state["minigame_stat_gains"] = { "CHA": cha_gain }
 
 	var next_id := str(GameSave.state.get("pending_next_id", ""))
 	GameSave.state["minigame_return_next_id"] = next_id

@@ -146,7 +146,7 @@ func _load_current_chapter() -> void:
 			if line_dict.has("id"):
 				id_to_index[line_dict["id"]] = i
 
-	_restore_from_gamesave()
+	await _restore_from_gamesave()
 	await _apply_restored_visuals()
 
 	choices_container.visible = false
@@ -212,6 +212,11 @@ func _restore_from_gamesave() -> void:
 			index = int(id_to_index[return_id])
 		GameSave.state.erase("minigame_return_next_id")
 		GameSave.state.erase("pending_next_id")
+	if GameSave.state.has("minigame_stat_gains"):
+		var gains = GameSave.state["minigame_stat_gains"]
+		if gains is Dictionary:
+			await _display_minigame_gains(gains)
+		GameSave.state.erase("minigame_stat_gains")
 	if GameSave.state.has("stats") and GameSave.state["stats"] is Dictionary:
 		stats = (GameSave.state["stats"] as Dictionary).duplicate(true)
 		_update_stats_display()
@@ -500,15 +505,17 @@ func _show_current() -> void:
 			_advance()
 
 func _show_stat_popup(stat_name: String, amount: int) -> void:
-	if not stat_notify: return
+	if not stat_notify: return 
 	
-	stat_notify.text = "+%d %s" % [amount, stat_name]
+	var sign_str = "+" if amount >= 0 else "" 
+	stat_notify.text = "%s%d %s" % [sign_str, amount, stat_name]
 	
 	if stat_name == "INT":
 		stat_notify.add_theme_color_override("font_color", Color("1f676d"))
 	elif stat_name == "CHA":
 		stat_notify.add_theme_color_override("font_color", Color("a1224e"))
 	
+	stat_notify.visible = true
 	stat_notify.global_position = Vector2(540,300)
 	stat_notify.modulate.a = 1.0
 	
@@ -519,6 +526,13 @@ func _show_stat_popup(stat_name: String, amount: int) -> void:
 	tween.tween_interval(0.6)
 		
 	tween.tween_property(stat_notify, "modulate:a", 0.0, 0.5)
+	
+	await tween.finished
+
+func _display_minigame_gains(gains: Dictionary) -> void:
+	for stat_name in gains.keys():
+		var amount = int(gains[stat_name])
+		await _show_stat_popup(stat_name, amount)
 	
 func _update_stats_display() -> void:
 	var current_int = stats.get("INT", 0)
@@ -717,6 +731,8 @@ func _show_choices(options_list: Array) -> void:
 
 	var my_style = load("res://sprites/choices/MyButtonStyle.tres")
 	var my_style_hover = load("res://sprites/choices/MyButtonStyle_Hover.tres")
+	var my_style_disabled = my_style.duplicate()
+	
 	var btn_font = load("res://fonts/LayijiMahaniyomV1_61.ttf")
 
 	for opt_any in options_list:
@@ -741,8 +757,9 @@ func _show_choices(options_list: Array) -> void:
 
 		b.add_theme_stylebox_override("normal", my_style)
 		b.add_theme_stylebox_override("hover", my_style_hover)
-
-		b.custom_minimum_size = Vector2(520, 70)
+		b.add_theme_stylebox_override("disabled", my_style_disabled)
+		
+		b.custom_minimum_size = Vector2(520, 50)
 		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		b.text_overrun_behavior = TextServer.OVERRUN_NO_TRIMMING
@@ -750,7 +767,9 @@ func _show_choices(options_list: Array) -> void:
 		b.alignment = HORIZONTAL_ALIGNMENT_LEFT
 
 		b.disabled = not unlocked
-
+		
+		if not unlocked:
+			b.modulate.a = 0.7
 		_setup_button_sounds(b)
 
 		if unlocked:

@@ -23,6 +23,8 @@ func _apply_minigame2_reward():
 
 	var flags: Dictionary = GameSave.state["flags"]
 	var stats: Dictionary = GameSave.state["stats"]
+	
+	var int_gain: int = 0
 
 	var scene_path := ""
 	if get_tree().current_scene:
@@ -33,6 +35,7 @@ func _apply_minigame2_reward():
 		if not bool(flags.get("mg2_room1_reward_applied", false)):
 			if bool(flags.get("mg2_room1_key_found", false)):
 				stats["INT"] = int(stats.get("INT", 0)) + 2
+				int_gain = 2
 			flags["mg2_room1_reward_applied"] = true
 			flags["mg2_room1_completed"] = true
 
@@ -41,11 +44,18 @@ func _apply_minigame2_reward():
 		if not bool(flags.get("mg2_room2_reward_applied", false)):
 			if bool(flags.get("mg2_room2_key_found", false)):
 				stats["INT"] = int(stats.get("INT", 0)) + 2
+				int_gain = 2
 			flags["mg2_room2_reward_applied"] = true
 			flags["mg2_room2_completed"] = true
 
 	GameSave.state["flags"] = flags
 	GameSave.state["stats"] = stats
+
+
+	GameSave.state["minigame_stat_gains"] = { "INT": int_gain }
+	var next_id := str(GameSave.state.get("pending_next_id", ""))
+	if next_id != "":
+		GameSave.state["minigame_return_next_id"] = next_id
 
 func _on_btn_complete_pressed():
 	confirm_box.show()
