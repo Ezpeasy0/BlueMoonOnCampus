@@ -1,6 +1,15 @@
 {
-  "start": "ch3_s1_001",
+  "start": "ch3_cover_001",
   "events": [
+	{
+	  "id": "ch3_cover_001",
+	  "type": "dialogue",
+	  "bg": "chapter_3_cover",
+	  "sprite": "",
+	  "name": "",
+	  "text": "",
+	  "next": "ch3_s1_001"
+	},
 	{
 	  "id": "ch3_s1_001",
 	  "type": "dialogue",

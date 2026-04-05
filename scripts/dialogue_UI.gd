@@ -9,6 +9,9 @@ extends Control
 @onready var choices_container: Control = %ChoicesPanel 
 @onready var choices_box: VBoxContainer = %ChoicesBox
 
+@onready var ui_root: Control = $UI
+@onready var menu_buttons: Control = $HBoxContainer
+
 @onready var bg_fade: ColorRect = %BGFade
 @onready var btn_options: Button = $HBoxContainer/options
 
@@ -254,6 +257,20 @@ func _advance() -> void:
 	logic.index += 1
 	await _show_current()
 
+func _is_chapter_cover(bg_name: String) -> bool:
+	bg_name = bg_name.strip_edges()
+	return bg_name.begins_with("chapter_") and bg_name.ends_with("_cover")
+
+func _set_cover_mode(enabled: bool) -> void:
+	if ui_root:
+		ui_root.visible = not enabled
+
+	if menu_buttons:
+		menu_buttons.visible = not enabled
+
+	if choices_container:
+		choices_container.visible = false
+		
 func _show_current() -> void:
 	if logic.index >= logic.story_lines.size():
 		logic.go_to_next_chapter_or_end()
@@ -299,6 +316,8 @@ func _show_current() -> void:
 			logic.current_bg = new_bg
 			await _set_background(new_bg)
 
+	_set_cover_mode(_is_chapter_cover(logic.current_bg))
+
 	if logic.is_fullscreen_bg(logic.current_bg):
 		logic.current_sprite = ""
 		character.visible = false
@@ -326,14 +345,14 @@ func _show_current() -> void:
 
 	await _type_text(txt)
 	logic.sync_state_to_gamesave()
-	
+
 	if line.has("skip_to"):
 		var target_id := str(line["skip_to"])
 		if target_id != "" and logic.id_to_index.has(target_id):
 			logic.index = int(logic.id_to_index[target_id])
 			await _show_current()
 			return
-	
+
 	if _is_fast_forwarding and not choices_container.visible:
 		await get_tree().create_timer(0.1).timeout
 		if not is_inside_tree(): return
