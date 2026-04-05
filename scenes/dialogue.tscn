@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://g5q7tm64coy7"]
 
-[ext_resource type="Script" uid="uid://raqig1qkw5ll" path="res://scripts/dialogue.gd" id="1_3n4vj"]
+[ext_resource type="Script" uid="uid://raqig1qkw5ll" path="res://scripts/dialogue_UI.gd" id="1_3n4vj"]
 [ext_resource type="FontFile" uid="uid://d2g1dcyt4rtyv" path="res://fonts/LayijiMahaniyomV1_61.ttf" id="1_jwyou"]
 [ext_resource type="PackedScene" uid="uid://3gx32k8n8q8l" path="res://scenes/save_slot_save.tscn" id="2_6xhvj"]
 [ext_resource type="PackedScene" uid="uid://bfywggkiehmc2" path="res://scenes/options_menu.tscn" id="2_fyky8"]
@@ -109,7 +109,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 
-[node name="Dialogue" type="Control" node_paths=PackedStringArray("sfx_click", "sfx_hover", "sfx_text_blip", "video_panel", "audio_panel", "back_button")]
+[node name="Dialogue" type="Control" node_paths=PackedStringArray("sfx_click", "sfx_hover", "sfx_text_blip", "video_panel", "audio_panel", "back_button", "btn_video_settings", "btn_audio_settings")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -123,6 +123,8 @@ sfx_text_blip = NodePath("TextBlip")
 video_panel = NodePath("Video")
 audio_panel = NodePath("Audio")
 back_button = NodePath("Back")
+btn_video_settings = NodePath("Video/Back")
+btn_audio_settings = NodePath("Audio/Back")
 save_scene = ExtResource("2_6xhvj")
 load_scene = ExtResource("3_sv5jy")
 
