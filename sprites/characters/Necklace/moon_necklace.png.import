@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1toj6j42jycx"
-path="res://.godot/imported/scene_3_16_mek_fon_tae_found_cherry_body.png-4a035951d3aae650a6d601e87a70e68c.ctex"
+uid="uid://b33urwbo3a7fn"
+path="res://.godot/imported/moon_necklace.png-81d2c32ab89cbf7fbde1ad6e0c1cd3b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_3_16_mek_fon_tae_found_cherry_body.png"
-dest_files=["res://.godot/imported/scene_3_16_mek_fon_tae_found_cherry_body.png-4a035951d3aae650a6d601e87a70e68c.ctex"]
+source_file="res://sprites/characters/Necklace/moon_necklace.png"
+dest_files=["res://.godot/imported/moon_necklace.png-81d2c32ab89cbf7fbde1ad6e0c1cd3b1.ctex"]
 
 [params]
 

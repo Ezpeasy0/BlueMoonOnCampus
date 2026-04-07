@@ -1807,8 +1807,7 @@
 	{
 	  "id": "ch3_s9_053",
 	  "type": "dialogue",
-	  "sprite": "boss_chill",
-	  "sprite_hide": true,
+	  "sprite": "",
 	  "name": "",
 	  "text": "",
 	  "next": "ch3_s9_054"
@@ -1957,8 +1956,7 @@
 	{
 	  "id": "ch3_s9_073",
 	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "sprite_hide": true,
+	  "sprite": "",
 	  "name": "",
 	  "text": "",
 	  "next": "ch3_s9_074"
@@ -2012,7 +2010,7 @@
 	{
 	  "id": "ch3_s10_001",
 	  "type": "dialogue",
-	  "bg": "scene_3_10_astronomy_club_main_inside",
+	  "bg": "scene_3_10_astronomy_club_main_inside_night",
 	  "bgm": "suspense_music.mp3",
 	  "name": "เมฆ",
 	  "text": "บอส!!",
@@ -2036,8 +2034,7 @@
 	{
 	  "id": "ch3_s10_004",
 	  "type": "dialogue",
-	  "sprite": "boss_angry",
-	  "sprite_hide": true,
+	  "sprite": "",
 	  "name": "",
 	  "text": "",
 	  "next": "ch3_s10_005"
@@ -2129,6 +2126,7 @@
 	{
 	  "id": "ch3_s11_009",
 	  "type": "dialogue",
+	  "sprite": "",
 	  "name": "เมฆ",
 	  "text": "ไปดูที่ถังขยะใบนั้นกันครับ",
 	  "next": "ch3_s11_010"
@@ -2152,7 +2150,6 @@
 	{
 	  "id": "ch3_s12_002",
 	  "type": "dialogue",
-	  "sprite": "tae_serious",
 	  "name": "เต้",
 	  "text": "..",
 	  "next": "ch3_s12_003"
@@ -2174,6 +2171,7 @@
 	{
 	  "id": "ch3_s12_005",
 	  "type": "dialogue",
+	  "bgm": "",
 	  "name": "ฝน",
 	  "text": "อ๊าา!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
 	  "next": "ch3_s12_006"
@@ -2324,8 +2322,7 @@
 	{
 	  "id": "ch3_s17_002",
 	  "type": "dialogue",
-	  "sprite": "tae_angry_with_tears",
-	  "sprite_hide": true,
+	  "sprite": "",
 	  "name": "",
 	  "text": "",
 	  "next": "ch3_s17_003"
@@ -2433,6 +2430,7 @@
 	  "type": "dialogue",
 	  "bg": "scene_3_20_climbing_ladder",
 	  "bgm": "suspense_music.mp3",
+	  "sprite": "",
 	  "sfx": "ladder_climb.mp3",
 	  "name": "เมฆ",
 	  "text": "จับบันไดดีๆ นะฝน!",
@@ -3057,7 +3055,7 @@
 	{
 	  "id": "ch3_s22_C_012",
 	  "type": "dialogue",
-	  "sprite": "tae_angry",
+	  "sprite": "tae_angry_hold_gun",
 	  "name": "เต้",
 	  "text": "…",
 	  "next": "ch3_s22_C_013"
@@ -3089,7 +3087,7 @@
 	{
 	  "id": "ch3_s22_C_016",
 	  "type": "dialogue",
-	  "sprite": "tae_angry_with_tears",
+	  "sprite": "tae_cry_hold_gun",
 	  "name": "เต้",
 	  "text": "พ่อชดใช้ให้แล้วนะลูก..",
 	  "next": "ch3_s23C_001"
@@ -4109,7 +4107,7 @@
 	  "bgm": "",
 	  "name": "",
 	  "text": "",
-	  "next": ""
+	  "next": "end"
 	},
 	{
 	  "id": "ch3_end_bloody",
@@ -4118,6 +4116,12 @@
 	  "bgm": "",
 	  "name": "",
 	  "text": "",
+	  "next": "end"
+	},
+	{
+	  "id": "end",
+	  "bg": "chapter_end_cover",
+	  "sprite": "",
 	  "next": ""
 	}
   ]
