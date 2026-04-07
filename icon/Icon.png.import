@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eqlrypvaypmf"
-path="res://.godot/imported/pete.png-11b466031fc60e0f02169c811e84abdf.ctex"
+uid="uid://dc0dbujvbpuyj"
+path="res://.godot/imported/Icon.png-f44f218bd70df1e3d51da80d1e376984.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/pete/pete.png"
-dest_files=["res://.godot/imported/pete.png-11b466031fc60e0f02169c811e84abdf.ctex"]
+source_file="res://icon/Icon.png"
+dest_files=["res://.godot/imported/Icon.png-f44f218bd70df1e3d51da80d1e376984.ctex"]
 
 [params]
 

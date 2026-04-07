@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eqlrypvaypmf"
-path="res://.godot/imported/pete.png-11b466031fc60e0f02169c811e84abdf.ctex"
+uid="uid://clnxxl148s0ux"
+path="res://.godot/imported/tae_handcuffed.png-300b06f3bdd732df9ca121cb8c377d80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/pete/pete.png"
-dest_files=["res://.godot/imported/pete.png-11b466031fc60e0f02169c811e84abdf.ctex"]
+source_file="res://sprites/characters/tae/tae_handcuffed.png"
+dest_files=["res://.godot/imported/tae_handcuffed.png-300b06f3bdd732df9ca121cb8c377d80.ctex"]
 
 [params]
 

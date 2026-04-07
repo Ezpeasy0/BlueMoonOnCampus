@@ -29,7 +29,7 @@ func load_chapter_data() -> void:
 		chapter_num = int(GameSave.state["chapter"])
 
 	var path := "res://data/chapter%d.json" % chapter_num
-	if not FileAccess.file_exists(path):
+	if not FileAccess.file_exists(path) and not ResourceLoader.exists(path):
 		push_error("Chapter file not found: " + path)
 		return
 
@@ -137,7 +137,7 @@ func go_to_next_chapter_or_end() -> void:
 	var next_chapter: int = current_chapter + 1
 	var next_path := "res://data/chapter%d.json" % next_chapter
 
-	if FileAccess.file_exists(next_path):
+	if FileAccess.file_exists(next_path) or ResourceLoader.exists(next_path):
 		GameSave.state["chapter"] = next_chapter
 		GameSave.state["line_index"] = 0
 		GameSave.state["bg"] = ""
@@ -296,13 +296,14 @@ func resolve_path(root: String, value: String) -> String:
 	if value.begins_with("res://"):
 		return value
 
+	var direct := root + value
+	if ResourceLoader.exists(direct) or FileAccess.file_exists(direct):
+		return direct
+
 	var found := search_recursive(root, value)
 	if found != "":
 		return found
 
-	var direct := root + value
-	if FileAccess.file_exists(direct):
-		return direct
 	return ""
 
 func search_recursive(path: String, target_file: String) -> String:
@@ -322,9 +323,10 @@ func search_recursive(path: String, target_file: String) -> String:
 				dir.list_dir_end()
 				return found
 		else:
-			if file_name == target_file:
+			var clean_name = file_name.replace(".import", "")
+			if clean_name == target_file:
 				dir.list_dir_end()
-				return path + file_name
+				return path + clean_name
 
 	dir.list_dir_end()
 	return ""
@@ -343,13 +345,13 @@ func guess_image_path(root: String, filename: String) -> String:
 func guess_audio_path(root: String, filename: String) -> String:
 	if filename.get_extension() != "":
 		var direct_path = root + filename
-		if FileAccess.file_exists(direct_path):
+		if ResourceLoader.exists(direct_path) or FileAccess.file_exists(direct_path):
 			return direct_path
 		return ""
 		
 	var exts = [".mp3", ".wav", ".ogg"]
 	for ext in exts:
 		var path = root + filename + ext
-		if FileAccess.file_exists(path):
+		if ResourceLoader.exists(path) or FileAccess.file_exists(path):
 			return path
 	return ""

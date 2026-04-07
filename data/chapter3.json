@@ -338,7 +338,6 @@
 	  "sprite": "",
 	  "next": "ch3_s4_008",
 	  "thought": true,
-	  "sfx": "doorknob.mp3"
 	},
 	{
 	  "id": "ch3_s4_008",
@@ -347,7 +346,8 @@
 	  "sfx": "doorknob.mp3",
 	  "name": "เมฆ",
 	  "text": "!?",
-	  "next": "ch3_s5_001"
+	  "next": "ch3_s5_001",
+	  "sfx": "doorknob.mp3",
 	},
 	{
 	  "id": "ch3_s5_001",
@@ -830,6 +830,7 @@
 	{
 	  "id": "ch3_s7_024",
 	  "type": "dialogue",
+	  "bg": "scene_3_1_astronomy_club_main_inside_evening",
 	  "sprite": "tae_sad",
 	  "name": "เมฆ",
 	  "text": "ใจเย็นๆ แล้วคุยกันดีกว่านะครับ",

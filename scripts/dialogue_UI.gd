@@ -597,6 +597,12 @@ func _set_background(value: String) -> void:
 
 	_busy = true
 	await _fade_rect_alpha(bg_fade, 0.0, 1.0, 0.25)
+	
+	if value.get_file() == "pete.png":
+		bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	else:
+		bg.stretch_mode = TextureRect.STRETCH_SCALE
+	
 	bg.texture = tex
 	await _fade_rect_alpha(bg_fade, 1.0, 0.0, 0.25)
 	_busy = false
