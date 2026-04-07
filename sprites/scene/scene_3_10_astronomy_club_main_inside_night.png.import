@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcy8blvel5qg1"
-path="res://.godot/imported/scene_2_17_mek_fon_astronomy_club_artwork.png-4203e7b700211ff46061cfcddf14de95.ctex"
+uid="uid://ba5ux0tcs52tu"
+path="res://.godot/imported/scene_3_10_astronomy_club_main_inside_night.png-63fe7d07b72e49f11d4788dfbea849d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scene/scene_2_17_mek_fon_astronomy_club_artwork.png"
-dest_files=["res://.godot/imported/scene_2_17_mek_fon_astronomy_club_artwork.png-4203e7b700211ff46061cfcddf14de95.ctex"]
+source_file="res://sprites/scene/scene_3_10_astronomy_club_main_inside_night.png"
+dest_files=["res://.godot/imported/scene_3_10_astronomy_club_main_inside_night.png-63fe7d07b72e49f11d4788dfbea849d8.ctex"]
 
 [params]
 

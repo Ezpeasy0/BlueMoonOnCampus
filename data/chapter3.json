@@ -634,6 +634,7 @@
 	{
 	  "id": "ch3_s6_001",
 	  "type": "dialogue",
+	  "sprite": "",
 	  "bg": "scene_3_6_tae_point_gun",
 	  "master_sfx": "",
 	  "bgm": "suspense",
