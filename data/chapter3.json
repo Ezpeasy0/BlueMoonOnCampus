@@ -662,7 +662,7 @@
 	  "bg": "scene_3_7_astronomy_club_main_inside",
 	  "master_sfx": "",
 	  "bgm": "suspense",
-	  "sprite": "tae_angry_hold_gun",
+	  "sprite": "",
 	  "name": "เมฆ",
 	  "text": "…",
 	  "next": "ch3_s7_002"
@@ -722,7 +722,7 @@
 	{
 	  "id": "ch3_s7_009",
 	  "type": "dialogue",
-	  "sprite": "tae_angry_hold_gun",
+	  "sprite": "",
 	  "name": "เต้",
 	  "text": "!!??",
 	  "next": "ch3_s7_010"
