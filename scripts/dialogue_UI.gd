@@ -174,7 +174,7 @@ func _input(event: InputEvent) -> void:
 		_hide_all_in_game_menus()
 		return
 
-	if is_inside_tree() and get_tree().paused: return
+	if not is_inside_tree() or get_tree().paused: return
 	if _busy: return
 
 	var is_any_menu_open: bool = (options_menu and options_menu.visible) \
@@ -321,12 +321,16 @@ func _show_current() -> void:
 	if logic.is_fullscreen_bg(logic.current_bg):
 		logic.current_sprite = ""
 		character.visible = false
+		character.modulate.a = 0.0
+		character.texture = null 
 	else:
 		if line.has("sprite"):
 			var new_sprite: String = str(line["sprite"])
-			if new_sprite.strip_edges() == "":
+			if new_sprite.strip_edges() == "" or new_sprite == "null":
 				logic.current_sprite = ""
 				character.visible = false
+				character.modulate.a = 0.0
+				character.texture = null
 			elif new_sprite != logic.current_sprite:
 				logic.current_sprite = new_sprite
 				await _set_character_sprite(new_sprite)
@@ -354,10 +358,15 @@ func _show_current() -> void:
 			return
 
 	if _is_fast_forwarding and not choices_container.visible:
+		if not is_inside_tree(): return 
 		await get_tree().create_timer(0.1).timeout
 		if not is_inside_tree(): return
-		while get_tree().paused:
-			await get_tree().process_frame
+		var tree = get_tree()
+		if tree:
+			while tree.paused:
+				if not is_inside_tree(): break 
+				await tree.process_frame
+				
 		if _is_fast_forwarding:
 			_advance()
 
@@ -604,29 +613,33 @@ func _set_character_sprite(value: String) -> void:
 		return
 
 	_busy = true
-	character.visible = true
-	await _fade_control_alpha(character, character.modulate.a, 0.0, 0.15)
+	if character.modulate.a > 0:
+		await _fade_control_alpha(character, character.modulate.a, 0.0, 0.1)	
 	character.texture = tex
+	character.visible = true 
 	await _fade_control_alpha(character, 0.0, 1.0, 0.15)
 	_busy = false
 
 func _fade_rect_alpha(rect: ColorRect, from_a: float, to_a: float, duration: float) -> void:
+	if not is_inside_tree(): return
+	
 	rect.visible = true
-	var t: float = 0.0
-	while t < duration:
-		t += get_process_delta_time()
-		rect.color.a = lerp(from_a, to_a, clamp(t / duration, 0.0, 1.0))
-		await get_tree().process_frame
-	rect.color.a = to_a
-	if to_a <= 0.001: rect.visible = false
+	rect.color.a = from_a
+	
+	var tween = create_tween()
+	tween.tween_property(rect, "color:a", to_a, duration)
+	await tween.finished
+	
+	if to_a <= 0.001: 
+		rect.visible = false
 
 func _fade_control_alpha(ctrl: CanvasItem, from_a: float, to_a: float, duration: float) -> void:
-	var t: float = 0.0
-	while t < duration:
-		t += get_process_delta_time()
-		ctrl.modulate.a = lerp(from_a, to_a, clamp(t / duration, 0.0, 1.0))
-		await get_tree().process_frame
-	ctrl.modulate.a = to_a
+	if not is_inside_tree(): return
+	
+	ctrl.modulate.a = from_a
+	var tween = create_tween()
+	tween.tween_property(ctrl, "modulate:a", to_a, duration)
+	await tween.finished
 
 func _on_quit_pressed() -> void:
 	if exit_confirm:

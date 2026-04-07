@@ -25,9 +25,9 @@ func new_game(slot: int) -> void:
 		"flags": {},
 		"timestamp": Time.get_datetime_string_from_system()
 	}
-	save_game(slot)
+	save_game(slot, true)
 
-func save_game(slot: int) -> void:
+func save_game(slot: int, is_new_game: bool = false) -> void:
 	print("[SAVE] slot=", slot, " path=", get_slot_path(slot))
 	current_slot = slot
 	state["timestamp"] = Time.get_datetime_string_from_system()
@@ -36,27 +36,45 @@ func save_game(slot: int) -> void:
 	var f := FileAccess.open(path, FileAccess.WRITE)
 	if f != null:
 		f.store_string(JSON.stringify(state, "\t"))
-		f.close() 
+		f.close()
 
-	await RenderingServer.frame_post_draw
-	
-	var img := get_viewport().get_texture().get_image()
-	
+	var img: Image
+	var chapter_num: int = state.get("chapter", 1)
+
+	if is_new_game:
+		var safe_chapter = clampi(chapter_num, 1, 3)
+		var cover_path := "res://sprites/scene/chapter_%d_cover.png" % safe_chapter
+		var tex: Texture2D = load(cover_path)
+		
+		if tex:
+			img = tex.get_image()
+		else:
+			img = Image.create(320, 180, false, Image.FORMAT_RGBA8)
+			img.fill(Color.BLACK)
+			print("[WARNING] Cover image not found: ", cover_path)
+	else:
+		await RenderingServer.frame_post_draw
+		img = get_viewport().get_texture().get_image()
+		
 	img.resize(320, 180, Image.INTERPOLATE_BILINEAR)
-	
-	var screenshot_tex := ImageTexture.create_from_image(img)
-	
+	var screenshot_tex = ImageTexture.create_from_image(img)
+
+	var img_save_path := "user://thumb_%d.png" % slot
+	img.save_png(img_save_path)
+	print("[SAVE] Image overwritten at: ", img_save_path)
+
 	var preview := SaveResource.new()
-	preview.slot_name = "Chapter " + str(state.get("chapter", 1)) # ดึงด่านมาตั้งเป็นชื่อเซฟ
+	preview.slot_name = "Chapter " + str(chapter_num)
 	
 	var dt := Time.get_datetime_dict_from_system()
 	preview.date = "%02d/%02d/%04d" % [dt.day, dt.month, dt.year]
 	preview.time = "%02d:%02d" % [dt.hour, dt.minute]
+	
 	preview.screenshot = screenshot_tex
 	
 	var preview_path := "user://save_%d.tres" % slot
 	ResourceSaver.save(preview, preview_path)
-	print("[SAVE] Saved preview image to ", preview_path)
+	print("[SAVE] Saved preview resource to ", preview_path)
 
 func load_game(slot: int) -> bool:
 	var path := get_slot_path(slot)

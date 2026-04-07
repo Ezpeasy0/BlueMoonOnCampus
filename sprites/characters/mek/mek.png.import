@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlo385ky8cyvj"
-path="res://.godot/imported/fon_smile.png-7d2ec757965f8a413118f43c0507ac46.ctex"
+uid="uid://56s8avb0rugm"
+path="res://.godot/imported/mek.png-1e8b97dea01ef40c8073d445d80a7802.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/fon/fon_smile.png"
-dest_files=["res://.godot/imported/fon_smile.png-7d2ec757965f8a413118f43c0507ac46.ctex"]
+source_file="res://sprites/characters/mek/mek.png"
+dest_files=["res://.godot/imported/mek.png-1e8b97dea01ef40c8073d445d80a7802.ctex"]
 
 [params]
 

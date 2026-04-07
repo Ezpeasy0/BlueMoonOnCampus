@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlo385ky8cyvj"
-path="res://.godot/imported/fon_smile.png-7d2ec757965f8a413118f43c0507ac46.ctex"
+uid="uid://yr4fmjyno3wu"
+path="res://.godot/imported/fon_shocked_with_tears_point_at_door_student.png-4bdb6ba2352d5196e39f9c341237ba66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/fon/fon_smile.png"
-dest_files=["res://.godot/imported/fon_smile.png-7d2ec757965f8a413118f43c0507ac46.ctex"]
+source_file="res://sprites/characters/fon/fon_shocked_with_tears_point_at_door_student.png"
+dest_files=["res://.godot/imported/fon_shocked_with_tears_point_at_door_student.png-4bdb6ba2352d5196e39f9c341237ba66.ctex"]
 
 [params]
 

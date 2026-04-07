@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bfywggkiehmc2" path="res://scenes/options_menu.tscn" id="5_5dd4i"]
 [ext_resource type="Script" uid="uid://0bhvnnymdwhl" path="res://scripts/video.gd" id="5_8ln24"]
 [ext_resource type="Script" uid="uid://dtakctuc41kv7" path="res://scripts/audio.gd" id="6_rtw2f"]
-[ext_resource type="AudioStream" uid="uid://cnd13wj0ynsqh" path="res://sounds/bgm/raydellrios-suspense.mp3" id="7_oa1go"]
+[ext_resource type="AudioStream" uid="uid://cbcb06mdoi32j" path="res://sprites/background_menu/investigation.mp3" id="8_5dd4i"]
 [ext_resource type="AudioStream" uid="uid://bihnsa6duijhn" path="res://sounds/sfx/sfx-hover.wav" id="8_jk1qb"]
 [ext_resource type="AudioStream" uid="uid://bwip8prevcfwo" path="res://sounds/sfx/sfx-click.mp3" id="9_5dd4i"]
 
@@ -358,7 +358,7 @@ theme_override_font_sizes/font_size = 24
 text = "Back"
 
 [node name="bg_menu_sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_oa1go")
+stream = ExtResource("8_5dd4i")
 autoplay = true
 bus = &"Music"
 

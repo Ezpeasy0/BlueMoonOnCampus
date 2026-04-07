@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlo385ky8cyvj"
-path="res://.godot/imported/fon_smile.png-7d2ec757965f8a413118f43c0507ac46.ctex"
+uid="uid://3jksqhpyimpl"
+path="res://.godot/imported/tana_shout.png-70fa277197dc4ec755eb9fb9cd1e2152.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/fon/fon_smile.png"
-dest_files=["res://.godot/imported/fon_smile.png-7d2ec757965f8a413118f43c0507ac46.ctex"]
+source_file="res://sprites/characters/tana/tana_shout.png"
+dest_files=["res://.godot/imported/tana_shout.png-70fa277197dc4ec755eb9fb9cd1e2152.ctex"]
 
 [params]
 

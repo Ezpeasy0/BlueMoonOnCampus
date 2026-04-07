@@ -1507,6 +1507,7 @@
 	{
 	  "id": "ch3_s9_013",
 	  "type": "dialogue",
+	  "sprite": "",
 	  "bg": "scene_3_4_moon_necklace_back_side_with_F",
 	  "bgm": "",
 	  "name": "เมฆ",
@@ -1524,6 +1525,7 @@
 	{
 	  "id": "ch3_s9_015",
 	  "type": "dialogue",
+	  "sprite": "fon_curious_student",
 	  "bg": "scene_3_9_astronomy_club_night",
 	  "bgm": "mysterious_music.mp3",
 	  "name": "เมฆ",
@@ -2271,6 +2273,7 @@
 	{
 	  "id": "ch3_s15_001",
 	  "type": "dialogue",
+	  "sprite": "",
 	  "bg": "scene_3_15_cherry_body",
 	  "bgm": "",
 	  "name": "เมฆ",
@@ -2474,6 +2477,7 @@
 	{
 	  "id": "ch3_s21_001",
 	  "type": "dialogue",
+	  "sprite": "",
 	  "bg": "scene_3_21_astronomy_club_basement_boss_tae_pete",
 	  "bgm": "suspense_music.mp3",
 	  "name": "เมฆ",

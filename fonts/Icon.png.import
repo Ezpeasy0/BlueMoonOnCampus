@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x6b7mui2255t"
-path="res://.godot/imported/fon_eat.png-983c5a5fcd93e2ad8949c22d8666b63b.ctex"
+uid="uid://dxrlbc4ftxtb5"
+path="res://.godot/imported/Icon.png-cd3601d9361eb7d0a0334a35a5df6db7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/fon/fon_eat.png"
-dest_files=["res://.godot/imported/fon_eat.png-983c5a5fcd93e2ad8949c22d8666b63b.ctex"]
+source_file="res://fonts/Icon.png"
+dest_files=["res://.godot/imported/Icon.png-cd3601d9361eb7d0a0334a35a5df6db7.ctex"]
 
 [params]
 
