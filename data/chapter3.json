@@ -337,7 +337,7 @@
 	  "bg": "scene_3_4_moon_necklace_back_side_with_F",
 	  "sprite": "",
 	  "next": "ch3_s4_008",
-	  "thought": true,
+	  "thought": true
 	},
 	{
 	  "id": "ch3_s4_008",
@@ -346,8 +346,7 @@
 	  "sfx": "doorknob.mp3",
 	  "name": "เมฆ",
 	  "text": "!?",
-	  "next": "ch3_s5_001",
-	  "sfx": "doorknob.mp3",
+	  "next": "ch3_s5_001"
 	},
 	{
 	  "id": "ch3_s5_001",
